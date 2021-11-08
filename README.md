@@ -22,8 +22,10 @@
 </h1>
 
 ---------
+
 ## Deploy
-[[Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/g4tito/gatybot/)
+- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/g4tito/gatybot/)
+
 ---------
 
 ## ⚙ Herramientas
