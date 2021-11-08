@@ -25,7 +25,7 @@ nocache("./gatybot.js", (module) => console.log(`${module} Se actualizó!`));
 
 const starts = async (Fg = new WAConnection()) => {
   Fg.logger.level = "warn";
- // Fg.version = [2, 2119, 6];
+  Fg.version = [2, 2140, 12];
  
  const CFonts  = require('cfonts')
 CFonts.say('FG98', {
