@@ -182,7 +182,7 @@ Fg.copyNForward(m.key.remoteJid, m.message)
 //---
 
   Fg.on("chat-update", async (message) => {
-    require("./fg.js")(Fg, message);
+    require("./gatybot.js")(Fg, message);
   });
   isBattre = "Not Detect"; //
   isCharge = "Not Detect"; //
