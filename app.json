@@ -4,9 +4,4 @@
   "repository": "https://github.com/g4tito/gatybot",
   "logo": "https://i.ibb.co/rksd9bC/gaty-2.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "gatybot"]
-  "buildpacks": [{
-    "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick"
-  }, {
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  }]
 }
