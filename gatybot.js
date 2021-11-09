@@ -2476,7 +2476,7 @@ gbutsan = [
 gbuttonan = {
 imageMessage: py.message.imageMessage,
 contentText: helfxz,
-footerText: `  *Copyright © gatybot*`,
+footerText: `  *Created By Kevin*`,
 buttons: gbutsan,
 headerType: 4
 }
@@ -6246,70 +6246,83 @@ _📤 Enviando, espere si el video no aparece, descargue por el link_`
         limitAdd(sender, limit)
         break;
         
-      //𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗠𝗔𝗞𝗘𝗥 
+      //𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗠𝗔𝗞𝗘𝗥
+      
 case 'stiker': 
 case 's': 
 case 'stikergif':
 case 'sticker': 
 case 'stickergif': 
-case 'sgif':  
-  if(!isVerify) return isUser()
+case 'sgif': 
+        if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-const encmedia1 = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-const dlfile1 = await Fg.downloadMediaMessage(encmedia1)
-
-const bas641 = `data:image/jpeg;base64,${dlfile1.toString('base64')}`
-
-anu = args.join(' ').split('|')
-satu = anu[0] !== '' ? anu[0] : `🐱gatybot🤖 `
-dua = typeof anu[1] !== 'undefined' ? anu[1] : `「gatitoツ」`
-
-var mantap1 = await convertSticker(bas641, `${dua}`, `${satu}`)
-var st = new Buffer.from(mantap1, 'base64');
-Fg.sendMessage(from, st, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: fakelogo, sourceUrl:`${soportefg}`}}})
-
-} else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-const media2 = await Fg.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
-
-anu = args.join(' ').split('|')
-satu = anu[0] !== '' ? anu[0] : `gatybot`
-dua = typeof anu[1] !== 'undefined' ? anu[1] : `gatito`
-
-const Nombre2 = `${satu}`  //animados💎
-const author101 = `${dua}`
-exif.create(Nombre2, author101, `stickwm_${sender}`)
-reply(wait())
-await ffmpeg(`${media2}`)
-.inputFormat(media2.split('.')[4])
-.on('start', function (cmd) {
-console.log(`Started : ${cmd}`)
-})
-.on('error', function (err) {
-console.log(`❎ Error : ${err}`)
-fs.unlinkSync(media2)
-tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-reply(`❎ Falló, en el momento de la conversión ${tipe} a la pegatina`)
-})
-.on('end', function () {
-console.log('✅ Listo')
-exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-if (error) return reply('error')
-sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), mek)
-fs.unlinkSync(media2)
-fs.unlinkSync(`./sticker/${sender}.webp`)
-fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
-})
-})
-.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decre
-ase,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-.toFormat('webp')
-.save(`./sticker/${sender}.webp`)
-} else {
-reply(`  *STICKER MAKER*\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n\n✳️ Envia una imagen con *${prefix + command}* Nombre|Autor \n o etiqueta una imagen que se haya enviado, *Videos 1-9 segundos*\n\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n*ALIAS DEL COMAMDO*\n\n${prefix}s\n${prefix}sticker\n${prefix}stickergif\n${prefix}sgif`)
-}
-break
+        if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+      const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
+      const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderfix}`)
+      await ffmpeg(`${media}`)
+      .input(media)
+      .on('start', function (cmd) {
+      console.log(`Started : ${cmd}`)
+      })
+      .on('error', function (err) {
+      console.log(`Error : ${err}`)
+      fs.unlinkSync(media)
+      reply('error')
+        })
+      .on('end', async function () {
+      console.log('Finish')
+      const MatadataFix3 = {
+        type: 'full',
+        pack: '🐱gatybot🤖',
+        author: '「gatitoツ」',
+        categories: [
+            '🌹'
+        ]
+        }
+      const sticker4s = await createSticker(`./sticker/${senderfix}.webp`, MatadataFix3)
+      Fg.sendMessage(from, sticker4s, MessageType.sticker, {quoted: vin, sendEphemeral: true, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
+      fs.unlinkSync(media)  
+      fs.unlinkSync(`./sticker/${senderfix}.webp`)  
+      })
+      .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+      .toFormat('webp')
+      .save(`./sticker/${senderfix}.webp`)
+      } else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
+      const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
+      const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderfix}`)
+      reply(wait())
+      await ffmpeg(`${media}`)
+      .inputFormat(media.split('.')[4])
+      .on('start', function (cmd) {
+      console.log(`Started : ${cmd}`)
+      })
+      .on('error', function (err) {
+      console.log(`Error : ${err}`)
+      fs.unlinkSync(media)
+      tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+      })
+      .on('end', async function () {
+      console.log('Finish')
+      const MatadataFix4 = {
+        type: 'full',
+        pack: '🐱gatybot🤖',
+        author: '「gatitoツ」',
+        categories: [
+            '🌹'
+        ]
+        }
+      const sticker5s = await createSticker(`./sticker/${senderfix}.webp`, MatadataFix4)
+      Fg.sendMessage(from, sticker5s, MessageType.sticker, {quoted: vin, sendEphemeral: true, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
+      fs.unlinkSync(media)
+      fs.unlinkSync(`./sticker/${senderfix}.webp`)
+      })
+      .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+      .toFormat('webp')
+      .save(`./sticker/${senderfix}.webp`)
+          } else {
+      reply(`Envíe una foto/video + el comando ${prefix}sticker\n\nTambién funciona si mencionas una foto o video junto al mismo comando\n\nNota: La duración máxima del video es de 10 segundos`)
+      }
+        break
         
       case 'toimage': 
 case 'toimg':
