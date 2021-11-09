@@ -2238,12 +2238,11 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}sticker2_ _(Nombre|Autor)_
 • 式 ⃟🎨 _${prefix}take_ _(Nombre|Autor)_
 • 式 ⃟🎨 _${prefix}exif_ _(Nombre|Autor)_
-• 式 ⃟🎨 _${prefix}stickfg_ 
-• 式 ⃟🎨 _${prefix}semoji_
+• 式 ⃟🎨 _${prefix}stickfg_
 • 式 ⃟🎨 _${prefix}ttp_
 • 式 ⃟🎨 _${prefix}ttp2_
-• 式 ⃟🎨 _${prefix}attp_ 
-• 式 ⃟🎨 _${prefix}attp2_ 
+• 式 ⃟🎨 _${prefix}attp_
+• 式 ⃟🎨 _${prefix}attp2_
 • 式 ⃟🎨 _${prefix}attp3_
 • 式 ⃟🎨 _${prefix}smeme_ _(txt|text2)_
 • 式 ⃟🎨 _${prefix}smeme2_
@@ -2252,12 +2251,12 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}tovid_
 • 式 ⃟🎨 _${prefix}toav_
 • 式 ⃟🎨 _${prefix}rvo_
-• 式 ⃟🎨 _${prefix}triggered_ 
-• 式 ⃟🎨 _${prefix}passed_ 
+• 式 ⃟🎨 _${prefix}triggered_
+• 式 ⃟🎨 _${prefix}passed_
 • 式 ⃟🎨 _${prefix}wasted_
 • 式 ⃟🎨 _${prefix}gtav_
-• 式 ⃟🎨 _${prefix}sgay_ 
-• 式 ⃟🎨 _${prefix}srip_ 
+• 式 ⃟🎨 _${prefix}sgay_
+• 式 ⃟🎨 _${prefix}srip_
 • 式 ⃟🎨 _${prefix}scelda_
 • 式 ⃟🎨 _${prefix}emoji_app_
 • 式 ⃟🎨 _${prefix}emoji_wa_
@@ -6343,117 +6342,167 @@ if(!isVerify) return isUser()
               }
               break
 
-               case 'emoji_app':
-               if(!isVerify) return isUser()
+case 'emoji_app':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
-			             emoji.get(`${emoje}`).then(emoji => {
-				         teks = `${emoji.images[0].url}`
-    	         		sendStickerFromUrl(from,`${teks}`)	
-             			console.log('  ✅ emoji a sticker ' )
-   	  	     		})
-   .catch((err) => {
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[0].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-            limitAdd(sender, limit)
-                        break
-                        
-              case 'emoji_wa':
-              if(!isVerify) return isUser()
+limitAdd(sender, limit)
+break
+
+case 'emoji_wa':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
-                         emoji.get(`${emoje}`).then(emoji => {
-				         teks = `${emoji.images[4].url}`
-      	       		sendStickerFromUrl(from,`${teks}`)	
-    		         	console.log('  ✅ emoji a sticker ' )
-   		     	 	})
-   .catch((err) => {
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[4].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-            limitAdd(sender, limit)
-                         break
-                         
-              case 'emoji_fb':
-              if(!isVerify) return isUser()
+limitAdd(sender, limit)
+break
+
+case 'emoji_fb':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
-                        emoji.get(`${emoje}`).then(emoji => {
-				        teks = `${emoji.images[6].url}`
-          	  		sendStickerFromUrl(from,`${teks}`)	
-    	        		console.log('  ✅ emoji a sticker ' )
-        				})
-        .catch((err) => {
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[6].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-            limitAdd(sender, limit)
-                        break
-                        
-              case 'emoji_go':
-              if(!isVerify) return isUser()
+limitAdd(sender, limit)
+break
+
+case 'emoji_go':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
-                     emoji.get(`${emoje}`).then(emoji => {
-				     teks = `${emoji.images[1].url}`
-    	   	  	sendStickerFromUrl(from,`${teks}`)	
-    	   	  	console.log('  ✅ emoji a sticker ' )
-   			  	})
-   .catch((err) => {
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[1].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-            limitAdd(sender, limit)
-                     break
-                     
-           case 'emoji_mo':
-           if(!isVerify) return isUser()
+limitAdd(sender, limit)
+break
+
+case 'emoji_mo':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
-                     emoji.get(`${emoje}`).then(emoji => {
-				     teks = `${emoji.images[14].url}`
-    			     sendStickerFromUrl(from,`${teks}`)	
-    		     	console.log('  ✅ emoji a sticker ' )
-   		      	})
-   .catch((err) => {
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[14].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-            limitAdd(sender, limit)
-                     break
-                     
-            case 'emoji_tw':
-            if(!isVerify) return isUser()
+limitAdd(sender, limit)
+break
+
+case 'emoji_tw':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
-                  emoji.get(`${emoje}`).then(emoji => {
-				  teks = `${emoji.images[5].url}`
-    	  		sendStickerFromUrl(from,`${teks}`)	
-      			console.log('  ✅ emoji a sticker ' )
-   				})
-   .catch((err) => {
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[5].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-            limitAdd(sender, limit)
-                  break
-                  
-            case 'emoji_sa':
-            if(!isVerify) return isUser()
+limitAdd(sender, limit)
+break
+
+case 'emoji_sa':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
-                    emoji.get(`${emoje}`).then(emoji => {
-				    teks = `${emoji.images[2].url}`
-       	 		sendStickerFromUrl(from,`${teks}`)	
-        			console.log('  ✅ emoji a sticker ' )
-   	 			})
-   .catch((err) => {
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[2].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-            limitAdd(sender, limit)
-                   break
+limitAdd(sender, limit)
+break
+
+case 'prueva':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[9].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
+            reply('❎ Por favor ingrese solo un emoji'); 
+            })
+limitAdd(sender, limit)
+break
+
+case 'pueva2':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (args.length < 1) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
+reply(wait()) 
+qes = args.join(' ')
+emoji.get(`${qes}`).then(emoji => {
+teks = `${emoji.images[8].url}`
+sendStickerFromUrl(from,`${teks}`)	
+console.log('  ✅ emoji a sticker ' )
+})
+.catch((err) => {
+            reply('❎ Por favor ingrese solo un emoji'); 
+            })
+limitAdd(sender, limit)
+break
 
       case "term":
       case "termux":
