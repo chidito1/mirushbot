@@ -2547,7 +2547,7 @@ _*Diseñador del bot*_
 
 • 式 ⃟⃟🤖 _*Ayudante :* @${ayudante.split("@s.whatsapp.net")[0]}_
 _*Ayuda en algunos comandos*_`
-Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢𝗡𝗘𝗦🐱⃟式`,body: `• Fecha : ${fecha2}/n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
+Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢𝗡𝗘𝗦🐱⃟式`,body: `• Fecha : ${fecha2}\n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
              
            break
 
