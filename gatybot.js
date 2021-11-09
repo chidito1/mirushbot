@@ -6257,7 +6257,7 @@ case 'sgif':
         if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
         if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-      const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
+      const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
       const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderfix}`)
       await ffmpeg(`${media}`)
       .input(media)
@@ -6288,7 +6288,7 @@ case 'sgif':
       .toFormat('webp')
       .save(`./sticker/${senderfix}.webp`)
       } else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-      const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
+      const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
       const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderfix}`)
       reply(wait())
       await ffmpeg(`${media}`)
