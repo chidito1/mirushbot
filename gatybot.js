@@ -2259,6 +2259,13 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}sgay_ 
 • 式 ⃟🎨 _${prefix}srip_ 
 • 式 ⃟🎨 _${prefix}scelda_
+• 式 ⃟🎨 _${prefix}emoji_app_
+• 式 ⃟🎨 _${prefix}emoji_wa_
+• 式 ⃟🎨 _${prefix}emoji_fb_
+• 式 ⃟🎨 _${prefix}emoji_go_
+• 式 ⃟🎨 _${prefix}emoji_mo_
+• 式 ⃟🎨 _${prefix}emoji_tw_
+• 式 ⃟🎨 _${prefix}emoji_sa_
 
 _*<DESCARGAS/>*_
 
@@ -2737,7 +2744,6 @@ break
 
 //-- Simsimi
 case 'simi':
-case 'bot':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   try {
@@ -2781,7 +2787,6 @@ if (args.length < 1) return Fg.sendMessage(from, simiimg2, image, {caption: simi
                      break
                      
 case 'simi2':
-case 'bot2':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   try {
@@ -6238,84 +6243,112 @@ _📤 Enviando, espere si el video no aparece, descargue por el link_`
         break;
         
       //𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗠𝗔𝗞𝗘𝗥 
-case 'stiker': 
-case 's': 
-case 'stikergif':
-case 'sticker': 
-case 'stickergif': 
-case 'sgif':  
-if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await Fg.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						await ffmpeg(`./${media}`)
-							.input(media)
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								reply('❎ Error al crear el sticker')
-							})
-							.on('end', function () {
-								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
-									 if (error) {
-											 reply(ind.stikga())
-											 fs.unlinkSync(media)	
-											 fs.unlinkSync(ran)
-											 }
-									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `Gatybot by 「gatitoツ」`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
-									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
-									fs.unlinkSync(media)	
-									fs.unlinkSync(ran)	
-								})
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
-						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await Fg.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						reply(wait())
-						await ffmpeg(`./${media}`)
-							.inputFormat(media.split('.')[1])
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply('❎ Error al crear el stickergif')
-							})
-							.on('end', function () {
-								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
-									if (error) {
-											 reply(ind.stikga())
-											 fs.unlinkSync(media)	
-											 fs.unlinkSync(ran)
-											 }
-									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `Gatybot by 「gatitoツ」`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
-									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
-									fs.unlinkSync(media)
-									fs.unlinkSync(ran)
-								})
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else {
-						reply(`✳️ Etiqueta un *imagen/video/gif* con el comando ${prefix + command}\n\n*📌Nota* :\nEl video no tiene que pasar los 9 segundos`)
-					}
-				    limitAdd(sender, limit)
-					break
+case "s":
+  case "stiker":
+  case "sticker":
+  if(!isVerify) return isUser()
+if (isBanned) return reply(banf()) 
+if (isLimit(sender)) return await limitAdd(sender) 
+        a = "gatybot"
+        b = "gatito"
+    if ( 
+      ((isMedia && !mek.message.videoMessage) || isQuotedImage)
+      ) { 
+        const encmedia = isQuotedImage 
+        ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message .extendedTextMessage.contextInfo : mek;
+          media = await Fg.downloadAndSaveMediaMessage(encmedia); 
+          await createExif(a, b); 
+          out = getRandom(".webp"); 
+          ffmpeg(media) 
+          .on("error", (e) => { 
+            console.log(e); 
+            Fg.sendMessage(from, "⚠️ Error", "conversation", { quoted: mek }); 
+            fs.unlinkSync(media); 
+            })
+            .on("end", () => { 
+              _out = getRandom(".webp"); 
+              spawn("webpmux", [
+                "-set",
+                "exif",
+                "./temp/data.exif",
+                out,
+                "-o",
+                _out,
+              ]).on("exit", () => {
+                Fg.sendMessage(
+                  from,
+                  fs.readFileSync(_out),
+                  "stickerMessage",
+                  { quoted: mek }
+                );
+                fs.unlinkSync(out);
+                fs.unlinkSync(_out);
+                fs.unlinkSync(media);
+              });
+            })
+            .addOutputOptions([
+              `-vcodec`,
+              `libwebp`,
+              `-vf`,
+              `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
+            ])
+            .toFormat("webp")
+            .save(out);
+        } else if (
+          ((isMedia && mek.message.videoMessage.seconds < 11) ||
+            (isQuotedVideo &&
+              mek.message.extendedTextMessage.contextInfo.quotedMessage
+                .videoMessage.seconds < 11))
+        ) {
+          const encmedia = isQuotedVideo
+            ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message
+                .extendedTextMessage.contextInfo
+            : mek;
+          const media = await Fg.downloadAndSaveMediaMessage(encmedia);
+          await createExif(a, b);
+          out = getRandom(".webp");
+          ffmpeg(media)
+            .on("error", (e) => {
+              console.log(e);
+              Fg.sendMessage(from, "⚠️ Error", "conversation", {
+                quoted: mek,
+              });
+              fs.unlinkSync(media);
+            })
+            .on("end", () => {
+              _out = getRandom(".webp");
+              spawn("webpmux", [
+                "-set",
+                "exif",
+                "./temp/data.exif",
+                out,
+                "-o",
+                _out,
+              ]).on("exit", () => {
+                Fg.sendMessage(
+                  from,
+                  fs.readFileSync(_out),
+                  "stickerMessage",
+                  { quoted: mek }
+                );
+                fs.unlinkSync(out);
+                fs.unlinkSync(_out);
+                fs.unlinkSync(media);
+              });
+            })
+            .addOutputOptions([
+              `-vcodec`,
+              `libwebp`,
+              `-vf`,
+              `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
+            ])
+            .toFormat("webp")
+            .save(out);
+        } else {
+          m.reply(msg.stima);
+        }
+        limitAdd(sender, limit)
+        break
         
       case 'toimage': 
 case 'toimg':
@@ -6353,32 +6386,11 @@ if(!isVerify) return isUser()
               }
               break
 
-case 'emoji':
-case 'semoji':
-case 'smoji':
-  if(!isVerify) return isUser()
+               case 'emoji_app':
+               if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-                      if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*
-
-*📝Lista de emojis* :
-──────────────
-ap = emoji de apple
-wa = emoji de whatsapp
-fb = emoji de facebook
-go = emoji de google
-mo = emoji de mozilla
-tw = emoji de twitter
-sa = emoji de samsung
-──────────────
-*📌Ejemplo* :
-${prefix + command} wa 🐱`)
-                     emojis = args[0]
-                     args.shift()
-                     emoje = args.join(" ")
-                     reply(wait()) 
-                     switch (emojis) {
-               case 'ap':
+  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
 			             emoji.get(`${emoje}`).then(emoji => {
 				         teks = `${emoji.images[0].url}`
     	         		sendStickerFromUrl(from,`${teks}`)	
@@ -6387,8 +6399,14 @@ ${prefix + command} wa 🐱`)
    .catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
+            limitAdd(sender, limit)
                         break
-              case 'wa':
+                        
+              case 'emoji_wa':
+              if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
                          emoji.get(`${emoje}`).then(emoji => {
 				         teks = `${emoji.images[4].url}`
       	       		sendStickerFromUrl(from,`${teks}`)	
@@ -6397,8 +6415,14 @@ ${prefix + command} wa 🐱`)
    .catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
+            limitAdd(sender, limit)
                          break
-              case 'fb':
+                         
+              case 'emoji_fb':
+              if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
                         emoji.get(`${emoje}`).then(emoji => {
 				        teks = `${emoji.images[6].url}`
           	  		sendStickerFromUrl(from,`${teks}`)	
@@ -6407,8 +6431,14 @@ ${prefix + command} wa 🐱`)
         .catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
+            limitAdd(sender, limit)
                         break
-              case 'go':
+                        
+              case 'emoji_go':
+              if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
                      emoji.get(`${emoje}`).then(emoji => {
 				     teks = `${emoji.images[1].url}`
     	   	  	sendStickerFromUrl(from,`${teks}`)	
@@ -6417,8 +6447,14 @@ ${prefix + command} wa 🐱`)
    .catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
+            limitAdd(sender, limit)
                      break
-           case 'mo':
+                     
+           case 'emoji_mo':
+           if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
                      emoji.get(`${emoje}`).then(emoji => {
 				     teks = `${emoji.images[14].url}`
     			     sendStickerFromUrl(from,`${teks}`)	
@@ -6427,8 +6463,14 @@ ${prefix + command} wa 🐱`)
    .catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
+            limitAdd(sender, limit)
                      break
-            case 'tw':
+                     
+            case 'emoji_tw':
+            if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
                   emoji.get(`${emoje}`).then(emoji => {
 				  teks = `${emoji.images[5].url}`
     	  		sendStickerFromUrl(from,`${teks}`)	
@@ -6437,8 +6479,14 @@ ${prefix + command} wa 🐱`)
    .catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
+            limitAdd(sender, limit)
                   break
-            case 'sa':
+                  
+            case 'emoji_sa':
+            if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  if (args.length == 0) return reply(`*✳️ Ejemplo de uso del comando*\n\n${prefix + command} ❤️`)
                     emoji.get(`${emoje}`).then(emoji => {
 				    teks = `${emoji.images[2].url}`
        	 		sendStickerFromUrl(from,`${teks}`)	
@@ -6447,9 +6495,7 @@ ${prefix + command} wa 🐱`)
    .catch((err) => {
             reply('❎ Por favor ingrese solo un emoji'); 
             })
-                   break
-                   }
-                   limitAdd(sender, limit)
+            limitAdd(sender, limit)
                    break
 
       case "term":
