@@ -215,14 +215,14 @@ let mtk = [];
 //====================[ CONTACTO DEL DUEÑO ]====================//
 const vcard1 = 'BEGIN:VCARD\n' 
  + 'VERSION:3.0\n' 
- + 'FN:「gatitoツ」\n'
+ + 'FN:式⃟🩸고양이🩸⃟式⁩\n'
  + 'ORG:Dueño de GatyBot;\n' 
  + `TEL;type=CELL;type=VOICE;waid=${owner}:+${owner}\n`
  + 'END:VCARD'
       
 const vcard2 = 'BEGIN:VCARD\n' 
  + 'VERSION:3.0\n' 
- + 'FN:「gatitoツ」\n'
+ + 'FN:式⃟🩸고양이🩸⃟式⁩\n'
  + 'ORG:Dueño de GatyBot;\n' 
  + 'TEL;type=CELL;type=VOICE;waid=51940617554:+51 940 617 554\n'
  + 'END:VCARD'
