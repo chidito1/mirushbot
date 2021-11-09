@@ -17,4 +17,3 @@ return hasil
 
 
 module.exports = { mediafire }
-

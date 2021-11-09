@@ -110,6 +110,16 @@ const spinner = {
                 lineHeight: 2
                 });
 
+//==simsimi api
+const simih = async (text) => {
+	try {
+		const sami = await fetch(`https://api.simsimi.net/v2/?text=${text}&lc=es`, {method: 'GET'})
+		const res = await sami.json()
+		return res.success
+	} catch {
+		return 'Error al responder.'
+	}
+}
 
 
-module.exports = { getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, start, info, success, banner, close }
+module.exports = { getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, start, info, success, banner, close, simih }
