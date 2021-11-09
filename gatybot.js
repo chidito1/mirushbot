@@ -6289,7 +6289,7 @@ case 'sgif':
       .save(`./sticker/${senderfix}.webp`)
       } else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
       const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-      const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderfix}`)
+      const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderr}`)
       reply(wait())
       await ffmpeg(`${media}`)
       .inputFormat(media.split('.')[4])
@@ -6311,7 +6311,7 @@ case 'sgif':
             '🌹'
         ]
         }
-      const sticker5s = await createSticker(`./sticker/${senderfix}.webp`, MatadataFix4)
+      const sticker5s = await createSticker(`./sticker/${senderr}.webp`, MatadataFix4)
       Fg.sendMessage(from, sticker5s, MessageType.sticker, {quoted: vin, sendEphemeral: true, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
       fs.unlinkSync(media)
       fs.unlinkSync(`./sticker/${senderfix}.webp`)
