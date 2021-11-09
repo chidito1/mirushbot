@@ -2502,7 +2502,7 @@ const latensii = speed() - timestampp
                    let totalchat = await Fg.chats.all()
                    let i = []
                    let giid = []
-                   for (let mem of totalchat){
+                   for (let mem of totalchat){ 
                    i.push(mem.jid)
                    }
                    for (let id of i){
@@ -2949,10 +2949,10 @@ case 'clonar':
 case 'actualizar':
 case 'update':
 if (!isOwner) return reply(ownerB())
-reply(`✳️ Espere un momento el bot se está actualizando`)
+reply(`✳️ Espere un momento la bot se está actualizando`)
 exec(`bash update.sh`, (err, stdout) => {
 if (err) return reply(err)
-if (stdout) reply(`✅ *El bot se ah actualizado de forma satisfactoria*\n Informe de la actualización:\n\n${stdout}\n\n Los cambios serán reflejados la próxima vez que inicie el bot.`)
+if (stdout) reply(`✅ *Informe de la actualización:*\n\n${stdout}`)
 })
 break
 
@@ -7579,6 +7579,12 @@ Zodiak : ${zodiac}
 `.trim()
 reply(teksh)
 break
+
+case 'wts':
+                 const wtss = "0@s.whatsapp.net"
+                 wts = `@${wtss.split("@s.whatsapp.net")[0]}`
+                 Fg.sendMessage(from, wts, text, {quoted: mek, contextInfo: {"mentionedJid": [wtss]}})
+                 break
 
 case 'ptz':
                  potz = fs.readFileSync('./almacenamiento/audios/poto.mp3')
