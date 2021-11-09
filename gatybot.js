@@ -22,7 +22,7 @@ const {
 //====================[ FIN DE CONECTAR A WHATSAPP ]====================//
 
 //====================[ MÓDULOS ]====================//
-const simple = require("./lib/simple.js");
+const simple = require("./libreria/simple.js");
 const hx = require("hxz-api");
 const yo = require("tod-api");
 const dh = require("dhn-api");
@@ -46,7 +46,7 @@ const phoneNum = require("awesome-phonenumber");
 const googlefg = require('google-it')
 const gis = require("g-i-s");
 const got = require("got");
-const Exif = require('./lib/exif');
+const Exif = require('./libreria/exif');
 const exif = new Exif();
 const imageToBase64 = require("image-to-base64");
 const ID3Writer = require("browser-id3-writer");
@@ -63,24 +63,24 @@ const crypto = require('crypto');
 const { removeBackgroundFromImageFile } = require('remove.bg');
 
 //====================[ LIBRERIA ]====================//
-const {convertSticker} = require("./lib/swm.js")
-const { webp2mp4Url, webp2gifFile, reverseVideoFile } = require('./lib/ezgif')
-const { validmove, setGame } = require("./lib/tictactoe");
-const { recognize } = require('./lib/ocr')
-const { wikiSearch } = require('./lib/wiki.js')
-const { getBuffer, h2k,  generateMessageID, getGroupAdmins,  getRandom, banner,  start,  info, success, close, simih} = require("./lib/functions");
-const { color, bgcolor } = require("./lib/color");
-const { fetchJson, getBase64, kyun, createExif } = require("./lib/fetcher");
-const { yta, ytv, igdl, upload, formatDate } = require("./lib/ytdl");
-const { webp2mp4File } = require("./lib/webp2mp4");
+const {convertSticker} = require("./libreria/swm.js")
+const { webp2mp4Url, webp2gifFile, reverseVideoFile } = require('./libreria/ezgif')
+const { validmove, setGame } = require("./libreria/tictactoe");
+const { recognize } = require('./libreria/ocr')
+const { wikiSearch } = require('./libreria/wiki.js')
+const { getBuffer, h2k,  generateMessageID, getGroupAdmins,  getRandom, banner,  start,  info, success, close, simih} = require("./libreria/functions");
+const { color, bgcolor } = require("./libreria/color");
+const { fetchJson, getBase64, kyun, createExif } = require("./libreria/fetcher");
+const { yta, ytv, igdl, upload, formatDate } = require("./libreria/ytdl");
+const { webp2mp4File } = require("./libreria/webp2mp4");
 const time = moment().tz("America/La_Paz").format("HH:mm:ss");
-const { sleep, isAfk, cekafk,  } = require("./lib/offline");
-const { cmdadd } = require("./lib/totalcmd.js");
-const { mediafire } = require('./lib/mediafire.js')
-const { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
-const _prem = require("./lib/premium");
-const game = require("./lib/game");
-const afk = require("./lib/afk");
+const { sleep, isAfk, cekafk,  } = require("./libreria/offline");
+const { cmdadd } = require("./libreria/totalcmd.js");
+const { mediafire } = require('./libreria/mediafire.js')
+const { jadibot, stopjadibot, listjadibot } = require("./libreria/jadibot");
+const _prem = require("./libreria/premium");
+const game = require("./libreria/game");
+const afk = require("./libreria/afk");
 //====================[ FIN DE LIBRERIA ]====================//
 
 //New
@@ -135,7 +135,7 @@ isGame,
 gameAdd, 
 givegame, 
 cekGLimit 
-} = require("./lib/economy");
+} = require("./libreria/economy");
 //====================[ FIN DE ECONOMÍA ]====================//
 
 //====================[ RESULTADOS ]====================//
@@ -556,7 +556,7 @@ const isAw = isGroup ? awgp.includes(from) : false
       : conts.notify || conts.vname || conts.name || "-";
     const readmore = "͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏";
     if (isCmd) cmdadd();
-    const totalhit = JSON.parse(fs.readFileSync("./lib/totalcmd.json"))[0]
+    const totalhit = JSON.parse(fs.readFileSync("./libreria/totalcmd.json"))[0]
       .totalcmd;
 const gcounti = confi.gcount
 const gcount = isPremium ? gcounti.prem : gcounti.user
@@ -1538,7 +1538,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 				download(url, namea, async function () {
 					let filess = namea
 					let asw = names
-					require('./lib/exif.js')
+					require('./libreria/exif.js')
 					exec(`ffmpeg -i ${filess} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${asw}`, (err) => {
 					exec(`webpmux -set exif ./sticker/data.exif ${asw} -o ${asw}`, async (error) => {
 					let media = fs.readFileSync(asw)
@@ -1625,7 +1625,7 @@ request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
 download(url, namea, async function () {
 let filess = namea
 let asw = names
-require('./lib/exif.js')
+require('./libreria/exif.js')
 exec(`ffmpeg -i ${filess} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${asw}`, (err) => {
 exec(`webpmux -set exif ./sticker/data.exif ${asw} -o ${asw}`, async (error) => {
 let media = fs.readFileSync(asw)
@@ -1658,7 +1658,7 @@ mtk.splice(game.getMtkPosi(from, mtk), 1)
 //>> Juego tictactoe
 const cmde = budy.toLowerCase().split(" ")[0] || "";
 let arrNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-if (fs.existsSync(`./lib/tictactoe/db/${from}.json`)) {
+if (fs.existsSync(`./libreria/tictactoe/db/${from}.json`)) {
 const boardnow = setGame(`${from}`);
 if (budy == "Cex") return reply("why");
 if (
@@ -1670,7 +1670,7 @@ if (boardnow.status)
 return reply(`✳️ El juego ha comenzado antes!`);
 const matrix = boardnow._matrix;
 boardnow.status = true;
-fs.writeFileSync(`./lib/tictactoe/db/${from}.json`,JSON.stringify(boardnow, null, 2)
+fs.writeFileSync(`./libreria/tictactoe/db/${from}.json`,JSON.stringify(boardnow, null, 2)
 );
 const chatAccept = ` TICTACTOE - GAME 
 
@@ -1711,7 +1711,7 @@ budy.toLowerCase() == "N"
 if (boardnow.O == sender.replace("@s.whatsapp.net", "")) {
 if (boardnow.status)
 return reply(`✳️ El juego ha comenzado antes!`);
-fs.unlinkSync(`./lib/tictactoe/db/${from}.json`);
+fs.unlinkSync(`./libreria/tictactoe/db/${from}.json`);
 Fg.sendMessage(from,`📌 Desafortunadamente el desafío @${boardnow.X} a sido rechazado 😕`,
 MessageType.text, {quoted: mek,
 contextInfo: {
@@ -1747,7 +1747,7 @@ const chatEqual = `*🎮 TICTACTOE - GAME 🎳*
 El juego terminó en empate 😐
 `;
 reply(chatEqual);
-fs.unlinkSync(`./lib/tictactoe/db/${from}.json`);
+fs.unlinkSync(`./libreria/tictactoe/db/${from}.json`);
 return;
 }
 const winnerJID = moving.winner == "O" ? moving.O : moving.X;
@@ -1777,7 +1777,7 @@ moving.X + "@s.whatsapp.net",
 ],
 },
 });
-fs.unlinkSync(`./lib/tictactoe/db/${from}.json`);
+fs.unlinkSync(`./libreria/tictactoe/db/${from}.json`);
 } else {
 const chatMove = `  TICTACTOE - GAME 
 
@@ -1806,8 +1806,8 @@ moving.O + "@s.whatsapp.net",
 if ((senderNumber) && ["Rendirse", "rendirse"].includes(budy) && !isCmd) {
 orangnye = sender
 teks = `@${orangnye.split("@")[0]} Se Rendio\n_jajaja xd_`
-if (fs.existsSync("./lib/tictactoe/db/" + from + ".json")) {
-fs.unlinkSync("./lib/tictactoe/db/" + from + ".json");
+if (fs.existsSync("./libreria/tictactoe/db/" + from + ".json")) {
+fs.unlinkSync("./libreria/tictactoe/db/" + from + ".json");
 mentions(teks,[sender],true)
   } else {
 reply(`✳️ No hay sesión en curso`);
@@ -3087,7 +3087,7 @@ case 'voz':
                 if (isBanned) return reply(banf())
                 try {
 					if (args.length < 1) return Fg.sendMessage(from, `❎ Ingrese el código de idioma y el texto\n\n*Ejemplo* : ${prefix}tts es Hola puercos`, text, {quoted: mek})
-					const gtts = require('./lib/gtts')(args[0])
+					const gtts = require('./libreria/gtts')(args[0])
 					if (args.length < 2) return Fg.sendMessage(from, `❎ Ingrese el código de idioma y el texto\n\n*Ejemplo* : ${prefix}tts es Hola puercos`, text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
@@ -6942,7 +6942,7 @@ if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 if (!isGroup) return reply(group())
 if (!q)return reply(`📌Mensiona al usuario que deseas desafiar`) 
 if (budy.includes("@51988050859")) return reply(`❎ No puedes desafiar a un bot`);
-if (fs.existsSync(`./lib/tictactoe/db/${from}.json`)) {
+if (fs.existsSync(`./libreria/tictactoe/db/${from}.json`)) {
 const boardnow = setGame(`${from}`);
 const matrix = boardnow._matrix;
 const chatMove = `TICTACTOE GAME..
@@ -6981,7 +6981,7 @@ console.log(color('[GATYBOT]','magenta'), color(`Juego iniciado en ${boardnow.se
 boardnow.status = false;
 boardnow.X = sender.replace("@s.whatsapp.net", "");
 boardnow.O = argss[1].replace("@", "");
-fs.writeFileSync(`./lib/tictactoe/db/${from}.json`,JSON.stringify(boardnow, null, 2));
+fs.writeFileSync(`./libreria/tictactoe/db/${from}.json`,JSON.stringify(boardnow, null, 2));
 const strChat = `TICTACTOE GAME..
 
 @${sender.replace("@s.whatsapp.net","")} desafía a ${argss[1]} para una partida de tictactoe
@@ -7006,8 +7006,8 @@ if(!isVerify) return isUser()
                                          if (isBanned) return reply(banf())
                                          //if (!isGroupAdmins && !isOwner) return reply(admin())
 if (!isGroup) return reply(group())
-if (fs.existsSync("./lib/tictactoe/db/" + from + ".json")) {
-fs.unlinkSync("./lib/tictactoe/db/" + from + ".json");
+if (fs.existsSync("./libreria/tictactoe/db/" + from + ".json")) {
+fs.unlinkSync("./libreria/tictactoe/db/" + from + ".json");
 reply(`✅ Sesión de juego reiniciado`);
   } else {
 reply(`No hay sesión en curso, 🛡️ Para iniciar uno escribe ${prefix}ttc`);
