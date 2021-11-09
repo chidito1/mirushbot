@@ -6258,13 +6258,13 @@ if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 const encmedia1 = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 const dlfile1 = await Fg.downloadMediaMessage(encmedia1)
 
-//const bas641 = `data:image/jpeg;base64,${dlfile1.toString('base64')}`
+const bas641 = `data:image/jpeg;base64,${dlfile1.toString('base64')}`
 
 anu = args.join(' ').split('|')
 satu = anu[0] !== '' ? anu[0] : `🐱gatybot🤖 `
 dua = typeof anu[1] !== 'undefined' ? anu[1] : `「gatitoツ」`
 
-var mantap1 = await convertSticker(dlfile1, `${dua}`, `${satu}`)
+var mantap1 = await convertSticker(bas641, `${dua}`, `${satu}`)
 var st = new Buffer.from(mantap1, 'base64');
 Fg.sendMessage(from, st, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: fakelogo, sourceUrl:`${groupmc}`}}})
 
