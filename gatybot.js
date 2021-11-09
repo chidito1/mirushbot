@@ -6256,8 +6256,8 @@ case 'sgif':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) return reply(`✳️ Responde a un imagen/video`);
-const encmediatsz = isMedia ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+if (!isQuotedImage) return reply(`✳️ Responde a un imagen`);
+const encmediatsz = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 const dlfilez = await Fg.downloadMediaMessage(encmediatsz)
 reply(wait())
 const bas644 = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
