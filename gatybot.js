@@ -6258,7 +6258,7 @@ case 'sgif':
   if (isBanned) return reply(banf())
         if (isMedia && !mek.message.videoMessage || isQuotedImage) {
       const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-      const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderfix}`)
+      const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderr}`)
       await ffmpeg(`${media}`)
       .input(media)
       .on('start', function (cmd) {
@@ -6279,14 +6279,14 @@ case 'sgif':
             '🌹'
         ]
         }
-      const sticker4s = await createSticker(`./sticker/${senderfix}.webp`, MatadataFix3)
+      const sticker4s = await createSticker(`./sticker/${senderr}.webp`, MatadataFix3)
       Fg.sendMessage(from, sticker4s, MessageType.sticker, {quoted: vin, sendEphemeral: true, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
       fs.unlinkSync(media)  
-      fs.unlinkSync(`./sticker/${senderfix}.webp`)  
+      fs.unlinkSync(`./sticker/${senderr}.webp`)  
       })
       .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
       .toFormat('webp')
-      .save(`./sticker/${senderfix}.webp`)
+      .save(`./sticker/${senderr}.webp`)
       } else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
       const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
       const media = await Fg.downloadAndSaveMediaMessage(encmedia, `./sticker/${senderr}`)
@@ -6314,11 +6314,11 @@ case 'sgif':
       const sticker5s = await createSticker(`./sticker/${senderr}.webp`, MatadataFix4)
       Fg.sendMessage(from, sticker5s, MessageType.sticker, {quoted: vin, sendEphemeral: true, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
       fs.unlinkSync(media)
-      fs.unlinkSync(`./sticker/${senderfix}.webp`)
+      fs.unlinkSync(`./sticker/${senderr}.webp`)
       })
       .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
       .toFormat('webp')
-      .save(`./sticker/${senderfix}.webp`)
+      .save(`./sticker/${senderr}.webp`)
           } else {
       reply(`Envíe una foto/video + el comando ${prefix}sticker\n\nTambién funciona si mencionas una foto o video junto al mismo comando\n\nNota: La duración máxima del video es de 10 segundos`)
       }
