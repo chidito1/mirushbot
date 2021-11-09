@@ -8,11 +8,11 @@ const {
   GroupSettingChange,
   Browsers,
 } = require("@adiwajshing/baileys");
-const simple = require("./lib/simple.js");
+const simple = require("./libreria/simple.js");
 const WAConnection = simple.WAConnection(_WAConnection);
 const fs = require("fs");
-const { banner, start, success, getGroupAdmins } = require("./lib/functions");
-const { color } = require("./lib/color");
+const { banner, start, success, getGroupAdmins } = require("./libreria/functions");
+const { color } = require("./libreria/color");
 //const { keepalive } = require("./keepalive");
 const fetch = require("node-fetch");
 const axios = require("axios")  
@@ -50,7 +50,7 @@ CFonts.say(`——————————\nGatybot by g4tito\n—————�
     );
   });
 
-  fs.existsSync("./session/gaty.json") && Fg.loadAuthInfo("./session/gaty.json");
+  fs.existsSync("./session.json") && Fg.loadAuthInfo("./session.json");
   Fg.on("connecting", () => {
     start("2", "Conectando...");
   });
@@ -59,7 +59,7 @@ CFonts.say(`——————————\nGatybot by g4tito\n—————�
   });
   await Fg.connect({ timeoutMs: 30 * 1000 });
   fs.writeFileSync(
-    "./session/gaty.json",
+    "./session.json",
     JSON.stringify(Fg.base64EncodedAuthInfo(), null, "\t")
   );
   
