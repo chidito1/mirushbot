@@ -2526,30 +2526,28 @@ const latensii = speed() - timestampp
 
 _*<INFORMACIÓN DE CHATS/>*_
 
-• 式 ⃟⃟💬 _*Chats grupales* : ${giid.length}
-• 式 ⃟⃟💬 _*Chats privados* : ${totalchat.length - giid.length}
-• 式 ⃟⃟💬 _*Total de chats* : ${totalchat.length}
-• 式 ⃟⃟💬 _*No leido* : ${unread.length} mensajes
+• 式 ⃟⃟💬 _*Chats grupales* : ${giid.length}_
+• 式 ⃟⃟💬 _*Chats privados* : ${totalchat.length - giid.length}_
+• 式 ⃟⃟💬 _*Total de chats* : ${totalchat.length}_
+• 式 ⃟⃟💬 _*No leido* : ${unread.length} mensajes_
 
 _*<INFORMACIÓN DEL ANDROID/>*_
 
-• 式 📲 _*Marca* : ${device_manufacturer}
-• 式 ⃟⃟📲 _*Modelo* : ${device_model}
-• 式 ⃟⃟📲 _*Vercion* : ${os_version}
-• 式 ⃟⃟📲 _*Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-• 式 ⃟⃟📲 _*MCC* : ${mcc}
-• 式 ⃟⃟📲 _*MNC* : ${mnc}
+• 式 ⃟⃟📲 _*Marca* : ${device_manufacturer}_
+• 式 ⃟⃟📲 _*Modelo* : ${device_model}_
+• 式 ⃟⃟📲 _*Vercion* : ${os_version}_
+• 式 ⃟⃟📲 _*Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB_
+• 式 ⃟⃟📲 _*MCC* : ${mcc}_
+• 式 ⃟⃟📲 _*MNC* : ${mnc}_
 
  _*<AGRADECIMIENTOS/>*_
 
-• 式 ⃟⃟🐱 _*Gatito :*_
-_@${fgnum.split("@s.whatsapp.net")[0]}_
+• 式 ⃟⃟🐱 _*Gatito :* @${fgnum.split("@s.whatsapp.net")[0]}_
 _*Diseñador del bot*_
 
-• 式 ⃟⃟🤖 _*Ayudante :*_
-_@${ayudante.split("@s.whatsapp.net")[0]}_
+• 式 ⃟⃟🤖 _*Ayudante :* @${ayudante.split("@s.whatsapp.net")[0]}_
 _*Ayuda en algunos comandos*_`
-Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢𝗡 𝗗𝗘 𝗚𝗔𝗧𝗬𝗕𝗢𝗧 🐱⃟式`,body: `• Fecha : ${fecha2}/n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
+Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢𝗡𝗘𝗦🐱⃟式`,body: `• Fecha : ${fecha2}/n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
              
            break
 
@@ -6988,7 +6986,7 @@ diafg = `
 「 *NOTA DE PAGO* 」
 ╭──────────────────✾
 ├ *🛒Compra nominal* : ${q}
-├ *💰BotCoins restante* : ${getBalance(sender, balance)}
+├ *??BotCoins restante* : ${getBalance(sender, balance)}
 ├ *💎Diamantes* : ${getLimit(sender, limitCount, limit)}/${limitCount}
 ╰──────────────────✾`
 reply(diafg)
