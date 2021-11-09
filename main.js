@@ -6,12 +6,13 @@ const {
   Presence,
   Mimetype,
   GroupSettingChange,
+  Browsers,
 } = require("@adiwajshing/baileys");
-const simple = require("./libreria/simple.js");
+const simple = require("./lib/simple.js");
 const WAConnection = simple.WAConnection(_WAConnection);
 const fs = require("fs");
-const { banner, start, success, getGroupAdmins } = require("./libreria/functions");
-const { color } = require("./libreria/color");
+const { banner, start, success, getGroupAdmins } = require("./lib/functions");
+const { color } = require("./lib/color");
 //const { keepalive } = require("./keepalive");
 const fetch = require("node-fetch");
 const axios = require("axios")  
@@ -25,24 +26,20 @@ nocache("./gatybot.js", (module) => console.log(`${module} Se actualizó!`));
 
 const starts = async (Fg = new WAConnection()) => {
   Fg.logger.level = "warn";
-  Fg.version = [2, 2140, 12];
+ // Fg.version = [2, 2119, 6];
  
  const CFonts  = require('cfonts')
-CFonts.say('FG98', {
-  font: 'pallet',
+CFonts.say('GATY-BOT', {
+  font: 'tiny',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`DyLux By FG98 Ig : @fg98._`, {
+
+CFonts.say(`——————————\nGatybot by g4tito\n——————————`, {
   font: 'console',
   align: 'center',
   colors: ['yellow']
 })
-
-
-  /*Fg.browserDescription = ["DyLux v4", "Chrome", "3.0"];
-  console.log(banner.string);*/
-  
   
   Fg.on("qr", () => {
     console.log(
@@ -53,7 +50,7 @@ CFonts.say(`DyLux By FG98 Ig : @fg98._`, {
     );
   });
 
-  fs.existsSync("./session.json") && Fg.loadAuthInfo("./session.json");
+  fs.existsSync("./session/gaty.json") && Fg.loadAuthInfo("./session/gaty.json");
   Fg.on("connecting", () => {
     start("2", "Conectando...");
   });
@@ -62,7 +59,7 @@ CFonts.say(`DyLux By FG98 Ig : @fg98._`, {
   });
   await Fg.connect({ timeoutMs: 30 * 1000 });
   fs.writeFileSync(
-    "./session.json",
+    "./session/gaty.json",
     JSON.stringify(Fg.base64EncodedAuthInfo(), null, "\t")
   );
   
@@ -71,77 +68,57 @@ Fg.on('group-participants-update', async (anu) => {
 	const _welcom = JSON.parse(fs.readFileSync('./database/welcom.json'))
 	const _left = JSON.parse(fs.readFileSync('./database/left.json'))	
 		if (!_welcom.includes(anu.jid)) return
-	
 		try {
-       const mdata = await Fg.groupMetadata(anu.jid)
-         num = anu.participants[0]
-         console.log(anu)
-         ini_user = Fg.contacts[num]
-         namaewa = ini_user.notify
-         member = mdata.participants.length
-        
-        try {
-sunumero = mek.key.fromMe ? Fg.user.name : conts.notify || conts.vname || conts.name || '-'
-
-} catch {
-sunumero = num.split('@')[0]
-} 
-  
-         try {
-               var ppimg = await Fg.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
-            } catch {
-               var ppimg = 'https://i.ibb.co/PZNv21q/Profile-FG98.jpg'
-            }
-        try {
-               var ppgc = await Fg.getProfilePicture(anu.jid)
-            } catch {
-               var ppgc = 'https://i.ibb.co/PZNv21q/Profile-FG98.jpg'
-            }
-        shortpc = await axios.get(`https://tinyurl.com/api-create.php?url=${ppimg}`)
-        shortgc = await axios.get(`https://tinyurl.com/api-create.php?url=${ppgc}`)
-         if (anu.action == 'add') {
-         	//sólo foto user
-         	let fotouser = await getBuffer(ppimg)
-         //
-         	img = await getBuffer(`https://servant-of-evil.herokuapp.com/api/swiftlite/welkom?nama=${sunumero}&gc=${encodeUrl(mdata.subject)}&ppgc=${shortgc.data}&pp=${shortpc.data}&bg=https://i.ibb.co/JzSdSYx/2775fbed9275.jpg&member=${mdata.participants.length}&apikey=GFL`)
-            teks = `Hola @${num.split('@')[0]}\nBienvenido/a al Grupo *${mdata.subject}*
+			const mdata = await Fg.groupMetadata(anu.jid)
+			console.log(anu)
+			if (anu.action == 'add') {
+				num = anu.participants[0]
+				try {
+					ppimg = await Fg.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+				} catch {
+					ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
+				}
+				teks = `👋Hola @${num.split('@')[0]}
 ───────────────────
-▢ *Pide las reglas del grupo*, O escribe /𝗶𝗻𝗳𝗼𝗴𝗽
+*🎊Bienvenido/a al grupo:*
+${mdata.subject}
 
-▢ Escriba /𝗩𝗲𝗿𝗶𝗳𝘆 para comenzar a usar el Bot.`
-            Fg.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]} })
-           
+▢ Espero que haya leído las reglas del grupo para no tener malos entendidos u.u`
+               
+				let buff = await getBuffer(ppimg)
+				Fg.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				
             //-----𝗦𝗔𝗟𝗜𝗗𝗔 
          } else if (anu.action == 'remove') {
          	if(!_left.includes(anu.jid)) return 
          	//sólo foto user
          	let fotouser = await getBuffer(ppimg)
          //
-         	img = await getBuffer(`https://servant-of-evil.herokuapp.com/api/swiftlite/goodbye?nama=${encodeUrl(namaewa)}&gc=${encodeUrl(mdata.subject)}&ppgc=${shortgc.data}&pp=${shortpc.data}&bg=https://i.ibb.co/qd5zCkk/121e4bf7a757.jpg&member=${mdata.participants.length}&apikey=GFL`)
+         	let img = await getBuffer(ppimg)
             teks = `_*Adios @${num.split('@')[0]}*_`
             Fg.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]}})
 //------𝗔𝗗𝗠𝗜𝗡𝗦
 } else if (anu.action == 'promote') {
-            img = await getBuffer(`http://hadi-api.herokuapp.com/api/card/promote?nama=${encodeUrl(namaewa)}&member=${member}&pesan=Nuevo admin!&pp=${shortpc.data}&bg=https://i.ibb.co/1qWxBwN/morde.jpg`)
+            let img = await getBuffer(ppimg)
             thu = await Fg.getStatus(anu.participants[0], MessageType.text)
             teks = `≡ *NUEVO ADMIN*
-┌──────────────
+╭──────────────────✾
 ├ *Nombre* : @${num.split('@')[0]}
-├ *Número* : ${num.replace('@s.whatsapp.net', '')}
+├ *Número* : wa.me/${num.replace('@s.whatsapp.net', '')}
 ├ *Info* : ${thu.status} 
 ├ *Mensaje* : Felicidades  Admin 🎉
-└──────────────`
+╰──────────────────✾`
             Fg.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]}})
          } else if (anu.action == 'demote') {
-            img = await getBuffer(`http://hadi-api.herokuapp.com/api/card/demote?nama=${encodeUrl(namaewa)}&member=${member}&pesan=Lo siento te Degradaron :'v&pp=${shortpc.data}&bg=https://i.ibb.co/ZW0xBXL/amumu.jpg`)
+            let img = await getBuffer(ppimg)
             thu = await Fg.getStatus(anu.participants[0], MessageType.text)
             teks = `≡ *ADMIN DEGRADADO*
-┌──────────────
+╭──────────────────✾
 ├ *Nombre* : @${num.split('@')[0]}
-├ *Número* : ${num.replace('@s.whatsapp.net', '')}
+├ *Número* : wa.me/${num.replace('@s.whatsapp.net', '')}
 ├ *Info* : ${thu.status} 
 ├ *Mensaje* : Lo siento :'v
-└──────────────`
+╰──────────────────✾`
             Fg.sendMessage(mdata.id, img, MessageType.image, {caption: teks, contextInfo: {'mentionedJid': [num]}})
          }
      } catch (e) {
@@ -151,34 +128,83 @@ sunumero = num.split('@')[0]
 
 
 //antidelete 
-antidel = false
+//=================================================//
 Fg.on('message-delete', async (m) => {
-if (m.key.remoteJid == 'status@broadcast') return
-if (!m.key.fromMe && m.key.fromMe) return
-if (antidel === false) return
-m.message = (Object.keys(m.message)[0] === 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
-const jam = moment.tz('America/La_Paz').format('HH:mm:ss')
-let d = new Date
-let locale = 'id'
-let gmt = new Date(0).getTime() - new Date('1 Januari 2021').getTime()
-let weton = ['Pahing', 'Pon','Wage','Kliwon','Legi'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
-let week = d.toLocaleDateString(locale, { weekday: 'long' })
-let calender = d.toLocaleDateString(locale, {
-day: 'numeric',
-month: 'long',
-year: 'numeric'
-})
-const type = Object.keys(m.message)[0]
-Fg.sendMessage(m.key.remoteJid, `━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━
+var date = new Date();
+        var tahun = date.getFullYear();
+        var bulan1 = date.getMonth();
+        var tanggal = date.getDate();
+        var hari = date.getDay();
+        var jam = date.getHours();
+        var menit = date.getMinutes();
+        var detik = date.getSeconds();
+        var waktoo = date.getHours();
+            switch(hari) {
+                case 0: hari = 'Domingo'; break;
+                case 1: hari = 'Lunes'; break;
+                case 2: hari = 'Martes'; break;
+                case 3: hari = 'Miercoles'; break;
+                case 4: hari = 'Jueves'; break;
+                case 5: hari = 'Viernes'; break;
+                case 6: hari = 'Sabado'; break;
+            }
+            switch(bulan1) {
+                case 0: bulan = "De Enero Del"; break;
+                case 1: bulan = "De Febrero Del"; break;
+                case 2: bulan = "De Marzo Del"; break;
+                case 3: bulan = "De Abril Del"; break;
+                case 4: bulan = "De Mayo Del"; break;
+                case 5: bulan = "De Junio Del"; break;
+                case 6: bulan = "De Julio Del"; break;
+                case 7: bulan = "De Agosto Del"; break;
+                case 8: bulan = "De Septiembre Del"; break;
+                case 9: bulan = "De Octubre Del"; break;
+                case 10: bulan = "De Noviembre Del"; break;
+                case 11: bulan = "De Diciembre Del"; break;
+            }
+                 var tampilHari = '' + hari + ', ' + tanggal + ' ' + bulan1 + ' ' + tahun;
+                var tampilJam = '' + jam + ':' + menit + ':' + detik;
+var ase = new Date();
+                        var waktoo = ase.getHours();
+                        switch(waktoo){
+                case 0: waktoo = "Buena Media Noche"; break;
+                case 1: waktoo = "Buena Madrugada"; break;
+                case 2: waktoo = "Buena Madrugada"; break;
+                case 3: waktoo = "Buena Madrugada"; break;
+                case 4: waktoo = "Buena Madrugada"; break;
+                case 5: waktoo = "Buena Madrugada"; break;
+                case 6: waktoo = "Buen Día"; break;
+                case 7: waktoo = "Buen Día"; break;
+                case 8: waktoo = "Buen Día"; break;
+                case 9: waktoo = "Buen Día"; break;
+                case 10: waktoo = "Buen Día"; break;
+                case 11: waktoo = "Buen Mediodía"; break;
+                case 12: waktoo = "Buen Mediodía"; break;
+                case 13: waktoo = "Buen Mediodía"; break;
+                case 14: waktoo = "Buena Tarde"; break;
+                case 15: waktoo = "Buena Tarde"; break;
+                case 16: waktoo = "Buena Tarde"; break;
+                case 17: waktoo = "Buena Tarde"; break;
+                case 18: waktoo = "Buena Noche"; break;
+                case 19: waktoo = "Buena Noche"; break;
+                case 20: waktoo = "Buena Noche"; break;
+                case 21: waktoo = "Buena Noche"; break;
+                case 22: waktoo = "Buena Noche"; break;
+                case 23: waktoo = "Buena Noche"; break;
+            }
+            var tampilUcapan = '' + waktoo;  
+if (antidel === false) return 
+const type2 = Object.keys(m.message)[0]
+console.log(color('[GATYBOT]', 'magenta'), color(`Mensaje eliminado detectado`, 'red')) 
+Fg.sendMessage(m.key.remoteJid, `*🍃「 Mensaje eliminado 」🍃*
 
-    *▢ Nombre :* @${m.participant.split("@")[0]}
-    *▢ Hora :* ${jam}
-    *▢ Tipo :* ${type}
-
-━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
-Fg.copyNForward(m.key.remoteJid, m.message)
-})
-
+*De:* @${m.participant.split("@")[0]}
+*Hora:* ${tampilJam}
+*Tipo:* ${type2}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
+setTimeout( () => {
+                Fg.copyNForward(m.key.remoteJid, m.message)
+                }, 1000)
+                })
 //---
 
   Fg.on("chat-update", async (message) => {

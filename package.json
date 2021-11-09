@@ -1,7 +1,7 @@
 {
-  "name": "Gatybot",
-  "version": "4.0.0",
-  "description": "WhatsApp Bot Baileys",
+  "name": "DyLux",
+  "version": "1.0.0",
+  "description": "TOD",
   "main": "main.js",
   "directories": {
     "lib": "lib"
@@ -59,19 +59,19 @@
   },
   "scripts": {
     "start": "node main",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "supervisor main"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/g4tito/gatybot.git"
+    "url": "-"
   },
   "keywords": [
     "Wasu"
   ],
-  "author": "g4tito",
+  "author": "-",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/g4tito/gatybot/issues"
+    "url": "-"
   },
-  "homepage": "https://github.com/g4tito/gatybot/"
+  "homepage": "-"
 }
