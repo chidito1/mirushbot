@@ -63,7 +63,7 @@ const crypto = require('crypto');
 const { removeBackgroundFromImageFile } = require('remove.bg');
 
 //====================[ LIBRERIA ]====================//
-const {convertSticker} = require("./libreria/swm.js")
+const { convertSticker } = require("./libreria/swm.js")
 const { webp2mp4Url, webp2gifFile, reverseVideoFile } = require('./libreria/ezgif')
 const { validmove, setGame } = require("./libreria/tictactoe");
 const { recognize } = require('./libreria/ocr')
@@ -6253,61 +6253,20 @@ case 'stikergif':
 case 'sticker': 
 case 'stickergif': 
 case 'sgif':  
-  if(!isVerify) return isUser()
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-const encmedia1 = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-const dlfile1 = await Fg.downloadMediaMessage(encmedia1)
-
-const bas641 = `data:image/jpeg;base64,${dlfile1.toString('base64')}` 
-
-anu = args.join(' ').split('|')
-satu = anu[0] !== '' ? anu[0] : `🐱gatybot🤖 `
-dua = typeof anu[1] !== 'undefined' ? anu[1] : `「gatitoツ」`
-
-var mantap1 = await convertSticker(bas641, `${dua}`, `${satu}`)
-Fg.sendMessage(from, mantap1, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: fakelogo, sourceUrl:`${soportefg}`}}})
-
-} else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-const media2 = await Fg.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
-
-anu = args.join(' ').split('|')
-satu = anu[0] !== '' ? anu[0] : `gatybot`
-dua = typeof anu[1] !== 'undefined' ? anu[1] : `gatito`
-
-const Nombre2 = `${satu}`  //animados💎
-const author101 = `${dua}`
-exif.create(Nombre2, author101, `stickwm_${sender}`)
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+if (!isMedia) return reply(`✳️ Responde a un imagen/video`);
+const encmediatsz = isMedia ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+const dlfilez = await Fg.downloadMediaMessage(encmediatsz)
 reply(wait())
-await ffmpeg(`${media2}`)
-.inputFormat(media2.split('.')[4])
-.on('start', function (cmd) {
-console.log(`Started : ${cmd}`)
-})
-.on('error', function (err) {
-console.log(`❎ Error : ${err}`)
-fs.unlinkSync(media2)
-tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-reply(`❎ Falló, en el momento de la conversión ${tipe} a la pegatina`)
-})
-.on('end', function () {
-console.log('✅ Listo')
-exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-if (error) return reply('error')
-sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), mek)
-fs.unlinkSync(media2)
-fs.unlinkSync(`./sticker/${sender}.webp`)
-fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
-})
-})
-.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decre
-ase,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-.toFormat('webp')
-.save(`./sticker/${sender}.webp`)
-} else {
-reply(`  *STICKER MAKER*\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n\n✳️ Envia una imagen con *${prefix + command}* Nombre|Autor \n o etiqueta una imagen que se haya enviado, *Videos 1-9 segundos*\n\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n*ALIAS DEL COMAMDO*\n\n${prefix}s\n${prefix}sticker\n${prefix}stickergif\n${prefix}sgif`)
-}
+const bas644 = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
+var mantapp = await convertSticker(bas644, `「gatitoツ」`, `🐱gatybot🤖`)
+var imageBufferr = new Buffer.from(mantapp, 'base64');
+Fg.sendMessage(from, imageBufferr, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
+.catch((err) => {
+            reply(`❎ Error, intente más tarde`); 
+            })
 break
         
       case 'toimage': 
