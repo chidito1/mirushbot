@@ -2266,7 +2266,7 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}emoji_tw_
 • 式 ⃟🎨 _${prefix}emoji_sa_
 • 式 ⃟🎨 _${prefix}emoji_op_
-• 式 ⃟🎨 _${prefix}emoji_mi_
+• 式 ⃟🎨 _${prefix}emoji_pi_
 • 式 ⃟🎨 _${prefix}emoji_ht_
 • 式 ⃟🎨 _${prefix}emoji_lg_
 
@@ -6266,7 +6266,7 @@ dua = typeof anu[1] !== 'undefined' ? anu[1] : `「gatitoツ」`
 
 var mantap1 = await convertSticker(bas641, `${dua}`, `${satu}`)
 var st = new Buffer.from(mantap1, 'base64');
-Fg.sendSticker(from, st, sticker, {quoted: mek})
+sendSticker(from, st, sticker, {quoted: mek})
 
 } else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -6295,7 +6295,7 @@ reply(`❎ Falló, en el momento de la conversión ${tipe} a la pegatina`)
 console.log('✅ Listo')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-Fg.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), mek)
+sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), mek)
 fs.unlinkSync(media2)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
@@ -7819,7 +7819,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
     }
 } catch (e) { 
     e = String(e);
-    if (!e.includes("this.isZero" || !e.match("jid is not defined"))) {
+	if (!e.includes("this.isZero") && !e.includes("jid is not defined") && !e.includes("Cannot read property 'fromMe' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("Cannot read property 'key' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined")) {
       console.log("Message : %s", color(e, "red"));
     }
   }
