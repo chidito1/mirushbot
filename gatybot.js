@@ -189,7 +189,7 @@ const mods = confi.mods
 
 
 //====================[ ENLACES ]====================//
-const soportefg = 'https://chat.whatsapp.com/GSZcY5bEKyq4NknFuT3jVr'
+const soportefg = 'https://chat.whatsapp.com/KQLMoi0FX0JHWBzRPOwJ31'
 //====================[ FIN DE ENLACES ]====================//
 
 //====================[ ALMACENAMIENTO ]====================//
@@ -2121,7 +2121,7 @@ const isUser = () => {
 //>> Enlace en los stickers
 const sendSticker = (from, filename, mek) => {
         Fg.sendMessage(from, filename, MessageType.sticker, {contextInfo: {externalAdReply:{
-title:`${pushname}`,body:"",previewType:"PHOTO",thumbnail:fakelogo,sourceUrl:`https://chat.whatsapp.com/GSZcY5bEKyq4NknFuT3jVr` }},quoted: mek})
+title:`${pushname}`,body:"",previewType:"PHOTO",thumbnail:fakelogo,sourceUrl:`${grupomc}` }},quoted: mek})
 }
 
 //----
@@ -2747,7 +2747,7 @@ case 'simi':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   try {
-  simiimg = fs.readFileSync(`./almacenamiento/imagenes/simi.jpg`)
+  simiimg = fs.readFileSync(`./almacenamiento/imagenes/simi_0.jpg`)
   simitext = `🐤Hola *@${sender.split("@")[0]}* quieres charlar un rato con la inteligencia artificial de simsimi?
 
 Responde con *${prefix}simi* _tu mensaje_
@@ -2769,7 +2769,7 @@ case '__bot2':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   try {
-		 simiimg2 = fs.readFileSync(`./almacenamiento/imagenes/simi.jpg`)
+		 simiimg2 = fs.readFileSync(`./almacenamiento/imagenes/simi_0.jpg`)
   simitext2 = `🐤Hola *@${sender.split("@")[0]}* quieres charlar un rato con la inteligencia artificial de simsimi?
 
 Responde con *${prefix}simi2* _tu mensaje_
@@ -2790,7 +2790,7 @@ case 'simi2':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   try {
-		 simiimg3 = fs.readFileSync(`./almacenamiento/imagenes/simi.jpg`)
+		 simiimg3 = fs.readFileSync(`./almacenamiento/imagenes/simi_0.jpg`)
   simitext3 = `🐤Hola *@${sender.split("@")[0]}* quieres charlar un rato con la inteligencia artificial de simsimi?
 
 Responde con *${prefix}simi3* _tu mensaje_
@@ -6263,7 +6263,7 @@ dua = typeof anu[1] !== 'undefined' ? anu[1] : `「gatitoツ」`
 
 var mantap1 = await convertSticker(bas641, `${dua}`, `${satu}`)
 var st = new Buffer.from(mantap1, 'base64');
-Fg.sendMessage(from, st, sticker, {quoted: mek})
+Fg.sendSticker(from, st, sticker, {quoted: mek})
 
 } else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -6292,7 +6292,7 @@ reply(`❎ Falló, en el momento de la conversión ${tipe} a la pegatina`)
 console.log('✅ Listo')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), mek)
+Fg.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), mek)
 fs.unlinkSync(media2)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
