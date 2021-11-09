@@ -2495,7 +2495,7 @@ if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 const fgnum = "51940617554@s.whatsapp.net"
 const botnum = "51988050859"
-const ayudante = "526221512187@s.whatsapp.net"
+const ayudante = "5216221512187@s.whatsapp.net"
 const unread = await Fg.loadAllUnreadMessages ();
 const timestampp = speed();
 const latensii = speed() - timestampp
@@ -2510,43 +2510,46 @@ const latensii = speed() - timestampp
                    giid.push(id)
                     }
                     }
-                   inifernazer = `☰ *INFO DEL BOT*
-╭──────────────────✾
-│⎔ *Nombre* : ${Fg.user.name}
-│⎔ *Numero* : wa.me/${botnum.split("@")[0]}
-│⎔ *Prefijo* : ${prefix}
-│⎔ *Version del bot* : 4.0.0
-│⎔ *Total Hits* : ${totalhit}
-│⎔ *Usuarios registrados* : ${_user.length}
-│⎔ *Tiempo activa* : ${runtime(process.uptime())}
-│⎔ *Velocidad* : ${latensii.toFixed(4)} Segundos
-│⎔ *Navegador* : ${Fg.browserDescription[1]}
-│⎔ *Versión del navegador* : ${Fg.browserDescription[2]}
-│⎔ *Vercion del Wpp* : ${wa_version}
-╰──────────────────✾
+                   inifernazer = `_*<INFORMACIÓN DEL BOT/>*_
 
-💬 *ESTADO DE CHATS*
-• *Chats grupales* : ${giid.length}
-• *Chats privados* : ${totalchat.length - giid.length}
-• *Total de chats* : ${totalchat.length}
-• *No leido* : ${unread.length} mensajes
+• 式 ⃟⃟🤖 _*Nombre* : ${Fg.user.name}_
+• 式 ⃟⃟🤖 _*Numero* : wa.me/${botnum.split("@")[0]}_
+• 式 ⃟🤖 _*Prefijo* : ${prefix}_
+• 式 ⃟🤖 _*Version del bot* : 4.0.0_
+• 式 ⃟⃟🤖 _*Total Hits* : ${totalhit}_
+• 式 ⃟⃟🤖 _*Usuarios registrados* : ${_user.length}_
+• 式 ⃟⃟🤖 _*Tiempo activa* : ${runtime(process.uptime())}_
+• 式 ⃟⃟?? _*Velocidad* : ${latensii.toFixed(4)} Segundos_
+• 式 ⃟⃟🤖 _*Navegador* : ${Fg.browserDescription[1]}_
+• 式 ⃟⃟🤖 _*Versión del navegador* : ${Fg.browserDescription[2]}_
+• 式 ⃟⃟🤖 _*Vercion del Wpp* : ${wa_version}_
 
-📲 *INFO DEL ANDROID*
-• *Marca* : ${device_manufacturer}
-• *Modelo* : ${device_model}
-• *Vercion* : ${os_version}
-• *Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-• *MCC* : ${mcc}
-• *MNC* : ${mnc}
+_*<INFORMACIÓN DE CHATS/>*_
 
-╭────ꕥ *Agradecimientos* ꕥ────✾
-├─❏ *GATITO* :
-├ @${fgnum.split("@s.whatsapp.net")[0]}
-│ *_Diseñador del bot_*
-├─❏ *AYUDANTE* :
-├ @${ayudante.split("@s.whatsapp.net")[0]}
-╰──────────────────✾`
-Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `「 INFORMACION DEL BOT 」`,body:"마시엘리", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
+• 式 ⃟⃟💬 _*Chats grupales* : ${giid.length}
+• 式 ⃟⃟💬 _*Chats privados* : ${totalchat.length - giid.length}
+• 式 ⃟⃟💬 _*Total de chats* : ${totalchat.length}
+• 式 ⃟⃟💬 _*No leido* : ${unread.length} mensajes
+
+_*<INFORMACIÓN DEL ANDROID/>*_
+
+• 式 📲 _*Marca* : ${device_manufacturer}
+• 式 ⃟⃟📲 _*Modelo* : ${device_model}
+• 式 ⃟⃟📲 _*Vercion* : ${os_version}
+• 式 ⃟⃟📲 _*Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+• 式 ⃟⃟📲 _*MCC* : ${mcc}
+• 式 ⃟⃟📲 _*MNC* : ${mnc}
+
+ _*<AGRADECIMIENTOS/>*_
+
+• 式 ⃟⃟🐱 _*Gatito :*_
+_@${fgnum.split("@s.whatsapp.net")[0]}_
+_*Diseñador del bot*_
+
+• 式 ⃟⃟🤖 _*Ayudante :*_
+_@${ayudante.split("@s.whatsapp.net")[0]}_
+_*Ayuda en algunos comandos*_`
+Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢𝗡 𝗗𝗘 𝗚𝗔𝗧𝗬𝗕𝗢𝗧 🐱⃟式`,body: `• Fecha : ${fecha2}/n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
              
            break
 
