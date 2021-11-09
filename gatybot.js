@@ -197,7 +197,7 @@ fakefg = fs.readFileSync('./image/fake.jpg')
 fakelogo = fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg')
 fglogo = fs.readFileSync('./almacenamiento/imagenes/gaty_0.jpg')
 gatylogo = fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg')
-minecraft = fs.readFileSync('./almacenamiento/imagenes/minecraft.jpg')
+minecraft = fs.readFileSync('./almacenamiento/imagenes/minecraft_0.jpg')
 //====================[ FIN DE ALMACENAMIENTO ]====================//
 
 //--anti delete 
