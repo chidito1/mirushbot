@@ -3863,11 +3863,10 @@ if (!isGroupAdmins) return reply(admin())
 					if (args.length < 1) return reply('Yang mau di add siapa??')
 					if (args[0].startsWith('08')) return reply('Gunakan kode negara Gan')
 					try {
-						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
-						Fg.groupAdd(from, [num])
+						Fg.groupAdd(from, `${args[0]}@s.whatsapp.net`)
 					} catch (e) {
 						console.log('Error :', e)
-						reply('Gagal menambahkan target, mungkin karena di private')
+						reply('❎ Error al añadir al usuario')
 					}
         break
  
