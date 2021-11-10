@@ -4189,24 +4189,20 @@ case  'profilegay':
 		if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 try {
 	pic = await Fg.getProfilePicture(mentioned[0])
 	} catch {
 	pic = 'https://i.ibb.co/FX6pMj0/profile.png'
 	}
-media = await  Fg.downloadAndSaveMediaMessage(pic)
-imgbb = require('imgbb-uploader')
-imgbb('e4bb5222011a8521cc60ce61a2aa1f98', media)
-.then(data => {
-	caps = `${data.display_url}`
-
-reply(wait())
-sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${caps}`)
-Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${caps}\n\n✅ Aqui tienes *0.0*`})
-}
+	reply(wait())
+	owgi = await  Fg.downloadAndSaveMediaMessage(pic)
+					anu = await imgbb("3b8594f4cb11895f4084291bc655e510", owgi)
+					teks = `${anu.display_url}`
+sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${teks}`)
+Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${teks}\n\n✅ Aqui tienes *0.0*`})
 limitAdd(sender, limit)
-					break
+break
 
 case 'gtav':
 if(!isVerify) return isUser()
@@ -4228,6 +4224,7 @@ quoted: mek
 } else {
 reply(`✳️ Envia o responde a una imagen`)
 }
+break
 
 					case 'imgrip':
 					case 'imagerip':
