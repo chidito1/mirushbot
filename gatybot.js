@@ -4198,7 +4198,7 @@ mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 	}
 
 reply(wait())
-owgig = await Fg.downloadMediaMessage(picc)
+owgig = await Fg.downloadAndSaveMediaMessage(picc)
 await fs.writeFileSync(`./stickgay.jpeg`, owgig)
 var imgbb22 = require('imgbb-uploader')
 anug = await imgbb22("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
