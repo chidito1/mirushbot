@@ -4197,9 +4197,10 @@ mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 	picc = 'https://i.ibb.co/FX6pMj0/profile.png'
 	}
 shortpc = await axios.get(`https://tinyurl.com/api-create.php?url=${picc}`)
+img = await getBuffer(`${shortpc.data}`)
 
 reply(wait())
-owgig = await Fg.downloadAndSaveMediaMessage(`${shortpc.data}`)
+owgig = await Fg.downloadMediaMessage(img)
 await fs.writeFileSync(`./stickgay.jpeg`, owgig)
 var imgbb22 = require('imgbb-uploader')
 anug = await imgbb22("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
