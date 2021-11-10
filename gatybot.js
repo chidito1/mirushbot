@@ -2253,7 +2253,8 @@ break;
           try {
         lvlh = getLevelingLevel(sender)
        infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
-	  infost = infost.status == 401 ? '' : infost.status
+       const fgnum = "51940617554@s.whatsapp.net"
+	  infost = infost.status == 401 ? 'sin info' : infost.status
         imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
         autorfg = `${sender.split("@")[0]}`
 
@@ -2517,11 +2518,11 @@ gbutsan = [
 gbuttonan = {
 imageMessage: py.message.imageMessage,
 contentText: helfxz,
-footerText: `  *Created By Kevin*`,
+footerText: `  *Created By @${fgnum.split("@s.whatsapp.net")[0]}*`,
 buttons: gbutsan,
 headerType: 4
 }
-await Fg.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: {  mentionedJid: [sender]}, quoted: mek})
+await Fg.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: {  mentionedJid: [sender, fgnum]}, quoted: mek})
 } catch (e) {
 	console.log(`Error :`, color(e,'red'))
      reply('❎ Error al mostrar el menú')
