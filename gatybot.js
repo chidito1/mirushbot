@@ -6297,6 +6297,12 @@ case 'sgif':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  try {
+  	ppimg = await Fg.getProfilePicture(`${sender.split('@')[0]}@c.us`)
+  } catch {
+  	ppimg = 'https://i.ibb.co/rksd9bC/gaty-2.jpg'
+  }
+  reusesr = await getBuffer(ppimg)
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await Fg.downloadAndSaveMediaMessage(encmedia)
@@ -6319,7 +6325,7 @@ if(!isVerify) return isUser()
 											 fs.unlinkSync(media)	
 											 fs.unlinkSync(ran)
 											 }
-									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${soportefg}`}}})
+									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: reusesr, sourceUrl:`${soportefg}`}}})
 									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
 									fs.unlinkSync(media)	
 									fs.unlinkSync(ran)	
@@ -6352,7 +6358,7 @@ if(!isVerify) return isUser()
 											 fs.unlinkSync(media)	
 											 fs.unlinkSync(ran)
 											 }
-									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${soportefg}`}}})
+									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: reusesr, sourceUrl:`${soportefg}`}}})
 									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
 									fs.unlinkSync(media)
 									fs.unlinkSync(ran)
