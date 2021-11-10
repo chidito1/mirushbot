@@ -4177,7 +4177,7 @@ var imgbb2 = require('imgbb-uploader')
 anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
 txtg = `${anug.display_url}`
 sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
-Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *0.0*`})
+Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtg}\n\n✅ Aqui tienes *0.0*`})
 limitAdd(sender, limit)
 } else {
 					reply('✳️ Envia o responde a una imagen')
@@ -4199,6 +4199,7 @@ try {
 	owgi = await  Fg.downloadAndSaveMediaMessage(pic)
 					anu = await imgbb("3b8594f4cb11895f4084291bc655e510", owgi)
 					teks = `${anu.display_url}`
+					reply(`${anu.display_url}`)
 sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${teks}`)
 Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${teks}\n\n✅ Aqui tienes *0.0*`})
 limitAdd(sender, limit)
