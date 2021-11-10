@@ -4198,9 +4198,9 @@ y = q.split('@')[1] + '@s.whatsapp.net'
 				}
 let buff = await getBuffer(`${ppimg}`)
 
-reply(`${ppimg}`)
+reply(wait())
 sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${buff}`)
-Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *0.0*`})
+Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${buff}\n\n✅ Aqui tienes *0.0*`})
 limitAdd(sender, limit)
 					break
 
