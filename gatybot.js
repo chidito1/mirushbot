@@ -4189,14 +4189,10 @@ case  'profilegay':
 		if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiqueta a alguien del grupo!')
-  mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = ''
-						usergay = `${mentioned.split('@')[0]}@c.us`
-					}
+y = q.split('@')[1] + '@s.whatsapp.net'
+
 	try {
-				ppimg = await Fg.getProfilePicture(`${usergay}`)
+				ppimg = await Fg.getProfilePicture(`${y.split('@')[0]}@c.us`)
 				} catch {
 				ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
 				}
