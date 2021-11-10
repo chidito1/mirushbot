@@ -3856,33 +3856,19 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
                     break
 
       case 'add':
-        if (!isOwner) return 
+if(!isVerify) return isUser()
+if (isBanned) return reply(banf())
 if (!isGroup) return reply(group())
 if (!isGroupAdmins) return reply(admin())
-if (!isBotGroupAdmins) return reply(Badmin())
-        if (
-          mek.message.extendedTextMessage === null ||
-          mek.message.extendedTextMessage === undefined
-        )
-          return;
-        if (
-          mek.message.extendedTextMessage.contextInfo.participant === undefined
-        ) {
-          entah = mek.message.extendedTextMessage.contextInfo.mentionedJid;
-          if (entah.length > 1) {
-            var mems_ids = [];
-            for (let ids of entah) {
-              mems_ids.push(ids);
-            }
-            add(from, mems_ids);
-          } else {
-            add(from, [entah[0]]);
-          }
-        } else {
-          entah = mek.message.extendedTextMessage.contextInfo.participant;
-          add(from, [entah]);
-        }
-        break;
+					if (args.length < 1) return reply('Yang mau di add siapa??')
+					if (args[0].startsWith('08')) return reply('Gunakan kode negara Gan')
+					try {
+						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+						Fg.groupAdd(from, [num])
+					} catch (e) {
+						console.log('Error :', e)
+						reply('Gagal menambahkan target, mungkin karena di private')
+					}
         
  
       //--- abrir y cerrar grupo
