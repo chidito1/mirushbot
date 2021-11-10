@@ -2956,13 +2956,6 @@ if (stdout) reply(`✅ *Informe de la actualización:*\n\n${stdout}`)
 })
 break
 
-case 'restart':
-  case 'reiniciar':
-             if (!isOwner) return reply(ownerB()) 
-             exec(`node main`)
-             reply('✅ El bot se reinicio')
-break
-
 case 'nulis':
 	case 'tulis':
 		case 'escribe':
@@ -3807,16 +3800,6 @@ Fg.groupRemove(from, [y])
 reply(`✅ Ordenes recibidas, emitidas`)
 break
 
-case 'okick':
-if(!isVerify) return isUser()
-if (isBanned) return reply(banf())
-if (!isGroup) return reply(group())
-if (!isGroupAdmins) return reply(admin())
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('✳️ Responde a un mensaje!')
-			kick = mek.message.extendedTextMessage.contextInfo.participant
-		    Fg.groupRemove(from, [kick])
-						reply('✅ Ordenes recibidas, emitidas')
-                    break
 
       case 'add':
         if (!isOwner) return 
@@ -6269,111 +6252,30 @@ case 's':
 case 'stikergif':
 case 'sticker': 
 case 'stickergif': 
-case 'sgif': 
-if (!isVerify) return reply(userB(prefix))
-  if (isBanned) return reply(banf()) 
-    anu = args.join(" ").split("|");
-        a = anu[0] !== "" ? anu[0] : `gatito`
-        b = typeof anu[1] !== "undefined" ? anu[1] : `gatybot`
-    if ( 
-      ((isMedia && !mek.message.videoMessage) || isQuotedImage)
-      ) { 
-        const encmedia = isQuotedImage 
-        ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message .extendedTextMessage.contextInfo : mek;
-          media = await Fg.downloadAndSaveMediaMessage(encmedia); 
-          await createExif(a, b); 
-          out = getRandom(".webp"); 
-          ffmpeg(media) 
-          .on("error", (e) => { 
-            console.log(e); 
-            Fg.sendMessage(from, "⚠️ Error", "conversation", { quoted: mek }); 
-            fs.unlinkSync(media); 
-            })
-            .on("end", () => { 
-              _out = getRandom(".webp"); 
-              spawn("webpmux", [
-                "-set",
-                "exif",
-                "./temp/data.exif",
-                out,
-                "-o",
-                _out,
-              ]).on("exit", () => {
-                Fg.sendMessage(
-                  from,
-                  fs.readFileSync(_out),
-                  "stickerMessage",
-                  { quoted: mek }
-                );
-                fs.unlinkSync(out);
-                fs.unlinkSync(_out);
-                fs.unlinkSync(media);
-              });
-            })
-            .addOutputOptions([
-              `-vcodec`,
-              `libwebp`,
-              `-vf`,
-              `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
-            ])
-            .toFormat("webp")
-            .save(out);
-        } else if (
-          ((isMedia && mek.message.videoMessage.seconds < 11) ||
-            (isQuotedVideo &&
-              mek.message.extendedTextMessage.contextInfo.quotedMessage
-                .videoMessage.seconds < 11))
-        ) {
-          const encmedia = isQuotedVideo
-            ? JSON.parse(JSON.stringify(mek).replace("quotedM", "m")).message
-                .extendedTextMessage.contextInfo
-            : mek;
-          const media = await Fg.downloadAndSaveMediaMessage(encmedia);
-          await createExif(a, b);
-          out = getRandom(".webp");
-          ffmpeg(media)
-            .on("error", (e) => {
-              console.log(e);
-              Fg.sendMessage(from, "⚠️ Error", "conversation", {
-                quoted: mek,
-              });
-              fs.unlinkSync(media);
-            })
-            .on("end", () => {
-              _out = getRandom(".webp");
-              spawn("webpmux", [
-                "-set",
-                "exif",
-                "./temp/data.exif",
-                out,
-                "-o",
-                _out,
-              ]).on("exit", () => {
-                Fg.sendMessage(
-                  from,
-                  fs.readFileSync(_out),
-                  "stickerMessage",
-                  { quoted: mek }
-                );
-                fs.unlinkSync(out);
-                fs.unlinkSync(_out);
-                fs.unlinkSync(media);
-              });
-            })
-            .addOutputOptions([
-              `-vcodec`,
-              `libwebp`,
-              `-vf`,
-              `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
-            ])
-            .toFormat("webp")
-            .save(out);
-        } else {
-          reply(`  *STICKER MAKER*\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n\n✳️ Envia una imagen con *${prefix + command}* Nombre|Autor \n o etiqueta una imagen que se haya enviado, *Videos 1-9 segundos*\n\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n*ALIAS DEL COMAMDO*\n\n${prefix}s\n${prefix}sticker\n${prefix}stickergif\n${prefix}sgif`)
-        }
-        break
+case 'sgif':  
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  try {
+if (!isQuotedImage) return reply(`✳️ Responde a un imagen/video`);
+const encmediatsz = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+const dlfilez = await Fg.downloadMediaMessage(encmediatsz)
+const bas644 = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
+var mantapp = await convertSticker(bas644, `「gatitoツ」`, `🐱gatybot🤖`)
+var imageBufferr = new Buffer.from(mantapp, 'base64');
+Fg.sendMessage(from, imageBufferr, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
+} catch {
+	if (!isQuotedVideo) return reply(`✳️ Responde a un imagen/video`);
+const encmediatsz = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+const dlfilez = await Fg.downloadMediaMessage(encmediatsz)
+reply(wait())
+const bas644 = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
+var mantapp = await convertSticker(bas644, `「gatitoツ」`, `🐱gatybot🤖`)
+var imageBufferr = new Buffer.from(mantapp, 'base64');
+Fg.sendMessage(from, imageBufferr, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
+}
+break
         
-
       case 'toimage': 
 case 'toimg':
 case 'aimg':
@@ -6400,14 +6302,11 @@ case 'rvo':
 case 'readviewonce':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-               if (mek.message[Object.keys(mek.message)[0]].contextInfo.quotedMessage.viewOnceMessage) {
+               if (mek.message[Object.keys(mek.message)[0]].contextInfo.quotedMessage.viewOnceMessage) return reply('❎ Etiqueta un mensaje viewOnce!')
 	           let message = { ...mek }
 	           message.message = message.message.extendedTextMessage.contextInfo.quotedMessage.viewOnceMessage.message
 	           message.message[Object.keys(message.message)[0]].viewOnce = false
 	           Fg.forwardMessage(from, message)
-           } else {
-	           reply('❎ Etiqueta un mensaje viewOnce!')
-              }
               break
 
 case 'emoji_app':
