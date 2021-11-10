@@ -4192,15 +4192,14 @@ case  'profilegay':
   if (mek.message.extendedTextMessage != undefined){
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 	try {
-	picc = await Fg.getProfilePicture(mentioned[0])
-	} catch {
-	picc = 'https://i.ibb.co/FX6pMj0/profile.png'
-	}
-shortpc = await axios.get(`https://tinyurl.com/api-create.php?url=${picc}`)
-img = await getBuffer(`${shortpc.data}`)
+				ppimg = await Fg.getProfilePicture(mentioned[0])
+				} catch {
+				ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
+				}
+let buff = await getBuffer(`${ppimg}`)
 
 reply(wait())
-owgig = await Fg.downloadMediaMessage(img)
+owgig = await Fg.downloadMediaMessage(buff)
 await fs.writeFileSync(`./stickgay.jpeg`, owgig)
 var imgbb22 = require('imgbb-uploader')
 anug = await imgbb22("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
