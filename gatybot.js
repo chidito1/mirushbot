@@ -6315,11 +6315,11 @@ if(!isVerify) return isUser()
 								console.log('Finish')
 								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
 									 if (error) {
-											 reply(ind.stikga())
+											 reply('❎ Error al crear el sticker')
 											 fs.unlinkSync(media)	
 											 fs.unlinkSync(ran)
 											 }
-									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `Gatybot by 「gatitoツ」`,body:"", previewType:"PHOTO",thumbnail: botc, sourceUrl:`${groupmc}`}}})
+									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: botc, sourceUrl:`${groupmc}`}}})
 									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
 									fs.unlinkSync(media)	
 									fs.unlinkSync(ran)	
@@ -6348,11 +6348,11 @@ if(!isVerify) return isUser()
 								console.log('Finish')
 								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
 									if (error) {
-											 reply(ind.stikga())
+											 reply('❎ Error al crear el stickergif')
 											 fs.unlinkSync(media)	
 											 fs.unlinkSync(ran)
 											 }
-									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `Gatybot by 「gatitoツ」`,body:"", previewType:"PHOTO",thumbnail: botc, sourceUrl:`${groupmc}`}}})
+									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: botc, sourceUrl:`${groupmc}`}}})
 									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
 									fs.unlinkSync(media)
 									fs.unlinkSync(ran)
