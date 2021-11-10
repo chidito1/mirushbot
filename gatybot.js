@@ -2956,6 +2956,13 @@ if (stdout) reply(`✅ *Informe de la actualización:*\n\n${stdout}`)
 })
 break
 
+case 'restart':
+  case 'reiniciar':
+             if (!isOwner) return reply(ownerB()) 
+             exec(`node main`)
+             reply('✅ El bot se reinicio')
+break
+
 case 'nulis':
 	case 'tulis':
 		case 'escribe':
@@ -3800,6 +3807,16 @@ Fg.groupRemove(from, [y])
 reply(`✅ Ordenes recibidas, emitidas`)
 break
 
+case 'okick':
+if(!isVerify) return isUser()
+if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
+if (!isGroupAdmins) return reply(admin())
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('✳️ Responde a un mensaje!')
+			kick = mek.message.extendedTextMessage.contextInfo.participant
+		    Fg.groupRemove(from, [kick])
+						reply('✅ Ordenes recibidas, emitidas')
+                    break
 
       case 'add':
         if (!isOwner) return 
@@ -6247,26 +6264,69 @@ _📤 Enviando, espere si el video no aparece, descargue por el link_`
         break;
         
       //𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗠𝗔𝗞𝗘𝗥
+      
 case 'stiker': 
 case 's': 
 case 'stikergif':
 case 'sticker': 
 case 'stickergif': 
 case 'sgif':  
-if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-if (!isQuotedImage) return reply(`✳️ Responde a un imagen`);
-const encmediatsz = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const dlfilez = await Fg.downloadMediaMessage(encmediatsz)
+  if (!isVerify) return reply(userB(prefix))
+  if (isBanned) return reply(banf()) 
+if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+const encmedia1 = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+const dlfile1 = await Fg.downloadMediaMessage(encmedia1)
+
+const bas641 = `data:image/jpeg;base64,${dlfile1.toString('base64')}`
+
+anu = args.join(' ').split('|')
+satu = anu[0] !== '' ? anu[0] : `「gatitoツ」`
+dua = typeof anu[1] !== 'undefined' ? anu[1] : `🐱gatybot🤖`
+
+var mantap1 = await convertSticker(bas641, `${dua}`, `${satu}`)
+var st = new Buffer.from(mantap1, 'base64');
+Fg.sendMessage(from, st, sticker, {quoted: mek})
+
+} else if ((isMedia && mek.message.videoMessage.fileLength < 10000000 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
+const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+const media2 = await Fg.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
+
+anu = args.join(' ').split('|')
+satu = anu[0] !== '' ? anu[0] : `DyLux`
+dua = typeof anu[1] !== 'undefined' ? anu[1] : `@fg98._`
+
+const Nombre2 = `${satu}`  //animados💎
+const author101 = `${dua}`
+exif.create(Nombre2, author101, `stickwm_${sender}`)
 reply(wait())
-const bas644 = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
-var mantapp = await convertSticker(bas644, `「gatitoツ」`, `🐱gatybot🤖`)
-var imageBufferr = new Buffer.from(mantapp, 'base64');
-Fg.sendMessage(from, imageBufferr, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
-.catch((err) => {
-            reply(`❎ Error, intente más tarde`); 
-            })
+await ffmpeg(`${media2}`)
+.inputFormat(media2.split('.')[4])
+.on('start', function (cmd) {
+console.log(`Started : ${cmd}`)
+})
+.on('error', function (err) {
+console.log(`❎ Error : ${err}`)
+fs.unlinkSync(media2)
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+reply(`❎ Falló, en el momento de la conversión ${tipe} a la pegatina`)
+})
+.on('end', function () {
+console.log('✅ Listo')
+exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
+if (error) return reply('error')
+sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), mek)
+fs.unlinkSync(media2)
+fs.unlinkSync(`./sticker/${sender}.webp`)
+fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
+})
+})
+.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decre
+ase,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+.toFormat('webp')
+.save(`./sticker/${sender}.webp`)
+} else {
+reply(`  *STICKER MAKER*\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n\n✳️ Envia una imagen con *${prefix + command}* Nombre|Autor \n o etiqueta una imagen que se haya enviado, *Videos 1-9 segundos*\n\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n*ALIAS DEL COMAMDO*\n\n${prefix}s\n${prefix}sticker\n${prefix}stickergif\n${prefix}sgif`)
+}
 break
         
       case 'toimage': 
