@@ -3869,7 +3869,7 @@ if (!isGroupAdmins) return reply(admin())
 						console.log('Error :', e)
 						reply('Gagal menambahkan target, mungkin karena di private')
 					}
-        
+        break
  
       //--- abrir y cerrar grupo
 case 'gp2':
