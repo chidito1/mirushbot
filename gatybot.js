@@ -2297,8 +2297,8 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}wasted_
 • 式 ⃟🎨 _${prefix}gtav_
 • 式 ⃟🎨 _${prefix}sgay_
-• 式 ⃟🎨 _${prefix}srip_
-• 式 ⃟🎨 _${prefix}srip2_
+• 式 ⃟🎨 _${prefix}imgrip_
+• 式 ⃟🎨 _${prefix}imgrip2_
 • 式 ⃟🎨 _${prefix}scelda_
 • 式 ⃟🎨 _${prefix}emoji_app_
 • 式 ⃟🎨 _${prefix}emoji_wa_
@@ -4163,8 +4163,8 @@ break
 					}
 					break
 					
-		case  'sgay':
-		case  'gay2':
+		case  'imggay':
+		case  'imagegay':
 		if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
@@ -4177,11 +4177,35 @@ var imgbb2 = require('imgbb-uploader')
 anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
 txtg = `${anug.display_url}`
 sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
-const bas642 = `data:image/jpeg;base64,${sgay.toString('base64')}`
-var mantap2 = await convertSticker(bas642, `🐱gatybot🤖`, `「gatitoツ」`)
-var imageBuffer2 = new Buffer.from(mantap2, 'base64');
-Fg.sendMessage(from, imageBuffer2, sticker, {quoted: mek})
-fs.unlinkSync('./stickgay.jpeg')
+Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *0.0*`})
+limitAdd(sender, limit)
+} else {
+					reply('✳️ Envia o responde a una imagen')
+					}
+					break
+
+case  'profilegay':
+		case  'perfilgay':
+		if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+  if (mek.message.extendedTextMessage != undefined){
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+	try {
+	picc = await Fg.getProfilePicture(mentioned[0])
+	} catch {
+	picc = 'https://i.ibb.co/FX6pMj0/profile.png'
+	}
+thumb = await getBuffer(picc)
+
+reply(wait())
+owgig = await Fg.downloadMediaMessage(thumb)
+await fs.writeFileSync(`./stickgay.jpeg`, owgig)
+var imgbb22 = require('imgbb-uploader')
+anug = await imgbb22("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
+txtg = `${anug.display_url}`
+sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
+Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *0.0*`})
 limitAdd(sender, limit)
 } else {
 					reply('✳️ Envia o responde a una imagen')
@@ -4209,8 +4233,8 @@ quoted: mek
 reply(`✳️ Envia o responde a una imagen`)
 }
 
-					case 'srip':
-					case 'sf':
+					case 'imgrip':
+					case 'imagerip':
 					if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
@@ -4223,11 +4247,7 @@ var imgbb2r = require('imgbb-uploader')
 anur = await imgbb2r("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
 txtr = `${anur.display_url}`
 srip = await getBuffer(`https://pecundang.herokuapp.com/api/rip?url=${txtr}`)
-const bas642r = `data:image/jpeg;base64,${srip.toString('base64')}`
-var mantap2r = await convertSticker(bas642r, ``, `「gatitoツ」`)
-var imageBuffer2r = new Buffer.from(mantap2r, 'base64');
-Fg.sendMessage(from, imageBuffer2r, sticker, {quoted: mek})
-fs.unlinkSync('./stickrip.jpeg')
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *n.n*`})
 limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
