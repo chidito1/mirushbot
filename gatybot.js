@@ -4207,9 +4207,6 @@ txtg = `${anug.display_url}`
 sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *0.0*`})
 limitAdd(sender, limit)
-} else {
-					reply('✳️ Envia o responde a una imagen')
-					}
 					break
 
 case 'gtav':
