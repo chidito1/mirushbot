@@ -728,6 +728,47 @@ const nebal = (angka) => {
 return Math.floor(angka)
 }
 
+//>> sticker nombre
+function addMetadata(packname, author) {	
+	if (!packname) packname = 'gatybot'; if (!author) author = 'gatito';	
+	author = author.replace(/[^a-zA-Z0-9]/g, '');	
+	let name = `${author}_${packname}`
+	if (fs.existsSync(`./${name}.exif`)) return `./${name}.exif`
+	const json = {	
+		"sticker-pack-name": packname,
+		"sticker-pack-publisher": author,
+	}
+	const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
+	const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
+
+	let len = JSON.stringify(json).length	
+	let last	
+
+	if (len > 256) {	
+		len = len - 256	
+		bytes.unshift(0x01)	
+	} else {	
+		bytes.unshift(0x00)	
+	}
+
+	if (len < 16) {	
+		last = len.toString(16)	
+		last = "0" + len	
+	} else {	
+		last = len.toString(16)	
+	}
+
+	const buf2 = Buffer.from(last, "hex")	
+	const buf3 = Buffer.from(bytes)	
+	const buf4 = Buffer.from(JSON.stringify(json))	
+
+	const buffer = Buffer.concat([littleEndian, buf2, buf3, buf4])	
+
+	fs.writeFile(`./${name}.exif`, buffer, (err) => {	
+		return `./${name}.exif`	
+	})
+}
+
 //=> Juego slot
 const zootoy = ['🍊 : 🍉 : 🍐','🍒 : 🔔 : 🥑','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🥥 : 🍒 : 🍐','🔔 : 🍉 : 🍊','🍓 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍎 : 🍐','🍊 : 🥝 : 🍒','🍑 : 🔔 : 🍇','🍌 : 🥥 : 🔔','🍐 : 🥝 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🍍 : 🍇','🔔 : 🥥 : 🍇','🍊 : 🥑 : 🍐','🍒 : 🥝 : 🍊','🍇 : 🥥 : 🍐','🍊 : 🥑 : 🔔','🍉 : 🍒 : 🍓','🔔 : 🍒 : 🍊','🍑 : 🍋 : 🍉','🍐 : 🍒 : 🍋','🍎 : 🍐 : 🍎','🍊 : 🥥 : 🍓','🍑 : 🔔 : 🍑','🍌 : 🍒 : 🔔','🥝 : 🔔 : 🥝','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🍍 : 🔔 : 🍍','🥥 : 🍐 : 🥥']
 const zotoy = ['🍓 : 🍒 : 🍐','🍎 : 🍎 : 🍎','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍇 : 🍇 : 🍇','🍊 : 🍋 : 🥝','🔔 : 🍑 : 🥑','🔔 : 🍒 : 🥝','🍊 : 🍍 : 🔔','🥥 : 🍒 : 🥥','🍉 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🍍 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🥥','🍊 : 🍑 : 🍒','🍍 : 🍑 : 🥥','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🥑 : 🥑 : 🥑','🍉 : 🍉 : 🍉','🍓 : 🍓 : 🍓','🍍 : 🍍 : 🍍','🥝 : 🥝 : 🥝','🍑 : 🍑 : 🍑','🥥 : 🥥 : 🥥','🍋 : 🍋 : 🍋','🍐 : 🍐 : 🍐','🍌 : 🍌 : 🍌','🍒 : 🍒 : 🍒','🔔 : 🔔 : 🔔','🍊 : 🍊 : 🍊','🍊 : 🍉 : 🍐','🍒 : 🔔 : 🥑','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🥥 : 🍒 : 🍐','🔔 : 🍉 : 🍊','🍓 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍎 : 🍐','🍊 : 🥝 : 🍒','🍑 : 🔔 : 🍇','🍌 : 🥥 : 🔔','🍐 : 🥝 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🍍 : 🍇','🔔 : 🥥 : 🍇']
@@ -6256,26 +6297,76 @@ case 'sgif':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  try {
-if (!isQuotedImage) return reply(`✳️ Responde a un imagen/video`);
-const encmediatsz = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const dlfilez = await Fg.downloadMediaMessage(encmediatsz)
-const bas644 = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
-var mantapp = await convertSticker(bas644, `「gatitoツ」`, `🐱gatybot🤖`)
-var imageBufferr = new Buffer.from(mantapp, 'base64');
-Fg.sendMessage(from, imageBufferr, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
-} catch {
-	if (!isQuotedVideo) return reply(`✳️ Responde a un imagen/video`);
-const encmediatsz = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-const dlfilez = await Fg.downloadMediaMessage(encmediatsz)
-reply(wait())
-const bas644 = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
-var mantapp = await convertSticker(bas644, `「gatitoツ」`, `🐱gatybot🤖`)
-var imageBufferr = new Buffer.from(mantapp, 'base64');
-Fg.sendMessage(from, imageBufferr, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${pushname}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
-}
-break
-        
+					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+						const media = await Fg.downloadAndSaveMediaMessage(encmedia)
+						ran = getRandom('.webp')
+						await ffmpeg(`./${media}`)
+							.input(media)
+							.on('start', function (cmd) {
+								console.log(`Started : ${cmd}`)
+							})
+							.on('error', function (err) {
+								console.log(`Error : ${err}`)
+								fs.unlinkSync(media)
+								reply('❎ Error al crear el sticker')
+							})
+							.on('end', function () {
+								console.log('Finish')
+								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
+									 if (error) {
+											 reply(ind.stikga())
+											 fs.unlinkSync(media)	
+											 fs.unlinkSync(ran)
+											 }
+									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `Gatybot by 「gatitoツ」`,body:"", previewType:"PHOTO",thumbnail: botc, sourceUrl:`${groupmc}`}}})
+									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
+									fs.unlinkSync(media)	
+									fs.unlinkSync(ran)	
+								})
+							})
+							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+							.toFormat('webp')
+							.save(ran)
+					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+						const media = await Fg.downloadAndSaveMediaMessage(encmedia)
+						ran = getRandom('.webp')
+						reply(wait())
+						await ffmpeg(`./${media}`)
+							.inputFormat(media.split('.')[1])
+							.on('start', function (cmd) {
+								console.log(`Started : ${cmd}`)
+							})
+							.on('error', function (err) {
+								console.log(`Error : ${err}`)
+								fs.unlinkSync(media)
+								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+								reply('❎ Error al crear el stickergif')
+							})
+							.on('end', function () {
+								console.log('Finish')
+								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
+									if (error) {
+											 reply(ind.stikga())
+											 fs.unlinkSync(media)	
+											 fs.unlinkSync(ran)
+											 }
+									Fg.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `Gatybot by 「gatitoツ」`,body:"", previewType:"PHOTO",thumbnail: botc, sourceUrl:`${groupmc}`}}})
+									reply(`${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}`)
+									fs.unlinkSync(media)
+									fs.unlinkSync(ran)
+								})
+							})
+							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+							.toFormat('webp')
+							.save(ran)
+					} else {
+						reply(`✳️ Etiqueta un *imagen/video/gif* con el comando ${prefix + command}\n\n*📌Nota* :\nEl video no tiene que pasar los 9 segundos`)
+					}
+				    limitAdd(sender, limit)
+					break
+					
       case 'toimage': 
 case 'toimg':
 case 'aimg':
