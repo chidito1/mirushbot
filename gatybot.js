@@ -2253,7 +2253,6 @@ break;
           try {
         lvlh = getLevelingLevel(sender)
        infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
-       const fgnum = "51940617554@s.whatsapp.net"
 	  infost = infost.status == 401 ? 'sin info' : infost.status
         imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
         autorfg = `${sender.split("@")[0]}`
@@ -2518,7 +2517,7 @@ gbutsan = [
 gbuttonan = {
 imageMessage: py.message.imageMessage,
 contentText: helfxz,
-footerText: `  *Created By @${fgnum.split("@s.whatsapp.net")[0]}*`,
+footerText: `  *Copyright © gatybot*`,
 buttons: gbutsan,
 headerType: 4
 }
