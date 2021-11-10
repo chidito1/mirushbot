@@ -2425,6 +2425,7 @@ _*<GRUPOS/>*_
 • 式 ⃟👥 _${prefix}mensaje_
 • 式 ⃟👥 _${prefix}online_
 • 式 ⃟👥 _${prefix}kick_
+• 式 ⃟👥 _${prefix}okick_
 • 式 ⃟👥 _${prefix}staff_
 • 式 ⃟👥 _${prefix}dueñogp_
 • 式 ⃟👥 _${prefix}setdesc_
@@ -3841,6 +3842,16 @@ Fg.groupRemove(from, [y])
 reply(`✅ Ordenes recibidas, emitidas`)
 break
 
+case 'okick':
+			 if (!isVerify) return reply(userB(prefix))
+  if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
+if (!isGroupAdmins) return reply(admin())
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('✳️ Responde a un mensaje!')
+			kick = mek.message.extendedTextMessage.contextInfo.participant
+		    Fg.groupRemove(from, [kick])
+						reply('✅ Ordenes recibidas, emitidas')
+                    break
 
       case 'add':
         if (!isOwner) return 
