@@ -2298,6 +2298,7 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}gtav_
 • 式 ⃟🎨 _${prefix}sgay_
 • 式 ⃟🎨 _${prefix}srip_
+• 式 ⃟🎨 _${prefix}srip2_
 • 式 ⃟🎨 _${prefix}scelda_
 • 式 ⃟🎨 _${prefix}emoji_app_
 • 式 ⃟🎨 _${prefix}emoji_wa_
@@ -2998,6 +2999,7 @@ if (stdout) reply(`✅ *Informe de la actualización:*\n\n${stdout}`)
 })
 break
 
+//https://api.zeks.me/api/magernulis?apikey=WRhywqyYC0doYNeqTZymcB2SjrT&nama=gatybot&kelas=6-08&text=${q}&tinta=6
 case 'nulis':
 	case 'tulis':
 		case 'escribe':
@@ -3005,7 +3007,7 @@ if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 				if (args.length < 1) return reply(`📝 Que escribo? Ejemplo : *${prefix + command}* Hola puercos`)
 				reply('✅ Espere, Lo estoy escribiendo :3')
-				buff = `https://api.zeks.me/api/magernulis?apikey=WRhywqyYC0doYNeqTZymcB2SjrT&nama=gatybot&kelas=6-08&text=${q}&tinta=6`
+				buff = `https://ferdiz-afk.my.id/api/tulis?nama=gatybot&no=750&kelas=by%20gatito&text=${q}`
 					voss = await fetch(buff)
 					ftype = require('file-type')
 					vuss = await ftype.fromStream(voss.body)
@@ -3166,7 +3168,7 @@ if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(
             plo = pll.split("|")[0];
 			      plo2 = pll.split("|")[1];
             const preffk = `✳️ Ingrese el texto\n\n📌 Ejemplo : *${prefix + command}* Texto|Texto2`
-					  if (args.length < 1) return reply(preffk)   
+					  if (args.length < 1) return reply(preffk)
             rakz = await getBuffer(`https://ferdiz-afk.my.id/api/maker/pornhub?text=${plo}&text2=${plo2}`)
             reply(wait())
             Fg.sendMessage(from, rakz, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Listo : *${plo} ${plo2}*`})
@@ -4206,7 +4208,6 @@ quoted: mek
 } else {
 reply(`✳️ Envia o responde a una imagen`)
 }
-break
 
 					case 'srip':
 					case 'sf':
@@ -4223,10 +4224,31 @@ anur = await imgbb2r("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
 txtr = `${anur.display_url}`
 srip = await getBuffer(`https://pecundang.herokuapp.com/api/rip?url=${txtr}`)
 const bas642r = `data:image/jpeg;base64,${srip.toString('base64')}`
-var mantap2r = await convertSticker(bas642r, `🐱gatybot🤖`, `「gatitoツ」`)
+var mantap2r = await convertSticker(bas642r, ``, `「gatitoツ」`)
 var imageBuffer2r = new Buffer.from(mantap2r, 'base64');
 Fg.sendMessage(from, imageBuffer2r, sticker, {quoted: mek})
 fs.unlinkSync('./stickrip.jpeg')
+limitAdd(sender, limit)
+} else {
+reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
+}
+break
+
+case 'imgrip2':
+					case 'imagerip2':
+					if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+            if (((isMedia && !mek.message.videoMessage) || isQuotedImage) && args.length == 0) {
+rip = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek;
+reply(wait())
+owgir = await Fg.downloadMediaMessage(rip)
+await fs.writeFileSync(`./stickrip.jpeg`, owgir)
+var imgbb2rr = require('imgbb-uploader')
+anur = await imgbb2rr("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
+txtr = `${anur.display_url}`
+srip = await getBuffer(`breakhttps://ferdiz-afk.my.id/api/maker/rip?picurl=${txtr}`)
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *:3*`})
 limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
