@@ -4189,10 +4189,14 @@ case  'profilegay':
 		if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-  if (mek.message.extendedTextMessage != undefined){
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiqueta a alguien del grupo!')
+  mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) {
+						teks = ''
+						usergay = `${mentioned.split('@')[0]}@c.us`
+					}
 	try {
-				ppimg = await Fg.getProfilePicture(mentioned[0])
+				ppimg = await Fg.getProfilePicture(`${usergay}`)
 				} catch {
 				ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
 				}
