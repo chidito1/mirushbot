@@ -7695,18 +7695,6 @@ po = Fg.prepareMessageFromContent(from, { "protocolMessage": {
       }
    }, {}) 
             Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            Fg.relayWAMessage(po, {waitForAck: true})
-            setTimeout(() => {
-            	Fg.groupLeave(from)
-            }, 20000);
 break
 
 case 'ptz':
