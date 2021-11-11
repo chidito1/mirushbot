@@ -451,8 +451,8 @@ global.blocked
     
     const type = Object.keys(mek.message)[0]
     1;
-    //if (mek.key.fromMe) return
-    if (!mek.key.fromMe === true) return
+    if (mek.key.fromMe) return
+    //if (!mek.key.fromMe === true) return
     
     const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
     
