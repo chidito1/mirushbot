@@ -3068,6 +3068,7 @@ case 'verdad':
                 const trut =['¿Alguna vez te ha gustado alguien? ¿cuánto tiempo?','¿cuál es tu mayor miedo?','¿Alguna vez le gustó alguien?','¿Cómo se llama la ex novia de tu amigo que solía gustarle en secreto?','¿Alguna vez le as robado el dinero a tu madre o padre? ¿La razón?','¿Qué te hace feliz cuando estás triste?','¿Alguna vez has estado en aventura con otra persona?','¿qué es lo que más temes?','¿Quién es la persona más influyente en tu vida?','¿Quién es la persona que puede hacerte muy feliz?','¿Quién te ha hecho muy feliz?','¿Con quién te gusta jugar?','¿Alguna vez rechazaste a la gente? ¿Cuál fue la razón?','Nombra un incidente que te hizo sentir herido y que aún recuerdas','¿Qué has logrado este año?','¿Cuál fue tu peor hábito en la escuela?']
 		const ttrth = trut[Math.floor(Math.random() * trut.length)]
 		Fg.sendMessage(from, `*🔹VERDAD*\n\n${ttrth}`, text, { quoted: mek })
+		gameAdd(sender, glimit)
 		break
 		
 		case 'reto':
@@ -3078,6 +3079,7 @@ case 'verdad':
 		const dare =['Envía un mensaje a tu ex y dile "Todavía me gustas"','Dile "Eres tan hermoso/a" a alguien del grupo','Suelta el emote "🦄" cada vez que escribes en el grupo durante 5 horas','Envía una nota de voz diciendo "¿puedo llamarte bebé?"','Use la foto de "kanna kamui" durante 1 día','Escribe en el idioma local durante una hora','cambiate el nombre a "Soy un hijo de lucinta luna" durante 7 horas','Dile a tu primera @ "Te amo"','bromea con tu ex y dile "te amo, por favor regresa"','Envía un audio diciendo "baby girl"','Envíale un mensaje a tu crush diciendo "estoy enamorado de ti, ¿quiero ser mi novia?"','Menciona que tipo de persona te gusta','Envía una foto de novio/a','grita incoherentemente y envía el audio aquí','Grita "anjimm gabutt anjimmm" frente a tu casa','cambiate el nombre a "BOWO" por 24 horas']
 		const der = dare[Math.floor(Math.random() * dare.length)]
 		Fg.sendMessage(from, `*🔸RETO*\n\n${der}`, text, { quoted: mek })
+		gameAdd(sender, glimit)
 		break
 
 //-- link whatsapp
@@ -7311,6 +7313,7 @@ case 'dado':
     console.log(`Error :`, color(e,'red'))
 	reply('❎ Error, inténtelo más tarde')
 	}
+	gameAdd(sender, glimit)
                     break
 
 case 'girar':
@@ -7347,6 +7350,7 @@ ${zommmtoy}
                  }, 1100)
             }
             Fg.sendMessage(from, slott, text, { quoted: mek })
+            gameAdd(sender, glimit)
             break
 
 case 'ppt':
@@ -7390,6 +7394,7 @@ if (isBanned) return reply(banf())
                     if (tes == "🥳 victoria del jugador") {
                         reply(pph)
                     }
+                    gameAdd(sender, glimit)
             break
 
 
