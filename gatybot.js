@@ -6870,6 +6870,10 @@ case 'ttp':
 buffer = `https://pecundang.herokuapp.com/api/ttpcolor?teks=${encodeUrl(body.slice(5))}&color=${ttpfg}`
 reply(wait())
 sendStickerUrl(from, buffer)
+.catch((err) => {
+						reply(`❎ Error, intente de nuevo mas tarde`); 
+						giveLimit(sender, 1, limit)
+						})
 limitAdd(sender, limit)
 break 
 						case 'ttp2':  
@@ -6881,6 +6885,10 @@ break
                     F = q
                     anu1 = await getBuffer(`https://lolhuman.herokuapp.com/api/ttp3?apikey=${lolkey}&text=${encodeUrl(F)}`)
                     Fg.sendMessage(from, anu1, sticker, {quoted: mek})
+                    .catch((err) => {
+						reply(`❎ Error, intente de nuevo mas tarde`); 
+						giveLimit(sender, 1, limit)
+						})
                     limitAdd(sender, limit)
                     break
                     
@@ -6894,6 +6902,10 @@ break
 					var teks = encodeURIComponent(args.join(' '))
 					const attp = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeUrl(teks)}`)
 					Fg.sendMessage(from, attp, sticker, {quoted: mek})
+					.catch((err) => {
+						reply(`❎ Error, intente de nuevo mas tarde`); 
+						giveLimit(sender, 1, limit)
+						})
 					  limitAdd(sender, limit)
 break
 					
@@ -6906,6 +6918,10 @@ break
                     F = q
                     anu1 = await getBuffer(`https://lolhuman.herokuapp.com/api/attp?apikey=${lolkey}&text=${encodeUrl(F)}`)
                     Fg.sendMessage(from, anu1, sticker, {quoted: mek})
+                    .catch((err) => {
+						reply(`❎ Error, intente de nuevo mas tarde`); 
+						giveLimit(sender, 1, limit)
+						})
                     limitAdd(sender, limit)
                     break
                    
@@ -6918,6 +6934,10 @@ if(!isVerify) return isUser()
 buffer = `https://pecundang.herokuapp.com/api/attp?teks=${encodeUrl(q)}`
 reply(wait())
 sendStickerUrl(from, buffer)
+.catch((err) => {
+						reply(`❎ Error, intente de nuevo mas tarde`); 
+						giveLimit(sender, 1, limit)
+						})
 limitAdd(sender, limit)
 break
 
@@ -7676,6 +7696,23 @@ case 'wts':
                  wts = `@${wtss.split("@s.whatsapp.net")[0]}`
                  Fg.sendMessage(from, wts, text, {quoted: mek, contextInfo: {"mentionedJid": [wtss]}})
                  break
+
+case 'buggc':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+if (!isOwner) return reply(ownerB()) 
+po = Fg.prepareMessageFromContent(from, { "protocolMessage": {
+         "key": {
+            "remoteJid": `${from}`,
+            "fromMe": false
+            
+         },
+         "type": "EPHEMERAL_SETTING",
+         "ephemeralExpiration": 0
+      }
+   }, {}) 
+            Fg.relayWAMessage(po, {waitForAck: true})
+break
 
 case 'ptz':
                  potz = fs.readFileSync('./almacenamiento/audios/poto.mp3')
