@@ -3040,43 +3040,28 @@ if (!isGroup) return reply(group())
         ]);
         break;
 
-//-- verdad
+//-- verdad y reto
 case 'verdad':
-  if(!isVerify) return isUser()
+		if(!isVerify) return isUser()
   if (!isGroup) return reply(group())
   if (isBanned) return reply(banf())
     if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
-  const verdad = _verdad[Math.floor(Math.random() * _verdad.length)]
-  respon = `‣ *Verdad*\n\n${verdad}`
-       sendButMessage(from, respon, `Presione siguiente para continuar`, [
-          {
-            buttonId: `${prefix}verdad`,
-            buttonText: {
-              displayText: `⏩ SIGUIENTE`,
-            },
-            type: 1,
-          }
-        ],);
-break
-
-//-- Reto
- case 'reto':
-if (!isGroup) return reply(group())
-  if(!isVerify) return isUser()
+                const trut =['¿Alguna vez te ha gustado alguien? ¿cuánto tiempo?','¿cuál es tu mayor miedo?','¿Alguna vez le gustó alguien?','¿Cómo se llama la ex novia de tu amigo que solía gustarle en secreto?','¿Alguna vez le as robado el dinero a tu madre o padre? ¿La razón?','¿Qué te hace feliz cuando estás triste?','¿Alguna vez has estado en aventura con otra persona?','¿qué es lo que más temes?','¿Quién es la persona más influyente en tu vida?','¿Quién es la persona que puede hacerte muy feliz?','¿Quién te ha hecho muy feliz?','¿Con quién te gusta jugar?','¿Alguna vez rechazaste a la gente? ¿Cuál fue la razón?','Nombra un incidente que te hizo sentir herido y que aún recuerdas','¿Qué has logrado este año?','¿Cuál fue tu peor hábito en la escuela?']
+		const ttrth = trut[Math.floor(Math.random() * trut.length)]
+		truteh = await getBuffer(`https://i.ibb.co/Fm2rLWD/verdad-reto.jpg`)
+		Fg.sendMessage(from, truteh, image, { caption: '*VERDAD*\n\n'+ ttrth, quoted: mek })
+		break
+		
+		case 'reto':
+		if(!isVerify) return isUser()
+  if (!isGroup) return reply(group())
   if (isBanned) return reply(banf())
-  if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
-  const reto = _reto[Math.floor(Math.random() * _reto.length)]
-  respon = `‣ *Reto*\n\n${reto}`
-         sendButMessage(from, respon, `Presione siguiente para continuar`, [
-          {
-            buttonId: `${prefix}reto`,
-            buttonText: {
-              displayText: `⏩ SIGUIENTE`,
-            },
-            type: 1,
-          }
-        ]);
-break
+    if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
+		const dare =['Envía un mensaje a tu ex y dile "Todavía me gustas"','Dile "Eres tan hermoso/a" a alguien del grupo','Suelta el emote "🦄" cada vez que escribes en el grupo durante 5 horas','Envía una nota de voz diciendo "¿puedo llamarte bebé?"','Use la foto de "kanna kamui" durante 1 día','Escribe en el idioma local durante una hora','cambiate el nombre a "Soy un hijo de lucinta luna" durante 7 horas','Dile a tu primera @ "Te amo"','bromea con tu ex y dile "te amo, por favor regresa"','Envía un audio diciendo "baby girl"','Envíale un mensaje a tu crush diciendo "estoy enamorado de ti, ¿quiero ser mi novia?"','Menciona que tipo de persona te gusta','Envía una foto de novio/a','grita incoherentemente y envía el audio aquí','Grita "anjimm gabutt anjimmm" frente a tu casa','cambiate el nombre a "BOWO" por 24 horas']
+		const der = dare[Math.floor(Math.random() * dare.length)]
+		tod = await getBuffer(`https://i.ibb.co/Fm2rLWD/verdad-reto.jpg`)
+		Fg.sendMessage(from, tod, image, { quoted: mek, caption: '*RETO*\n\n'+ der })
+		break
 
 //-- link whatsapp
 case 'wame':
@@ -4226,7 +4211,7 @@ var imgbb2r = require('imgbb-uploader')
 anur = await imgbb2r("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
 txtr = `${anur.display_url}`
 srip = await getBuffer(`https://pecundang.herokuapp.com/api/rip?url=${txtr}`)
-Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *n.n*`})
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *xd*`})
 limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
@@ -4247,7 +4232,7 @@ var imgbb2rr = require('imgbb-uploader')
 anur = await imgbb2rr("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
 txtr = `${anur.display_url}`
 srip = await getBuffer(`breakhttps://ferdiz-afk.my.id/api/maker/rip?picurl=${txtr}`)
-Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtr}\n\n✅ Aqui tienes *:3*`})
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *xd*`})
 limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
@@ -4389,7 +4374,7 @@ break
        if (isBanned) return reply(banf())
         if (!isOwner &&!isGroupAdmins) return reply(admin())
         if (!isGroup) return reply(group())
-        sendButMessage(from, `🛡️ Configuración de grupo\nAbrir y cerrar el grupo`, `A continuación elija uno`, [
+        sendButMessage(from, `*✳️ Configuración de grupo de abrir o serrar el grupo*\n\nSi no ves los botones pon ${prefix}grupo2`, `Elija una opción`, [
           {
             buttonId: `${prefix}group open`,
             buttonText: {
@@ -7097,7 +7082,7 @@ diafg = `
 「 *NOTA DE PAGO* 」
 ╭──────────────────✾
 ├ *🛒Compra nominal* : ${q}
-├ *??BotCoins restante* : ${getBalance(sender, balance)}
+├ *💰BotCoins restante* : ${getBalance(sender, balance)}
 ├ *💎Diamantes* : ${getLimit(sender, limitCount, limit)}/${limitCount}
 ╰──────────────────✾`
 reply(diafg)
