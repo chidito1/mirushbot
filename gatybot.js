@@ -2296,7 +2296,6 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}sticker2 (Nombre|Autor)_
 • 式 ⃟🎨 _${prefix}take (Nombre|Autor)_
 • 式 ⃟🎨 _${prefix}exif (Nombre|Autor)_
-• 式 ⃟🎨 _${prefix}stickfg_
 • 式 ⃟🎨 _${prefix}ttp_
 • 式 ⃟🎨 _${prefix}ttp2_
 • 式 ⃟🎨 _${prefix}attp_
@@ -2313,7 +2312,6 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}passed_
 • 式 ⃟🎨 _${prefix}wasted_
 • 式 ⃟🎨 _${prefix}gtav_
-• 式 ⃟🎨 _${prefix}sgay_
 • 式 ⃟🎨 _${prefix}imgrip_
 • 式 ⃟🎨 _${prefix}imgrip2_
 • 式 ⃟🎨 _${prefix}scelda_
@@ -2440,7 +2438,7 @@ _*<GRUPOS/>*_
 • 式 ⃟👥 _${prefix}infogp_
 • 式 ⃟👥 _${prefix}infodetec_
 • 式 ⃟👥 _${prefix}group_
-• 式 ⃟👥 _${prefix}group2 (Close/Open)_
+• 式 ⃟👥 _${prefix}group2 [close/open]_
 • 式 ⃟👥 _${prefix}link_
 • 式 ⃟👥 _${prefix}mensaje_
 • 式 ⃟👥 _${prefix}online_
@@ -2457,14 +2455,14 @@ _*<GRUPOS/>*_
 • 式 ⃟👥 _${prefix}nivel_
 • 式 ⃟👥 _${prefix}rangos_
 • 式 ⃟👥 _${prefix}leido (Mensaje bot)_ 
-• 式 ⃟👥 _${prefix}leveling (on/off)_
-• 式 ⃟👥 _${prefix}welcome (on/off)_
-• 式 ⃟👥 _${prefix}goodbye (on/off)_
-• 式 ⃟👥 _${prefix}simih (on/off)_
-• 式 ⃟👥 _${prefix}antiviewonce (on/off)_
-• 式 ⃟👥 _${prefix}antilink (on/off)_
-• 式 ⃟👥 _${prefix}antivirtual (on/off)_
-• 式 ⃟👥 _${prefix}nsfw (on/off)_
+• 式 ⃟👥 _${prefix}leveling [on/off]_
+• 式 ⃟👥 _${prefix}welcome [on/off]_
+• 式 ⃟👥 _${prefix}goodbye [on/off]_
+• 式 ⃟👥 _${prefix}simih [on/off]_
+• 式 ⃟👥 _${prefix}antiviewonce [on/off]_
+• 式 ⃟👥 _${prefix}antilink [on/off]_
+• 式 ⃟👥 _${prefix}antivirtual [on/off]_
+• 式 ⃟👥 _${prefix}nsfw [on/off]_
 • 式 ⃟👥 _${prefix}delete (mensaje bot)_
 • 式 ⃟👥 _${prefix}salir (dejo el grupo)_
 
@@ -2528,7 +2526,8 @@ _*<INFORMACIÓN/>*_
 • 式 ⃟ℹ️ _${prefix}ping_
 • 式 ⃟ℹ️ _${prefix}runtime_
 • 式 ⃟ℹ️ _${prefix}estado_
-• 式 ⃟ℹ️ _${prefix}join_`
+• 式 ⃟ℹ️ _${prefix}join_
+• 式 ⃟ℹ️ _${prefix}ayuda_`
 
   py =  await Fg.prepareMessage(from, imgth, image)
 gbutsan = [
@@ -2609,7 +2608,7 @@ _*Diseñador del bot*_
 
 • 式 ⃟⃟🌀 _*Edgar :* @${ayudante.split("@s.whatsapp.net")[0]}_
 _*Ayuda en algunos comandos*_`
-Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢𝗡𝗘𝗦🐱⃟式`,body: `• Fecha : ${fecha2}\n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
+Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱INFORMACIÓNES🐱⃟式`,body: `• Fecha : ${fecha2}\n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
              
            break
 
@@ -2707,28 +2706,45 @@ case 'rules':
 case 'reglas':
 case 'reglasbot':
 if(!isVerify) return isUser()
-	reglasbot = `───────────────────
+	reglasbot = `---------------- » «» « ----------------
 
-*▢ No envíe spam al bot.*
+*▢≽ No envíe spam al bot.*
  Penalización: *ADVERTENCIA Y BLOQUEO TEMPORAL*
  
-*▢ No llame o textee al bot*
+*▢≽ No llame o textee al bot*
 Penalización: *BLOQUEO TEMPORAL*
 
-*▢ No abuse del bot.*
+*▢≽ No abuse del bot.*
 Penalización: *BLOQUEO PERMANENTE*
  
-*▢ No agrege a grupos al bot.*
+*▢≽ No agrege a grupos al bot.*
 Penalización: *BLOQUEO PERMANENTE*
 
-───────────────────
+---------------- » «» « ----------------
+
 🤖El bot no esta activo las 24 horas, por lo que depende de si el propietario esta alli cuando el bot tambien esta encendido.`
-Fg.sendMessage(from, reglasbot, text, { quoted: mek, contextInfo: { externalAdReply:{title: `「 REGLAS DEL BOT 」`,body:"마시엘리", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}}})
+Fg.sendMessage(from, reglasbot, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱REGLAS DEL BOT🐱⃟式`,body:"마시엘리", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}}})
 break
 
-case 'groupgaty':
-case 'grupogaty':
-case 'gpgaty':
+case 'help':
+case 'ayuda':
+if(!isVerify) return isUser()
+	reglasbot = `───────────────────
+*¿Cómo puedo subir de nivel?*
+
+Para subir de nivel primeramente tiene que estar activado la ${prefix}nivelacion en el grupo.
+
+Subes de nivel cada ves que envíes mensajes al grupo
+───────────────────
+_*PRONTO SE AGREGARAN MAS AYUDAS*_
+───────────────────`
+Fg.sendMessage(from, reglasbot, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱AYUDA/HELP🐱⃟式`,body:"• preguntas frecuentes", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}}})
+break
+
+
+case '_groupgaty':
+case '_grupogaty':
+case '_gpgaty':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 thumb = fs.readFileSync(`./image/fg.jpg`)
@@ -3064,22 +3080,18 @@ case 'verdad':
 		if(!isVerify) return isUser()
   if (!isGroup) return reply(group())
   if (isBanned) return reply(banf())
-    if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
                 const trut =['¿Alguna vez te ha gustado alguien? ¿cuánto tiempo?','¿cuál es tu mayor miedo?','¿Alguna vez le gustó alguien?','¿Cómo se llama la ex novia de tu amigo que solía gustarle en secreto?','¿Alguna vez le as robado el dinero a tu madre o padre? ¿La razón?','¿Qué te hace feliz cuando estás triste?','¿Alguna vez has estado en aventura con otra persona?','¿qué es lo que más temes?','¿Quién es la persona más influyente en tu vida?','¿Quién es la persona que puede hacerte muy feliz?','¿Quién te ha hecho muy feliz?','¿Con quién te gusta jugar?','¿Alguna vez rechazaste a la gente? ¿Cuál fue la razón?','Nombra un incidente que te hizo sentir herido y que aún recuerdas','¿Qué has logrado este año?','¿Cuál fue tu peor hábito en la escuela?']
 		const ttrth = trut[Math.floor(Math.random() * trut.length)]
 		Fg.sendMessage(from, `*🔹VERDAD*\n\n${ttrth}`, text, { quoted: mek })
-		gameAdd(sender, glimit)
 		break
 		
 		case 'reto':
 		if(!isVerify) return isUser()
   if (!isGroup) return reply(group())
   if (isBanned) return reply(banf())
-    if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 		const dare =['Envía un mensaje a tu ex y dile "Todavía me gustas"','Dile "Eres tan hermoso/a" a alguien del grupo','Suelta el emote "🦄" cada vez que escribes en el grupo durante 5 horas','Envía una nota de voz diciendo "¿puedo llamarte bebé?"','Use la foto de "kanna kamui" durante 1 día','Escribe en el idioma local durante una hora','cambiate el nombre a "Soy un hijo de lucinta luna" durante 7 horas','Dile a tu primera @ "Te amo"','bromea con tu ex y dile "te amo, por favor regresa"','Envía un audio diciendo "baby girl"','Envíale un mensaje a tu crush diciendo "estoy enamorado de ti, ¿quiero ser mi novia?"','Menciona que tipo de persona te gusta','Envía una foto de novio/a','grita incoherentemente y envía el audio aquí','Grita "anjimm gabutt anjimmm" frente a tu casa','cambiate el nombre a "BOWO" por 24 horas']
 		const der = dare[Math.floor(Math.random() * dare.length)]
 		Fg.sendMessage(from, `*🔸RETO*\n\n${der}`, text, { quoted: mek })
-		gameAdd(sender, glimit)
 		break
 
 //-- link whatsapp
@@ -4172,27 +4184,6 @@ limitAdd(sender, limit)
 					reply('✳️ Envia o responde a una imagen')
 					}
 					break
-
-case  'profilegay':
-		case  'perfilgay':
-		if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-try {
-	pic = await Fg.getProfilePicture(mentioned[0])
-	} catch {
-	pic = 'https://i.ibb.co/FX6pMj0/profile.png'
-	}
-	reply(wait())
-	owgi = await  Fg.downloadAndSaveMediaMessage(pic)
-					anu = await imgbb("3b8594f4cb11895f4084291bc655e510", owgi)
-					teks = `${anu.display_url}`
-					reply(`${anu.display_url}`)
-sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${teks}`)
-Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${teks}\n\n✅ Aqui tienes *0.0*`})
-limitAdd(sender, limit)
-break
 
 case 'gtav':
 if(!isVerify) return isUser()
@@ -5434,7 +5425,6 @@ if (!isOwner)return reply(ownerB())
 	case 'topgay':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
   if (!isGroup) return reply(group())
 member = []
 top5 = args.join(' ')
@@ -5483,7 +5473,6 @@ member.push(b8.jid)
 member.push(b9.jid)
 member.push(b10.jid)
 mentions(teks, member, true)
-gameAdd(sender, glimit)
 break
 				
 case 'dueñogrupo':
@@ -6794,7 +6783,7 @@ break
 case 'togif':
 case 'agif':
 if(!isVerify) return isUser()
-                   if (isBanned) return reply(banf())
+if (isBanned) return reply(banf())
 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
 if (!isQuotedSticker) return reply('✳️ Responde a un sticker')
 reply(wait())
@@ -6809,7 +6798,7 @@ Fg.sendMessage(from, anu, video, {mimetype: 'video/gif', caption: '✅ Aquí tie
 limitAdd(sender, limit)
 break
 
-      case 'tourl':
+case 'tourl':
 case 'aurl':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -6850,7 +6839,7 @@ if(!isVerify) return isUser()
             }
             break
             
-            case 'urltoimg':
+case 'urltoimg':
 case 'urlaimg':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -6949,6 +6938,7 @@ break
 
 case 'prem':
 case 'premiun':
+case 'premium':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 premz = `_Este menú esta en proceso_`
@@ -7023,7 +7013,7 @@ break
 //******************** 》DIAMANTES《 ********************\\
 
 case 'shop':
-	case 'tienda':
+case 'tienda':
 	 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 	shopfg = `「 *TIENDA* 」
@@ -7032,10 +7022,9 @@ case 'shop':
 ├❏ *🎰 1 GameCoin* : ➜ *100* 💰
 ╰──────────────────✾
 
-*NOTA :* Puedes comprar 💎 diamantes usando
- *${prefix}buy* 
-Para comprar 🎰GameCoins
-*${prefix}buygcoin*`
+*📌NOTA:*
+Puedes comprar 💎Diamantes usando *${prefix}buy* 
+Y para comprar 🎰GameCoins *${prefix}buygcoin*`
 reply(shopfg)
 	break
 	
@@ -7167,7 +7156,7 @@ if (isBanned) return reply(banf())
 if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 if (!isGroup) return reply(group())
 if (!q)return reply(`📌Mensiona al usuario que deseas desafiar`) 
-if (budy.includes("@51988050859")) return reply(`❎ No puedes desafiar a un bot`);
+if (budy.includes("@51988050859")) return reply(`❎ No puedes desafiar a la bot`);
 if (fs.existsSync(`./libreria/tictactoe/db/${from}.json`)) {
 const boardnow = setGame(`${from}`);
 const matrix = boardnow._matrix;
