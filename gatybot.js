@@ -3058,7 +3058,7 @@ case 'verdad':
     if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 		const dare =['Envía un mensaje a tu ex y dile "Todavía me gustas"','Dile "Eres tan hermoso/a" a alguien del grupo','Suelta el emote "🦄" cada vez que escribes en el grupo durante 5 horas','Envía una nota de voz diciendo "¿puedo llamarte bebé?"','Use la foto de "kanna kamui" durante 1 día','Escribe en el idioma local durante una hora','cambiate el nombre a "Soy un hijo de lucinta luna" durante 7 horas','Dile a tu primera @ "Te amo"','bromea con tu ex y dile "te amo, por favor regresa"','Envía un audio diciendo "baby girl"','Envíale un mensaje a tu crush diciendo "estoy enamorado de ti, ¿quiero ser mi novia?"','Menciona que tipo de persona te gusta','Envía una foto de novio/a','grita incoherentemente y envía el audio aquí','Grita "anjimm gabutt anjimmm" frente a tu casa','cambiate el nombre a "BOWO" por 24 horas']
 		const der = dare[Math.floor(Math.random() * dare.length)]
-		Fg.sendMessage(from, `*🔸RETO*\n\n${ttrth}`, text, { quoted: mek })
+		Fg.sendMessage(from, `*🔸RETO*\n\n${der}`, text, { quoted: mek })
 		break
 
 //-- link whatsapp
