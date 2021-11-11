@@ -1326,7 +1326,22 @@ const loli = [
         "https://i.pinimg.com/originals/8c/bb/18/8cbb18000f0be5bbc35ad9f00ddb0601.jpg",
 ]
  
- const neko = [
+ const meme = [
+   "https://images3.memedroid.com/images/UPLOADED657/618c3ed1527ac.jpeg",
+   "https://images7.memedroid.com/images/UPLOADED352/618c55625f0b6.jpeg",
+   "https://images3.memedroid.com/images/UPLOADED107/618c3b0c9bd2a.jpeg",
+   "https://images3.memedroid.com/images/UPLOADED398/618c61c639d0e.jpeg",
+   "https://images3.memedroid.com/images/UPLOADED594/618c3e3d96680.jpeg",
+   "https://images7.memedroid.com/images/UPLOADED202/618b9aa1aa4d5.jpeg",
+   "https://images7.memedroid.com/images/UPLOADED979/618c72d234869.jpeg",
+   "https://images7.memedroid.com/images/UPLOADED473/618c174446176.jpeg",
+   "https://images3.memedroid.com/images/UPLOADED247/618c4987c37e9.jpeg",
+   "https://images7.memedroid.com/images/UPLOADED353/618c4adbcb051.jpeg",
+   "https://images3.memedroid.com/images/UPLOADED929/618c7a949570b.jpeg",
+   "https://images3.memedroid.com/images/UPLOADED563/618c3f7fcbc75.jpeg"
+]
+
+const neko = [
    "xxx",
    "xxx",
    "xxx",
@@ -1448,6 +1463,7 @@ const loli = [
    "xxx",
    "xxx"
 ]
+
   //---------𝗙𝗨𝗡𝗖𝗜𝗢́𝗡 𝗥𝗔𝗡𝗚𝗢𝗦--------
 	const levelRole = getLevelingLevel(sender, _level)
         var role = 'HIERRO I'
@@ -2276,10 +2292,10 @@ _*<INFO DEL BOT/>*_
 
 _*<CONVERTIDORES/>*_
 
-• 式 ⃟🎨 _${prefix}sticker_ _(Foto/video)_ 
-• 式 ⃟🎨 _${prefix}sticker2_ _(Nombre|Autor)_
-• 式 ⃟🎨 _${prefix}take_ _(Nombre|Autor)_
-• 式 ⃟🎨 _${prefix}exif_ _(Nombre|Autor)_
+• 式 ⃟🎨 _${prefix}sticker (Foto/video)_ 
+• 式 ⃟🎨 _${prefix}sticker2 (Nombre|Autor)_
+• 式 ⃟🎨 _${prefix}take (Nombre|Autor)_
+• 式 ⃟🎨 _${prefix}exif (Nombre|Autor)_
 • 式 ⃟🎨 _${prefix}stickfg_
 • 式 ⃟🎨 _${prefix}ttp_
 • 式 ⃟🎨 _${prefix}ttp2_
@@ -2315,15 +2331,16 @@ _*<CONVERTIDORES/>*_
 
 _*<DESCARGAS/>*_
 
-• 式 ⃟📥 _${prefix}play_ 
-• 式 ⃟📥 _${prefix}play2_ 
-• 式 ⃟📥 _${prefix}playvid_ 
+• 式 ⃟📥 _${prefix}play_
+• 式 ⃟📥 _${prefix}play2_
+• 式 ⃟📥 _${prefix}playvid_
 • 式 ⃟📥 _${prefix}ytmp3_
 • 式 ⃟📥 _${prefix}ytmp4_
 • 式 ⃟📥 _${prefix}instagram_
 • 式 ⃟📥 _${prefix}igstory_
 • 式 ⃟📥 _${prefix}tiktok_
 • 式 ⃟📥 _${prefix}tiktokaudio_
+• 式 ⃟📥 _${prefix}mdfire_
 
 _*<BUSQUEDA/>*_
 
@@ -2366,15 +2383,15 @@ _*<MEDIA/>*_
 • 式 ⃟🎥 _${prefix}ocr_
 • 式 ⃟🎥 _${prefix}sinfondo_
 • 式 ⃟🎥 _${prefix}escribe_
-• 式 ⃟🎥 _${prefix}tinyurl_ _(acortador)_
+• 式 ⃟🎥 _${prefix}tinyurl (acortador)_
 
 _*<FUNCIÓNES/>*_
 
 • 式 ⃟🍒 _${prefix}random_
-• 式 ⃟🍒 _${prefix}Leermas_ _(txt1|txt2)_
-• 式 ⃟🍒 _${prefix}fake_ _(@tag|txt1|txt2)_
+• 式 ⃟🍒 _${prefix}leermas (txt1|txt2)_
+• 式 ⃟🍒 _${prefix}fake (@tag|txt1|txt2)_
 • 式 ⃟🍒 _${prefix}tagme_
-• 式 ⃟🍒 _${prefix}mention_ _(549xxx)_
+• 式 ⃟🍒 _${prefix}mention (549xxx)_
 • 式 ⃟🍒 _${prefix}say_
 
 _*<ECONOMÍA/>*_
@@ -2382,8 +2399,8 @@ _*<ECONOMÍA/>*_
 • 式 ⃟🪙 _${prefix}shop_
 • 式 ⃟🪙 _${prefix}toplevel_
 • 式 ⃟🪙 _${prefix}bal_
-• 式 ⃟🪙 _${prefix}buy_ _(compra 💎)_ 
-• 式 ⃟🪙 _${prefix}buygcoin_ _(compra 🎰)_ 
+• 式 ⃟🪙 _${prefix}buy (compra 💎)_ 
+• 式 ⃟🪙 _${prefix}buygcoin (compra 🎰)_ 
 • 式 ⃟🪙 _${prefix}adddiama_
 • 式 ⃟🪙 _${prefix}addgcoin_
 • 式 ⃟🪙 _${prefix}claim_
@@ -2392,9 +2409,10 @@ _*<DIVERSIÓN/>*_
 
 • 式 ⃟🎲 _${prefix}shipping_ 
 • 式 ⃟🎲 _${prefix}pregunta_
-• 式 ⃟🎲 _${prefix}vor_ _(verdad/reto)_
+• 式 ⃟🎲 _${prefix}vor (verdad/reto)_
 • 式 ⃟🎲 _${prefix}verdad_
 • 式 ⃟🎲 _${prefix}reto_
+• 式 ⃟🎲 _${prefix}meme_
 • 式 ⃟🎲 _${prefix}ppt_
 • 式 ⃟🎲 _${prefix}topgay_
 • 式 ⃟🎲 _${prefix}ttc_ <@tag>
@@ -2422,7 +2440,7 @@ _*<GRUPOS/>*_
 • 式 ⃟👥 _${prefix}infogp_
 • 式 ⃟👥 _${prefix}infodetec_
 • 式 ⃟👥 _${prefix}group_
-• 式 ⃟👥 _${prefix}group2_ _(Close/Open)_
+• 式 ⃟👥 _${prefix}group2 (Close/Open)_
 • 式 ⃟👥 _${prefix}link_
 • 式 ⃟👥 _${prefix}mensaje_
 • 式 ⃟👥 _${prefix}online_
@@ -2433,30 +2451,30 @@ _*<GRUPOS/>*_
 • 式 ⃟👥 _${prefix}setdesc_
 • 式 ⃟👥 _${prefix}setname_
 • 式 ⃟👥 _${prefix}anularlink_
-• 式 ⃟👥 _${prefix}getbio_ _(@tag)_
-• 式 ⃟👥 _${prefix}perfil+_ _(@tag)_
+• 式 ⃟👥 _${prefix}getbio (@tag)_
+• 式 ⃟👥 _${prefix}getperfil (@tag)_
 • 式 ⃟👥 _${prefix}perfil_
 • 式 ⃟👥 _${prefix}nivel_
 • 式 ⃟👥 _${prefix}rangos_
-• 式 ⃟👥 _${prefix}leido_ _(Mensaje bot)_ 
-• 式 ⃟👥 _${prefix}leveling_ _(on/off)_
-• 式 ⃟👥 _${prefix}welcome_ _(on/off)_
-• 式 ⃟👥 _${prefix}goodbye_ _(on/off)_
-• 式 ⃟👥 _${prefix}simih_ _(on/off)_
-• 式 ⃟👥 _${prefix}antiviewonce_ _(on/off)_
-• 式 ⃟👥 _${prefix}antilink_ _(on/off)_
-• 式 ⃟👥 _${prefix}antivirtual_ _(on/off)_
-• 式 ⃟👥 _${prefix}nsfw_ _(on/off)_
-• 式 ⃟👥 _${prefix}delete_ _(Mensaje bot)_
-• 式 ⃟👥 _${prefix}salir_ _(dejo el grupo)_
+• 式 ⃟👥 _${prefix}leido (Mensaje bot)_ 
+• 式 ⃟👥 _${prefix}leveling (on/off)_
+• 式 ⃟👥 _${prefix}welcome (on/off)_
+• 式 ⃟👥 _${prefix}goodbye (on/off)_
+• 式 ⃟👥 _${prefix}simih (on/off)_
+• 式 ⃟👥 _${prefix}antiviewonce (on/off)_
+• 式 ⃟👥 _${prefix}antilink (on/off)_
+• 式 ⃟👥 _${prefix}antivirtual (on/off)_
+• 式 ⃟👥 _${prefix}nsfw (on/off)_
+• 式 ⃟👥 _${prefix}delete (mensaje bot)_
+• 式 ⃟👥 _${prefix}salir (dejo el grupo)_
 
 _*<MENSIONES/>*_
 
 • 式 ⃟🪀 _${prefix}tagall_
 • 式 ⃟🪀 _${prefix}tag_
-• 式 ⃟🪀 _${prefix}notify_ _(texto)_
+• 式 ⃟🪀 _${prefix}notify (texto)_
 • 式 ⃟🪀 _${prefix}hidetag_
-• 式 ⃟🪀 _${prefix}contag_ _(Nombre|Num)_
+• 式 ⃟🪀 _${prefix}contag (Nombre|Num)_
 • 式 ⃟🪀 _${prefix}sticktag_
 • 式 ⃟🪀 _${prefix}imgtag_
 
@@ -2479,7 +2497,7 @@ _*<AVANZADO/>*_
 _*<OWNER/>*_
 
 • 式 ⃟🐱 _${prefix}actualizar_
-• 式 ⃟🐱 _${prefix}modo_ _(publico/privado)_
+• 式 ⃟🐱 _${prefix}modo (publico/privado)_
 • 式 ⃟🐱 _${prefix}stickcmd_
 • 式 ⃟🐱 _${prefix}delstickcmd_
 • 式 ⃟🐱 _${prefix}addprem_
@@ -2527,7 +2545,7 @@ headerType: 4
 await Fg.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: {  mentionedJid: [sender]}, quoted: mek})
 } catch (e) {
 	console.log(`Error :`, color(e,'red'))
-     reply('❎ Error al mostrar el menú')
+     reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
                      }
 break
 
@@ -2563,7 +2581,7 @@ const latensii = speed() - timestampp
 • 式 ⃟⃟🤖 _*Total Hits* : ${totalhit}_
 • 式 ⃟⃟🤖 _*Usuarios registrados* : ${_user.length}_
 • 式 ⃟⃟🤖 _*Tiempo activa* : ${runtime(process.uptime())}_
-• 式 ⃟⃟?? _*Velocidad* : ${latensii.toFixed(4)} Segundos_
+• 式 ⃟⃟🤖 _*Velocidad* : ${latensii.toFixed(4)} Segundos_
 • 式 ⃟⃟🤖 _*Navegador* : ${Fg.browserDescription[1]}_
 • 式 ⃟⃟🤖 _*Versión del navegador* : ${Fg.browserDescription[2]}_
 • 式 ⃟⃟🤖 _*Vercion del Wpp* : ${wa_version}_
@@ -7619,13 +7637,16 @@ case 'memes':
 case 'meme':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-const memess = ['https://i.ibb.co/pzdxn6s/38.jpg','https://i.ibb.co/16gYL8P/39.jpg','https://i.ibb.co/swfpGQm/6.jpg','https://i.ibb.co/kgdLJ4R/40.jpg','https://i.ibb.co/D8ZCpqG/7.jpg','https://i.ibb.co/WgYpy9T/4.jpg','https://i.ibb.co/f29bhc3/5.jpg','https://i.ibb.co/ZKhJHz8/2.jpg','https://i.ibb.co/Jm4nBzj/3.jpg','https://i.ibb.co/4m2Rtv2/1.jpg','https://i.ibb.co/JcfzhVw/47.jpg','https://i.ibb.co/cCmH42p/48.jpg','https://i.ibb.co/xDBzYQS/45.jpg','https://i.ibb.co/0V6ZjLF/46.jpg','https://i.ibb.co/93prDzF/43.jpg','https://i.ibb.co/MVk8KdY/44.jpg','https://i.ibb.co/8Df2j7T/41.jpg','https://i.ibb.co/NjD9MZM/8.jpg','https://i.ibb.co/TvYRG0j/42.jpg','https://i.ibb.co/mRhS4P6/9.jpg','https://i.ibb.co/cDMcbQR/49.jpg','https://i.ibb.co/q73CLfV/50.jpg','https://i.ibb.co/kMB8FWr/51.jpg','https://i.ibb.co/nmWr35W/58.jpg','https://i.ibb.co/cDhqz32/14.jpg','https://i.ibb.co/nBQRHq0/59.jpg','https://i.ibb.co/KzjXCDb/16.jpg','https://i.ibb.co/GTjssQt/56.jpg','https://i.ibb.co/hBfQbSX/12.jpg','https://i.ibb.co/yq5b0f4/57.jpg','https://i.ibb.co/DM550x0/13.jpg','https://i.ibb.co/5W0qP05/54.jpg','https://i.ibb.co/c1h9CP8/10.jpg','https://i.ibb.co/BG9rkTL/55.jpg','https://i.ibb.co/1LBR8MV/11.jpg','https://i.ibb.co/4Zkps5r/52.jpg','https://i.ibb.co/7tQvxpk/53.jpg','https://i.ibb.co/dcwZRXm/18.jpg','https://i.ibb.co/7k0SDmN/19.jpg','https://i.ibb.co/30mbJfL/15.jpg','https://i.ibb.co/rHLyr1G/17.jpg','https://i.ibb.co/vwPLJxQ/61.jpg','https://i.ibb.co/k9ZJFYp/60.jpg','https://i.ibb.co/d6DQHcX/25.jpg','https://i.ibb.co/pxtRTsC/26.jpg','https://i.ibb.co/prtxcSh/23.jpg','https://i.ibb.co/KNyFD2d/24.jpg','https://i.ibb.co/F7HPjkG/21.jpg','https://i.ibb.co/HBX9vFW/65.jpg','https://i.ibb.co/rvTVq9g/62.jpg','https://i.ibb.co/PrWmdL9/22.jpg','https://i.ibb.co/dpKnWbq/63.jpg','https://i.ibb.co/RjfWpK0/64.jpg','https://i.ibb.co/TTc8Qjk/20.jpg','https://i.ibb.co/4Mv124B/28.jpg','https://i.ibb.co/G3qV0cv/29.jpg','https://i.ibb.co/ck3TDmd/27.jpg','https://i.ibb.co/cb7gVKC/36.jpg','https://i.ibb.co/t2FY3D8/37.jpg','https://i.ibb.co/qWzMPPP/34.jpg','https://i.ibb.co/fGmts3b/35.jpg','https://i.ibb.co/PTstmcc/32.jpg','https://i.ibb.co/MPVQrxq/33.jpg','https://i.ibb.co/9V7YXck/30.jpg','https://i.ibb.co/vvVT4JZ/31.jpg']
-let mems = memess[Math.floor(Math.random() * memess.length)]
-      memes = await getBuffer(mems)
-Fg.sendMessage(from, memes, image, {quote: mek})
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+let memez = meme[Math.floor(Math.random() * meme.length)]
+      memex = await getBuffer(memez)
+Fg.sendMessage(from, memex, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${memez}\n\n✅ Aqui tienes :v`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
             })
+            limitAdd(sender, limit)
           break
           
 case 'hbd':
