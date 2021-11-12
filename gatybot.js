@@ -2344,6 +2344,7 @@ _*<CONVERTIDORES/>*_
 • 式 ⃟🎨 _${prefix}triggered_
 • 式 ⃟🎨 _${prefix}passed_
 • 式 ⃟🎨 _${prefix}wasted_
+• 式 ⃟🎨 _${prefix}wanted_
 • 式 ⃟🎨 _${prefix}gtav_
 • 式 ⃟🎨 _${prefix}imgrip_
 • 式 ⃟🎨 _${prefix}imgrip2_
@@ -4323,6 +4324,26 @@ limitAdd(sender, limit)
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
 }
 break
+
+case 'wanted':
+					case 'imagerip2':
+					if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+            if (((isMedia && !mek.message.videoMessage) || isQuotedImage) && args.length == 0) {
+rip = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek;
+reply(wait())
+owgir = await Fg.downloadMediaMessage(rip)
+await fs.writeFileSync(`./stickrip.jpeg`, owgir)
+var imgbb2rrr = require('imgbb-uploader')
+anur = await imgbb2rrr("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
+txtr = `${anur.display_url}`
+srip = await getBuffer(`https://api.dhamzxploit.my.id/api/canvas/wanted?url=${txtr}`)
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *:3*`})
+limitAdd(sender, limit)
+} else {
+reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
+}
 		
 		case  'passed':
 		case  'aprobado':
@@ -7794,6 +7815,17 @@ break
 case 'menupv':
 Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
 break
+
+case 'gamemode':
+			if (args.length == 0) return reply(from, 'Você esqueceu de colocar se quer ativado [1  ou c ou creative], ou desativado [0 ou s ou survival].', id)
+			if (args[0] == '1' || args[0] == 'c' || args[0] == 'creative') {
+				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a creativo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+			} else if (args[0] == '0' || args[0] == 's' || args[0] == 'survival') {
+				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a supervivencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+			} else {
+				reply(from, 'Você esqueceu de colocar se quer ativado [1  ou c ou creative], ou desativado [0 ou s ou survival].', id)
+			}
+            break
 
 //--------------------------------------
       default:
