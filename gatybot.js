@@ -2818,6 +2818,7 @@ case 'reg':
 case 'verificar':
 case 'register':
 case 'daftar':
+if (isBanned) return reply(banf())
 			if (isVerify) return reply('*✳️ Tu cuenta ya esta verificada*')
 					const seriTod = bikinSerial(10)
 					
