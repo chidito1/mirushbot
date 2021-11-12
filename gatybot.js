@@ -7795,10 +7795,43 @@ case 'menupv':
 Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('gatybot.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
 break
 
-case 'ptz':
-                 potz = fs.readFileSync('./almacenamiento/audios/poto.mp3')
-                 Fg.sendMessage(from, potz, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 3})
-                 break
+case 'mensaje2':
+ms = `Comando en creación`
+Fg.sendMessage(from, ms, text, {contextInfo: {"mentionedJid": [sender]}})
+break
+
+case 'msgp1':
+if (args.length < 1) return reply('✳️ Que mensaje quieres enviar?')
+if (q.length > 10000) return reply('❎ El mensaje el demasiado largo!')
+if (budy.includes(".com")) return reply(`❎ No puedes enviar enlaces a través de mensajes.`);
+ms = `📩「 *Mensaje enviado* 」📩\n\n• *Grupo :* ${groupName}\n• *De :* @${sender.split("@")[0]}\n\n${q}`
+Fg.sendMessage("51940617554-1600359399@g.us", ms, text, {contextInfo: {"mentionedJid": [sender]}})
+break
+
+case 'msgp2':
+if (args.length < 1) return reply('✳️ Que mensaje quieres enviar?')
+if (q.length > 10000) return reply('❎ El mensaje el demasiado largo!')
+if (budy.includes(".com")) return reply(`❎ No puedes enviar enlaces a través de mensajes.`);
+ms = `📩「 *Mensaje enviado* 」📩\n\n• *Grupo :* ${groupName}\n• *De :* @${sender.split("@")[0]}\n\n${q}`
+Fg.sendMessage("5218919697383-1621817981@g.us", ms, text, {contextInfo: {"mentionedJid": [sender]}})
+break
+
+case 'msgp3':
+if (args.length < 1) return reply('✳️ Que mensaje quieres enviar?')
+if (q.length > 10000) return reply('❎ El mensaje el demasiado largo!')
+if (budy.includes(".com")) return reply(`❎ No puedes enviar enlaces a través de mensajes.`);
+ms = `📩「 *Mensaje enviado* 」📩\n\n• *Grupo :* ${groupName}\n• *De :* @${sender.split("@")[0]}\n\n${q}`
+Fg.sendMessage("59169726830-1617644379@g.us", ms, text, {contextInfo: {"mentionedJid": [sender]}})
+break
+
+case 'msgp4':
+if (args.length < 1) return reply('✳️ Que mensaje quieres enviar?')
+if (q.length > 10000) return reply('❎ El mensaje el demasiado largo!')
+if (budy.includes(".com")) return reply(`❎ No puedes enviar enlaces a través de mensajes.`);
+ms = `📩「 *Mensaje enviado* 」📩\n\n• *Grupo :* ${groupName}\n• *De :* @${sender.split("@")[0]}\n\n${q}`
+Fg.sendMessage("50237010992-1627413960@g.us", ms, text, {contextInfo: {"mentionedJid": [sender]}})
+break
+
 //--------------------------------------
       default:
  
