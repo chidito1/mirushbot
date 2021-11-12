@@ -3933,6 +3933,48 @@ if (!isBotGroupAdmins) return reply(Badmin())
         ]);
         break;
 
+case 'closetime':
+if(!isVerify) return isUser()
+if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
+if (!isGroupAdmins && !isOwner) return reply(admin())
+if (!isBotGroupAdmins) return reply(Badmin())
+                    if (args[1]=="s") {var timer = args[0]+"000"
+				    } else if (args[1]=="m") {var timer = args[0]+"0000"
+				    } else if (args[1]=="h") {var timer = args[0]+"00000"
+				    } else {return reply("Use assim:\ns: segundos\nm: minutos\nh: horas\nex: +closetime 30 s")}
+				    setTimeout( () => {
+					var nomor = mek.participant
+					const close = {
+					text: `Cerrando grupo a pedido de @${nomor.split("@s.whatsapp.net")[0]}`,
+					contextInfo: { mentionedJid: [nomor] }
+					}
+					Fg.groupSettingChange (from, GroupSettingChange.messageSend, true);
+					reply(close)
+				    }, timer)
+				    break
+				
+case 'opentime':
+if(!isVerify) return isUser()
+if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
+if (!isGroupAdmins && !isOwner) return reply(admin())
+if (!isBotGroupAdmins) return reply(Badmin())
+                    if (args[1]=="s") {var timer = args[0]+"000"
+				    } else if (args[1]=="m") {var timer = args[0]+"0000"
+				    } else if (args[1]=="h") {var timer = args[0]+"00000"
+				    } else {return reply("*Use assim:\ns: segundos\nm: minutos\nh: horas\nex: +opentime 30 s")}
+				    setTimeout( () => {
+					var nomor = mek.participant
+					const open = {
+					text: `Abriendo grupo a pedido de @${nomor.split("@s.whatsapp.net")[0]}`,
+					contextInfo: { mentionedJid: [nomor] }
+					}
+					Fg.groupSettingChange (from, GroupSettingChange.messageSend, false);
+					reply(open)
+				    }, timer)
+				    break
+
 //--- Cambiar descripción del grupo
 case 'setdesc': 
 case'setdescgp':
