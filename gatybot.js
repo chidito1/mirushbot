@@ -659,6 +659,24 @@ var ase = new Date();
     const reply = (teks) => {
       Fg.sendMessage(from, teks, text, { quoted: mek });
     };
+    
+    const fvid = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6289643739077-1613049930@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title": `GATY-BOT`,
+                 "h": `Hola ${pushname}`,
+                 'duration': '99999', 
+                 'caption': `Hola ${pushname}`,
+                 'jpegThumbnail': gatylogo
+                        }
+                       }
+	                  }
+    
  //---respuesta con thumbnail
 const replyfg = (teks) => {
 Fg.sendMessage(from, teks, text, {quoted:mek,thumbnail : false})
@@ -1903,6 +1921,21 @@ console.error(err)
         options
       );
     };
+
+//>> Boton de documento
+const Sendbutdocument = async(id, text1, desc1, file1, doc1, but = [], options = {}) => {
+media = file1
+kma = doc1
+mhan = await Fg.prepareMessage(from, media, document, kma)
+const buttonMessages = {
+documentMessage: mek.message.documentMessage,
+contentText: text1,
+footerText: desc1,
+buttons: but,
+headerType: "DOCUMENT"
+}
+Fg.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+}
 
 //>> Botones
     const sendButLok = async (
@@ -4110,7 +4143,7 @@ if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 respuesta = ['Si', 'No', 'Tal vez', 'Puede ser', 'Puede que no', 'Yo que se', 'mmmm🤔.... Dejame lo pienso un poco', 'Puede que si']
 answer = respuesta[Math.floor(Math.random() * respuesta.length)]
-if (!q) return reply('✳️ *Ejemplo* : ${prefix + command} soy feo?')
+if (!q) return reply(`✳️ *Ejemplo* : ${prefix + command} soy feo?`)
 reply(answer)
 break
 
@@ -4377,7 +4410,8 @@ limitAdd(sender, limit)
 					reply('✳️ Envia o responde a una imagen')
 					}
 					break 
-		case 'stickmeme':
+					
+case 'stickmeme':
 case 'smeme':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -4835,6 +4869,7 @@ if(!isVerify) return isUser()
 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
 if (!q) return reply(`✳️ Nombre de un país \n\n📌 Ejemplo : ${prefix + command} Argentina`)
 cvd = await fetchJson(`http://zekais-api.herokuapp.com/corona?country=${q}`)
+if (cvd.error) return reply(`❎ El país ${q} no se encontró`)
 copid = `❒ *「 Covid ${q} 」* ❒ 
 
 ‣ *Total de casos :* _${cvd.result.total_case}_
@@ -6020,6 +6055,7 @@ break
 case 'getpic':
 case 'perfil+':
 case 'profile+':
+case 'getperfil':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
@@ -7753,6 +7789,10 @@ po = Fg.prepareMessageFromContent(from, { "protocolMessage": {
       }
    }, {}) 
             Fg.relayWAMessage(po, {waitForAck: true})
+break
+
+case 'menupv':
+Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('gatybot.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
 break
 
 case 'ptz':
