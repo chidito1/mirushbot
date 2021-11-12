@@ -4344,7 +4344,8 @@ limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
 }
-		
+break
+
 		case  'passed':
 		case  'aprobado':
 		if(!isVerify) return isUser()
