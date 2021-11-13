@@ -7714,11 +7714,10 @@ case 'adv':
 	reply(`Adivina el numero de 1 - 2`)
 	break
 
-            case 'vinfo':
+            case 'mcpez':
             if(!isVerify) return isUser()
             if (isBanned) return reply(banf())
-                    aingxx = `https://www.mediafire.com/file/zbiljtkba7ws324/%255B%25C9%25A2%25E1%25B4%2580%25E1%25B4%259B%25C9%25AA%25E1%25B4%259B%25E1%25B4%258F%255D_Minecraft_PE_1.17.34.02_Oficial.apk/file`
-             Fg.sendMessage(from, aingxx, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+                    Fg.sendMessage('./[ɢᴀᴛɪᴛᴏ] Minecraft PE 1.17.41.01 Official.apk', MessageType.document, { quoted: mek })
                     break
 
 case 'mc':
