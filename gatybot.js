@@ -81,7 +81,6 @@ const { jadibot, stopjadibot, listjadibot } = require("./libreria/jadibot");
 const _prem = require("./libreria/premium");
 const game = require("./libreria/game");
 const afk = require("./libreria/afk");
-const _claim = require("./libreria/claim");
 //====================[ FIN DE LIBRERIA ]====================//
 
 //New
@@ -119,7 +118,7 @@ const nsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'))
 const _leveling = JSON.parse(fs.readFileSync('./database/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./database/nivel.json'))
 const awgp = JSON.parse(fs.readFileSync('./database/awgp.json'))
-const claim = JSON.parse(fs.readFileSync('./database/claim.json'))
+const _claim = JSON.parse(fs.readFileSync('./database/claim.json'))
 //====================[ FIN DE BASE DE DATOS ]====================//
 
 
@@ -519,7 +518,7 @@ prefix = prefa }}}
       const isOwner = senderNumber == owner || senderNumber == botNumero
       const isMods = mods.includes(senderNumber)
       
-      const isClaimOn = _claim.checkClaimUser(sender)
+      const isClaimOn = _claim.includes(sender)
 
     const isVerify = _user.includes(sender)
     const isAntilink = isGroup ? _antilink.includes(from) : false
@@ -1715,8 +1714,6 @@ console.log(color(time, 'magenta'), color(moment.tz('America/La_Paz').format('HH
    //-----------
 
 _prem.expiredCheck(premium)
-_prem.expiredClaimCheck(claim)
-
 
 //====================================================================================================//
 
@@ -7689,9 +7686,9 @@ break
                     addBalance(sender, claimcoins, balance)
                     const claimexp = Math.floor(Math.random() * 900) + 10000
                     addLevelingXp(sender, claimexp)
-                    const claimz = {id: `${sender.split("@")[0]}@s.whatsapp.net`,claimexpired: Date.now() + toMs('1d') }
-                    claim.push(claimz)
-                    fs.writeFileSync('./database/claim.json', JSON.stringify(claim))
+                    const claimz = {id: `${sender.split("@")[0]}@s.whatsapp.net`,claim: Date.now() + toMs('1d') }
+                    _claim.push(claimz)
+                    fs.writeFileSync('./database/claim.json', JSON.stringify(_claim))
                     reply(`*🎁 RECOMPENSA DIARIA 🎁*
 
 ▢ *Has recibido:*
