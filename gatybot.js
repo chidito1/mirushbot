@@ -519,7 +519,7 @@ prefix = prefa }}}
       const isOwner = senderNumber == owner || senderNumber == botNumero
       const isMods = mods.includes(senderNumber)
       
-      const isClaimOn = _claim.includes(sender)
+      const isClaimOn = _prem.checkClaimUser(sender)
 
     const isVerify = _user.includes(sender)
     const isAntilink = isGroup ? _antilink.includes(from) : false
