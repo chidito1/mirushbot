@@ -7686,7 +7686,7 @@ break
                     addBalance(sender, claimcoins, balance)
                     const claimexp = Math.floor(Math.random() * 900) + 10000
                     addLevelingXp(sender, claimexp)
-                    const claimz = {id: `${sender.split("@")[0]}@s.whatsapp.net`,claim: Date.now() + toMs(1) }
+                    const claimz = {id: `${sender.split("@")[0]}@s.whatsapp.net`,claim: Date.now() + toMs(1d) }
                     _claim.push(claimz)
                     fs.writeFileSync('./database/claim.json', JSON.stringify(_claim))
                     reply(`*🎁 RECOMPENSA DIARIA 🎁*
