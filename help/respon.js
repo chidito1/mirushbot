@@ -78,7 +78,7 @@ const lvlnul = () => {
   return '❎ Tu nivel aun está vacio'
 }
 const fgnsfw = () => {
-  return '❎ Lo siento pero no puedo ejecutar este comando, este grupo no permite contenido +18'
+  return '❎ Lo siento este grupo no permite contenido +18'
 }
 
 module.exports =  { wait, stick, errorfg, group, banf, ownerB, premi, userB, modsB, admin, Badmin, leveloff, lvlnul, fdiama, fgnsfw, gCoinF } 
