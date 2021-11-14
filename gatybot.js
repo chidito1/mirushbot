@@ -5713,7 +5713,7 @@ if(!isVerify) return isUser()
                     })
             break
 
-				case 'ranks':
+		    case 'ranks':
             case 'rangos':
             case 'rango':
             if(!isVerify) return isUser()
@@ -5762,7 +5762,7 @@ Fg.sendMessage(from, fgranks, text, { quoted: mek, contextInfo: {mentionedJid: [
   
 //Leveling 
 
-    case 'leveling':
+case 'leveling':
 case 'nivelación':
     if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -6073,7 +6073,7 @@ if (!isGroup) return reply(group())
 infogp = `「 *INFO DE GRUPO* 」
 ╭──────────────────✾
 │⎔ *🐱Nombre* : ${groupName}
-│⎔ *🪀Se creó el* : ${moment(`${groupMetadata.creation}` * 1000).tz('America/Peru').format('DD/MM/YYYY HH:mm:ss')}
+│⎔ *🪀Se creó el* : ${moment(`${groupMetadata.creation}` * 1000).tz('America/La_Paz').format('DD/MM/YYYY HH:mm:ss')}
 │⎔ *👥Miembros* : ${groupMembers.length}
 │⎔ *🕵🏻‍♂️Admins* : ${groupAdmins.length}
 │⎔ *📮Bienvenida* : ${Welcome_}
@@ -7505,7 +7505,7 @@ if (isBanned) return reply(banf())
             const zommmtoy = zoootoy[Math.floor(Math.random() * (zoootoy.length))]
             ppg = Math.floor(Math.random() * (100000 - 50000 + 1) + 50000)
             addLevelingXp(sender, ppg)
-            if ((zomtoy == '🥑 : 🥑 : 🥑') || (zomtoy == '🍉 : 🍉 : 🍉') || (zomtoy == '🍓 : 🍓 : 🍓') || (zomtoy == '🍎 : 🍎 : 🍎') || (zomtoy == '🍍 : 🍍 : 🍍') || (zomtoy == '🥝 : 🥝 : 🥝') || (zomtoy == '🍑 : 🍑 : 🍑') || (zomtoy == '🥥 : 🥥 : 🥥') || (zomtoy == '🍋 : 🍋 : 🍋') || (zomtoy == '🍐 : 🍐 : 🍐') || (zomtoy == '🍌 : 🍌 : 🍌') || (zomtoy == '🍒 : 🍒 : 🍒') || (zomtoy == '🔔 : 🔔 : 🔔') || (zomtoy == '🍊 : 🍊 : 🍊') || (zomtoy == '🍇 : 🍇 : 🍇')) {
+            if ((zomtoy == '🥑 : 🥑 : 🥑') || (zomtoy == '🍉 : 🍉 : 🍉') || (zomtoy == '🍓 : 🍓 : 🍓') || (zomtoy == '🍎 : 🍎 : 🍎') || (zomtoy == '🍍 : 🍍 : 🍍') || (zomtoy == '🥝 : 🥝 : 🥝') || (zomtoy == '🍑 : 🍑 : 🍑') || (zomtoy == '🥥 : 🥥 : 🥥') || (zomtoy == '🍋 : 🍋 : 🍋') || (zomtoy == '🍐 : 🍐 : 🍐') || (zomtoy == '🍌 : 🍌 : 🍌') || (zomtoy == '🍒 : ?? : 🍒') || (zomtoy == '🔔 : 🔔 : 🔔') || (zomtoy == '🍊 : 🍊 : 🍊') || (zomtoy == '🍇 : 🍇 : 🍇')) {
             var vitr = "Usted ganó!!!"
             } else {
             var vitr = "Usted perdió..."
@@ -7635,28 +7635,29 @@ break
 
 
 ///===============NSFW ========
-case 'nsfw':
-case '+18':
-    if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-					if (!isGroup) return reply(group())
-		           if (!isGroupAdmins && !isOwner) return reply(admin())
-				
-					if (args.length < 1) return reply(`🔞 *+18*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
-if (Number(args[0]) === 'on') {
-if (isNsfw) return reply('✳️Ya está activado!')
-nsfw.push(from)
-fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
-reply('✅  Contenido *+🔞* habilitado en el grupo')
-} else if (Number(args[0]) === 'off') {
-nsfw.splice(from, 1)
-fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
-reply('✅  Contenido *+🔞* Deshabilitado en el grupo')
-} else {
-reply(`🔞 *CONTENIDO +18*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
-}
-break
 
+                case 'nsfw':
+                case '+18':
+				if(!isVerify) return isUser()
+				if (isBanned) return reply(banf())
+				if (!isGroup) return reply(group())
+					if (!isGroupAdmins && !isOwner) return reply(admin())
+					if (!isBotGroupAdmins) return reply(Badmin())
+					if (args.length < 1) return reply(`✳️ *CONTENIDO +18*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					if ((args[0]) === 'on') {
+						if (isNsfw) return reply('✳️ Nsfw ya está activo')
+						nsfw.push(from)
+						fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
+						reply(`✅ Se activo el *nsfw* en este grupo`)
+					} else if ((args[0]) === 'off') {
+						if (!isNsfw) return reply('✳️ Nsfw ya está desactivado')
+						nsfw.splice(from, 1)
+						fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
+						reply(`✅ Se desactivo el *nsfw* en este grupo`)
+					} else {
+						reply(`✳️ *CONTENIDO +18*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					}
+					break
 
 ///---------
 case 'topnivel':
