@@ -7221,7 +7221,7 @@ giveLimit(tagadd1, limm, limit)
 adddiamond = `「 *TRANSFERENCIA EXITOSA* 」
 ╭──────────────────✾
 ├ *🏦De* : @${sender.split("@")[0]}
-├ *💱A* : @${q.split("@")[0]}
+├ *💱A* : ${q.split("@s.whatsapp.net")[0]}
 ├ *💎Total* : +${limm} Diamantes
 ╰──────────────────✾
 
