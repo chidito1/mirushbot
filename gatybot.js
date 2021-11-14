@@ -1359,6 +1359,57 @@ const loli = [
    "https://images3.memedroid.com/images/UPLOADED563/618c3f7fcbc75.jpeg"
 ]
 
+const nsfw_loli = [
+   "https://img-12.poringa.net/poringa/img/7/E/2/9/A/2/Suputamadrexd/D87.jpg",
+   "https://img-12.poringa.net/poringa/img/8/8/9/B/C/E/Suputamadrexd/317.jpg",
+   "https://img-12.poringa.net/poringa/img/9/D/5/8/B/E/Suputamadrexd/406.jpg",
+   "https://img-12.poringa.net/poringa/img/B/A/1/F/3/4/Suputamadrexd/6E3.jpg",
+   "https://img-12.poringa.net/poringa/img/C/5/4/F/A/F/Suputamadrexd/CF6.jpg",
+   "https://img-12.poringa.net/poringa/img/8/1/A/1/8/A/Suputamadrexd/A8F.jpg",
+   "https://img-12.poringa.net/poringa/img/5/E/E/B/D/9/Suputamadrexd/A38.jpg",
+   "https://img-12.poringa.net/poringa/img/5/E/1/4/8/4/Suputamadrexd/096.jpg",
+   "https://img-12.poringa.net/poringa/img/E/2/5/6/3/C/Suputamadrexd/496.jpg",
+   "https://img-12.poringa.net/poringa/img/6/0/3/1/B/E/Suputamadrexd/0C2.jpg",
+   "https://img-12.poringa.net/poringa/img/1/C/6/1/C/F/Suputamadrexd/6B1.jpg",
+   "https://img-12.poringa.net/poringa/img/F/F/C/1/A/E/Suputamadrexd/2EE.jpg",
+   "https://img-12.poringa.net/poringa/img/B/5/B/5/6/C/Suputamadrexd/8DF.jpg",
+   "https://img-12.poringa.net/poringa/img/6/8/0/C/2/4/Suputamadrexd/A26.jpg",
+   "https://img-12.poringa.net/poringa/img/6/F/2/C/4/4/Suputamadrexd/80A.jpg",
+   "https://img-12.poringa.net/poringa/img/4/E/C/2/E/3/Suputamadrexd/6F7.jpg",
+   "https://img-12.poringa.net/poringa/img/F/8/6/8/5/3/Suputamadrexd/F54.jpg",
+   "https://img-12.poringa.net/poringa/img/9/6/5/3/7/8/Suputamadrexd/D34.jpg"
+]
+
+const nsfw_waifu = [
+   "https://img-12.poringa.net/poringa/img/8/3/C/5/4/3/punisher2017/C6B.jpg",
+   "https://img-12.poringa.net/poringa/img/9/8/B/C/7/9/punisher2017/AB5.jpg",
+   "https://img-12.poringa.net/poringa/img/A/6/D/F/D/7/punisher2017/C54.jpg",
+   "https://img-12.poringa.net/poringa/img/9/7/D/A/F/3/punisher2017/355.jpg",
+   "https://img-12.poringa.net/poringa/img/D/F/F/9/F/5/punisher2017/82E.jpg",
+   "https://img-12.poringa.net/poringa/img/8/3/B/D/8/0/punisher2017/305.jpg",
+   "https://img-12.poringa.net/poringa/img/D/4/B/F/D/1/punisher2017/319.jpg",
+   "https://img-12.poringa.net/poringa/img/4/0/3/9/8/9/punisher2017/3CB.jpg",
+   "https://img-12.poringa.net/poringa/img/6/4/B/0/4/F/punisher2017/67B.jpg",
+   "https://img-12.poringa.net/poringa/img/F/3/F/8/4/6/punisher2017/00A.jpg",
+   "https://img-12.poringa.net/poringa/img/8/D/7/8/0/3/punisher2017/C28.jpg",
+   "https://img-12.poringa.net/poringa/img/6/7/4/A/D/B/punisher2017/248.jpg",
+   "https://i.waifu.pics/D99m3Bl.jpg",
+   "https://img-12.poringa.net/poringa/img/C/A/E/A/F/0/punisher2017/901.jpg",
+   "https://i.waifu.pics/_09oawn.jpg",
+   "https://i.waifu.pics/c911IZa.jpg",
+   "https://i.waifu.pics/eYGN-kx.jpg",
+   "https://i.waifu.pics/EkGjZVC.jpg",
+   "https://i.waifu.pics/-pn1uiI.jpg",
+   "https://i.waifu.pics/JPtPHHr.com_0371.jpg",
+   "https://i.waifu.pics/OLryhT9.png",
+   "https://i.waifu.pics/0FRrqpH.jpg",
+   "https://i.waifu.pics/v-zdPb4.png",
+   "https://i.waifu.pics/1iGvZCn.png",
+   "https://i.waifu.pics/t17Oixv.jpg",
+   "https://i.waifu.pics/lHUFq~j.jpg",
+   "https://i.waifu.pics/JGwqnP4.jpg"
+]
+
 const neko = [
    "xxx",
    "xxx",
@@ -2466,6 +2517,11 @@ _*<IMAGENES/>*_
 • 式 ⃟🌅 _${prefix}girl_
 • 式 ⃟🌅 _${prefix}man_
 • 式 ⃟🌅 _${prefix}rip_
+
+_*<NSFW/>*_
+
+• 式 ⃟🔞 _${prefix}nsfw_waifu_
+• 式 ⃟🔞 _${prefix}nsfw_loli_
 
 _*<GRUPOS/>*_
 
@@ -5029,6 +5085,35 @@ Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwne
             limitAdd(sender, limit)
           break
      
+        case 'nsfw_loli':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+let nsfw_loliz = nsfw_loli[Math.floor(Math.random() * nsfw_loli.length)]
+      nsfw_lolix = await getBuffer(nsfw_loliz)
+Fg.sendMessage(from, nsfw_lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${nsfw_loliz}\n\n✅ Aqui tienes *7u7*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
+            })
+            limitAdd(sender, limit)
+          break
+          
+        case 'waifu':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+let nsfw_waifuz = nsfw_waifu[Math.floor(Math.random() * nsfw_waifu.length)]
+      nsfw_waifux = await getBuffer(nsfw_waifuz)
+Fg.sendMessage(from, nsfw_waifux, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${nsfw_waifuz}\n\n✅ Aqui tienes *Onii chan*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
+            })
+            limitAdd(sender, limit)
+          break
         
         //https://nekos.life/api/v2/img/kemonomimi
         //https://nekos.life/api/v2/img/neko
