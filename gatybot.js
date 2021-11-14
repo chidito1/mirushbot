@@ -7200,6 +7200,32 @@ break
 
 //******************** 》DIAMANTES《 ********************\\
 
+case 'transferdiamond':
+case 'dardiamante':
+case 'transferirdiamante':
+if (!isVerify) return isUser()
+if (isBanned) return reply(banf())
+if (q.includes('-')) return reply(`❎ No use  -`)
+const useradddi = `51940617554@s.whatsapp.net`
+if (!q) return reply(`✳️ Uso del comando *${prefix +  command}* @tag|cantidad\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]} 5000`)
+lim = q.split(" ")
+limm = q.split(" ")[1]
+if (isNaN(limm)) return await reply(`*❎ Error de transferencia*\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]}|5000`)
+if (limm < 50 ) return reply(`✳️ La transferencia mínima es de *50 💎Diamantes*`)
+if (getBalance(sender, balance) < limm) return reply(`❎ No tienes suficientes *💎Diamantes* para realizar la transferencia`)
+const tagadd1 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
+//giveLimit(tag1, limm, limit)
+adddiamond = `「 *TRANSFERENCIA EXITOSA* 」
+╭──────────────────✾
+├ *🏦De* : @${sender.split("@")[0]}
+├ *💱A* : @${tagadd1}
+├ *💎Total* : +${tujuan} Diamantes
+╰──────────────────✾
+
+*📌Nota:* Puedes revisar tus *💎Diamantes* con el comando *${prefix}cartera*`
+Fg.sendMessage(from, adddiamond, text, { quoted: mek, contextInfo: {mentionedJid: [sender, tagadd1] }})
+break
+
 case 'shop':
 case 'tienda':
 	 if(!isVerify) return isUser()
