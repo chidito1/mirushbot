@@ -6073,7 +6073,7 @@ if (!isGroup) return reply(group())
 infogp = `「 *INFO DE GRUPO* 」
 ╭──────────────────✾
 │⎔ *🐱Nombre* : ${groupName}
-│⎔ *🪀Se creó el* : ${fecha2(`${groupMetadata.creation}`}
+│⎔ *🪀Se creó el* : ${moment(`${groupMetadata.creation}` * 1000).tz('America/Peru').format('DD/MM/YYYY HH:mm:ss')}
 │⎔ *👥Miembros* : ${groupMembers.length}
 │⎔ *🕵🏻‍♂️Admins* : ${groupAdmins.length}
 │⎔ *📮Bienvenida* : ${Welcome_}
