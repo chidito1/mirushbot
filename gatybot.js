@@ -7221,7 +7221,7 @@ giveLimit(tagadd1, limm, limit)
 adddiamond = `「 *TRANSFERENCIA EXITOSA* 」
 ╭──────────────────✾
 ├ *🏦De* : @${sender.split("@")[0]}
-├ *💱A* : @${lim.split("@s.whatsapp.net")[0]}
+├ *💱A* : @${q.split("@s.whatsapp.net")[0]}
 ├ *💎Total* : +${limm} Diamantes
 ╰──────────────────✾
 
@@ -7307,7 +7307,7 @@ diafg = `
 「 *NOTA DE PAGO* 」
 ╭──────────────────✾
 ├ *🛒Compra nominal* : ${q}
-├ *💰BotCoins restante* : ${getBalance(sender, balance)}
+├ *??BotCoins restante* : ${getBalance(sender, balance)}
 ├ *💎Diamantes* : ${getLimit(sender, limitCount, limit)}/${limitCount}
 ╰──────────────────✾`
 reply(diafg)
