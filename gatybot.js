@@ -7215,7 +7215,8 @@ if (limm < 50 ) return reply(`✳️ La transferencia mínima es de *50 💎Diam
 if (getBalance(sender, balance) < limm) return reply(`❎ No tienes suficientes *💎Diamantes* para realizar la transferencia`)
 desdia = `-${limm}`
 const tagadd1 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
-giveLimit(sender, desdia, limit)
+const tagadd2 = `${sender.split("@")[0]}@s.whatsapp.net`
+giveLimit(tagadd2, desdia, limit)
 giveLimit(tagadd1, limm, limit)
 adddiamond = `「 *TRANSFERENCIA EXITOSA* 」
 ╭──────────────────✾
