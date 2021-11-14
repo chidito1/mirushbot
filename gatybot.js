@@ -5073,7 +5073,6 @@ case 'mujer':
 case 'loli':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isNsfw) return reply(fgnsfw())
     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
       reply(wait()) 
 let loliz = loli[Math.floor(Math.random() * loli.length)]
@@ -5089,7 +5088,7 @@ Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwne
         case 'nsfw_loli':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-  if (isNsfw) return reply(fgnsfw())
+  if (!isNsfw) return reply(fgnsfw())
     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
       reply(wait()) 
 let nsfw_loliz = nsfw_loli[Math.floor(Math.random() * nsfw_loli.length)]
@@ -5102,9 +5101,10 @@ Fg.sendMessage(from, nsfw_lolix, image, {quoted: mek, caption: `${isPremium && i
             limitAdd(sender, limit)
           break
           
-        case 'waifu':
+        case 'nsf_waifu':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
+  if (!isNsfw) return reply(fgnsfw())
     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
       reply(wait()) 
 let nsfw_waifuz = nsfw_waifu[Math.floor(Math.random() * nsfw_waifu.length)]
