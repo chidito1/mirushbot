@@ -7203,6 +7203,7 @@ break
 case 'transferdiamond':
 case 'dardiamante':
 case 'transferirdiamante':
+case 'transferird':
 if (!isVerify) return isUser()
 if (isBanned) return reply(banf())
 if (q.includes('-')) return reply(`❎ No use  -`)
@@ -7215,13 +7216,12 @@ if (limm < 50 ) return reply(`✳️ La transferencia mínima es de *50 💎Diam
 if (getLimit(sender, limitCount, limit) < limm) return reply(`❎ No tienes suficientes *💎Diamantes* para realizar la transferencia`)
 desdia = `-${limm}`
 const tagadd1 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
-const tagadd2 = `${q.split("@")[0]}@s.whatsapp.net`
-giveLimit(tagadd2, desdia, limit)
+giveLimit(sender, desdia, limit)
 giveLimit(tagadd1, limm, limit)
 adddiamond = `「 *TRANSFERENCIA EXITOSA* 」
 ╭──────────────────✾
 ├ *🏦De* : @${sender.split("@")[0]}
-├ *💱A* : @${tagadd2.split("@")[0]}
+├ *💱A* : @${tagadd1.split("@")[0]}
 ├ *💎Total* : +${limm} Diamantes
 ╰──────────────────✾
 
