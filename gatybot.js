@@ -7207,7 +7207,7 @@ if (!isVerify) return isUser()
 if (isBanned) return reply(banf())
 if (q.includes('-')) return reply(`❎ No use  -`)
 const useradddi = `51940617554@s.whatsapp.net`
-if (!q) return reply(`✳️ Uso del comando *${prefix +  command}* @tag|cantidad\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]} 5000`)
+if (!q) return Fg.sendMessage(from, `✳️ Uso del comando *${prefix +  command}* @tag|cantidad\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]} 5000`, text, { quoted: mek, contextInfo: {mentionedJid: [useradddi] }})
 lim = q.split(" ")
 limm = q.split(" ")[1]
 if (isNaN(limm)) return await reply(`*❎ Error de transferencia*\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]}|5000`)
@@ -7219,7 +7219,7 @@ adddiamond = `「 *TRANSFERENCIA EXITOSA* 」
 ╭──────────────────✾
 ├ *🏦De* : @${sender.split("@")[0]}
 ├ *💱A* : @${tagadd1}
-├ *💎Total* : +${tujuan} Diamantes
+├ *💎Total* : +${limm} Diamantes
 ╰──────────────────✾
 
 *📌Nota:* Puedes revisar tus *💎Diamantes* con el comando *${prefix}cartera*`
