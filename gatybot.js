@@ -5073,6 +5073,7 @@ case 'mujer':
 case 'loli':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
+  if (isNsfw) return reply(fgnsfw())
     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
       reply(wait()) 
 let loliz = loli[Math.floor(Math.random() * loli.length)]
@@ -5088,6 +5089,7 @@ Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwne
         case 'nsfw_loli':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
+  if (isNsfw) return reply(fgnsfw())
     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
       reply(wait()) 
 let nsfw_loliz = nsfw_loli[Math.floor(Math.random() * nsfw_loli.length)]
