@@ -5101,7 +5101,7 @@ Fg.sendMessage(from, nsfw_lolix, image, {quoted: mek, caption: `${isPremium && i
             limitAdd(sender, limit)
           break
           
-        case 'nsf_waifu':
+        case 'nsfw_waifu':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (!isNsfw) return reply(fgnsfw())
