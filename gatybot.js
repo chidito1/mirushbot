@@ -7642,7 +7642,6 @@ break
 				if (isBanned) return reply(banf())
 				if (!isGroup) return reply(group())
 					if (!isGroupAdmins && !isOwner) return reply(admin())
-					if (!isBotGroupAdmins) return reply(Badmin())
 					if (args.length < 1) return reply(`✳️ *CONTENIDO +18*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
 					if ((args[0]) === 'on') {
 						if (isNsfw) return reply('✳️ Nsfw ya está activo')
