@@ -7212,16 +7212,16 @@ lim = q.split(" ")
 limm = q.split(" ")[1]
 if (isNaN(limm)) return await reply(`*❎ Error de transferencia*\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]}|5000`)
 if (limm < 50 ) return reply(`✳️ La transferencia mínima es de *50 💎Diamantes*`)
-if (getLimit(sender, balance) < limm) return reply(`❎ No tienes suficientes *💎Diamantes* para realizar la transferencia`)
+if (getLimitgetLimit(sender, limitCount, limit) < limm) return reply(`❎ No tienes suficientes *💎Diamantes* para realizar la transferencia`)
 desdia = `-${limm}`
 const tagadd1 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
-const tagadd2 = `${sender.split("@")[0]}@s.whatsapp.net`
+const tagadd2 = `${q.split("@")[0]}@s.whatsapp.net`
 giveLimit(tagadd2, desdia, limit)
 giveLimit(tagadd1, limm, limit)
 adddiamond = `「 *TRANSFERENCIA EXITOSA* 」
 ╭──────────────────✾
 ├ *🏦De* : @${sender.split("@")[0]}
-├ *💱A* : ${q.split("@s.whatsapp.net")[0]}
+├ *💱A* : @${tagadd2.split("@")[0]}
 ├ *💎Total* : +${limm} Diamantes
 ╰──────────────────✾
 
