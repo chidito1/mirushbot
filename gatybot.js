@@ -6073,7 +6073,7 @@ if (!isGroup) return reply(group())
 infogp = `「 *INFO DE GRUPO* 」
 ╭──────────────────✾
 │⎔ *🐱Nombre* : ${groupName}
-│⎔ *🪀Se creó el* : ${moment(`${groupMetadata.creation}` * 1000).tz('America/La_Paz').format('DD/MM/YYYY HH:mm:ss')}
+│⎔ *🪀Se creó el* : ${fecha2(`${groupMetadata.creation}`}
 │⎔ *👥Miembros* : ${groupMembers.length}
 │⎔ *🕵🏻‍♂️Admins* : ${groupAdmins.length}
 │⎔ *📮Bienvenida* : ${Welcome_}
@@ -6085,7 +6085,7 @@ infogp = `「 *INFO DE GRUPO* 」
 ▢ *📌Descripción del grupo* :
 ${groupDesc}`
 buffer = await getBuffer(ppUrl)
-Fg.sendMessage(from, buffer, image, {quoted: mek,caption: infogp })
+Fg.sendMessage(from, buffer, image, {quoted: mek, caption: infogp })
 break
 
 //-- Dar admin 
