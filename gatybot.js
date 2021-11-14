@@ -2274,7 +2274,7 @@ const sendMessageFromContent = async(jid, message, options) => {
              }
 
 //>> Bot modo privado y grupo muteado
-    if (!isOwner && banChats && isCmd === true) return reply('✳️ Bot en modo privado, todas las funciones bloqueadas')
+    if (!isOwner && !isMods && banChats && isCmd === true) return reply('✳️ Bot en modo privado, todas las funciones bloqueadas')
     if (!isOwner && isBanchat && isCmd === true) return reply('✳️ Grupo muteado, todas las funciones bloqueadas')
    
 //====================================================================================================//
