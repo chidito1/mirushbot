@@ -3971,8 +3971,22 @@ if (!isGroupAdmins) return reply(admin())
 if (!isBotGroupAdmins) return reply(Badmin())
  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
 			const zadd = mek.message.extendedTextMessage.contextInfo.participant
+			try {
 		    Fg.groupAdd(from, [zadd])
 		    reply(`✅ Usuario añadido con éxito`)
+		} catch (e) {
+						console.log('Error :', e)
+						teks1 = `✳️ No responda a este mensaje por que será bloqueado automáticamente\n\n${grupomc}`
+					var options = {
+					text: teks1,
+					contextInfo: {mentionedJid: [zadd]},
+					}
+					Fg.sendMessage(`${zadd.split("@s.whatsapp.net")[0]}@s.whatsapp.net`, options, text, {quoted: mek})
+					setTimeout( () => {
+                    Fg.modifyChat(`${zadd.split("@s.whatsapp.net")[0]}@s.whatsapp.net`, ChatModification.delete)
+                  }, 10000)
+						reply(`❎ No se pudo añadir a usuario @${zadd.split("@s.whatsapp.net")[0]} así que le envié una invitación`)
+					}
 break
 
       case 'add':
