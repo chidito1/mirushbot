@@ -3952,19 +3952,10 @@ reply(`✅ Ordenes recibidas, emitidas`)
 break
 
 case 'okick':
- if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-if (!isGroup) return reply(group())
-if (!isGroupAdmins) return reply(admin())
-if (!isBotGroupAdmins) return reply(Badmin())
-if (mek.message.extendedTextMessage != undefined){
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
-kickp = `${mentioned}@s.whatsapp.net`
-Fg.groupRemove(from, [kickp])
-reply(`✅ Ordenes recibidas, emitidas`)
-} else {
-reply('✳️ Responde a un mensaje')
-}
+ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
+			kick = mek.message.extendedTextMessage.contextInfo.participant
+		    Fg.groupRemove(from, [kick])
+		    reply('*Usuario eliminado con éxito*')
 break
 
       case 'add':
@@ -6155,8 +6146,8 @@ case 'getbio':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 if (mek.message.extendedTextMessage != undefined){
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-var p = await Fg.getStatus(`${mentioned}@s.whatsapp.net`, MessageType.text)
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+var p = await Fg.getStatus(`${mentioned}`, MessageType.text)
 reply(p.status)
 if (p.status == 401) {
 reply("❎ Nose encontro la información del usuario")
