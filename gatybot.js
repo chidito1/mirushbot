@@ -3952,15 +3952,17 @@ reply(`✅ Ordenes recibidas, emitidas`)
 break
 
 case 'okick':
-			 if (!isVerify) return reply(userB(prefix))
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
-if (!isGroup) return reply(group())
-if (!isGroupAdmins) return reply(admin())
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('✳️ Responde a un mensaje!')
-			kick = mek.message.extendedTextMessage.contextInfo.participant
-		    Fg.groupRemove(from, [kick])
-						reply('✅ Ordenes recibidas, emitidas')
-                    break
+if (mek.message.extendedTextMessage != undefined){
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
+kickp = `${mentioned}@s.whatsapp.net`
+Fg.groupRemove(from, [kickp])
+reply(`✅ Ordenes recibidas, emitidas`)
+} else {
+reply('✳️ Responde a un mensaje')
+}
+break
 
       case 'add':
 if(!isVerify) return isUser()
@@ -6203,7 +6205,6 @@ case 'profile':
 
 					infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
 				    infost = infost.status == 401 ? '' : infost.status
-				    num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
 
 					 profile = `「 *PERFIL* 」
 ╭──────────────────✾
@@ -6211,7 +6212,6 @@ case 'profile':
 │⎔ *🔮Tag* : @${sender.split("@")[0]}
 │⎔ *#️⃣Numero* : wa.me/${sender.split("@")[0]}
 │⎔ *📇Info* : ${infost}
-│⎔ *📮Info Número* : ${num.data.country_code} - ${num.data.carrier.type} - ${num.data.carrier.name}
 │⎔ *🥇Rango* : ${role}
 │⎔ *⭐Premium* : ${prem_}
 │⎔ *🕐Expira* : ${isPremium ? 'Ilimitado' : `${prmm}`}
@@ -7207,7 +7207,7 @@ case 'transferird':
 if (!isVerify) return isUser()
 if (isBanned) return reply(banf())
 if (q.includes('-')) return reply(`❎ No use  -`)
-const useradddi = `51988050859@s.whatsapp.net`
+const useradddi = `0@s.whatsapp.net`
 if (!q) return Fg.sendMessage(from, `✳️ Uso del comando *${prefix +  command}* @tag|cantidad\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]} 5000`, text, { quoted: mek, contextInfo: {mentionedJid: [useradddi] }})
 lim = q.split(" ")
 limm = q.split(" ")[1]
@@ -7329,8 +7329,7 @@ const total = koinPerlimit * q
 if (getBalance(sender,balance) <= total) return reply(`❎ Lo siento, no tienes suficientes Coins💰 para comprar *${q}* 🎰GameCoins`)
 kurangBalance(sender, total, balance)
 givegame(sender, q, glimit)
-gcoi = `
-「 *NOTA DE PAGO* 」
+gcoi = `「 *NOTA DE PAGO* 」
 ╭──────────────────✾
 ├ *🛒Compra nominal* : ${q}
 ├ *💰BotCoins restante* : ${getBalance(sender, balance)}
