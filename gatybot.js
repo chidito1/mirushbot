@@ -3952,10 +3952,27 @@ reply(`✅ Ordenes recibidas, emitidas`)
 break
 
 case 'okick':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
+if (!isGroupAdmins) return reply(admin())
+if (!isBotGroupAdmins) return reply(Badmin())
  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
 			const zkick = mek.message.extendedTextMessage.contextInfo.participant
 		    Fg.groupRemove(from, [zkick])
-		    reply('*Usuario eliminado con éxito*')
+		    reply(`✅ Ordenes recibidas, emitidas`)
+break
+
+case 'oadd':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
+if (!isGroupAdmins) return reply(admin())
+if (!isBotGroupAdmins) return reply(Badmin())
+ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
+			const zadd = mek.message.extendedTextMessage.contextInfo.participant
+		    Fg.groupAdd(from, [zadd])
+		    reply(`✅ Usuario añadido con éxito`)
 break
 
       case 'add':
