@@ -3953,8 +3953,8 @@ break
 
 case 'okick':
  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
-			kick = mek.message.extendedTextMessage.contextInfo.participant
-		    Fg.groupRemove(from, [kick])
+			const zkick = mek.message.extendedTextMessage.contextInfo.participant
+		    Fg.groupRemove(from, [zkick])
 		    reply('*Usuario eliminado con éxito*')
 break
 
