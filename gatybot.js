@@ -3952,8 +3952,11 @@ reply(`✅ Ordenes recibidas, emitidas`)
 break
 
 case 'okick':
-if(!isVerify) return isUser()
+ if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
+if (!isGroupAdmins) return reply(admin())
+if (!isBotGroupAdmins) return reply(Badmin())
 if (mek.message.extendedTextMessage != undefined){
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 kickp = `${mentioned}@s.whatsapp.net`
@@ -6152,8 +6155,8 @@ case 'getbio':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 if (mek.message.extendedTextMessage != undefined){
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
-var p = await Fg.getStatus(`${mentioned}`, MessageType.text)
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+var p = await Fg.getStatus(`${mentioned}@s.whatsapp.net`, MessageType.text)
 reply(p.status)
 if (p.status == 401) {
 reply("❎ Nose encontro la información del usuario")
