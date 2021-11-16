@@ -7279,10 +7279,10 @@ if (!isVerify) return isUser()
 if (isBanned) return reply(banf())
 if (q.includes('-')) return reply(`❎ No use  -`)
 const useradddi = `0@s.whatsapp.net`
-if (!q) return Fg.sendMessage(from, `✳️ Uso del comando *${prefix +  command}* @tag|cantidad\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]} 5000`, text, { quoted: mek, contextInfo: {mentionedJid: [useradddi] }})
+if (!q) return Fg.sendMessage(from, `✳️ Uso del comando *${prefix +  command}* @tag cantidad\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]} 50`, text, { quoted: mek, contextInfo: {mentionedJid: [useradddi] }})
 lim = q.split(" ")
 limm = q.split(" ")[1]
-if (isNaN(limm)) return await reply(`*❎ Error de transferencia*\n\n*📌Ejemplo :* ${prefix + command} @${useradddi.split("@s.whatsapp.net")[0]}|5000`)
+if (isNaN(limm)) return await reply(`*❎ Error de transferencia*\n\n*📌Ejemplo :* ${prefix + command} @tag 50`)
 if (limm < 50 ) return reply(`✳️ La transferencia mínima es de *50 💎Diamantes*`)
 if (getLimit(sender, limitCount, limit) < limm) return reply(`❎ No tienes suficientes *💎Diamantes* para realizar la transferencia`)
 desdia = `-${limm}`
