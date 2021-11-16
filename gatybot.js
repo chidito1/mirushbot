@@ -1410,6 +1410,42 @@ const nsfw_waifu = [
    "https://i.waifu.pics/JGwqnP4.jpg"
 ]
 
+const hentai = [
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/cover.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/1.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/2.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/3.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/4.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/5.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/6.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/7.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/8.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/9.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/10.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/11.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/12.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/13.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/14.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/15.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/16.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/17.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/18.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/19.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/20.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/21.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/22.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/23.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/24.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/25.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/26.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1132090/27.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1124453/thumb.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1481363/thumb.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1402139/thumb.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1136471/thumb.jpg", 
+  "https://external-content.duckduckgo.com/iu/?u=https://i.nhentai.net/galleries/1982420/thumb.jpg"
+]
+
 const neko = [
    "xxx",
    "xxx",
@@ -2520,6 +2556,7 @@ _*<IMAGENES/>*_
 
 _*<NSFW/>*_
 
+• 式 ⃟🔞 _${prefix}hentai_
 • 式 ⃟🔞 _${prefix}nsfw_waifu_
 • 式 ⃟🔞 _${prefix}nsfw_loli_
 
@@ -2534,6 +2571,7 @@ _*<GRUPOS/>*_
 • 式 ⃟👥 _${prefix}online_
 • 式 ⃟👥 _${prefix}kick_
 • 式 ⃟👥 _${prefix}okick_
+• 式 ⃟👥 _${prefix}oadd_
 • 式 ⃟👥 _${prefix}staff_
 • 式 ⃟👥 _${prefix}dueñogp_
 • 式 ⃟👥 _${prefix}setdesc_
@@ -5097,6 +5135,22 @@ if(!isVerify) return isUser()
 let loliz = loli[Math.floor(Math.random() * loli.length)]
       lolix = await getBuffer(loliz)
 Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${loliz}\n\n✅ Aqui tienes *Onii chan*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
+            })
+            limitAdd(sender, limit)
+          break
+     
+case 'hentai':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (!isNsfw) return reply(fgnsfw())
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+let hentaiz = hentai[Math.floor(Math.random() * hentai.length)]
+      hentaix = await getBuffer(hentaiz)
+Fg.sendMessage(from, hentaix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${hentaiz}\n\n✅ Aqui tienes *7u7*`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
