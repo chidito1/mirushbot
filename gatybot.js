@@ -7378,9 +7378,9 @@ bal = `❏ *Nombre* : @${getcartera.split("@")[0]}
 
 「 *BALANCE* 」
 ╭──────────────────✾
-├ *💎Diamantes* : ${isPremium ? 'Ilimitado' : `${getLimit(getcartera, limitCount, limit)}/${limitCount}`}
-├ *🎰GameCoins* : ${isPremium ? 'Ilimitado' : `${cekGLimit(getcartera, gcount, glimit)}/${gcount}`}
-├ *💰BotCoins* : ${isPremium ? 'Ilimitado' : `${getBalance(getcartera, balance)}`}
+├ *💎Diamantes* : ${getLimit(getcartera, limitCount, limit)}/${limitCount}
+├ *🎰GameCoins* : ${cekGLimit(getcartera, gcount, glimit)}/${gcount}
+├ *💰BotCoins* : ${getBalance(getcartera, balance)}
 ╰──────────────────✾
 *📌NOTA:* 
 Puedes comprar 💎Diamantes usando *${prefix}buy*
