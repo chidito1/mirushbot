@@ -2517,9 +2517,11 @@ _*<ECONOMÍA/>*_
 
 • 式 ⃟🪙 _${prefix}shop_
 • 式 ⃟🪙 _${prefix}toplevel_
-• 式 ⃟🪙 _${prefix}bal_
-• 式 ⃟🪙 _${prefix}buy (compra 💎)_ 
-• 式 ⃟🪙 _${prefix}buygcoin (compra 🎰)_ 
+• 式 ⃟🪙 _${prefix}cartera_
+• 式 ⃟🪙 _${prefix}getcartera_ (@tag)
+• 式 ⃟🪙 _${prefix}buy (compra 💎)_
+• 式 ⃟🪙 _${prefix}buygcoin (compra 🎰)_
+• 式 ⃟🪙 _${prefix}transferd_
 • 式 ⃟🪙 _${prefix}adddiama_
 • 式 ⃟🪙 _${prefix}addgcoin_
 • 式 ⃟🪙 _${prefix}claim_
@@ -2534,7 +2536,7 @@ _*<DIVERSIÓN/>*_
 • 式 ⃟🎲 _${prefix}meme_
 • 式 ⃟🎲 _${prefix}ppt_
 • 式 ⃟🎲 _${prefix}topgay_
-• 式 ⃟🎲 _${prefix}ttc_ <@tag>
+• 式 ⃟🎲 _${prefix}ttc_ (@tag)
 • 式 ⃟🎲 _${prefix}delttc_
 • 式 ⃟🎲 _${prefix}mates_
 • 式 ⃟🎲 _${prefix}simi_
@@ -4701,6 +4703,7 @@ break
      		.catch(e => console.log(e))
      limitAdd(sender, limit)
      		break
+     
      case 'tiktokaudio':
  if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -4836,6 +4839,7 @@ _📤 El video se está enviando, si no llega descargue por el link_`
           limitAdd(sender, limit)
         break;
       //******************** 》 SEARCH 《 ********************\\
+      
 case 'ytsearch':
 case 'ytbuscar':
 if(!isVerify) return isUser()
@@ -4998,14 +5002,15 @@ if (args.length < 1) return reply(`✳️ Ingrese el mensaje para buscar\n\n*�
         }
         break;
 
-     case 'covid':
+case 'covid':
 case 'covid19':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-if (!q) return reply(`✳️ Nombre de un país \n\n📌 Ejemplo : ${prefix + command} Argentina`)
+if (!q) return reply(`✳️ Nombre de un país \n\n📌 Ejemplo : ${prefix + command} Peru`)
 cvd = await fetchJson(`http://zekais-api.herokuapp.com/corona?country=${q}`)
 if (cvd.error) return reply(`❎ El país ${q} no se encontró`)
+if (cvd = "undefined") return reply(`❎ El país *${q}* no se encontró\n\nTen en cuenta que no debes colocar tildes\n\n*📌Ejemplo:* ${prefix + command} Peru`)
 copid = `❒ *「 Covid ${q} 」* ❒ 
 
 ‣ *Total de casos :* _${cvd.result.total_case}_
@@ -7276,6 +7281,7 @@ case 'transferdiamond':
 case 'dardiamante':
 case 'transferirdiamante':
 case 'transferird':
+case 'transferd':
 if (!isVerify) return isUser()
 if (isBanned) return reply(banf())
 if (q.includes('-')) return reply(`❎ No use  -`)
@@ -8274,7 +8280,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   }, 5000)
       setTimeout( () => {
                   Fg.modifyChat(from, ChatModification.delete)
-                  }, 10000)
+                  }, 15000)
                   
     }
 } catch (e) { 
