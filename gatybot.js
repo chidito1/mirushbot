@@ -7360,7 +7360,33 @@ Y para comprar 🎰GameCoins *${prefix}buygcoin*`
 Fg.sendMessage(from, bal, text, { quoted: mek, contextInfo: {mentionedJid: [sender] }})
 break
 
+case 'getdiamond':
+case 'getdiamonds': 
+case 'getdiamantes': 
+case 'getdiamantes': 
+case 'getbal':
+case 'getbalance':
+case 'getdinero':
+case 'getcoins':
+case 'getcoin':
+case 'getcartera':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (!q) return reply(`✳️ Etiqueta a alguien del grupo\n\n*📌Ejemplo:* ${prefix + command} @tag`)
+const getcartera = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
+bal = `❏ *Nombre* : @${getcartera.split("@")[0]}
 
+「 *BALANCE* 」
+╭──────────────────✾
+├ *💎Diamantes* : ${isPremium ? 'Ilimitado' : `${getLimit(getcartera, limitCount, limit)}/${limitCount}`}
+├ *🎰GameCoins* : ${isPremium ? 'Ilimitado' : `${cekGLimit(getcartera, gcount, glimit)}/${gcount}`}
+├ *💰BotCoins* : ${isPremium ? 'Ilimitado' : `${getBalance(getcartera, balance)}`}
+╰──────────────────✾
+*📌NOTA:* 
+Puedes comprar 💎Diamantes usando *${prefix}buy*
+Y para comprar 🎰GameCoins *${prefix}buygcoin*`
+Fg.sendMessage(from, bal, text, { quoted: mek, contextInfo: {mentionedJid: [getcartera] }})
+break
 
 case 'buy':
 case 'buydiamond':
