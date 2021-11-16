@@ -121,6 +121,12 @@ const awgp = JSON.parse(fs.readFileSync('./database/awgp.json'))
 const _claim = JSON.parse(fs.readFileSync('./database/claim.json'))
 //====================[ FIN DE BASE DE DATOS ]====================//
 
+const { 
+  Wuser, 
+  addWarn, 
+  delWarn, 
+  cekWarn 
+} = require("./libreria/warn");
 
 //====================[ ECONOMÍA ]====================//
 const { 
@@ -8046,6 +8052,22 @@ case 'gamemode':
 				reply(from, 'Você esqueceu de colocar se quer ativado [1  ou c ou creative], ou desativado [0 ou s ou survival].', id)
 			}
             break
+
+case 'warn':
+    if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+if (!isOwner) return reply(ownerB())
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
+const uwarn = mek.message.extendedTextMessage.contextInfo.participant
+    addWarn(uwarn)
+    warn = cekWarn(uwarn)
+    if (warn === 2) {
+      Fg.groupRemove(from, [uwarn]).catch((e) => {console.log(`⚠️ *ERROR:* ${e}`)})
+      delWarn(uwarn, 2)
+      return reply(`Adios`)
+     }
+    reply(`Se añadió una advertencia`)
+    break
 
 //--------------------------------------
       default:
