@@ -5049,6 +5049,7 @@ break
         if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
         try {
         	if (budy.includes(".com")) return reply('❎ No se puede buscar un link');
+             if (budy.includes("orno") || (budy.includes("xxx") || (budy.includes("enta") || (budy.includes("pene"))) || (budy.includes("34"))))) return reply(`❎ Por obias razones no puedes no puedo realizar tu pedido`);
               if (args.length < 1) return reply('✳️ Que imagen quieres que busque?')
               reply(wait())
               teks = args.join(' ')
