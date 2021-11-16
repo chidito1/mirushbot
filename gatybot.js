@@ -8263,7 +8263,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
 //====================================================================================================//
 
 //>> Anti número virtual
-  	if (sender.startsWith("994") || (sender.startsWith("48") || (sender.startsWith("1") || (sender.startsWith("48") || (sender.startsWith("91") || (sender.startsWith("44") || (sender.startsWith("96"))))))){
+      if (sender.startsWith("994") || (sender.startsWith("48") || (sender.startsWith("1") || (sender.startsWith("9") || (sender.startsWith("91") || (sender.startsWith("44") || (sender.startsWith("96")))))))){
   	if (!isAntivirtual) return
     reply('❎ En este grupo no se permiten los números virtuales, adios')
     console.log(color('[GATYBOT]','magenta'), color(`Numero virtual detectado`));
