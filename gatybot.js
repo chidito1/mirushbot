@@ -6398,16 +6398,18 @@ if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏ�
          if (isBanned) return reply(banf())
           if (!isQuotedAudio) return reply('Menciona el audio que quieres volver estilo SlowMotion')
                   reply(wait()) 
-                  encmediaSL = isQuotedAudio ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
+                  encmediaSL = isQuotedAudio ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+                  roll4 = await Fg.downloadMediaMessage(encmediaSL)
                   ron = getRandom('.mp3')
-                  exec(`ffmpeg -i ${encmediaSL} -filter:a "atempo=0.7,asetrate=44100" ${ron}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(encmediaSL)
+                  exec(`ffmpeg -i ${roll4} -filter:a "atempo=0.7,asetrate=44100" ${ron}`, (err, stderr, stdout) => {
+                  fs.unlinkSync(roll4)
                   if (err) return reply('Ups algo ha salido mal....')
                   hah = fs.readFileSync(ron)
                   mek.sendMessage(from, hah, audio,{ mimetype: "audio/mp4", ptt: true, quoted: mek })
                   fs.unlinkSync(ron)
                   })
             break
+            
             
         case 'lentocore':
         if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
@@ -8443,9 +8445,9 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
   }
   
 //====================================================================================================//
-
+if (!isQuotedSticker) return
 //>> Simi sin comando 
-  if (isGroup && isSimi && budy != undefined) {
+  if (isGroup && !isQuotedSticker && isSimi && budy != undefined) {
   	try {
            await Fg.updatePresence(from, Presence.composing)
            simi = await fetchJson(`https://api.simsimi.net/v2/?text=${budy}&lc=es`, {method: 'GET'})
