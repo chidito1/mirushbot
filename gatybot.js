@@ -6973,7 +6973,7 @@ if (!args[0].includes('chat.whatsapp.com')) return reply(mess.link)
 let code = args[0].replace('chat.whatsapp.com/', '')
 Fg.acceptInvite(code)
 .then((res) => {
-Fg.sendMessage(res.gid,`🎈 Hola soy *${Fg.user.name}*\n_🛡️ Fui invitado por @${sender.split("@")[0]} para unirme al grupo_\n📌 Escriba *${prefix}help* para ver el Menu del bot\📃 *${prefix}reglas*`,text,{contextInfo:{mentionedJid:[sender]}, quoted : estadofake})
+Fg.sendMessage(res.gid,`🎈 Hola soy *${Fg.user.name}*\n_🛡️ Fui invitado por @${sender.split("@")[0]} para unirme al grupo_\n📌 Escriba *${prefix}menu* para ver el Menu del bot\📃 *${prefix}reglas*`,text,{contextInfo:{mentionedJid:[sender]}, quoted : estadofake})
 reply(`✅ Me uní correctamente al grupo`)
 })
 .catch((err) => reply(err))
@@ -6989,7 +6989,13 @@ break
     if(!q) return reply(`✳️Ingrese el link de tu Grupo`) 
     join = `${q}`
     await Fg.acceptInvite(join).then((res) => {
-      Fg.sendMessage(res.gid,`🎈 Hola soy *${Fg.user.name}*\n\n_🛡️ Fui invitado por @${sender.split("@")[0]} para unirme al grupo_\n\n📌 Escriba *${prefix}help* para ver el Menu del bot`, text, {contextInfo:{mentionedJid:[sender]}})
+      Fg.sendMessage(res.gid,`🐱Hola soy *${Fg.user.name}* Fuy invitado por *@${sender.split("@")[0]}* para unirme a este grupo.
+
+*Nombre* : ${groupName}
+*Miembros* : ${groupMembers.length}
+*Admins* : ${groupAdmins.length}
+
+📌Para ver mi comandos escriba *${prefix}menu* pero primero tienes que verificarte con el comando *${prefix}verify*`, text, {contextInfo:{mentionedJid:[sender]}})
       reply(`✅ Me uní correctamente al grupo`)
       })
       .catch((err) => m.reply("‣ "+jsonformat(err)))
