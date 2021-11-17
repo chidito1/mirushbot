@@ -2335,6 +2335,21 @@ pre = `⭐ El prefijo que se utiliza es : *${prefix}*`
 reply(pre)
 break
 
+case '/gamemode':
+			if (args.length == 0) return reply(from, 'Eliga un modo [survival/creative/spectator/adventure]', id)
+			if (args[0] == '1' || args[0] == 'c' || args[0] == 'creative') {
+				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a creativo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+			} else if (args[0] == '0' || args[0] == 's' || args[0] == 'survival') {
+				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a supervivencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+			} else if (args[0] == '2' || args[0] == 'a' || args[0] == 'spectator') {
+				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a espectador`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+			} else if (args[0] == 'xxxxx' || args[0] == 'xxxxx' || args[0] == 'adventure') {
+				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a aventura`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+			} else {
+				reply(from, 'Eliga un modo [survival/creative/spectator/adventure]', id)
+			}
+            break
+
 }
 
 //====================================================================================================//
@@ -8041,17 +8056,6 @@ break
 case 'menupv':
 Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
 break
-
-case 'gamemode':
-			if (args.length == 0) return reply(from, 'Você esqueceu de colocar se quer ativado [1  ou c ou creative], ou desativado [0 ou s ou survival].', id)
-			if (args[0] == '1' || args[0] == 'c' || args[0] == 'creative') {
-				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a creativo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else if (args[0] == '0' || args[0] == 's' || args[0] == 'survival') {
-				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a supervivencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else {
-				reply(from, 'Você esqueceu de colocar se quer ativado [1  ou c ou creative], ou desativado [0 ou s ou survival].', id)
-			}
-            break
 
 case 'warn':
     if(!isVerify) return isUser()
