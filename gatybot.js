@@ -6986,8 +6986,8 @@ break
     if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if(!isPremium)return reply(premi())
-    if(!args) return reply(`✳️Ingrese el link de tu Grupo`) 
-    join = args.join('https://chat.whatsapp.com/')[1]
+    if(!q) return reply(`✳️Ingrese el link de tu Grupo`) 
+    join = `${q}`
     await Fg.acceptInvite(join).then((res) => {
       Fg.sendMessage(res.gid,`🎈 Hola soy *${Fg.user.name}*\n\n_🛡️ Fui invitado por @${sender.split("@")[0]} para unirme al grupo_\n\n📌 Escriba *${prefix}help* para ver el Menu del bot`, text, {contextInfo:{mentionedJid:[sender]}})
       reply(`✅ Me uní correctamente al grupo`)
@@ -8062,65 +8062,36 @@ case 'menupv':
 Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
 break
 
-case "inspect":
-        try {
-          if (!q) return reply("masukan link wa");
-          var net = `https://chat.whatsapp.com/${q}`
-          jids = [];
-          let {
-            id,
-            owner,
-            subject,
-            subjectOwner,
-            desc,
-            descId,
-            participants,
-            size,
-            descOwner,
-            descTime,
-            creation,
-          } = await Fg.query({
-            json: ["query", "invite", net],
-            expect200: true,
-          });
-          let par = `*Id* : ${id}
-${owner ? `*Owner* : @${owner.split("@")[0]}` : "*Owner* : -"}
+case 'inspect':
+            try {
+            if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(mess.Iv)
+            if (!q) return reply('masukan link wa')
+            cos = args[0]
+            var net = cos.split('https://chat.whatsapp.com/')[1]
+            if (!net) return reply('pastikan itu link https://whatsapp.com/')
+            jids = []
+            let { id, owner, subject, subjectOwner, desc, descId, participants, size, descOwner, descTime, creation} = await xdev.query({ 
+            json: ["query", "invite",net],
+            expect200:true })
+            let par = `*Id* : ${id}
+${owner ? `*Owner* : @${owner.split('@')[0]}` : '*Owner* : -'}
 *Nama Gc* : ${subject}
 *Gc dibuat Tanggal* : ${formatDate(creation * 1000)}
 *Jumlah Member* : ${size}
-${desc ? `*Desc* : ${desc}` : "*Desc* : tidak ada"}
+${desc ? `*Desc* : ${desc}` : '*Desc* : tidak ada'}
 *Id desc* : ${descId}
-${
-  descOwner
-    ? `*Desc diubah oleh* : @${descOwner.split("@")[0]}`
-    : "*Desc diubah oleh* : -"
-}\n*Tanggal* : ${
-            descTime ? `${formatDate(descTime * 1000)}` : "-"
-          }\n\n*Kontak yang tersimpan*\n`;
-          for (let y of participants) {
-            par += `> @${y.id.split("@")[0]}\n*Admin* : ${
-              y.isAdmin ? "Ya" : "Tidak"
-            }\n`;
-            jids.push(`${y.id.replace(/@c.us/g, "@s.whatsapp.net")}`);
-          }
-          jids.push(
-            `${owner ? `${owner.replace(/@c.us/g, "@s.whatsapp.net")}` : "-"}`
-          );
-          jids.push(
-            `${
-              descOwner
-                ? `${descOwner.replace(/@c.us/g, "@s.whatsapp.net")}`
-                : "-"
-            }`
-          );
-          Fg.sendMessage(from, par, text, {
-            quoted: mek,
-            contextInfo: { mentionedJid: jids },
-          });
-        } catch {
-          reply("Link error");
-        }
-        break
+${descOwner ? `*Desc diubah oleh* : @${descOwner.split('@')[0]}` : '*Desc diubah oleh* : -'}\n*Tanggal* : ${descTime ? `${formatDate(descTime * 1000)}` : '-'}\n\n*Kontak yang tersimpan*\n`
+           for ( let y of participants) {
+             par += `> @${y.id.split('@')[0]}\n*Admin* : ${y.isAdmin ? 'Ya' : 'Tidak'}\n`
+             jids.push(`${y.id.replace(/@c.us/g,'@s.whatsapp.net')}`)
+             }
+             jids.push(`${owner ? `${owner.replace(/@c.us/g,'@s.whatsapp.net')}` : '-'}`)
+             jids.push(`${descOwner ? `${descOwner.replace(/@c.us/g,'@s.whatsapp.net')}` : '-'}`)
+             xdev.sendMessage(from,par,text,{quoted:dev,contextInfo:{mentionedJid:jids}})
+             } catch {
+             reply('Link error')
+             }
+             break
         
 //--------------------------------------
       default:
