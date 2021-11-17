@@ -8445,10 +8445,11 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
   }
   
 //====================================================================================================//
-if (!isQuotedSticker) return
+
 //>> Simi sin comando 
-  if (isGroup && !isQuotedSticker && isSimi && budy != undefined) {
+  if (isGroup && isSimi && budy != undefined) {
   	try {
+       	if (!isQuotedSticker) return
            await Fg.updatePresence(from, Presence.composing)
            simi = await fetchJson(`https://api.simsimi.net/v2/?text=${budy}&lc=es`, {method: 'GET'})
                reply(simi.success)
