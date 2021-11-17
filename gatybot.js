@@ -6401,8 +6401,8 @@ if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏ�
                   encmediaSL = isQuotedAudio ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
                   roll4 = await mek.downloadAndSaveMediaMessage(encmediaSL)
                   ron = getRandom('.mp3')
-                  exec(`ffmpeg -i ${roll4} -filter:a "atempo=0.7,asetrate=44100" ${ron}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(roll4)
+                  exec(`ffmpeg -i ${encmediaSL} -filter:a "atempo=0.7,asetrate=44100" ${ron}`, (err, stderr, stdout) => {
+                  fs.unlinkSync(encmediaSL)
                   if (err) return reply('Ups algo ha salido mal....')
                   hah = fs.readFileSync(ron)
                   mek.sendMessage(from, hah, audio,{ mimetype: "audio/mp4", ptt: true, quoted: mek })
