@@ -8064,12 +8064,8 @@ break
 
 case "inspect":
         try {
-          if (!isUrl(args[0]) && !args[0].includes("whatsapp.com"))
-            return reply(`a`);
           if (!q) return reply("masukan link wa");
-          cos = args[0];
-          var net = cos.split("https://chat.whatsapp.com/")[1];
-          if (!net) return reply("pastikan itu link https://whatsapp.com/");
+          var net = `https://chat.whatsapp.com/${q}`
           jids = [];
           let {
             id,
