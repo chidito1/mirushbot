@@ -2338,15 +2338,15 @@ break
 case '/gamemode':
 			if (!q)return reply('Eliga un modo [survival/creative/spectator/adventure]')
 			if (args[0] == '1' || args[0] == 'c' || args[0] == 'creative')
-			if {
+			if (
 				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a creativo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else if (args[0] == '0' || args[0] == 's' || args[0] == 'survival') {
+			) else if {args[0] == '0' || args[0] == 's' || args[0] == 'survival') {
 				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a supervivencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else if (args[0] == '2' || args[0] == 'a' || args[0] == 'spectator') {
+			) else if {args[0] == '2' || args[0] == 'a' || args[0] == 'spectator') {
 				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a espectador`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else if (args[0] == 'xxxxx' || args[0] == 'xxxxx' || args[0] == 'adventure') {
+			) else if {args[0] == 'xxxxx' || args[0] == 'xxxxx' || args[0] == 'adventure') {
 				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a aventura`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else {
+			} else (
 				reply('Eliga un modo [survival/creative/spectator/adventure]')
 			}
             break
