@@ -6398,7 +6398,7 @@ if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏ�
          if (isBanned) return reply(banf())
           if (!isQuotedAudio) return reply('Menciona el audio que quieres volver estilo SlowMotion')
                   reply(wait()) 
-                  encmediaSL = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+                  encmediaSL = isQuotedAudio ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
                   roll4 = await mek.downloadAndSaveMediaMessage(encmediaSL)
                   ron = getRandom('.mp3')
                   exec(`ffmpeg -i ${roll4} -filter:a "atempo=0.7,asetrate=44100" ${ron}`, (err, stderr, stdout) => {
