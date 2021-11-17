@@ -6991,9 +6991,9 @@ break
     await Fg.acceptInvite(join).then((res) => {
       Fg.sendMessage(res.gid,`🐱Hola soy *${Fg.user.name}* Fuy invitado por *@${sender.split("@")[0]}* para unirme a este grupo.
 
-*Nombre* : ${groupName}
-*Miembros* : ${groupMembers.length}
-*Admins* : ${groupAdmins.length}
+*Nombre* : ${res.groupName}
+*Miembros* : ${res.groupMembers.length}
+*Admins* : ${res.groupAdmins.length}
 
 📌Para ver mi comandos escriba *${prefix}menu* pero primero tienes que verificarte con el comando *${prefix}verify*`, text, {contextInfo:{mentionedJid:[sender]}})
       reply(`✅ Me uní correctamente al grupo`)
