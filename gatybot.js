@@ -3421,7 +3421,7 @@ if(!isVerify) return isUser()
    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
 				if (args.length < 1) return reply(`✳️ Ingrese el texto\n📌 Ejemplo : ${prefix + command} Texto`)
 			    defg = q
-                data = await await getBuffer(`https://docs-jojo.herokuapp.com/api/neon_light?text=${defg}`)
+                data = await await getBuffer(`https://docs-jojo.herokuapp.com/api/neon_light?text=${encodeUrl(defg)}`)
                 
                 	reply(wait())
                 Fg.sendMessage(from, data, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Listo : *${defg}*`})
@@ -3845,7 +3845,7 @@ case 'calculadora':
 case 'cal':
 case 'calcu':
 if(!isVerify) return isUser()
-                   if (isBanned) return reply(banf())
+if (isBanned) return reply(banf())
 if (args.length < 1) return reply(`✳️ Ingrese la ecuación\n\nsímbolos compatibles -, +, *, /, ×, ÷, π, e, (, )`)
 global.math = global.math ? global.math : {}
 let ed = from
