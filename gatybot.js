@@ -7641,6 +7641,17 @@ reply(gcoi)
   }
 break
 
+case 'gifxp':
+case 'addxp':
+case 'addexp':
+  if(!isOwner) return reply(ownerB())
+if (!q)return reply(`📌Ejemplo : ${prefix + command} @tag 500`)
+lim = q.split(" ")[1]
+const tag11 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
+addLevelingXp(tag11, lim)
+reply('✅ Expe ✨ agregados al usuario')
+break
+
 case 'giftlimit':
 case 'adddiamond':
 case 'adddiama':
@@ -7916,6 +7927,7 @@ if (isBanned) return reply(banf())
                 if (!isLevelingOn) return reply(leveloff())
                  if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
                    const girobc = Math.floor(Math.random() * 50000) + 100000
+                   const mmogiro = `${girobc}`
                    const girores = Math.floor(Math.random() * 44) + 77
                    const mnogiro = `-${girores}`
                     const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
@@ -7923,23 +7935,23 @@ if (isBanned) return reply(banf())
                     const somtoyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     if (somtoyy  == '🍌 : 🍌 : 🍌') {
-	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
-                    addLevelingXp(sender, girobc)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${mmogiro}* Exp`)
+                    addLevelingXp(sender, mmogiro)
 	     	        } else if (somtoyy == '🍒 : 🍒 : 🍒') {
-	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
-                    addLevelingXp(sender, girobc)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${mmogiro}* Exp`)
+                    addLevelingXp(sender, mmogiro)
 	     	        } else if (somtoyy == '🔔 : 🔔 : 🔔') {
-	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
-                    addLevelingXp(sender, girobc)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${mmogiro}* Exp`)
+                    addLevelingXp(sender, mmogiro)
 	     	        } else if (somtoyy == '🍐 : 🍐 : 🍐') {
-	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
-                    addLevelingXp(sender, girobc)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${mmogiro}* Exp`)
+                    addLevelingXp(sender, mmogiro)
 	     	        } else if (somtoyy == '🍇 : 🍇 : 🍇') {
-	     	        reply(` ${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
-                    addLevelingXp(sender, girobc)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${mmogiro}* Exp`)
+                    addLevelingXp(sender, mmogiro)
 	     	        } else {
 	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*${mnogiro}* botcoins`)
-                    addLevelingXp(sender, mnogiro)
+                    kurangBalance(sender, mnogiro, balance)
 	     	        }
                     gameAdd(sender, glimit)
                     break
