@@ -7916,7 +7916,7 @@ if (isBanned) return reply(banf())
                 if (!isLevelingOn) return reply(leveloff())
                  if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
                    const girobc = Math.floor(Math.random() * 50000) + 100000
-                   const girores = Math.floor(Math.random() * 500) + 1000
+                   const girores = Math.floor(Math.random() * 44) + 77
                    const mnogiro = `-${girores}`
                     const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
                     const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
@@ -7938,7 +7938,7 @@ if (isBanned) return reply(banf())
 	     	        reply(` ${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
                     addLevelingXp(sender, girobc)
 	     	        } else {
-	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*-${mnogiro}* botcoins`)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*${mnogiro}* botcoins`)
                     addLevelingXp(sender, mnogiro)
 	     	        }
                     gameAdd(sender, glimit)
