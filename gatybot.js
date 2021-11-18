@@ -97,6 +97,7 @@ const _solicitud = JSON.parse(fs.readFileSync('./result/reportes/solicitud.json'
 const confi = JSON.parse(fs.readFileSync('./settings.json'))
 
 //====================[ BASE DE DATOS ]====================//
+const _interaction = JSON.parse(fs.readFileSync('./database/interaction.json'))
 const _antilink = JSON.parse(fs.readFileSync('./database/antilink.json'))
 const _antivirtual = JSON.parse(fs.readFileSync('./database/antivirtual.json'))
 const _antiviewonce = JSON.parse(fs.readFileSync('./database/antiviewonce.json'))
@@ -527,6 +528,7 @@ prefix = prefa }}}
       const isClaimOn = _claim.includes(sender)
 
     const isVerify = _user.includes(sender)
+    const isInteraction = isGroup ? _interaction.includes(from) : false
     const isAntilink = isGroup ? _antilink.includes(from) : false
     const isAntiviewOnce = isGroup ? _antiviewonce.includes(from) : false
     const isAntivirtual = isGroup ? _antivirtual.includes(from) : false
@@ -2612,6 +2614,7 @@ _*<GRUPOS/>*_
 • 式 ⃟👥 _${prefix}simih [on/off]_
 • 式 ⃟👥 _${prefix}antiviewonce [on/off]_
 • 式 ⃟👥 _${prefix}antilink [on/off]_
+• 式 ⃟👥 _${prefix}interaction [on/off]_
 • 式 ⃟👥 _${prefix}antivirtual [on/off]_
 • 式 ⃟👥 _${prefix}nsfw [on/off]_
 • 式 ⃟👥 _${prefix}delete (mensaje bot)_
@@ -5938,8 +5941,6 @@ break
 //--- on/off antilink WhatsApp 
 				case 'antilink':
 				case 'antienlace':
-				case 'antilinkwha':
-				case 'antilinkwhatsapp':
 				if(!isVerify) return isUser()
 				if (isBanned) return reply(banf())
 				if (!isGroup) return reply(group())
@@ -5950,14 +5951,38 @@ break
 						if (isAntilink) return reply('✳️ Antilink ya está activo')
 						_antilink.push(from)
 						fs.writeFileSync('./database/antilink.json', JSON.stringify(_antilink))
-						reply(`✅ Se activo el *Antilink WhatsApp* en este grupo`)
+						reply(`✅ Se activo el *Antilink* en este grupo`)
 					} else if ((args[0]) === 'off') {
 						if (!isAntilink) return reply('✳️ Antilink ya está desactivado')
 						_antilink.splice(from, 1)
 						fs.writeFileSync('./database/antilink.json', JSON.stringify(_antilink))
-						reply(`✅ Se desactivo el *Antilink WhatsApp* en este grupo`)
+						reply(`✅ Se desactivo el *Antilink* en este grupo`)
 					} else {
 						reply(`✳️ *ANTILINK WHATSAPP*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					}
+					break
+					
+				case 'interaction':
+				case 'interacción':
+				case 'interaccion':
+				if(!isVerify) return isUser()
+				if (isBanned) return reply(banf())
+				if (!isGroup) return reply(group())
+					if (!isGroupAdmins && !isOwner) return reply(admin())
+					if (!isBotGroupAdmins) return reply(Badmin())
+					if (args.length < 1) return reply(`✳️ *INTERACCIÓN*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					if ((args[0]) === 'on') {
+						if (isInteraction) return reply('✳️ Interacción ya está activo')
+						_interaction.push(from)
+						fs.writeFileSync('./database/interaction.json', JSON.stringify(_interaction))
+						reply(`✅ Se activo la *Interacción* en este grupo`)
+					} else if ((args[0]) === 'off') {
+						if (!isInteraction) return reply('✳️ Interacción ya está desactivado')
+						_interaction.splice(from, 1)
+						fs.writeFileSync('./database/interaction.json', JSON.stringify(_interaction))
+						reply(`✅ Se desactivo la *Interacción* en este grupo`)
+					} else {
+						reply(`✳️ *INTERACCIÓN*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
 					}
 					break
 					
