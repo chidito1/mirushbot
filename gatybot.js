@@ -8323,12 +8323,12 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                  
                  //>> audios
                   if (budy.includes('ika')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   ika = fs.readFileSync('./almacenamiento/audios/pikachu.mp3')
                   Fg.sendMessage(from, ika, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 2})
                   }
                   if (budy.includes('adios')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   masturbar = fs.readFileSync('./almacenamiento/audios/masturvar.mp3')
                   Fg.sendMessage(from, masturbar, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 2})
                   setTimeout( () => {
@@ -8337,69 +8337,69 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   }, 50000)
                   }
                   if (budy.includes('jaja')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   gracioso = fs.readFileSync('./almacenamiento/audios/gracioso.mp3')
                   Fg.sendMessage(from, gracioso, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 4})
                   }
                   if (budy.includes('vto bot')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   pvto = fs.readFileSync('./almacenamiento/audios/insultarme.mp3')
                   Fg.sendMessage(from, pvto, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 3})
                   }
                   if (budy.includes('ame tu poto')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   poto = fs.readFileSync('./almacenamiento/audios/poto.mp3')
                   Fg.sendMessage(from, poto, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 3})
                   }
                   if (budy.includes('👀')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   potoz = fs.readFileSync('./almacenamiento/audios/poto2.mp3')
                   Fg.sendMessage(from, potoz, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 4})
                   }
                   if (budy.includes(':3')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   quiero = fs.readFileSync('./almacenamiento/audios/quiero.mp3')
                   Fg.sendMessage(from, quiero, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 1})
                   }
                   if (budy.includes('entai')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   hentai = fs.readFileSync('./almacenamiento/audios/sexuales.mp3')
                   Fg.sendMessage(from, hentai, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 2})
                   }
                   if (budy.includes('ot te amo')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   amo = fs.readFileSync('./almacenamiento/audios/teamo.mp3')
                   Fg.sendMessage(from, amo, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 3})
                   }
                   if (budy.includes('e amo bot')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   amoz = fs.readFileSync('./almacenamiento/audios/teamo.mp3')
                   Fg.sendMessage(from, amoz, audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true, duration: 3})
                   }
                   
                   //>> Mensajes
                   if (budy.includes("Gracias bot") || (budy.includes("gracias bot") || (budy.includes("Gracias gatybot") || (budy.includes("gracias gatybot"))))){
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   reply(`De nada, estoy para ayudarte :3`)
                   }
                   if (budy.includes("Arigato") || (budy.includes("arigato") || (budy.includes("Arigatu") || (budy.includes("arigatu"))))){
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   reply(`nya~`)
                   }
                   if (budy.startsWith("Te elimino") || (budy.startsWith("Te eliminó") || (budy.startsWith("te eliminó") || (budy.startsWith("te elimino"))))){
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   reply(`De su corazón`)
                   }
                   if (budy.includes('tengo hermana')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   reply(`Bueno en ese caso el tuyo 7w7`)
                   }
                   if (budy.includes('@51988050859')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   reply(`Holi, en que le puedo ayudar? para ver mis comandos pon *+menu*`)
                   }
                   if (budy.includes('Gay bot')) {
-                  if (isInteraction) return
+                  if (!isInteraction) return 
                   reply(`😒`)
                   }
                  
