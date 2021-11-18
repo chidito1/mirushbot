@@ -2947,9 +2947,8 @@ if (isBanned) return reply(banf())
 				} catch {
 				ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
 				}
-				fgfoto = 'https://i.ibb.co/JxxPcm2/verify.jpg' //cambia como quieras, puedes subirlo a imgbb.com
+				fgfoto = 'https://i.ibb.co/JxxPcm2/verify.jpg'
 				veri = sender
-				_user.push(sender)
 				fs.writeFileSync('./database/verify.json', JSON.stringify(_user))
 				adduserUser(sender, pushname, fecha2, hora2, seriTod)
 				console.log(color('[GATYBOT]','magenta'), color(`Verificacion exitosa`));
@@ -4466,8 +4465,8 @@ reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya
 break
 
 case 'wanted':
-					case 'imagerip2':
-					if(!isVerify) return isUser()
+case 'imagerip2':
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
             if (((isMedia && !mek.message.videoMessage) || isQuotedImage) && args.length == 0) {
@@ -7641,6 +7640,8 @@ reply(gcoi)
   }
 break
 
+
+
 case 'gifxp':
 case 'addxp':
 case 'addexp':
@@ -7648,7 +7649,16 @@ case 'addexp':
 if (!q)return reply(`📌Ejemplo : ${prefix + command} @tag 500`)
 lim = q.split(" ")[1]
 const tag11 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
-addLevelingXp(tag11, lim)
+let position = false
+	Object.keys(_level).forEach((i) => {
+		if (_level[i].id === tag11) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_level[position].xp = lim
+		fs.writeFileSync('./database/nivel.json', JSON.stringify(_level))
+	}
 reply('✅ Expe ✨ agregados al usuario')
 break
 
