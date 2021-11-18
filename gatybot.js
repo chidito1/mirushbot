@@ -7640,28 +7640,6 @@ reply(gcoi)
   }
 break
 
-
-
-case 'gifxp':
-case 'addxp':
-case 'addexp':
-  if(!isOwner) return reply(ownerB())
-if (!q)return reply(`📌Ejemplo : ${prefix + command} @tag 500`)
-lim = q.split(" ")[1]
-const tag11 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
-let position = false
-	Object.keys(_level).forEach((i) => {
-		if (_level[i].id === tag11) {
-			position = i
-		}
-	})
-	if (position !== false) {
-		_level[position].xp = lim
-		fs.writeFileSync('./database/nivel.json', JSON.stringify(_level))
-	}
-reply('✅ Expe ✨ agregados al usuario')
-break
-
 case 'giftlimit':
 case 'adddiamond':
 case 'adddiama':
