@@ -7823,8 +7823,8 @@ case 'dado':
 	gameAdd(sender, glimit)
                     break
 
-case 'girar':
-case 'slot':
+case '__girar':
+case '__slot':
             if(!isVerify) return isUser()
 if (isBanned) return reply(banf())
                if (!isGroup) return reply(group()) 
@@ -7833,8 +7833,9 @@ if (isBanned) return reply(banf())
             const zomtoy = zotoy[Math.floor(Math.random() * (zotoy.length))]
             const zommtoy = zootoy[Math.floor(Math.random() * (zootoy.length))]
             const zommmtoy = zoootoy[Math.floor(Math.random() * (zoootoy.length))]
+            const giroc = Math.floor(Math.random() * 88) + 99
+            girob = `-${giroc}`
             ppg = Math.floor(Math.random() * (100000 - 50000 + 1) + 50000)
-            addLevelingXp(sender, ppg)
             if ((zomtoy == '🥑 : 🥑 : 🥑') || (zomtoy == '🍉 : 🍉 : 🍉') || (zomtoy == '🍓 : 🍓 : 🍓') || (zomtoy == '🍎 : 🍎 : 🍎') || (zomtoy == '🍍 : 🍍 : 🍍') || (zomtoy == '🥝 : 🥝 : 🥝') || (zomtoy == '🍑 : 🍑 : 🍑') || (zomtoy == '🥥 : 🥥 : 🥥') || (zomtoy == '🍋 : 🍋 : 🍋') || (zomtoy == '🍐 : 🍐 : 🍐') || (zomtoy == '🍌 : 🍌 : 🍌') || (zomtoy == '🍒 : ?? : 🍒') || (zomtoy == '🔔 : 🔔 : 🔔') || (zomtoy == '🍊 : 🍊 : 🍊') || (zomtoy == '🍇 : 🍇 : 🍇')) {
             var vitr = "Usted ganó!!!"
             } else {
@@ -7857,6 +7858,8 @@ ${zommmtoy}
                  }, 1100)
             }
             Fg.sendMessage(from, slott, text, { quoted: mek })
+            addBalance(sender, girob, balance)
+            addLevelingXp(sender, ppg)
             gameAdd(sender, glimit)
             break
 
@@ -7905,36 +7908,38 @@ if (isBanned) return reply(banf())
             break
 
 
-case '_slot2':
-case '_lucky':
+case 'girar':
+case 'slot':
 if(!isVerify) return isUser()
 if (isBanned) return reply(banf())
                if (!isGroup) return reply(group()) 
                 if (!isLevelingOn) return reply(leveloff())
                  if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
-                 
+                   const girobc = Math.floor(Math.random() * 50000) + 100000
+                   const girores = Math.floor(Math.random() * 500) + 1000
+                   const mnogiro = `-${girores}`
                     const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
                     const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     if (somtoyy  == '🍌 : 🍌 : 🍌') {
-	     	        reply(` 🎰 | *SLOTS* \n-----------------\n${somtoy}\n${somtoyy} <=====\n${somtoyyy}\n-----------------\n 🎰 | GANASTE 🎉 *${pushname}* \n\nObtienes *+ 10000 XP*`)
-                    addLevelingXp(sender, 10000)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
+                    addLevelingXp(sender, girobc)
 	     	        } else if (somtoyy == '🍒 : 🍒 : 🍒') {
-	     	        reply(` 🎰 | *SLOTS* \n-----------------\n${somtoy}\n${somtoyy} <=====\n${somtoyyy}\n-----------------\n 🎰 | GANASTE 🎉 *${pushname}*\n\nObtienes *+ 10000 XP*`)
-                    addLevelingXp(sender, 10000)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
+                    addLevelingXp(sender, girobc)
 	     	        } else if (somtoyy == '🔔 : 🔔 : 🔔') {
-	     	        reply(` 🎰 | *SLOTS* \n-----------------\n${somtoy}\n${somtoyy} <=====\n${somtoyyy}\n-----------------\n 🎰 | GANASTE 🎉 *${pushname}*\n\nObtienes *+ 10000 XP*`)
-                    addLevelingXp(sender, 10000)
-	     	        } else if (somtoyy == '?? : 🍐 : 🍐') {
-	     	        reply(` 🎰 | *SLOTS* \n-----------------\n${somtoy}\n${somtoyy} <=====\n${somtoyyy}\n-----------------\n 🎰 | GANASTE 🎉 *${pushname}* \n\nObtienes *+ 10000 XP*`)
-                    addLevelingXp(sender, 10000)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
+                    addLevelingXp(sender, girobc)
+	     	        } else if (somtoyy == '🍐 : 🍐 : 🍐') {
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
+                    addLevelingXp(sender, girobc)
 	     	        } else if (somtoyy == '🍇 : 🍇 : 🍇') {
-	     	        reply(` 🎰 | *SLOTS* \n-----------------\n${somtoy}\n${somtoyy} <=====\n${somtoyyy}\n-----------------\n 🎰 | GANASTE 🎉 *${pushname}*\n\nObtienes *+ 10000 XP*`)
-                    addLevelingXp(sender, 10000)
+	     	        reply(` ${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*+${girobc}* Exp`)
+                    addLevelingXp(sender, girobc)
 	     	        } else {
-	     	        reply(` ?? | *SLOTS* \n-----------------\n${somtoy}\n${somtoyy} <=====\n${somtoyyy}\n-----------------\n 🎰 | Perdiste *${pushname}*\n\n Se descontará - 998 de XP`)
-                    addLevelingXp(sender, -998)
+	     	        reply(`${somtoy}\n${somtoyy} ⇦\n${somtoyyy}\n\n*-${mnogiro}* botcoins`)
+                    addLevelingXp(sender, mnogiro)
 	     	        }
                     gameAdd(sender, glimit)
                     break
