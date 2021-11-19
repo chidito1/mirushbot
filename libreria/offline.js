@@ -1,7 +1,7 @@
 const toMs = require('ms')
 const ms = require('parse-ms')
 const fs = require("fs")
-const afk = JSON.parse(fs.readFileSync('./libreria/off.json'))
+const afk = JSON.parse(fs.readFileSync('./lib/off.json'))
 
 const addafk = (from) => {
     const obj = { id: from, expired: Date.now() + toMs('2m') }
