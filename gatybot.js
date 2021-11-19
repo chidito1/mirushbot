@@ -7914,10 +7914,9 @@ if (isBanned) return reply(banf())
                if (!isGroup) return reply(group()) 
                 if (!isLevelingOn) return reply(leveloff())
                  if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
-                   const girobc = Math.floor(Math.random() * 50000) + 100000
-                   const mmogiro = `${girobc}`
-                   const girores = Math.floor(Math.random() * 44) + 77
-                   const mnogiro = `-${girores}`
+                   mmogiro = Math.floor(Math.random() * (100000 - 50000 + 1) + 50000)
+                   const girores = Math.floor(Math.random() * (100 - 50 + 1) + 50)
+                   mnogiro = `-${girores}`
                     const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
                     const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
@@ -8269,22 +8268,6 @@ ${descOwner ? `*Desc diubah oleh* : @${descOwner.split('@')[0]}` : '*Desc diubah
              reply('Link error')
              }
              break
-        
-        case 'skinzz':
-      lolix = await getBuffer('https://api.mcpedl.com/storage/submissions/132470/images/casualskinpack-76-110-new-skins-more-squid-game-skins_4.png')
-Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : _none_\n\n✅ Aqui tienes *Onii chan*`})
-.catch((err) => {
-            reply(`❎ Error, intente de nuevo mas tarde`); 
-            })
-          break
-          
-          case 'skinzs':
-      lolix = await getBuffer('https://api.mcpedl.com/storage/submissions/132470/images/casualskinpack-76-110-new-skins-more-squid-game-skins_5.png')
-Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : _none_\n\n✅ Aqui tienes *Onii chan*`})
-.catch((err) => {
-            reply(`❎ Error, intente de nuevo mas tarde`); 
-            })
-          break
         
 //--------------------------------------
       default:
