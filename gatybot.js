@@ -99,29 +99,26 @@ const confi = JSON.parse(fs.readFileSync('./settings.json'))
 //====================================================================================================//
 
 //>> base de datos
-const _interaction = JSON.parse(fs.readFileSync('./database/interaction.json'))
-const _antilink = JSON.parse(fs.readFileSync('./database/antilink.json'))
-const _antivirtual = JSON.parse(fs.readFileSync('./database/antivirtual.json'))
-const _antiviewonce = JSON.parse(fs.readFileSync('./database/antiviewonce.json'))
-const balance = JSON.parse(fs.readFileSync('./database/balance.json'));
-const _bancht = JSON.parse(fs.readFileSync('./database/banchat.json'));
-const ban = JSON.parse(fs.readFileSync('./database/banned.json'));
-const glimit = JSON.parse(fs.readFileSync('./database/glimit.json'));
-const limit = JSON.parse(fs.readFileSync('./database/diaman.json'));
-const premium = JSON.parse(fs.readFileSync('./database/premium.json'))
-const _scommand = JSON.parse(fs.readFileSync('./database/stickcmd.json'))
-const _welcom = JSON.parse(fs.readFileSync('./database/welcom.json'))
-const _left = JSON.parse(fs.readFileSync('./database/left.json'))	 
-const _user = JSON.parse(fs.readFileSync('./database/verify.json'))
-const _samih = JSON.parse(fs.readFileSync('./database/simi.json'))
-const Verify = JSON.parse(fs.readFileSync('./database/verify.json'))
-const _antilinkte = JSON.parse(fs.readFileSync('./database/antilinkte.json'));
-const _antilinkdi = JSON.parse(fs.readFileSync('./database/antilinkdi.json'));
-const nsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'))
-const _leveling = JSON.parse(fs.readFileSync('./database/leveling.json'))
-const _level = JSON.parse(fs.readFileSync('./database/nivel.json'))
-const awgp = JSON.parse(fs.readFileSync('./database/awgp.json'))
-const _claim = JSON.parse(fs.readFileSync('./database/claim.json'))
+const _interaction = JSON.parse(fs.readFileSync('./database/group/interaction.json'))
+const _antilink = JSON.parse(fs.readFileSync('./database/group/antilink.json'))
+const _antivirtual = JSON.parse(fs.readFileSync('./database/group/antivirtual.json'))
+const _antiviewonce = JSON.parse(fs.readFileSync('./database/group/antiviewonce.json'))
+const _bancht = JSON.parse(fs.readFileSync('./database/group/banchat.json'));
+const ban = JSON.parse(fs.readFileSync('./database/bot/banned.json'));
+const premium = JSON.parse(fs.readFileSync('./database/bot/premium.json'))
+const _scommand = JSON.parse(fs.readFileSync('./database/bot/stickcmd.json'))
+const glimit = JSON.parse(fs.readFileSync('./database/user/glimit.json'));
+const limit = JSON.parse(fs.readFileSync('./database/user/diaman.json'));
+const balance = JSON.parse(fs.readFileSync('./database/user/balance.json'));
+const _welcom = JSON.parse(fs.readFileSync('./database/group/welcom.json'))
+const _bye = JSON.parse(fs.readFileSync('./database/group/bye.json'))	 
+const _user = JSON.parse(fs.readFileSync('./database/bot/verify.json'))
+const _samih = JSON.parse(fs.readFileSync('./database/group/simi.json'))
+const Verify = JSON.parse(fs.readFileSync('./database/bot/verify.json'))
+const nsfw = JSON.parse(fs.readFileSync('./database/group/nsfw.json'))
+const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
+const _level = JSON.parse(fs.readFileSync('./database/user/nivel.json'))
+const _claim = JSON.parse(fs.readFileSync('./database/user/claim.json'))
 //====================[ FIN DE BASE DE DATOS ]====================//
 
 
@@ -212,7 +209,7 @@ hit_today = [];
 
 //----Juegos
 let mtk = [];
- let {GameTime, limitCount } = require('./settings')
+let {GameTime, limitCount } = require('./settings')
 //---
 
 //====================[ CONTACTO DEL DUEÑO ]====================//
@@ -277,7 +274,7 @@ const addLevelingXp = (sender, amount) => {
 	})
 	if (position !== false) {
 		_level[position].xp += amount
-		fs.writeFileSync('./database/nivel.json', JSON.stringify(_level))
+		fs.writeFileSync('./database/user/nivel.json', JSON.stringify(_level))
 	}
 }
 
@@ -290,14 +287,14 @@ const addLevelingLevel = (sender, amount) => {
 	})
 	if (position !== false) {
 		_level[position].level += amount
-		fs.writeFileSync('./database/nivel.json', JSON.stringify(_level))
+		fs.writeFileSync('./database/user/nivel.json', JSON.stringify(_level))
 	}
 }
 
 const addLevelingId = (sender) => {
 	const obj = { id: sender, xp: 1, level: 1 }
 	_level.push(obj)
-	fs.writeFileSync('./database/nivel.json', JSON.stringify(_level))
+	fs.writeFileSync('./database/user/nivel.json', JSON.stringify(_level))
 }
 //====================[ FIN FUNCIÓN DE NIVELACIÓN ]====================//
 
@@ -323,7 +320,7 @@ time: hora2,
 serial: seriTod
   }
   _user.push(obj)
-  fs.writeFileSync('./database/verify.json', JSON.stringify(_user))
+  fs.writeFileSync('./database/user/verify.json', JSON.stringify(_user))
 }
 
 const createSerial = (size) => {
@@ -381,7 +378,7 @@ var date = new Date();
 const addCmd = (id, command) => {
   const obj = { id: id, chats: command };
   _scommand.push(obj);
-  fs.writeFileSync("./database/stickcmd.json", JSON.stringify(_scommand));
+  fs.writeFileSync("./database/bot/stickcmd.json", JSON.stringify(_scommand));
 };
 
 const getCommandPosition = (id) => {
@@ -530,7 +527,7 @@ prefix = prefa }}}
     const isAntivirtual = isGroup ? _antivirtual.includes(from) : false
     const isPremium = _prem.checkPremiumUser(sender,premium) || false || isOwner
     const isWelcom = isGroup ? _welcom.includes(from) : false
-    const isLeft = isGroup ? _left.includes(from) : false
+    const isBye = isGroup ? _bye.includes(from) : false
     const isBanchat = isGroup ? _bancht.includes(from) : false
     const isSimi = isGroup ? _samih.includes(from) : false
     
@@ -547,11 +544,8 @@ prefix = prefa }}}
     const isGroupAdmins = groupAdmins.includes(sender) || false;
     //----nuevo fg 
 const isBanned = ban.includes(sender)
-const isAntiTele = isGroup ? _antilinkte.includes(from) : false
-const isAntiDis = isGroup ? _antilinkdi.includes(from) : false
 const isNsfw = isGroup ? nsfw.includes(from) : false 
 const isLevelingOn = isGroup ? _leveling.includes(from) : false
-const isAw = isGroup ? awgp.includes(from) : false 
 
     const conts = mek.key.fromMe
       ? Fg.user.jid
@@ -2259,7 +2253,7 @@ let Welcome_ = 'desactivado'
 			Welcome_ = 'activado'
 			}
 let Adios_ = 'desactivado'
-			if (isLeft) {
+			if (isBye) {
 			Adios_ = 'activado'
 			}
 let AntiLink_ = 'desactivado'
@@ -2762,95 +2756,6 @@ Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAd
              
            break
 
-             //---activar Android World
-case '_rulesgp':
-				if (!isOwner) return
-			
-					if (args.length < 1) return reply(`✳️ on  - off`)
-					if ((args[0]) === 'on') {
-						if (isAw) return reply('✳️ ya está activo')
-						awgp.push(from)
-						fs.writeFileSync('./database/awgp.json', JSON.stringify(awgp))
-						reply(`✅ Activado`)
-					} else if ((args[0]) === 'off') {
-						if (!isAw) return reply('✳️ Ya está desactivado')
-						awgp.splice(from, 1)
-						fs.writeFileSync('./database/awgp.json', JSON.stringify(awgp))
-						reply(`✅ Desactivado`)
-					} else {
-						reply(`on - off`)
-					}
-					break
-             //---Reglas del grupo Android World
-             
-             case '_reglasgp':
-             case '_reglasgrupo':
-              if (!isAw) return
-            if (!isGroup) return reply(group())
-            bbaw = ` *📲💻ANDROID WORLD🎬🎮*
-
-                 🔷Te ofrece🔶
-
-➢ Todo para tu celular android! 📱
-➢Juegos de todo tipo🎮👾
-➢🛠 Herramientas para personalizar tu celular 🔧🔩
-➢ Aplicaciones⚙🕋🎮
-➢ Juegos PPSSPP
-➢ Libros🗃📚
-➢ Todo tipo de archivos apk
-➢ Ayuda y aplicaciones para usuarios root 📱
-➢ Fondos📱🖼
-➢ Programas para pc
-➢ Videos🎞🎥 (leer reglas) 
-➢ Películas📽🍿
-➢ Música 🎵🎶🎧
-➢ Y mucho más ✅
-
-💠Envía y descarga juegos, aplicaciones, herramientas y todo lo relacionado para tu android 
-💠 si tienes problemas en tu android, cuéntanos y entre todos nos ayudaremos 
-
-❢◥ ▬▬▬▬▬▬ ◆ ▬▬▬▬▬▬ ◤❢
-
-                 ❌ *REGLAS* ❌
-
-
-🚫 ➭ *ADMINISTRADORES NO ANULAR EL LINK DEL GRUPO* (importante!). 
-🚫 ➭No  enviar links de otros grupos, no importa el contenido del grupo. (pueden enviar links de otras redes sociales menos de WhatsApp y Telegram) 
-🚫 ➭ No xxx, gore, filias o material explícito. 
-🚫 ➭ No  incitar, crear o seguir peleas entre usuarios.
-🚫 ➭ No pedir rango de administrador.
-🚫 ➭ No hacer  spam.
-🚫 ➭ No spamear con stickers
-🚫 ➭ No pedir cosas sin pedir el favor.
-🚫 ➭ No enviar cadenas molestas.
-🚫 ➭ *No pedir sin aportar antes, muy importante.* 
-🚫 ➭ No ser irrespetuoso con los miembros del grupo.
-🚫 ➭ *Intercambiar, está totalmente prohibido.* 
-🚫 ➭ No enviar aplicaciones maliciosas (virus, o con un fin no bueno para quien lo instala).
-
-ツ📦Sólo se tomará como aporte los archivos que pesen 10 MB o más 
-🚷 La gente inactiva se elimina cada vez que se llena el grupo o esta inactivo, siempre asegúrate tener más de 30 mensajes✍.
-💠si envías música deberás mencionar su género, nombre y artista. 
-
-    *Link del grupo -  Android World*
-https://chat.whatsapp.com/Ly4I2LObSvW8VgOnJjofgA
-
-*Grupo Telegram*
- http://t.me/AndroidWorldfg
-
-🚷 si  eres eliminado puedes apelar tu eliminación aquí:
-https://chat.whatsapp.com/Hcvn72lEw9Y0nYqyR6TcBC
-
-Para pedir desban deberás mostrar una captura del momento de tu eliminación y de la razón que fuiste eliminado 🚷 Si no fuiste eliminado del grupo y entras al de pedir desban, serás eliminado de ambos grupos. ❌
-
-👨🏻‍💻 Siempre y cuando necesites ayuda pide en el grupo, los administradores y usuarios te ayudarán en lo que necesites. 
-
-¡Gracias por ser parte de nuestra comunidad!. 
-
-*Creado el 1 de Marzo de 2018.* `
-reply(bbaw) 
-             break 
-             
 //----  Reglas bot
 case 'rules':
 case 'reglas':
@@ -2945,7 +2850,7 @@ if (isBanned) return reply(banf())
 				}
 				fgfoto = 'https://i.ibb.co/JxxPcm2/verify.jpg'
 				veri = sender
-				fs.writeFileSync('./database/verify.json', JSON.stringify(_user))
+				fs.writeFileSync('./database/user/verify.json', JSON.stringify(_user))
 				adduserUser(sender, pushname, fecha2, hora2, seriTod)
 				console.log(color('[GATYBOT]','magenta'), color(`Verificacion exitosa`));
 
@@ -3487,7 +3392,7 @@ if (!isOwner && !isMods) return reply(modsB())
 if (!isQuotedSticker) return reply(`✳️ Responde al sticker comando para eliminar\n\n📌 Uso del comamdo : ${prefix + command} tagsticker`)
 var kodenya = mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString('base64')
 _scommand.splice(getCommandPosition(kodenya), 1)
-fs.writeFileSync('./database/stickcmd.json', JSON.stringify(_scommand))
+fs.writeFileSync('./database/bot/stickcmd.json', JSON.stringify(_scommand))
 reply("✅ Comando eliminado")
 break
 case 'listcmd':
@@ -3651,7 +3556,7 @@ case 'ban':
 				mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 				bnnd = `${args[0].replace('@', '')}@s.whatsapp.net`
 					ban.push(bnnd)
-					fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
+					fs.writeFileSync('./database/bot/banned.json', JSON.stringify(ban))
 					
 					if (mentioned.length > 1) {
 						teks = ''
@@ -3671,7 +3576,7 @@ case 'ban':
 				mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 				//bnnd = body.slice(8)
 				ban.splice(`${args[0].replace('@')}@s.whatsapp.net`, 1)
-				fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
+				fs.writeFileSync('./database/bot/banned.json', JSON.stringify(ban))
 				
 				if (mentioned.length > 1) {
 						teks = ''
@@ -5869,11 +5774,11 @@ case 'nivelación':
                 if (args[0] === 'on') {
                     if (isLevelingOn) return reply('✳️ *Ya está activado*')
                     _leveling.push(from)
-                    fs.writeFileSync('./database/leveling.json', JSON.stringify(_leveling))
+                    fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
                    reply('✅ Nivelacion habilitada en el grupo')
                 } else if (args[0] === 'off') {
                     _leveling.splice(from, 1)
-                    fs.writeFileSync('./database/leveling.json', JSON.stringify(_leveling))
+                    fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
                      reply('✅ Nivelacion deshabilita')
                 } else {
                     reply(`✳️ *NIVELACION*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -5894,12 +5799,12 @@ case 'bienvenida':
 		if ((args[0]) === 'on') {
 		if (isWelcom) return reply('✳️ El mensaje de *Bienvenida* ya esta activa')
 						_welcom.push(from)
-						fs.writeFileSync('./database/welcom.json', JSON.stringify(_welcom))
+						fs.writeFileSync('./database/group/welcom.json', JSON.stringify(_welcom))
 						reply(`✅ La función de bienvenida se activo en el grupo *${groupMetadata.subject}*`)
 		} else if ((args[0]) === 'off') {
 		if (!isWelcom) return reply('✳️ Bienvenida ya esta desactivada')
 						_welcom.splice(from, 1)
-						fs.writeFileSync('./database/welcom.json', JSON.stringify(_welcom))
+						fs.writeFileSync('./database/group/welcom.json', JSON.stringify(_welcom))
 						reply(`✅ La función de Bienvenida se desactivo en el grupo *${groupMetadata.subject}*`)
 					} else {
 						reply(`✳️ *BIENVENIDAS*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -5918,14 +5823,14 @@ if (!isGroupAdmins && !isOwner) return reply(admin())
 if (!isWelcom) return reply('✳️ Para usar este comando, debe activar primero las *Bienvenidas*')
 if (args.length < 1) return reply(`✳️ *DESPEDIDAS*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
 if ((args[0]) === 'on') {
-	if (isLeft) return reply('✳️ El mensaje de *Despedida* ya esta activa ')
-	_left.push(from)
-	fs.writeFileSync('./database/left.json', JSON.stringify(_left))
+	if (isBye) return reply('✳️ El mensaje de *Despedida* ya esta activa ')
+	_bye.push(from)
+	fs.writeFileSync('./database/group/bye.json', JSON.stringify(_bye))
 	reply(`✅ El mensaje de *Despedida* se activo en el grupo *${groupMetadata.subject}*`)
 } else if ((args[0]) === 'off') {
-	if (!isLeft) return reply('✳️ Se desactivo antes')
-	_left.splice(from, 1)
-	fs.writeFileSync('./database/left.json', JSON.stringify(_left))
+	if (!isBye) return reply('✳️ Se desactivo antes')
+	_bye.splice(from, 1)
+	fs.writeFileSync('./database/group/bye.json', JSON.stringify(_bye))
 reply(`✅ El mensaje de *Despedida* se desactivo en el grupo *${groupMetadata.subject}*`)
 } else {
 reply(`✳️ *DESPEDIDAS*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -5944,12 +5849,12 @@ break
 					if ((args[0]) === 'on') {
 						if (isAntilink) return reply('✳️ Antilink ya está activo')
 						_antilink.push(from)
-						fs.writeFileSync('./database/antilink.json', JSON.stringify(_antilink))
+						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(_antilink))
 						reply(`✅ Se activo el *Antilink* en este grupo`)
 					} else if ((args[0]) === 'off') {
 						if (!isAntilink) return reply('✳️ Antilink ya está desactivado')
 						_antilink.splice(from, 1)
-						fs.writeFileSync('./database/antilink.json', JSON.stringify(_antilink))
+						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(_antilink))
 						reply(`✅ Se desactivo el *Antilink* en este grupo`)
 					} else {
 						reply(`✳️ *ANTILINK WHATSAPP*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -5968,12 +5873,12 @@ break
 					if ((args[0]) === 'on') {
 						if (isInteraction) return reply('✳️ Interacción ya está activo')
 						_interaction.push(from)
-						fs.writeFileSync('./database/interaction.json', JSON.stringify(_interaction))
+						fs.writeFileSync('./database/group/interaction.json', JSON.stringify(_interaction))
 						reply(`✅ Se activo la *Interacción* en este grupo`)
 					} else if ((args[0]) === 'off') {
 						if (!isInteraction) return reply('✳️ Interacción ya está desactivado')
 						_interaction.splice(from, 1)
-						fs.writeFileSync('./database/interaction.json', JSON.stringify(_interaction))
+						fs.writeFileSync('./database/group/interaction.json', JSON.stringify(_interaction))
 						reply(`✅ Se desactivo la *Interacción* en este grupo`)
 					} else {
 						reply(`✳️ *INTERACCIÓN*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -5993,12 +5898,12 @@ break
 					if ((args[0]) === 'on') {
 						if (isAntivirtual) return reply('✳️ Anti numero virtual ya está activo')
 						_antivirtual.push(from)
-						fs.writeFileSync('./database/antivirtual.json', JSON.stringify(_antivirtual))
+						fs.writeFileSync('./database/group/antivirtual.json', JSON.stringify(_antivirtual))
 						reply(`✅ Se activo el *Anti numero virtual* en este grupo`)
 					} else if ((args[0]) === 'off') {
 						if (!isAntivirtual) return reply('✳️ Anti numero virtual ya está desactivado')
 						_antivirtual.splice(from, 1)
-						fs.writeFileSync('./database/antivirtual.json', JSON.stringify(_antivirtual))
+						fs.writeFileSync('./database/group/antivirtual.json', JSON.stringify(_antivirtual))
 						reply(`✅ Se desactivo el *Anti numero virtual* en este grupo`)
 					} else {
 						reply(`✳️ *ANTI NUMERO VIRTUAL*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -6016,12 +5921,12 @@ break
 					if ((args[0]) === 'on') {
 						if (isAntiviewOnce) return reply('✳️ AntiviewOnce ya está activo')
 						_antiviewonce.push(from)
-						fs.writeFileSync('./database/antiviewonce.json', JSON.stringify(_antilink))
+						fs.writeFileSync('./database/group/antiviewonce.json', JSON.stringify(_antilink))
 						reply(`✅ Se activo el *AntiviewOnce* en este grupo`)
 					} else if ((args[0]) === 'off') {
 						if (!isAntiviewOnce) return reply('✳️ AntiviewOnce ya está desactivado')
 						_antiviewonce.splice(from, 1)
-						fs.writeFileSync('./database/antiviewonce.json', JSON.stringify(_antiviewonce))
+						fs.writeFileSync('./database/group/antiviewonce.json', JSON.stringify(_antiviewonce))
 						reply(`✅ Se desactivo el *AntiviewOnce* en este grupo`)
 					} else {
 						reply(`✳️ *ANTIVIEW ONCE*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -6038,69 +5943,17 @@ if(!isVerify) return isUser()
 					if ((args[0]) === 'on') {
 						if (isSimi) return reply('✳️ Simsimi ya está activo')
 						_samih.push(from)
-						fs.writeFileSync('./database/simi.json', JSON.stringify(_samih))
+						fs.writeFileSync('./database/group/simi.json', JSON.stringify(_samih))
 						reply(`✅ Se activo el *Simsimi* en este grupo`)
 					} else if ((args[0]) === 'off') {
 						if (!isSimi) return reply('✳️ Simsimi ya está desactivado')
 						_samih.splice(from, 1)
-						fs.writeFileSync('./database/simi.json', JSON.stringify(_samih))
+						fs.writeFileSync('./database/group/simi.json', JSON.stringify(_samih))
 						reply(`✅ Se desactivo el *Simsimi* en este grupo`)
 					} else {
 						reply(`✳️ *SIMSIMI*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
 					}
 					break
-
-					//---  antilink Telegram
-				
-case 'antilinktelegram':
-case 'antilinktele':
-				if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-				if (!isGroup) return reply(group())
-					if (!isGroupAdmins && !isOwner) return reply(admin())
-					if (!isBotGroupAdmins) return reply(Badmin())
-					if (args.length < 1) return reply(`✳️ *ANTILINK TELEGRAM*\n\n*${prefix + command} 1* para activar\n*${prefix + command} 0* para desactivar`)
-					if ((args[0]) === '1') {
-						if (isAntiTele) return reply('✳️ Antilink Telegram ya está activo')
-						_antilinkte.push(from)
-						fs.writeFileSync('./database/antilinkte.json', JSON.stringify(_antilinkte))
-						reply(`✅ Se activo el *Antilink Telegram* en el grupo *${groupMetadata.subject}*`)
-					} else if ((args[0]) === '0') {
-						if (!isAntiTele) return reply('✳️ Antilink Telegram ya está desactivado')
-						_antilinkte.splice(from, 1)
-						fs.writeFileSync('./database/antilinkte.json', JSON.stringify(_antilinkte))
-						reply(`✅ Se desactivo el *Antilink Telegram* en el grupo *${groupMetadata.subject}*`)
-					} else {
-						reply(`✳️ *ANTILINK TELEGRAM*\n\n*${prefix + command} 1* para activar\n*${prefix + command} 0* para desactivar`)
-					}
-					break
-					
-					//---  antilink Discord 
-				
-case 'antilinkdiscord':
-case 'antilinkdis':
-case 'antilinkdi':
-				if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-				if (!isGroup) return reply(group())
-					if (!isGroupAdmins && !isOwner) return reply(admin())
-					if (!isBotGroupAdmins) return reply(Badmin())
-					if (args.length < 1) return reply(`✳️ *ANTILINK DISCORD*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
-					if ((args[0]) === 'on') {
-						if (isAntiDis) return reply('✳️ Antilink Discord ya está activo')
-						_antilinkdi.push(from)
-						fs.writeFileSync('./database/antilinkdi.json', JSON.stringify(_antilinkdi))
-						reply(`✅ Se activo el *Antilink Discord* en el grupo *${groupMetadata.subject}*`)
-					} else if ((args[0]) === 'off') {
-						if (!isAntiDis) return reply('✳️ Antilink Discord ya está desactivado')
-						_antilinkdi.splice(from, 1)
-						fs.writeFileSync('./database/antilinkdi.json', JSON.stringify(_antilinkdi))
-						reply(`✅ Se desactivo el *Antilink Discord* en el grupo *${groupMetadata.subject}*`)
-					} else {
-						reply(`✳️ *ANTILINK DISCORD*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
-					}
-					break
-					
 					
 	  case "modechat":
       case "modochat":
@@ -6133,7 +5986,7 @@ if (!isOwner && !isMods) return reply(modsB())
 //if (!isBotGroupAdmins) return reply(Badmin())
 if (isBanchat) return reply(`✳️ Este grupo ya está silenciado`)
 _bancht.push(from)
-fs.writeFileSync('./database/banchat.json', JSON.stringify(_bancht))
+fs.writeFileSync('./database/group/banchat.json', JSON.stringify(_bancht))
 reply(`✅ *Grupo Silenciado*\n\n⏯️ El bot ha sido silenciado en este chat. No responderá ningún comando`)
 break
 
@@ -6142,7 +5995,7 @@ if (!isOwner && !isMods) return reply(modsB())
 if (!isBanchat) return reply(`✳️El grupo no estaba silenciado`)
 let ubc = _bancht.indexOf(from)
 _bancht.splice(ubc, 1)
-fs.writeFileSync('./database/banchat.json', JSON.stringify(_bancht))
+fs.writeFileSync('./database/group/banchat.json', JSON.stringify(_bancht))
 reply(`✅ *Grupo desmuteado*\n\n ▶️ Ahora ya pueden usar los comandos`)
 break
 
@@ -7409,7 +7262,7 @@ if (!q)return reply(`✳️ *Uso del comamdo!*\n\n*📌Ejemplo :*\n• *${prefix
 expired = q.split(" ")[1]
 const pnom = {id: `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`,expired: Date.now() + toMs(expired) }
 premium.push(pnom) 
-fs.writeFileSync('./database/premium.json',JSON.stringify(premium))
+fs.writeFileSync('./database/bot/premium.json',JSON.stringify(premium))
 reply(`✅ *Premium añadido*`)
 break
 
@@ -7421,7 +7274,7 @@ for(let i=0; i<premium.length; i++){
 if(user.includes(premium[i].id)){
 let del = premium.indexOf(premium[i])
 premium.splice(del, 1)
-fs.writeFileSync('./database/premium.json', JSON.stringify(premium))
+fs.writeFileSync('./database/bot/premium.json', JSON.stringify(premium))
 mentions(`✅Se eliminó  premium de @${user.split("@")[0]}`,[user],true)
 }
 }
@@ -7975,12 +7828,12 @@ break
 					if ((args[0]) === 'on') {
 						if (isNsfw) return reply('✳️ Nsfw ya está activo')
 						nsfw.push(from)
-						fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
+						fs.writeFileSync('./database/group/nsfw.json', JSON.stringify(nsfw))
 						reply(`✅ Se activo el *nsfw* en este grupo`)
 					} else if ((args[0]) === 'off') {
 						if (!isNsfw) return reply('✳️ Nsfw ya está desactivado')
 						nsfw.splice(from, 1)
-						fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfw))
+						fs.writeFileSync('./database/group/nsfw.json', JSON.stringify(nsfw))
 						reply(`✅ Se desactivo el *nsfw* en este grupo`)
 					} else {
 						reply(`✳️ *CONTENIDO +18*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
@@ -8103,7 +7956,7 @@ break
                     const claimexp = Math.floor(Math.random() * 900) + 10000
                     addLevelingXp(sender, claimexp)
                     _claim.push(sender)
-                    fs.writeFileSync('./database/claim.json', JSON.stringify(_claim))
+                    fs.writeFileSync('./database/user/claim.json', JSON.stringify(_claim))
                     reply(`*🎁 RECOMPENSA DIARIA 🎁*
 
 ▢ *Has recibido:*
