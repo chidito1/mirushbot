@@ -11,7 +11,7 @@ const {
 const simple = require("./lib/simple.js");
 const WAConnection = simple.WAConnection(_WAConnection);
 const fs = require("fs");
-const { banner, start, success, getGroupAdmins } = require("./libreria/functions");
+const { banner, start, success, getGroupAdmins } = require("./lib/functions");
 const { color } = require("./lib/color");
 //const { keepalive } = require("./keepalive");
 const fetch = require("node-fetch");
@@ -35,7 +35,7 @@ CFonts.say('GATY-BOT', {
   gradient: ['red', 'magenta']
 })
 
-CFonts.say(`——————————\nGatybot by g4tito\n——————————`, {
+CFonts.say(`Gatybot by g4tito`, {
   font: 'console',
   align: 'center',
   colors: ['yellow']
@@ -65,8 +65,8 @@ CFonts.say(`——————————\nGatybot by g4tito\n—————�
   
   //𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗔 𝗬 𝗗𝗘𝗦𝗣𝗘𝗗𝗜𝗗𝗔 𝗰𝗼𝗻 𝗮𝗽𝗶 //
 Fg.on('group-participants-update', async (anu) => {
-	const _welcom = JSON.parse(fs.readFileSync('./database/welcom.json'))
-	const _left = JSON.parse(fs.readFileSync('./database/left.json'))	
+	const _welcom = JSON.parse(fs.readFileSync('./database/group/welcom.json'))
+	const _left = JSON.parse(fs.readFileSync('./database/group/bye.json'))	
 		if (!_welcom.includes(anu.jid)) return
 		try {
 			const mdata = await Fg.groupMetadata(anu.jid)
