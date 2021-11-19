@@ -8270,6 +8270,22 @@ ${descOwner ? `*Desc diubah oleh* : @${descOwner.split('@')[0]}` : '*Desc diubah
              }
              break
         
+        case 'skinzz':
+      lolix = await getBuffer('https://api.mcpedl.com/storage/submissions/132470/images/casualskinpack-76-110-new-skins-more-squid-game-skins_4.png')
+Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${loliz}\n\n✅ Aqui tienes *Onii chan*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            })
+          break
+          
+          case 'skinzs':
+      lolix = await getBuffer('https://api.mcpedl.com/storage/submissions/132470/images/casualskinpack-76-110-new-skins-more-squid-game-skins_5.png')
+Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${loliz}\n\n✅ Aqui tienes *Onii chan*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            })
+          break
+        
 //--------------------------------------
       default:
  
