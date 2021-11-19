@@ -8,11 +8,11 @@ const {
   GroupSettingChange,
   Browsers,
 } = require("@adiwajshing/baileys");
-const simple = require("./libreria/simple.js");
+const simple = require("./lib/simple.js");
 const WAConnection = simple.WAConnection(_WAConnection);
 const fs = require("fs");
 const { banner, start, success, getGroupAdmins } = require("./libreria/functions");
-const { color } = require("./libreria/color");
+const { color } = require("./lib/color");
 //const { keepalive } = require("./keepalive");
 const fetch = require("node-fetch");
 const axios = require("axios")  
