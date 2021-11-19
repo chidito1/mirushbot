@@ -3,13 +3,13 @@ const dbdir = 'Creado por FG98'
 
 function defineSave(db, obj, session) {
 mine = db
-const dbdir = `./libreria/tictactoe/db/${session}.json`
+const dbdir = `./lib/tictactoe/db/${session}.json`
 fs.writeFileSync(dbdir, JSON.stringify(obj, null, 2))
 }
 
 function setGame(session) {
 const matrix = []
-const dbdir = `./libreria/tictactoe/db/${session}.json`
+const dbdir = `./lib/tictactoe/db/${session}.json`
 if (!fs.existsSync(dbdir)) {
 matrix[0] = ["1️⃣", "2️⃣", "3️⃣"]
 matrix[1] = ["4️⃣", "5️⃣", "6️⃣"]
