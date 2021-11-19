@@ -6,7 +6,7 @@ const afk = JSON.parse(fs.readFileSync('./libreria/off.json'))
 const addafk = (from) => {
     const obj = { id: from, expired: Date.now() + toMs('2m') }
     afk.push(obj)
-    fs.writeFileSync('./libreria/off.json', JSON.stringify(afk))
+    fs.writeFileSync('./lib/off.json', JSON.stringify(afk))
 }
 
 
@@ -20,7 +20,7 @@ const cekafk = (_dir) => {
         })
         if (position !== null) {
             _dir.splice(position, 1)
-            fs.writeFileSync('./libreria/off.json', JSON.stringify(_dir))
+            fs.writeFileSync('./lib/off.json', JSON.stringify(_dir))
         }
     }, 1000)
 }
