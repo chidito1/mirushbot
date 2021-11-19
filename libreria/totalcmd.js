@@ -1,6 +1,6 @@
 const fs = require('fs-extra')
 
-const ceemde = JSON.parse(fs.readFileSync('./libreria/totalcmd.json'))
+const ceemde = JSON.parse(fs.readFileSync('./lib/totalcmd.json'))
 
 /**
  * for add total command
@@ -9,7 +9,7 @@ const ceemde = JSON.parse(fs.readFileSync('./libreria/totalcmd.json'))
 **/
 const cmdadd = () => {
 	ceemde[0].totalcmd += 1
-	fs.writeFileSync('./libreria/totalcmd.json', JSON.stringify(ceemde))
+	fs.writeFileSync('./lib/totalcmd.json', JSON.stringify(ceemde))
 }
 
 module.exports = {
