@@ -1804,13 +1804,14 @@ _prem.expiredCheck(premium)
 //====================================================================================================//
 
 //>> Juego de matemáticas
+const htgm3 = Math.floor(Math.random() * (10000 - 5000 + 1) + 5000)
+
 game.cekWaktuMtk(Fg, mtk)
 
 if (game.isMtk(from, mtk)){
 if (chats.toLowerCase().includes(game.getJawabanMtk(from, mtk))){
-var htgm3 = Math.floor(Math.random() * (10000 - 5000 + 1) + 5000)
 addBalance(sender, htgm3, balance)
-await reply(`*✅ Felicidades tu respuesta es correcta*\n*‣ Respuesta :* ${game.getJawabanMtk(from, mtk)}\n*‣ Ganaste :* ${htgm3}💰\n\nQuieres jugar de nuevo? 📌 Escribe\n*${prefix}mates*`)
+await reply(`*✅ Respuesta correcta*\n\n+${htgm3} botcoins💰`)
 mtk.splice(game.getMtkPosi(from, mtk), 1)
 }
 }
@@ -7577,42 +7578,42 @@ if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuest
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					if (args[0] === 'noob' ) {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'fácil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'facil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 					} else if (args[0] === 'normal') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=medium`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 					} else if (args[0] === 'difícil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'dificil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'extremo') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=extreme`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'imposible') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=impossible`)
-reply(`_*Cuanto es :*_\n\n_${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2} =_\n*Tiempo* : ${GameTime} _Segundos_`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${htgm3} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 					} else {
