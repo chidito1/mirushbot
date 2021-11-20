@@ -1808,7 +1808,7 @@ _prem.expiredCheck(premium)
 //====================================================================================================//
 
 //>> Juego de matemáticas
-var matez = 'nobb'
+var matez = '142'
             if (budy.includes("nobb")) {
                 matez = '142'
             } else if (budy.includes("fácil")) {
@@ -1830,10 +1830,10 @@ game.cekWaktuMtk(Fg, mtk)
 
 if (game.isMtk(from, mtk)){
 if (chats.toLowerCase().includes(game.getJawabanMtk(from, mtk))){
-addBalance(sender, 6370, balance)
-await reply(`*✅ Respuesta correcta*\n\n+${matez} botcoins💰`)
+addBalance(sender, _mate, balance)
+await reply(`*✅ Respuesta correcta*\n\n+${_mate} botcoins💰`)
 mtk.splice(game.getMtkPosi(from, mtk), 1)
-_mate.splice(1)
+_mate.splice(_mate)
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 }
 }
