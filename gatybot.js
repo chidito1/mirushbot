@@ -7582,7 +7582,7 @@ if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 if (!isGroup) return reply(group())
 if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuesta en este chat`)
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
-_mate.splice(_mate)
+_mate.splice("")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					if (args[0] === 'noob' ) {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
@@ -8111,6 +8111,22 @@ ${descOwner ? `*Desc diubah oleh* : @${descOwner.split('@')[0]}` : '*Desc diubah
              reply('Link error')
              }
              break
+        
+case 'reenviar':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+   if (!isGroup)return reply(group())
+	if (!isGroupAdmins && !isOwner) return reply(admin())
+try{
+if(!isQuotedMsg)return reply('✳️ Responde a un mensaje!')
+pp = {id:mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from }
+Fg.sendMessage(from, pp, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+} catch(e) {
+reply('✳️ Responde a un mensaje!')
+reply(e)
+console.log(e)
+}
+break
         
 //--------------------------------------
       default:
