@@ -2404,276 +2404,251 @@ break;
        infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
 	  infost = infost.status == 401 ? 'sin info' : infost.status
         imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
-        autorfg = `${sender.split("@")[0]}`
-
-        helfxz = `_👋Hola @${autorfg} ${YahahaHayyuk}_
+        helfxz = `Hola ${sender.split("@")[0]} ${YahahaHayyuk}
         
-_*<INFO DEL USUARIO/>*_
+💫 Tu Info: *${wstatus.status}*
+    
+📆 *Fecha Actual :* _${fecha2}_
+🕜 *Hora :* _${hora2}_
+  📚 *Lib :*  _Baileys_
+💣 *Usos :*  _${totalhit}_
+⚔️ *Prefix :*  _${prefix}_
 
-• 式 ⃟🐱 *_Nombre_* _: @${sender.split("@")[0]}_
-• 式 ⃟🆙 *_Nivel_* _: ${lvlh}_
-• 式 ⃟🏅 *_Rango_* _: ${role}_
-• 式 ⃟ℹ️ *_Info_* _: ${infost}_
+    CONVERTIDORES
+  🎨 ${prefix}sticker (Foto/video) 
+  🎨 ${prefix}sticker2 (Nombre|Autor)
+  🎨 ${prefix}take (Nombre|Autor)
+  🎨 ${prefix}exif (Nombre|Autor)
+  🎨 ${prefix}ttp
+  🎨 ${prefix}ttp2
+  🎨 ${prefix}attp
+  🎨 ${prefix}attp2
+  🎨 ${prefix}attp3
+  🎨 ${prefix}smeme (txt|text2)
+  🎨 ${prefix}smeme2
+  🎨 ${prefix}toimg
+  🎨 ${prefix}togif
+  🎨 ${prefix}tovid
+  🎨 ${prefix}toav
+  🎨 ${prefix}rvo
+  🎨 ${prefix}triggered
+  🎨 ${prefix}passed
+  🎨 ${prefix}wasted
+  🎨 ${prefix}wanted
+  🎨 ${prefix}gtav
+  🎨 ${prefix}imgrip
+  🎨 ${prefix}imgrip2
+  🎨 ${prefix}scelda
+  🎨 ${prefix}emojiapp
+  🎨 ${prefix}emojiwa
+  🎨 ${prefix}emojifb
+  🎨 ${prefix}emojigo
+  🎨 ${prefix}emojimo
+  🎨 ${prefix}emojitw
+  🎨 ${prefix}emojisa
+  🎨 ${prefix}emojiop
+  🎨 ${prefix}emojipi
+  🎨 ${prefix}emojiht
+  🎨 ${prefix}emojilg
 
-_*<INFO DEL BOT/>*_
+    DESCARGAS
+  📥 ${prefix}play
+  📥 ${prefix}play2
+  📥 ${prefix}playvid
+  📥 ${prefix}ytmp3
+  📥 ${prefix}ytmp4
+  📥 ${prefix}instagram
+  📥 ${prefix}igstory
+  📥 ${prefix}tiktok
+  📥 ${prefix}tiktokaudio
+  📥 ${prefix}mdfire
 
-• 式 ⃟📆 *_Fecha_* _: ${fecha2}_
-• 式 ⃟🕜 *_Hora_* _: ${hora2}_
-• 式 ⃟#️⃣ *_Prefijo_* _: ${prefix}_
-• 式 ⃟✅ *_Usuarios_* _: ${_user.length}_
+    BUSQUEDA
+  🔎 ${prefix}ytsearch
+  🔎 ${prefix}ytstalk
+  🔎 ${prefix}igstalk
+  🔎 ${prefix}playstore
 
-_*<CONVERTIDORES/>*_
+    EDUCACIÓN
+  📚 ${prefix}covid
+  📚 ${prefix}hora
+  📚 ${prefix}trad
+  📚 ${prefix}cal
+  📚 ${prefix}google
+  📚 ${prefix}wiki
+  📚 ${prefix}encode
+  📚 ${prefix}decode
 
-• 式 ⃟🎨 _${prefix}sticker (Foto/video)_ 
-• 式 ⃟🎨 _${prefix}sticker2 (Nombre|Autor)_
-• 式 ⃟🎨 _${prefix}take (Nombre|Autor)_
-• 式 ⃟🎨 _${prefix}exif (Nombre|Autor)_
-• 式 ⃟🎨 _${prefix}ttp_
-• 式 ⃟🎨 _${prefix}ttp2_
-• 式 ⃟🎨 _${prefix}attp_
-• 式 ⃟🎨 _${prefix}attp2_
-• 式 ⃟🎨 _${prefix}attp3_
-• 式 ⃟🎨 _${prefix}smeme_ _(txt|text2)_
-• 式 ⃟🎨 _${prefix}smeme2_
-• 式 ⃟🎨 _${prefix}toimg_
-• 式 ⃟🎨 _${prefix}togif_
-• 式 ⃟🎨 _${prefix}tovid_
-• 式 ⃟🎨 _${prefix}toav_
-• 式 ⃟🎨 _${prefix}rvo_
-• 式 ⃟🎨 _${prefix}triggered_
-• 式 ⃟🎨 _${prefix}passed_
-• 式 ⃟🎨 _${prefix}wasted_
-• 式 ⃟🎨 _${prefix}wanted_
-• 式 ⃟🎨 _${prefix}gtav_
-• 式 ⃟🎨 _${prefix}imgrip_
-• 式 ⃟🎨 _${prefix}imgrip2_
-• 式 ⃟🎨 _${prefix}scelda_
-• 式 ⃟🎨 _${prefix}emoji_app_
-• 式 ⃟🎨 _${prefix}emoji_wa_
-• 式 ⃟🎨 _${prefix}emoji_fb_
-• 式 ⃟🎨 _${prefix}emoji_go_
-• 式 ⃟🎨 _${prefix}emoji_mo_
-• 式 ⃟🎨 _${prefix}emoji_tw_
-• 式 ⃟🎨 _${prefix}emoji_sa_
-• 式 ⃟🎨 _${prefix}emoji_op_
-• 式 ⃟🎨 _${prefix}emoji_pi_
-• 式 ⃟🎨 _${prefix}emoji_ht_
-• 式 ⃟🎨 _${prefix}emoji_lg_
+    LOGOS
+  🧩 ${prefix}blackpink
+  🧩 ${prefix}glich
+  🧩 ${prefix}retroneon
+  🧩 ${prefix}luzneon
+  🧩 ${prefix}gaming
+  🧩 ${prefix}3d
+  🧩 ${prefix}phlogo
 
-_*<DESCARGAS/>*_
+    MEDIA
+  🎥 ${prefix}screenshot
+  🎥 ${prefix}tourl
+  🎥 ${prefix}tourl2
+  🎥 ${prefix}urltoimg
+  🎥 ${prefix}toav
+  🎥 ${prefix}tomp3
+  🎥 ${prefix}asupan
+  🎥 ${prefix}wame
+  🎥 ${prefix}ocr
+  🎥 ${prefix}sinfondo
+  🎥 ${prefix}escribe
+  🎥 ${prefix}tinyurl (acortador)
 
-• 式 ⃟📥 _${prefix}play_
-• 式 ⃟📥 _${prefix}play2_
-• 式 ⃟📥 _${prefix}playvid_
-• 式 ⃟📥 _${prefix}ytmp3_
-• 式 ⃟📥 _${prefix}ytmp4_
-• 式 ⃟📥 _${prefix}instagram_
-• 式 ⃟📥 _${prefix}igstory_
-• 式 ⃟📥 _${prefix}tiktok_
-• 式 ⃟📥 _${prefix}tiktokaudio_
-• 式 ⃟📥 _${prefix}mdfire_
+    FUNCIÓNES
+  🍒 ${prefix}random
+  🍒 ${prefix}leermas (txt1|txt2)
+  🍒 ${prefix}fake (@tag|txt1|txt2)
+  🍒 ${prefix}tagme
+  🍒 ${prefix}mention (549xxx)
+  🍒 ${prefix}say
 
-_*<BUSQUEDA/>*_
+    ECONOMÍA
+  🪙 ${prefix}shop
+  🪙 ${prefix}toplevel
+  🪙 ${prefix}cartera
+  🪙 ${prefix}getcartera (@tag)
+  🪙 ${prefix}buy (compra 💎)
+  🪙 ${prefix}buygcoin (compra 🎰)
+  🪙 ${prefix}transferd
+  🪙 ${prefix}adddiama
+  🪙 ${prefix}addgcoin
+  🪙 ${prefix}claim
 
-• 式 ⃟🔎 _${prefix}ytsearch_
-• 式 ⃟🔎 _${prefix}ytstalk_
-• 式 ⃟🔎 _${prefix}igstalk_
-• 式 ⃟🔎 _${prefix}playstore_
+    DIVERSIÓN
+  🎲 ${prefix}shipping 
+  🎲 ${prefix}pregunta
+  🎲 ${prefix}vor (verdad/reto)
+  🎲 ${prefix}verdad
+  🎲 ${prefix}reto
+  🎲 ${prefix}meme
+  🎲 ${prefix}ppt
+  🎲 ${prefix}topgay
+  🎲 ${prefix}ttc (@tag)
+  🎲 ${prefix}delttc
+  🎲 ${prefix}mates
+  🎲 ${prefix}simi
+  🎲 ${prefix}simi2
+  🎲 ${prefix}slot
+  🎲 ${prefix}dado
 
-_*<EDUCACIÓN/>*_
+    IMAGENES
+  🌅 ${prefix}imagen
+  🌅 ${prefix}pinterest
+  🌅 ${prefix}wallpaper
+  🌅 ${prefix}loli
+  🌅 ${prefix}neko
+  🌅 ${prefix}waifu
+  🌅 ${prefix}girl
+  🌅 ${prefix}man
+  🌅 ${prefix}rip
 
-• 式 ⃟📚 _${prefix}covid_
-• 式 ⃟📚 _${prefix}hora_
-• 式 ⃟📚 _${prefix}trad_
-• 式 ⃟📚 _${prefix}cal_
-• 式 ⃟📚 _${prefix}google_
-• 式 ⃟📚 _${prefix}wiki_
-• 式 ⃟📚 _${prefix}encode_
-• 式 ⃟📚 _${prefix}decode_
+    NSFW
+  🔞 ${prefix}hentai
+  🔞 ${prefix}pack
+  🔞 ${prefix}nsfwwaifu
+  🔞 ${prefix}nsfwloli
+  🔞 ${prefix}nsfwneko
 
-_*<LOGOS/>*_
+        GRUPOS
+  👥 ${prefix}infogp
+  👥 ${prefix}infodetec
+  👥 ${prefix}group
+  👥 ${prefix}group2 [close/open]
+  👥 ${prefix}link
+  👥 ${prefix}mensaje
+  👥 ${prefix}online
+  👥 ${prefix}kick
+  👥 ${prefix}okick
+  👥 ${prefix}oadd
+  👥 ${prefix}staff
+  👥 ${prefix}dueñogp
+  👥 ${prefix}setdesc
+  👥 ${prefix}setname
+  👥 ${prefix}anularlink
+  👥 ${prefix}getbio (@tag)
+  👥 ${prefix}getperfil (@tag)
+  👥 ${prefix}perfil
+  👥 ${prefix}nivel
+  👥 ${prefix}rangos
+  👥 ${prefix}leido (Mensaje bot) 
+  👥 ${prefix}leveling [on/off]
+  👥 ${prefix}welcome [on/off]
+  👥 ${prefix}goodbye [on/off]
+  👥 ${prefix}simih [on/off]
+  👥 ${prefix}antiviewonce [on/off]
+  👥 ${prefix}antilink [on/off]
+  👥 ${prefix}interaction [on/off]
+  👥 ${prefix}antivirtual [on/off]
+  👥 ${prefix}nsfw [on/off]
+  👥 ${prefix}delete (mensaje bot)
+  👥 ${prefix}salir (dejo el grupo)
 
-• 式 ⃟🧩 _${prefix}blackpink_
-• 式 ⃟🧩 _${prefix}glich_
-• 式 ⃟🧩 _${prefix}retroneon_
-• 式 ⃟🧩 _${prefix}luzneon_
-• 式 ⃟🧩 _${prefix}gaming_
-• 式 ⃟🧩 _${prefix}3d_
-• 式 ⃟🧩 _${prefix}phlogo_
+    MENSIONES
+  🪀 ${prefix}tagall
+  🪀 ${prefix}tag
+  🪀 ${prefix}notify (texto)
+  🪀 ${prefix}hidetag
+  🪀 ${prefix}contag (Nombre|Num)
+  🪀 ${prefix}sticktag
+  🪀 ${prefix}imgtag
 
-_*<MEDIA/>*_
+    SESIÓN
+  🤖 ${prefix}serbot
+  🤖 ${prefix}stopbot
+  🤖 ${prefix}listbots
 
-• 式 ⃟🎥 _${prefix}screenshot_
-• 式 ⃟🎥 _${prefix}tourl_
-• 式 ⃟🎥 _${prefix}tourl2_
-• 式 ⃟🎥 _${prefix}urltoimg_
-• 式 ⃟🎥 _${prefix}toav_
-• 式 ⃟🎥 _${prefix}tomp3_
-• 式 ⃟🎥 _${prefix}asupan_
-• 式 ⃟🎥 _${prefix}wame_
-• 式 ⃟🎥 _${prefix}ocr_
-• 式 ⃟🎥 _${prefix}sinfondo_
-• 式 ⃟🎥 _${prefix}escribe_
-• 式 ⃟🎥 _${prefix}tinyurl (acortador)_
+    AVANZADO
+  ⚙️ ${prefix}blocklist
+  ⚙️ ${prefix}banlist
+  ⚙️ ${prefix}listbanchat
+  ⚙️ ${prefix}liststickcmd
+  ⚙️ ${prefix}getstickcmd
+  ⚙️ ${prefix}premiumlist
+  ⚙️ ${prefix}checkpremium
 
-_*<FUNCIÓNES/>*_
+    OWNER
+  🐱 ${prefix}actualizar
+  🐱 ${prefix}modo (publico/privado)
+  🐱 ${prefix}stickcmd
+  🐱 ${prefix}delstickcmd
+  🐱 ${prefix}addprem
+  🐱 ${prefix}delprem
+  🐱 ${prefix}setprefix
+  🐱 ${prefix}ban
+  🐱 ${prefix}unban
+  🐱 ${prefix}clearchat
+  🐱 ${prefix}buscarmsg
+  🐱 ${prefix}listagp
+  🐱 ${prefix}antillamada
+  🐱 ${prefix}antidelete
+  🐱 ${prefix}autoread
+  🐱 ${prefix}informes
+  🐱 ${prefix}solicitudes
+  🐱 ${prefix}clonar
+  🐱 ${prefix}banchat
+  🐱 ${prefix}unbanchat
+  🐱 ${prefix}chatmode
 
-• 式 ⃟🍒 _${prefix}random_
-• 式 ⃟🍒 _${prefix}leermas (txt1|txt2)_
-• 式 ⃟🍒 _${prefix}fake (@tag|txt1|txt2)_
-• 式 ⃟🍒 _${prefix}tagme_
-• 式 ⃟🍒 _${prefix}mention (549xxx)_
-• 式 ⃟🍒 _${prefix}say_
-
-_*<ECONOMÍA/>*_
-
-• 式 ⃟🪙 _${prefix}shop_
-• 式 ⃟🪙 _${prefix}toplevel_
-• 式 ⃟🪙 _${prefix}cartera_
-• 式 ⃟🪙 _${prefix}getcartera_ (@tag)
-• 式 ⃟🪙 _${prefix}buy (compra 💎)_
-• 式 ⃟🪙 _${prefix}buygcoin (compra 🎰)_
-• 式 ⃟🪙 _${prefix}transferd_
-• 式 ⃟🪙 _${prefix}adddiama_
-• 式 ⃟🪙 _${prefix}addgcoin_
-• 式 ⃟🪙 _${prefix}claim_
-
-_*<DIVERSIÓN/>*_
-
-• 式 ⃟🎲 _${prefix}shipping_ 
-• 式 ⃟🎲 _${prefix}pregunta_
-• 式 ⃟🎲 _${prefix}vor (verdad/reto)_
-• 式 ⃟🎲 _${prefix}verdad_
-• 式 ⃟🎲 _${prefix}reto_
-• 式 ⃟🎲 _${prefix}meme_
-• 式 ⃟🎲 _${prefix}ppt_
-• 式 ⃟🎲 _${prefix}topgay_
-• 式 ⃟🎲 _${prefix}ttc_ (@tag)
-• 式 ⃟🎲 _${prefix}delttc_
-• 式 ⃟🎲 _${prefix}mates_
-• 式 ⃟🎲 _${prefix}simi_
-• 式 ⃟🎲 _${prefix}simi2_
-• 式 ⃟🎲 _${prefix}slot_
-• 式 ⃟🎲 _${prefix}dado_
-
-_*<IMAGENES/>*_
-
-• 式 ⃟🌅 _${prefix}imagen_
-• 式 ⃟🌅 _${prefix}pinterest_
-• 式 ⃟🌅 _${prefix}wallpaper_
-• 式 ⃟🌅 _${prefix}loli_
-• 式 ⃟🌅 _${prefix}neko_
-• 式 ⃟🌅 _${prefix}waifu_
-• 式 ⃟🌅 _${prefix}girl_
-• 式 ⃟🌅 _${prefix}man_
-• 式 ⃟🌅 _${prefix}rip_
-
-_*<NSFW/>*_
-
-• 式 ⃟🔞 _${prefix}hentai_
-• 式 ⃟🔞 _${prefix}pack_
-• 式 ⃟🔞 _${prefix}nsfw_waifu_
-• 式 ⃟🔞 _${prefix}nsfw_loli_
-• 式 ⃟🔞 _${prefix}nsfw_neko_
-
-_*<GRUPOS/>*_
-
-• 式 ⃟👥 _${prefix}infogp_
-• 式 ⃟👥 _${prefix}infodetec_
-• 式 ⃟👥 _${prefix}group_
-• 式 ⃟👥 _${prefix}group2 [close/open]_
-• 式 ⃟👥 _${prefix}link_
-• 式 ⃟👥 _${prefix}mensaje_
-• 式 ⃟👥 _${prefix}online_
-• 式 ⃟👥 _${prefix}kick_
-• 式 ⃟👥 _${prefix}okick_
-• 式 ⃟👥 _${prefix}oadd_
-• 式 ⃟👥 _${prefix}staff_
-• 式 ⃟👥 _${prefix}dueñogp_
-• 式 ⃟👥 _${prefix}setdesc_
-• 式 ⃟👥 _${prefix}setname_
-• 式 ⃟👥 _${prefix}anularlink_
-• 式 ⃟👥 _${prefix}getbio (@tag)_
-• 式 ⃟👥 _${prefix}getperfil (@tag)_
-• 式 ⃟👥 _${prefix}perfil_
-• 式 ⃟👥 _${prefix}nivel_
-• 式 ⃟👥 _${prefix}rangos_
-• 式 ⃟👥 _${prefix}leido (Mensaje bot)_ 
-• 式 ⃟👥 _${prefix}leveling [on/off]_
-• 式 ⃟👥 _${prefix}welcome [on/off]_
-• 式 ⃟👥 _${prefix}goodbye [on/off]_
-• 式 ⃟👥 _${prefix}simih [on/off]_
-• 式 ⃟👥 _${prefix}antiviewonce [on/off]_
-• 式 ⃟👥 _${prefix}antilink [on/off]_
-• 式 ⃟👥 _${prefix}interaction [on/off]_
-• 式 ⃟👥 _${prefix}antivirtual [on/off]_
-• 式 ⃟👥 _${prefix}nsfw [on/off]_
-• 式 ⃟👥 _${prefix}delete (mensaje bot)_
-• 式 ⃟👥 _${prefix}salir (dejo el grupo)_
-
-_*<MENSIONES/>*_
-
-• 式 ⃟🪀 _${prefix}tagall_
-• 式 ⃟🪀 _${prefix}tag_
-• 式 ⃟🪀 _${prefix}notify (texto)_
-• 式 ⃟🪀 _${prefix}hidetag_
-• 式 ⃟🪀 _${prefix}contag (Nombre|Num)_
-• 式 ⃟🪀 _${prefix}sticktag_
-• 式 ⃟🪀 _${prefix}imgtag_
-
-_*<SESIÓN/>*_
-
-• 式 ⃟🤖 _${prefix}serbot_
-• 式 ⃟🤖 _${prefix}stopbot_
-• 式 ⃟🤖 _${prefix}listbots_
-
-_*<AVANZADO/>*_
-
-• 式 ⃟⚙️ _${prefix}blocklist_
-• 式 ⃟⚙️ _${prefix}banlist_
-• 式 ⃟⚙️ _${prefix}listbanchat_
-• 式 ⃟⚙️ _${prefix}liststickcmd_
-• 式 ⃟⚙️ _${prefix}getstickcmd_
-• 式 ⃟⚙️ _${prefix}premiumlist_
-• 式 ⃟⚙️ _${prefix}checkpremium_
-
-_*<OWNER/>*_
-
-• 式 ⃟🐱 _${prefix}actualizar_
-• 式 ⃟🐱 _${prefix}modo (publico/privado)_
-• 式 ⃟🐱 _${prefix}stickcmd_
-• 式 ⃟🐱 _${prefix}delstickcmd_
-• 式 ⃟🐱 _${prefix}addprem_
-• 式 ⃟🐱 _${prefix}delprem_
-• 式 ⃟🐱 _${prefix}setprefix_
-• 式 ⃟🐱 _${prefix}ban_
-• 式 ⃟🐱 _${prefix}unban_
-• 式 ⃟🐱 _${prefix}clearchat_
-• 式 ⃟🐱 _${prefix}buscarmsg_
-• 式 ⃟🐱 _${prefix}listagp_
-• 式 ⃟🐱 _${prefix}antillamada_
-• 式 ⃟🐱 _${prefix}antidelete_
-• 式 ⃟🐱 _${prefix}autoread_
-• 式 ⃟🐱 _${prefix}informes_
-• 式 ⃟🐱 _${prefix}solicitudes_
-• 式 ⃟🐱 _${prefix}clonar_
-• 式 ⃟🐱 _${prefix}banchat_
-• 式 ⃟🐱 _${prefix}unbanchat_
-• 式 ⃟🐱 _${prefix}chatmode_
-
-_*<INFORMACIÓN/>*_
-
-• 式 ⃟ℹ️ _${prefix}reglas_
-• 式 ⃟ℹ️ _${prefix}creador_
-• 式 ⃟ℹ️ _${prefix}info_
-• 式 ⃟ℹ️ _${prefix}gpbot_
-• 式 ⃟ℹ️ _${prefix}script_
-• 式 ⃟ℹ️ _${prefix}report_
-• 式 ⃟ℹ️ _${prefix}ping_
-• 式 ⃟ℹ️ _${prefix}runtime_
-• 式 ⃟ℹ️ _${prefix}estado_
-• 式 ⃟ℹ️ _${prefix}join_
-• 式 ⃟ℹ️ _${prefix}ayuda_`
+    INFORMACIÓN
+  ℹ️ ${prefix}reglas
+  ℹ️ ${prefix}creador
+  ℹ️ ${prefix}info
+  ℹ️ ${prefix}gpbot
+  ℹ️ ${prefix}script
+  ℹ️ ${prefix}report
+  ℹ️ ${prefix}ping
+  ℹ️ ${prefix}runtime
+  ℹ️ ${prefix}estado
+  ℹ️ ${prefix}join
+  ℹ️ ${prefix}ayuda`
 
   py =  await Fg.prepareMessage(from, imgth, image)
 gbutsan = [
