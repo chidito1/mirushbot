@@ -120,6 +120,10 @@ const nsfw = JSON.parse(fs.readFileSync('./database/group/nsfw.json'))
 const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./database/user/nivel.json'))
 const _claim = JSON.parse(fs.readFileSync('./database/user/claim.json'))
+
+//>> Juego mate
+const _mate = JSON.parse(fs.readFileSync('./game/mate.json'))
+
 //====================[ FIN DE BASE DE DATOS ]====================//
 
 
@@ -1804,6 +1808,22 @@ _prem.expiredCheck(premium)
 //====================================================================================================//
 
 //>> Juego de matemáticas
+var matez = 'nobb'
+            if (budy.includes("nobb")) {
+                matez = '142'
+            } else if (budy.includes("fácil")) {
+                matez = '560'
+            } else if (budy.includes("normal")) {
+                matez = '841'
+	        } else if (budy.includes("difícil")) {
+                matez = '7506'
+            } else if (budy.includes("extremo")) {
+                matez = '29543'
+            } else if (budy.includes("imposible")) {
+                matez = '99999'
+            }
+
+
 const htgm3 = Math.floor(Math.random() * (10000 - 5000 + 1) + 5000)
 
 game.cekWaktuMtk(Fg, mtk)
@@ -1811,8 +1831,10 @@ game.cekWaktuMtk(Fg, mtk)
 if (game.isMtk(from, mtk)){
 if (chats.toLowerCase().includes(game.getJawabanMtk(from, mtk))){
 addBalance(sender, 6370, balance)
-await reply(`*✅ Respuesta correcta*\n\n+6370 botcoins💰`)
+await reply(`*✅ Respuesta correcta*\n\n+${matez} botcoins💰`)
 mtk.splice(game.getMtkPosi(from, mtk), 1)
+_mate.splice(1)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 }
 }
 
@@ -3249,9 +3271,9 @@ if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(
 if (args.length < 1) return reply(`✳️ Ingrese el texto\n\n📌 Ejemplo : *${prefix + command}* Texto`)
 reply(wait())
 bp = args.join(" ")
-bp = await getBuffer(`https://docs-jojo.herokuapp.com/api/blackpink?text=${bp}`)
+bpz = await getBuffer(`https://docs-jojo.herokuapp.com/api/blackpink?text=${bp}`)
 reply(wait())
-Fg.sendMessage(from, bp, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Listo : *${bp}*`})
+Fg.sendMessage(from, bpz, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Listo : *${bp}*`})
 .catch((err) => {
             reply(`❎ Error, intente más tarde`); 
             })
@@ -3705,6 +3727,7 @@ case 'cal':
 case 'calcu':
 if(!isVerify) return isUser()
 if (isBanned) return reply(banf())
+if (game.isMtk(from, mtk)) return reply(`❎ Sin hacer trampa -_-`)
 if (args.length < 1) return reply(`✳️ Ingrese la ecuación\n\nsímbolos compatibles -, +, *, /, ×, ÷, π, e, (, )`)
 global.math = global.math ? global.math : {}
 let ed = from
@@ -7578,42 +7601,56 @@ if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuest
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					if (args[0] === 'noob' ) {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370  botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez}  botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push(matez)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'fácil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push(matez)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'facil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push(matez)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else if (args[0] === 'normal') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=medium`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push(matez)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else if (args[0] === 'difícil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push(matez)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'dificil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push(matez)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'extremo') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=extreme`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push(matez)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'imposible') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=impossible`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +6370 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 					} else {
