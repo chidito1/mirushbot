@@ -113,6 +113,7 @@ const balance = JSON.parse(fs.readFileSync('./database/user/balance.json'));
 const _welcom = JSON.parse(fs.readFileSync('./database/group/welcom.json'))
 const _bye = JSON.parse(fs.readFileSync('./database/group/bye.json'))	 
 const _user = JSON.parse(fs.readFileSync('./database/bot/verify.json'))
+const _verify = JSON.parse(fs.readFileSync('./database/user/verify.json'))
 const _samih = JSON.parse(fs.readFileSync('./database/group/simi.json'))
 const Verify = JSON.parse(fs.readFileSync('./database/bot/verify.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/group/nsfw.json'))
@@ -520,7 +521,7 @@ prefix = prefa }}}
       
       const isClaimOn = _claim.includes(sender)
 
-    const isVerify = _user.includes(sender)
+    const isVerify = _verify.includes(sender)
     const isInteraction = isGroup ? _interaction.includes(from) : false
     const isAntilink = isGroup ? _antilink.includes(from) : false
     const isAntiviewOnce = isGroup ? _antiviewonce.includes(from) : false
@@ -2842,6 +2843,7 @@ if (isBanned) return reply(banf())
 				}
 				fgfoto = 'https://i.ibb.co/JxxPcm2/verify.jpg'
 				veri = sender
+				_verify.push(sender)
 				fs.writeFileSync('./database/bot/verify.json', JSON.stringify(_user))
 				adduserUser(sender, pushname, fecha2, hora2, seriTod)
 				console.log(color('[GATYBOT]','magenta'), color(`Verificacion exitosa`));
