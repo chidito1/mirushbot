@@ -320,7 +320,7 @@ time: hora2,
 serial: seriTod
   }
   _user.push(obj)
-  fs.writeFileSync('./database/user/verify.json', JSON.stringify(_user))
+  fs.writeFileSync('./database/bot/verify.json', JSON.stringify(_user))
 }
 
 const createSerial = (size) => {
@@ -2842,7 +2842,7 @@ if (isBanned) return reply(banf())
 				}
 				fgfoto = 'https://i.ibb.co/JxxPcm2/verify.jpg'
 				veri = sender
-				fs.writeFileSync('./database/user/verify.json', JSON.stringify(_user))
+				fs.writeFileSync('./database/bot/verify.json', JSON.stringify(_user))
 				adduserUser(sender, pushname, fecha2, hora2, seriTod)
 				console.log(color('[GATYBOT]','magenta'), color(`Verificacion exitosa`));
 
