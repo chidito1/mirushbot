@@ -1808,21 +1808,6 @@ _prem.expiredCheck(premium)
 //====================================================================================================//
 
 //>> Juego de matemáticas
-var matez = '142'
-            if (budy.includes("nobb")) {
-                matez = '142'
-            } else if (budy.includes("fácil")) {
-                matez = '560'
-            } else if (budy.includes("normal")) {
-                matez = '841'
-	        } else if (budy.includes("difícil")) {
-                matez = '7506'
-            } else if (budy.includes("extremo")) {
-                matez = '29543'
-            } else if (budy.includes("imposible")) {
-                matez = '99999'
-            }
-
 
 const htgm3 = Math.floor(Math.random() * (10000 - 5000 + 1) + 5000)
 
@@ -7601,61 +7586,66 @@ if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuest
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					if (args[0] === 'noob' ) {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez}  botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +142  botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push(matez)
+_mate.push("142")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'fácil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +560 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push(matez)
+_mate.push("560")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'facil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +560 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push(matez)
+_mate.push("560")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else if (args[0] === 'normal') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=medium`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +841 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push(matez)
+_mate.push("841")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else if (args[0] === 'difícil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push(matez)
+_mate.push("7506")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'dificil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push(matez)
+_mate.push("7506")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'extremo') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=extreme`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +29543 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push(matez)
+_mate.push("29543")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'imposible') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=impossible`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +${matez} botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +99999 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
+_mate.push("99999")
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else {
 					  reply(`🗂️  *${args[0]}* No disponible!\n\n*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
-					}
+					} catch (e) {
+    console.log(`Error :`, color(e,'red'))
+	reply('❎ Error, inténtelo más tarde')
+	}
 					gameAdd(sender, glimit)
 break
 
