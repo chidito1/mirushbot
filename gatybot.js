@@ -1818,8 +1818,6 @@ if (chats.toLowerCase().includes(game.getJawabanMtk(from, mtk))){
 addBalance(sender, _mate, balance)
 await reply(`*✅ Respuesta correcta*\n\n+${_mate} botcoins💰`)
 mtk.splice(game.getMtkPosi(from, mtk), 1)
-_mate.splice(_mate)
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 }
 }
 
@@ -7584,6 +7582,8 @@ if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 if (!isGroup) return reply(group())
 if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuesta en este chat`)
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
+_mate.splice(_mate)
+fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					if (args[0] === 'noob' ) {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
 reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +142  botcoins`)
@@ -7642,10 +7642,10 @@ _mate.push("99999")
 fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else {
 					  reply(`🗂️  *${args[0]}* No disponible!\n\n*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
-					} catch (e) {
-    console.log(`Error :`, color(e,'red'))
-	reply('❎ Error, inténtelo más tarde')
-	}
+					}
+					.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            })
 					gameAdd(sender, glimit)
 break
 
