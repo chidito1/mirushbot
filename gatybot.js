@@ -2404,7 +2404,8 @@ break;
        infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
 	  infost = infost.status == 401 ? 'sin info' : infost.status
         imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
-        helfxz = `Hola ${sender.split("@")[0]} ${YahahaHayyuk}
+        autorfg = `${sender.split("@")[0]}`
+        helfxz = `Hola @${autorfg} ${YahahaHayyuk}
         
 💫 Tu Info: *${infost}*
     
