@@ -2275,7 +2275,7 @@ let Leveling_ = 'desactivado'
 
 //>> Usuario no Verificado
 const isUser = () => { 
-  sendButMessage(from, `*≡* Hola @${sender.split("@")[0]}\n\nTodavía no estas verificado/a, para usar mis comandos primero verifiquese u.u`, `Presiona el botón para verificarte o escribe ${prefix}verify`, [
+  sendButMessage(from, `▢ Hola *@${sender.split("@")[0]}*\n╭──────────────────✾\n│ Todavía no estas verificado/a\n╰──────────────────✾`, `Presiona el botón para verificarte o escribe ${prefix}verify`, [
           {
             buttonId: `${prefix}verify`,
             buttonText: {
@@ -2660,6 +2660,7 @@ _*<INFORMACIÓN/>*_
 • 式 ⃟ℹ️ _${prefix}creador_
 • 式 ⃟ℹ️ _${prefix}info_
 • 式 ⃟ℹ️ _${prefix}gpbot_
+• 式 ⃟ℹ️ _${prefix}script_
 • 式 ⃟ℹ️ _${prefix}report_
 • 式 ⃟ℹ️ _${prefix}ping_
 • 式 ⃟ℹ️ _${prefix}runtime_
@@ -2755,23 +2756,18 @@ case 'rules':
 case 'reglas':
 case 'reglasbot':
 if(!isVerify) return isUser()
-	reglasbot = `---------------- » «» « ----------------
+	reglasbot = `╭──────────────────✾
+├▢ No envíe spam al bot
+├▢ No llame al bot
+├▢ No textee al pv del bot
+├▢ No abuse del bot
+├▢ No agrege a grupos al bot
+╰──────────────────✾
+_*<CONSECUENCIAS/>*_
 
-*▢≽ No envíe spam al bot.*
- Penalización: *ADVERTENCIA Y BLOQUEO TEMPORAL*
- 
-*▢≽ No llame o textee al bot*
-Penalización: *BLOQUEO TEMPORAL*
+▪︎El bot te bloqueara o dejara el grupo
 
-*▢≽ No abuse del bot.*
-Penalización: *BLOQUEO PERMANENTE*
- 
-*▢≽ No agrege a grupos al bot.*
-Penalización: *BLOQUEO PERMANENTE*
-
----------------- » «» « ----------------
-
-🤖El bot no esta activo las 24 horas, por lo que depende de si el propietario esta alli cuando el bot tambien esta encendido.`
+*📌Nota:* El bot no esta activo 24/7`
 Fg.sendMessage(from, reglasbot, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱REGLAS DEL BOT🐱⃟式`,body:"마시엘리", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}}})
 break
 
@@ -2932,7 +2928,7 @@ case 'solicitud':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   yoi = q
-  if (args.length < 1) return reply('✳️ Ingrese las funciones que desee en *Gatybot*')
+  if (args.length < 1) return reply('✳️ Ingrese las funciones que desee en *gatybot*')
   if (yoi.length > 200 ) return reply('El texto supera el límite, su solicitud es rechazada!')
   _solicitud.push(yoi)
   fs.writeFileSync('./result/reportes/solicitud.json', JSON.stringify(_solicitud))
