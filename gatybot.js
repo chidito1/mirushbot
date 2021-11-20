@@ -1658,7 +1658,8 @@ const neko = [
 //====================================================================================================//
 
 //>> Nivelación
-			if (isGroup && !isVerify && isLevelingOn) {
+			if (isGroup && isLevelingOn) {
+				if(!isVerify) return
 				const currentLevel = getLevelingLevel(sender)
 				const checkId = getLevelingId(sender)
 				try {
