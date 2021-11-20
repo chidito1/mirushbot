@@ -111,9 +111,9 @@ const glimit = JSON.parse(fs.readFileSync('./database/user/glimit.json'));
 const limit = JSON.parse(fs.readFileSync('./database/user/diaman.json'));
 const balance = JSON.parse(fs.readFileSync('./database/user/balance.json'));
 const _welcom = JSON.parse(fs.readFileSync('./database/group/welcom.json'))
-const _bye = JSON.parse(fs.readFileSync('./database/group/bye.json'))	 
-const _user = JSON.parse(fs.readFileSync('./database/bot/verify.json'))
+const _bye = JSON.parse(fs.readFileSync('./database/group/bye.json'))
 const _verify = JSON.parse(fs.readFileSync('./database/user/verify.json'))
+const _user = JSON.parse(fs.readFileSync('./database/bot/verify.json'))
 const _samih = JSON.parse(fs.readFileSync('./database/group/simi.json'))
 const Verify = JSON.parse(fs.readFileSync('./database/bot/verify.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/group/nsfw.json'))
@@ -1658,7 +1658,7 @@ const neko = [
 //====================================================================================================//
 
 //>> Nivelación
-			if (isGroup && isLevelingOn) {
+			if (isGroup && !isVerify && isLevelingOn) {
 				const currentLevel = getLevelingLevel(sender)
 				const checkId = getLevelingId(sender)
 				try {
@@ -2790,42 +2790,6 @@ Fg.sendMessage(from, reglasbot, text, { quoted: mek, contextInfo: { externalAdRe
 break
 
 
-case '_groupgaty':
-case '_grupogaty':
-case '_gpgaty':
-if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-thumb = fs.readFileSync(`./image/fg.jpg`)
-respon = `Grupo WhatsApp Official`
-sendButLok(from, respon, `Grupo Bot WhatsApp, Click para obtener el link`, thumb, [
-          {
-            buttonId: `${prefix}soporte`,
-            buttonText: {
-              displayText: `Gaty-Bot`,
-            },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}grupo2`,
-            buttonText: {
-              displayText: `Android World`,
-            },
-            type: 1,
-          },
-        ], {quoted: mek});
-        break;
-
-
-case '_grupo2':
-  reply('*➤ ፝͡ॢॎॕ❰🏜MINECRAFT▪︎BEDROCK🏜❱ ፝͡ॢॎॕ࿐*\nhttps://chat.whatsapp.com/GSZcY5bEKyq4NknFuT3jVr')
-  break
-case '_soporte':
-case '_support':
- if(!isVerify) return isUser()
-     gaty = `📌 *Grupo soporte del Bot*\n\n${soportefg}`
-      reply(gaty) 
-   break
-   
 //--- verificación  api funciona
 case 'verify':
 case 'reg':
@@ -2844,7 +2808,7 @@ if (isBanned) return reply(banf())
 				fgfoto = 'https://i.ibb.co/JxxPcm2/verify.jpg'
 				veri = sender
 				_verify.push(sender)
-				fs.writeFileSync('./database/bot/verify.json', JSON.stringify(_user))
+				fs.writeFileSync('./database/user/verify.json', JSON.stringify(_verify))
 				adduserUser(sender, pushname, fecha2, hora2, seriTod)
 				console.log(color('[GATYBOT]','magenta'), color(`Verificacion exitosa`));
 
