@@ -2274,7 +2274,7 @@ let Leveling_ = 'desactivado'
 
 //>> Usuario no Verificado
 const isUser = () => { 
-  sendButMessage(from, `▢ Hola *@${sender.split("@")[0]}*\n╭──────────────────✾\n│ Todavía no estas verificado/a\n╰──────────────────✾`, `Presiona el botón para verificarte o escribe ${prefix}verify`, [
+  sendButMessage(from, `▢ Hola *@${sender.split("@")[0]}*\n╭──────────────────✾\n│ Todavía no estas verificado/a\n╰──────────────────✾`, `Presiona el botón o escribe ${prefix}verify`, [
           {
             buttonId: `${prefix}verify`,
             buttonText: {
@@ -2565,8 +2565,10 @@ _*<IMAGENES/>*_
 _*<NSFW/>*_
 
 • 式 ⃟🔞 _${prefix}hentai_
+• 式 ⃟🔞 _${prefix}pack_
 • 式 ⃟🔞 _${prefix}nsfw_waifu_
 • 式 ⃟🔞 _${prefix}nsfw_loli_
+• 式 ⃟🔞 _${prefix}nsfw_neko_
 
 _*<GRUPOS/>*_
 
@@ -5023,6 +5025,20 @@ Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwne
             giveLimit(sender, 1, limit)
             })
             limitAdd(sender, limit)
+          break
+     
+case 'pack':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (!isNsfw) return reply(fgnsfw())
+      reply(`_Pronto_`) 
+          break
+          
+case 'nsfw_neko':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (!isNsfw) return reply(fgnsfw())
+      reply(`_Pronto_`) 
           break
      
 case 'hentai':
