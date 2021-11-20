@@ -2406,16 +2406,16 @@ break;
         imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
         autorfg = `${sender.split("@")[0]}`
         helfxz = `Hola @${autorfg} ${YahahaHayyuk}
-        
+
 💫 Tu Info: *${infost}*
-    
-📆 *Fecha Actual :* _${fecha2}_
+
+🌏 *Fecha Actual :* _${fecha2}_
 🕜 *Hora :* _${hora2}_
-  📚 *Lib :*  _Baileys_
+📚 *Lib :*  _Baileys_
 💣 *Usos :*  _${totalhit}_
 ⚔️ *Prefix :*  _${prefix}_
 
-    CONVERTIDORES
+    *CONVERTIDORES*
   🎨 ${prefix}sticker (Foto/video) 
   🎨 ${prefix}sticker2 (Nombre|Autor)
   🎨 ${prefix}take (Nombre|Autor)
@@ -2452,7 +2452,7 @@ break;
   🎨 ${prefix}emojiht
   🎨 ${prefix}emojilg
 
-    DESCARGAS
+    *DESCARGAS*
   📥 ${prefix}play
   📥 ${prefix}play2
   📥 ${prefix}playvid
@@ -2464,13 +2464,13 @@ break;
   📥 ${prefix}tiktokaudio
   📥 ${prefix}mdfire
 
-    BUSQUEDA
+    *BUSQUEDA*
   🔎 ${prefix}ytsearch
   🔎 ${prefix}ytstalk
   🔎 ${prefix}igstalk
   🔎 ${prefix}playstore
 
-    EDUCACIÓN
+    *EDUCACIÓN*
   📚 ${prefix}covid
   📚 ${prefix}hora
   📚 ${prefix}trad
@@ -2480,7 +2480,7 @@ break;
   📚 ${prefix}encode
   📚 ${prefix}decode
 
-    LOGOS
+    *LOGOS*
   🧩 ${prefix}blackpink
   🧩 ${prefix}glich
   🧩 ${prefix}retroneon
@@ -2489,7 +2489,7 @@ break;
   🧩 ${prefix}3d
   🧩 ${prefix}phlogo
 
-    MEDIA
+    *MEDIA*
   🎥 ${prefix}screenshot
   🎥 ${prefix}tourl
   🎥 ${prefix}tourl2
@@ -2503,7 +2503,7 @@ break;
   🎥 ${prefix}escribe
   🎥 ${prefix}tinyurl (acortador)
 
-    FUNCIÓNES
+    *FUNCIÓNES*
   🍒 ${prefix}random
   🍒 ${prefix}leermas (txt1|txt2)
   🍒 ${prefix}fake (@tag|txt1|txt2)
@@ -2511,7 +2511,7 @@ break;
   🍒 ${prefix}mention (549xxx)
   🍒 ${prefix}say
 
-    ECONOMÍA
+    *ECONOMÍA*
   🪙 ${prefix}shop
   🪙 ${prefix}toplevel
   🪙 ${prefix}cartera
@@ -2523,7 +2523,7 @@ break;
   🪙 ${prefix}addgcoin
   🪙 ${prefix}claim
 
-    DIVERSIÓN
+    *DIVERSIÓN*
   🎲 ${prefix}shipping 
   🎲 ${prefix}pregunta
   🎲 ${prefix}vor (verdad/reto)
@@ -2540,7 +2540,7 @@ break;
   🎲 ${prefix}slot
   🎲 ${prefix}dado
 
-    IMAGENES
+    *IMAGENES*
   🌅 ${prefix}imagen
   🌅 ${prefix}pinterest
   🌅 ${prefix}wallpaper
@@ -2551,14 +2551,14 @@ break;
   🌅 ${prefix}man
   🌅 ${prefix}rip
 
-    NSFW
+    *NSFW*
   🔞 ${prefix}hentai
   🔞 ${prefix}pack
   🔞 ${prefix}nsfwwaifu
   🔞 ${prefix}nsfwloli
   🔞 ${prefix}nsfwneko
 
-        GRUPOS
+    *    *GRUPOS*
   👥 ${prefix}infogp
   👥 ${prefix}infodetec
   👥 ${prefix}group
@@ -2592,7 +2592,7 @@ break;
   👥 ${prefix}delete (mensaje bot)
   👥 ${prefix}salir (dejo el grupo)
 
-    MENSIONES
+    *MENSIONES*
   🪀 ${prefix}tagall
   🪀 ${prefix}tag
   🪀 ${prefix}notify (texto)
@@ -2601,12 +2601,12 @@ break;
   🪀 ${prefix}sticktag
   🪀 ${prefix}imgtag
 
-    SESIÓN
+    *SESIÓN*
   🤖 ${prefix}serbot
   🤖 ${prefix}stopbot
   🤖 ${prefix}listbots
 
-    AVANZADO
+    *AVANZADO*
   ⚙️ ${prefix}blocklist
   ⚙️ ${prefix}banlist
   ⚙️ ${prefix}listbanchat
@@ -2615,7 +2615,7 @@ break;
   ⚙️ ${prefix}premiumlist
   ⚙️ ${prefix}checkpremium
 
-    OWNER
+    *OWNER*
   🐱 ${prefix}actualizar
   🐱 ${prefix}modo (publico/privado)
   🐱 ${prefix}stickcmd
@@ -2638,7 +2638,7 @@ break;
   🐱 ${prefix}unbanchat
   🐱 ${prefix}chatmode
 
-    INFORMACIÓN
+    *INFORMACIÓN*
   ℹ️ ${prefix}reglas
   ℹ️ ${prefix}creador
   ℹ️ ${prefix}info
