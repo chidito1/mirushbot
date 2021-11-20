@@ -2406,7 +2406,7 @@ break;
         imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
         helfxz = `Hola ${sender.split("@")[0]} ${YahahaHayyuk}
         
-💫 Tu Info: *${wstatus.status}*
+💫 Tu Info: *${infost}*
     
 📆 *Fecha Actual :* _${fecha2}_
 🕜 *Hora :* _${hora2}_
