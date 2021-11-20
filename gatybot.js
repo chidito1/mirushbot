@@ -7643,9 +7643,6 @@ fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else {
 					  reply(`🗂️  *${args[0]}* No disponible!\n\n*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					}
-					.catch((err) => {
-            reply(`❎ Error, intente de nuevo mas tarde`); 
-            })
 					gameAdd(sender, glimit)
 break
 
