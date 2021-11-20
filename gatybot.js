@@ -2260,14 +2260,6 @@ let AntiLink_ = 'desactivado'
 			if (isAntilink) {
 			AntiLink_ = 'activado'
 			}
-let AntiLinktele_ = 'Inactivo'
-			if (isAntiTele) {
-			AntiLinktele_ = 'Activo'
-			}
-let AntiLinkdis_ = 'Inactivo'
-			if (isAntiDis) {
-			AntiLinkdis_ = 'Activo'
-			}
 let Nsfw_ = 'desactivado'
 			if (isNsfw) {
 			Nsfw_ = 'activado'
