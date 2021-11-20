@@ -2558,7 +2558,7 @@ break;
   🔞 ${prefix}nsfwloli
   🔞 ${prefix}nsfwneko
 
-    *    *GRUPOS*
+    *GRUPOS*
   👥 ${prefix}infogp
   👥 ${prefix}infodetec
   👥 ${prefix}group
@@ -8054,7 +8054,7 @@ po = Fg.prepareMessageFromContent(from, { "protocolMessage": {
 break
 
 case 'menupv':
-Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
+Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./storage/gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
 break
 
 case 'inspect':
