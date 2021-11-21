@@ -1744,6 +1744,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 				const currentMsg = getMsg(sender)
 				const checkIdMsg = getMsgId(sender)
 					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
+					addMsg(sender, 1)
 			}
 			
 			
@@ -7626,7 +7627,7 @@ reply(`No hay sesión en curso, 🛡️ Para iniciar uno escribe ${prefix}ttc`);
   }
 break
 
-               //-----  𝗝𝘂𝗲𝗴𝗼𝘀 𝗽𝗮𝗿𝗮 𝗴𝗮𝗻𝗮𝗿 𝗕𝗼𝘁𝗖𝗼𝗶𝗻𝘀--         
+               //-----  𝗝𝘂𝗲𝗴𝗼𝘀 𝗽𝗮𝗿𝗮 𝗴𝗮𝗻𝗮𝗿 𝗕??𝘁𝗖𝗼𝗶𝗻𝘀--         
 case 'math':
 case 'mate':
 case 'mates':
