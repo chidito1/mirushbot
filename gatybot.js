@@ -7781,7 +7781,7 @@ Tu turno:  @${boardnow.turn == "X" ? boardnow.X : boardnow.O}
           
 Escriba *rendirse* para dejar el juego..
 Escriba ${prefix}delttc para eliminar la sesión de juego..`;
-if (chatMove.includes("null")) return reply(`❎ Error pon ${prefix}deltt para restablecer el juego`);
+if (chatMove.includes("null")) return reply(`❎ Error pon ${prefix}delttt para restablecer el juego`);
 Fg.sendMessage(from, chatMove, MessageType.text, {
 quoted: mek,
 contextInfo: {
@@ -8690,7 +8690,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
     }
 } catch (e) { 
     e = String(e);
-	if (!e.includes("this.isZero") && !e.includes("jid is not defined") && !e.includes("Cannot read property 'fromMe' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("Cannot read property 'key' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("no such file or directory")) {
+	if (!e.includes("this.isZero") && !e.includes("jid is not defined") && !e.includes("Cannot read property 'fromMe' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("Cannot read property 'key' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("no such file or directory") && !e.includes("Not expecting a response")) {
       console.log("Message : %s", color(e, "red"));
     }
   }
