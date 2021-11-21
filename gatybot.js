@@ -1743,12 +1743,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			if (isGroup && isContador) {
 				const currentMsg = getMsg(sender)
 				const checkIdMsg = getMsgId(sender)
-				try {
 					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
-					}
-				} catch (err) {
-					console.error(err)
-				}
 			}
 			
 			
