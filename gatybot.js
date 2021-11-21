@@ -7870,9 +7870,9 @@ const opy = ["+","*","-"]
 const opez = opy[Math.floor(Math.random() * opy.length)]
 const matec0 = `${Math.floor(Math.random() * 10)}`
 const matec1 = `${Math.floor(Math.random() * 10)}`
-const mated = `${matec0} ${opex} ${matec1}`
+const mated = `${matec0} ${opez} ${matec1}`
 maat = mated
-timeax = 10
+timeax = 12
 bonoax = 170
 let vall = maat
 let resulat = (new Function('return ' + vall))()
@@ -7882,7 +7882,19 @@ const resulaz = resulat
 reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750  botcoins`)
 game.addmtk(from, resulaz, timeax, mtk)
 } else if (args[0] === 'fácil') {
-reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${timebx} segundos\n*💰Bono:* +750 botcoins`)
+const opyy = ["+","*","-"]
+const opezz = opy[Math.floor(Math.random() * opy.length)]
+const matecc0 = `${Math.floor(Math.random() * 100)}`
+const matecc1 = `${Math.floor(Math.random() * 100)}`
+const mateed = `${matecc0} ${opezz} ${matecc1}`
+maat = mated
+timeax = 30
+bonoax = 170
+let vaall = maat
+let resulaat = (new Function('return ' + vaall))()
+if (!resulaat) throw resulaat
+const resulaaz = resulaat
+reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resulez, timebx, mtk)
 } else if (args[0] === 'facil') {
 reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${timebx} segundos\n*💰Bono:* +750 botcoins`)
