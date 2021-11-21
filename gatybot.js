@@ -2623,7 +2623,7 @@ break;
   👥 ${prefix}group
   👥 ${prefix}group2 [close/open]
   👥 ${prefix}link
-  👥 ${prefix}mensaje
+  👥 ${prefix}mensajes
   👥 ${prefix}online
   👥 ${prefix}kick
   👥 ${prefix}okick
@@ -3524,8 +3524,8 @@ reply(`✅ Transmision realizada *Total chats ${totalchat.length}*`)
 		}
 break
 
-case 'ms':
-case 'mensaje':
+case '__ms':
+case '__mensaje':
 					if(!isVerify) return isUser()
 					if (isBanned) return reply(banf())
 					if (args.length < 1) return reply('✳️ Que mensaje quieres enviar?')
@@ -5726,6 +5726,26 @@ if(!isVerify) return isUser()
                         await reply(`❎ Ocurrió un Error!\n${err}`)
                     })
             break
+            
+case 'micontador':
+case 'mensajes':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+    if (!isGroup) return reply(group()) 
+                if (!isContador) return reply('❎ El contador de mensajes no se activó en este grupo')
+                const currentMsgz = getMsg(sender)
+				const checkIdMsgz = getMsgId(sender)
+				if (currentMsgz === undefined && checkIdMsgz === undefined) return reply('✳️ Tu contador esta vacío')
+                msgresul = `*▢ Nombre:* @${sender.split("@")[0]}
+╭──────────────────✾
+├ *💬Mensajes enviados :* ${currentMsgz}
+╰──────────────────✾`
+               Fg.sendMessage(from, msgresul, text, { quoted: mek, contextInfo: {mentionedJid: [sender] }})
+                .catch(async (err) => {
+                        console.error(err)
+                        await reply(`❎ Ocurrió un Error!\n${err}`)
+                    })
+            break
 
 		    case 'ranks':
             case 'rangos':
@@ -7627,7 +7647,7 @@ reply(`No hay sesión en curso, 🛡️ Para iniciar uno escribe ${prefix}ttc`);
   }
 break
 
-               //-----  𝗝𝘂𝗲𝗴𝗼𝘀 𝗽𝗮𝗿𝗮 𝗴𝗮𝗻𝗮𝗿 𝗕??𝘁𝗖𝗼𝗶𝗻𝘀--         
+               //-----  𝗝𝘂𝗲𝗴𝗼𝘀 𝗽𝗮𝗿𝗮 𝗴𝗮𝗻𝗮𝗿 𝗕𝗼𝘁𝗖𝗼𝗶𝗻𝘀--         
 case 'math':
 case 'mate':
 case 'mates':
