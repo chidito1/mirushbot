@@ -1872,6 +1872,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> mensaje
 			if (isContador && content.includes('Message')) {
+				if (content.includes("contexInfo")) return
 				const currentMensaje = getMsg(sender)
 				const checkIdMensaje = getMsgId(sender)
 					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
@@ -1880,6 +1881,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> imagen
 			if (isContador && content.includes("imageMessage")) {
+				if (content.includes("contexInfo")) return
 				const currentImagen = getMsgimg(sender)
 				const checkIdImagen = getMsgId(sender)
 					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
@@ -1888,6 +1890,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> video
 			if (isContador && content.includes("videoMessage")) {
+				if (content.includes("contexInfo")) return
 				const currentVideo = getMsgvideo(sender)
 				const checkIdVideo = getMsgId(sender)
 					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
@@ -1896,6 +1899,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> archivo
 			if (isContador && content.includes("documentMessage")) {
+				if (content.includes("contexInfo")) return
 				const currentArchivo = getMsgarchivo(sender)
 				const checkIdArchivo = getMsgId(sender)
 					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
@@ -1904,6 +1908,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> sticker
 			if (isContador && content.includes("stickerMessage")) {
+				if (content.includes("contexInfo")) return
 				const currentSticker = getMsgsticker(sender)
 				const checkIdSticker = getMsgId(sender)
 					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
@@ -1912,6 +1917,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> audio
 			if (isContador && content.includes("audioMessage")) {
+				if (content.includes("contexInfo")) return
 				const currentAudio = getMsgaudio(sender)
 				const checkIdAudio = getMsgId(sender)
 					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
@@ -2045,8 +2051,8 @@ game.cekWaktuMtk(Fg, mtk)
 
 if (game.isMtk(from, mtk)){
 if (chats.toLowerCase().includes(game.getJawabanMtk(from, mtk))){
-addBalance(sender, 7506, balance)
-await reply(`*✅ Respuesta correcta*\n\n+7506 botcoins💰`)
+addBalance(sender, 750, balance)
+await reply(`*✅ Respuesta correcta*\n\n+750 botcoins💰`)
 mtk.splice(game.getMtkPosi(from, mtk), 1)
 }
 }
@@ -7840,42 +7846,42 @@ if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuest
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					if (args[0] === 'noob' ) {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506  botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750  botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'fácil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'facil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 					} else if (args[0] === 'normal') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=medium`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 					} else if (args[0] === 'difícil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'dificil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'extremo') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=extreme`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 } else if (args[0] === 'imposible') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=impossible`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
 					} else {
