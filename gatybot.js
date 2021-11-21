@@ -1768,7 +1768,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			}
 			
 //>> mensaje
-			if (!isQuotedMsg && isContador) {
+			if (!isTmsg && isContador) {
 				const currentMsg = getMsg(sender)
 				const checkIdMsg = getMsgId(sender)
 					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
@@ -1776,7 +1776,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			}
 			
 //>> imagen
-			if (!isQuotedImage && isContador) {
+			if (!isTmsgimg && isContador) {
 				const currentMsg = getMsgimg(sender)
 				const checkIdMsg = getMsgId(sender)
 					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
@@ -2317,6 +2317,8 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
    
 //>> Tipo de mensaje
     const isViewOnce = (type == 'viewOnceMessage')
+    const isTmsg = (type == 'Message')
+    const isTmsgimg = (type == 'imageMessage')
     const isMedia = type === "imageMessage" || type === "videoMessage";
     const isQuotedMsg = type === 'extendedTextMessage' && content.includes('Message');
     const isQuotedImage = type === "extendedTextMessage" && content.includes("imageMessage");
@@ -2324,6 +2326,7 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isQuotedAudio = type === "extendedTextMessage" && content.includes("audioMessage");
     const isQuotedSticker = type === "extendedTextMessage" && content.includes("stickerMessage");
     const isQuotedDocs = type === "extendedTextMessage" && content.includes("documentMessage")
+    const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid")
     
 //>> Mensaje privado y grupo
  if (!isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Pv", color(command, "blue"), "de", color(sender.split('@')[0], "aqua"), args.length)
@@ -7609,6 +7612,7 @@ if (isBanned) return reply(banf())
 if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 if (!isGroup) return reply(group())
 if (!q)return reply(`📌Mensiona al usuario que deseas desafiar`) 
+if (!isQuotedTag)return reply('✳️ Etiqueta a alguien del grupo')
 if (budy.includes("@51988050859")) return reply(`❎ No puedes desafiar a la bot`);
 if (fs.existsSync(`./lib/tictactoe/db/${from}.json`)) {
 const boardnow = setGame(`${from}`);
@@ -8376,15 +8380,6 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   if (!isInteraction) return 
                   reply(`😒`)
                   }
-                 
-                 if (budy.includes('🚮')) {
-                 if (isBanned) return reply()
-                 if (!isGroup) return reply()
-                 if (!isGroupAdmins) return reply()
-                 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply()
-                 kick = mek.message.extendedTextMessage.contextInfo.participant
-                 Fg.groupRemove(from, [kick])
-                 }
                  
                   //gif con sonido 
                   if (budy.startsWith(`__Linda noche`)) {
