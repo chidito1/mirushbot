@@ -7833,22 +7833,6 @@ reply(`No hay sesión en curso, 🛡️ Para iniciar uno escribe ${prefix}ttc`);
   }
 break
 
-case 'mathpv':
-if (!isOwner) return reply(ownerB())
-
-
-
-if (args[0] === 'z' ) {
-	reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timex} segundos\n*💰Bono:* +${bonox}  botcoins\n*Resultado:* ${resulz}`)
-	game.addmtk(from, result, timex, mtk)
-	} else if (args[0] === 'x') {
-		reply(`Cuanto es el resultado de *${maatt}*?\n\n*⏰Tiempo:* ${timez} segundos\n*💰Bono:* +${bonoz}  botcoins\n*Resultado:* ${resulz}`)
-		game.addmtk(from, result, timez, mtk)
-		} else {
-					  reply(`Modo *${args[0]}* no disponible!`)
-					}
-break
-
                //-----  𝗝𝘂𝗲𝗴𝗼𝘀 𝗽𝗮𝗿𝗮 𝗴𝗮𝗻𝗮𝗿 𝗕𝗼𝘁𝗖𝗼𝗶𝗻𝘀--         
 case 'math':
 case 'mate':
@@ -7882,13 +7866,13 @@ const resulaz = resulat
 reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750  botcoins`)
 game.addmtk(from, resulaz, timeax, mtk)
 } else if (args[0] === 'fácil') {
-const opyy = ["+","*","-"]
+const opyy = ["+","*","-","÷"]
 const opezz = opyy[Math.floor(Math.random() * opyy.length)]
 const matecc0 = `${Math.floor(Math.random() * 100)}`
 const matecc1 = `${Math.floor(Math.random() * 100)}`
 const mateed = `${matecc0} ${opezz} ${matecc1}`
 maat = mateed
-timeax = 30
+timeax = 32
 bonoax = 170
 let vaall = maat
 let resulaat = (new Function('return ' + vaall))()
@@ -7897,23 +7881,95 @@ const resulaaz = resulaat
 reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resulaaz, timeax, mtk)
 } else if (args[0] === 'facil') {
-reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${timebx} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resulez, timebx, mtk)
+const opyyy = ["+","*","-","÷"]
+const opezzz = opyyy[Math.floor(Math.random() * opyyy.length)]
+const mateccc0 = `${Math.floor(Math.random() * 100)}`
+const mateccc1 = `${Math.floor(Math.random() * 100)}`
+const mateeed = `${mateccc0} ${opezzz} ${mateccc1}`
+maaat = mateeed
+timeax = 32
+bonoax = 170
+let vaaall = maaat
+let resulaaat = (new Function('return ' + vaaall))()
+if (!resulaaat) throw resulaaat
+const resulaaaz = resulaaat
+reply(`Cuanto es el resultado de *${maaat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resulaaaz, timeax, mtk)
 					} else if (args[0] === 'normal') {
-reply(`Cuanto es el resultado de *${mact}*?\n\n*⏰Tiempo:* ${timecx} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resuliz, timecx, mtk)
+const opyyyy = ["+","*","-","÷"]
+const opezzzz = opyyyy[Math.floor(Math.random() * opyyyy.length)]
+const matecccc0 = `${Math.floor(Math.random() * 1000)}`
+const matecccc1 = `${Math.floor(Math.random() * 1000)}`
+const mateeeed = `${matecccc0} ${opezzzz} ${matecccc1}`
+maaaat = mateeeed
+timeax = 52
+bonoax = 170
+let vaaaall = maaaat
+let resulaaaat = (new Function('return ' + vaaaall))()
+if (!resulaaaat) throw resulaaaat
+const resulaaaaz = resulaaaat
+reply(`Cuanto es el resultado de *${maaaat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resulaaaaz, timeax, mtk)
 					} else if (args[0] === 'difícil') {
-reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${timedx} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resuloz, timedx, mtk)
+const opyyyyy = ["+","*","-","÷"]
+const opezzzzz = opyyyyy[Math.floor(Math.random() * opyyyyy.length)]
+const mateccccc0 = `${Math.floor(Math.random() * 10000)}`
+const mateccccc1 = `${Math.floor(Math.random() * 10000)}`
+const mateeeeed = `${mateccccc0} ${opezzzzz} ${mateccccc1}`
+maaaaat = mateeeeed
+timeax = 72
+bonoax = 170
+let vaaaaall = maaaaat
+let resulaaaaat = (new Function('return ' + vaaaaall))()
+if (!resulaaaaat) throw resulaaaaat
+const resulaaaaaz = resulaaaaat
+reply(`Cuanto es el resultado de *${maaaaat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resulaaaaaz, timeax, mtk)
 } else if (args[0] === 'dificil') {
-reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${timedx} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resuloz, timedx, mtk)
+const opqy = ["+","*","-","÷"]
+const opeqz = opqy[Math.floor(Math.random() * opqy.length)]
+const mateq0 = `${Math.floor(Math.random() * 10000)}`
+const mateq1 = `${Math.floor(Math.random() * 10000)}`
+const matqd = `${mateq0} ${opeqz} ${mateq1}`
+mqt = matqd
+timeax = 72
+bonoax = 170
+let vqll = mqt
+let resulqt = (new Function('return ' + vqll))()
+if (!resulqt) throw resulqt
+const resulqz = resulqt
+reply(`Cuanto es el resultado de *${mqt}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resulqz, timeax, mtk)
 } else if (args[0] === 'extremo') {
-reply(`Cuanto es el resultado de *${maet}*?\n\n*⏰Tiempo:* ${timeex} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resuluz, timeex, mtk)
+const opiy = ["+","*","-","÷"]
+const opeiz = opiy[Math.floor(Math.random() * opiy.length)]
+const matei0 = `${Math.floor(Math.random() * 1000000)}`
+const matei1 = `${Math.floor(Math.random() * 1000000)}`
+const matid = `${matei0} ${opeiz} ${matei1}`
+mit = matid
+timeax = 92
+bonoax = 170
+let vill = mit
+let resulit = (new Function('return ' + vill))()
+if (!resulit) throw resulit
+const resuliz = resulit
+reply(`Cuanto es el resultado de *${mit}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resuliz, timeex, mtk)
 } else if (args[0] === 'imposible') {
-reply(`Cuanto es el resultado de *${maft}*?\n\n*⏰Tiempo:* ${timefx} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resulyz, timefx, mtk)
+const opoy = ["+","*","-","÷"]
+const opeoz = opoy[Math.floor(Math.random() * opoy.length)]
+const mateo0 = `${Math.floor(Math.random() * 100000000)}`
+const mateo1 = `${Math.floor(Math.random() * 100000000)}`
+const matod = `${mateo0} ${opeoz} ${mateo1}`
+mot = matod
+timeax = 92
+bonoax = 170
+let voll = mot
+let resulot = (new Function('return ' + voll))()
+if (!resulot) throw resulot
+const resuloz = resulot
+reply(`Cuanto es el resultado de *${mot}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resuloz, timeax, mtk)
 					} else {
 					  reply(`🗂️  *${args[0]}* No disponible!\n\n*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					}
