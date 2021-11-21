@@ -2674,17 +2674,17 @@ break;
   🎨 ${prefix}imgrip
   🎨 ${prefix}imgrip2
   🎨 ${prefix}scelda
-  🎨 ${prefix}emojiapp
-  🎨 ${prefix}emojiwa
-  🎨 ${prefix}emojifb
-  🎨 ${prefix}emojigo
-  🎨 ${prefix}emojimo
-  🎨 ${prefix}emojitw
-  🎨 ${prefix}emojisa
-  🎨 ${prefix}emojiop
-  🎨 ${prefix}emojipi
-  🎨 ${prefix}emojiht
-  🎨 ${prefix}emojilg
+  🎨 ${prefix}emoji_app
+  🎨 ${prefix}emoji_wa
+  🎨 ${prefix}emoji_fb
+  🎨 ${prefix}emoji_go
+  🎨 ${prefix}emoji_mo
+  🎨 ${prefix}emoji_tw
+  🎨 ${prefix}emoji_sa
+  🎨 ${prefix}emoji_op
+  🎨 ${prefix}emoji_pi
+  🎨 ${prefix}emoji_ht
+  🎨 ${prefix}emoji_lg
 
     *DESCARGAS*
   📥 ${prefix}play
@@ -2788,15 +2788,17 @@ break;
     *NSFW*
   🔞 ${prefix}hentai
   🔞 ${prefix}pack
-  🔞 ${prefix}nsfwwaifu
-  🔞 ${prefix}nsfwloli
-  🔞 ${prefix}nsfwneko
+  🔞 ${prefix}nsfw_waifu
+  🔞 ${prefix}nsfw_loli
+  🔞 ${prefix}nsfw_neko
 
     *GRUPOS*
   👥 ${prefix}infogp
   👥 ${prefix}infodetec
   👥 ${prefix}group
   👥 ${prefix}group2 [close/open]
+  👥 ${prefix}opentime
+  👥 ${prefix}closetime
   👥 ${prefix}link
   👥 ${prefix}mensajes
   👥 ${prefix}online
@@ -4189,10 +4191,11 @@ if (!isBotGroupAdmins) return reply(Badmin())
 				    } else if (args[1]=="m") {var timer = args[0]+"0000"
 				    } else if (args[1]=="h") {var timer = args[0]+"00000"
 				    } else {return reply("Use assim:\ns: segundos\nm: minutos\nh: horas\nex: +closetime 30 s")}
+				    reply(`✅ El grupo se cerrará dentro de ${q}`)
 				    setTimeout( () => {
 					var nomor = mek.participant
 					const close = {
-					text: `Cerrando grupo a pedido de @${nomor.split("@s.whatsapp.net")[0]}`,
+					text: `✳️ Cerrando grupo a pedido de @${nomor.split("@s.whatsapp.net")[0]}`,
 					contextInfo: { mentionedJid: [nomor] }
 					}
 					Fg.groupSettingChange (from, GroupSettingChange.messageSend, true);
@@ -4210,10 +4213,11 @@ if (!isBotGroupAdmins) return reply(Badmin())
 				    } else if (args[1]=="m") {var timer = args[0]+"0000"
 				    } else if (args[1]=="h") {var timer = args[0]+"00000"
 				    } else {return reply("*Use assim:\ns: segundos\nm: minutos\nh: horas\nex: +opentime 30 s")}
+				    reply(`✅ El grupo se abrirá dentro de ${q}`)
 				    setTimeout( () => {
 					var nomor = mek.participant
 					const open = {
-					text: `Abriendo grupo a pedido de @${nomor.split("@s.whatsapp.net")[0]}`,
+					text: `✳️ Abriendo grupo a pedido de @${nomor.split("@s.whatsapp.net")[0]}`,
 					contextInfo: { mentionedJid: [nomor] }
 					}
 					Fg.groupSettingChange (from, GroupSettingChange.messageSend, false);
