@@ -7866,7 +7866,8 @@ const opez = operators[Math.floor(Math.random() * operators.length)]
 opex = opez
 
 					if (args[0] === 'noob' ) {
-						
+const opy = ["+","*","-"]
+const opez = opy[Math.floor(Math.random() * opy.length)]
 const matec0 = `${Math.floor(Math.random() * 10)}`
 const matec1 = `${Math.floor(Math.random() * 10)}`
 const mated = `${matec0} ${opex} ${matec1}`
