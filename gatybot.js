@@ -310,6 +310,109 @@ const getMsgimg = (sender) => {
 	}
 }
 
+//>> video
+  const addMsgvideo = (sender, vd) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_msg[position].video += vd
+		fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+	}
+}
+
+const getMsgvideo = (sender) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _msg[position].video
+	}
+}
+
+//>> archivo
+  const addMsgarchivo = (sender, archv) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_msg[position].archivo += archv
+		fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+	}
+}
+
+const getMsgarchivo = (sender) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _msg[position].archivo
+	}
+}
+
+//>> sticker
+  const addMsgsticker = (sender, stk) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_msg[position].sticker += stk
+		fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+	}
+}
+
+const getMsgsticker = (sender) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _msg[position].sticker
+	}
+}
+
+//>> audio
+  const addMsgaudio = (sender, ado) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_msg[position].audio += ado
+		fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+	}
+}
+
+const getMsgaudio = (sender) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _msg[position].audio
+	}
+}
 //====================[ FUNCIÓN DE NIVELACIÓN ]====================//
 const getLevelingXp = (sender) => {
 	let position = false
@@ -1769,18 +1872,50 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> mensaje
 			if (isContador && content.includes('Message')) {
-				const currentMsg = getMsg(sender)
-				const checkIdMsg = getMsgId(sender)
-					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
+				const currentMensaje = getMsg(sender)
+				const checkIdMensaje = getMsgId(sender)
+					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
 					addMsg(sender, 1)
 			}
 			
 //>> imagen
 			if (isContador && content.includes("imageMessage")) {
-				const currentMsg = getMsgimg(sender)
-				const checkIdMsg = getMsgId(sender)
-					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
+				const currentImagen = getMsgimg(sender)
+				const checkIdImagen = getMsgId(sender)
+					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
 					addMsgimg(sender, 1)
+			}
+			
+//>> video
+			if (isContador && content.includes("videoMessage")) {
+				const currentVideo = getMsgvideo(sender)
+				const checkIdVideo = getMsgId(sender)
+					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
+					addMsgvideo(sender, 1)
+			}
+			
+//>> archivo
+			if (isContador && content.includes("documentMessage")) {
+				const currentArchivo = getMsgarchivo(sender)
+				const checkIdArchivo = getMsgId(sender)
+					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
+					addMsgarchivo(sender, 1)
+			}
+			
+//>> sticker
+			if (isContador && content.includes("stickerMessage")) {
+				const currentSticker = getMsgsticker(sender)
+				const checkIdSticker = getMsgId(sender)
+					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
+					addMsgsticker(sender, 1)
+			}
+			
+//>> audio
+			if (isContador && content.includes("audioMessage")) {
+				const currentAudio = getMsgaudio(sender)
+				const checkIdAudio = getMsgId(sender)
+					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
+					addMsgaudio(sender, 1)
 			}
 			
 			
@@ -1910,8 +2045,8 @@ game.cekWaktuMtk(Fg, mtk)
 
 if (game.isMtk(from, mtk)){
 if (chats.toLowerCase().includes(game.getJawabanMtk(from, mtk))){
-addBalance(sender, _mate, balance)
-await reply(`*✅ Respuesta correcta*\n\n+${_mate} botcoins💰`)
+addBalance(sender, 7506, balance)
+await reply(`*✅ Respuesta correcta*\n\n+7506 botcoins💰`)
 mtk.splice(game.getMtkPosi(from, mtk), 1)
 }
 }
@@ -5769,12 +5904,20 @@ if(!isVerify) return isUser()
                 if (!isContador) return reply('❎ El contador de mensajes no se activó en este grupo')
                 const currentMsgz = getMsg(sender)
                 const currentMsgimgz = getMsgimg(sender)
+                const currentMsgvideoz = getMsgvideo(sender)
+                const currentMsgarchivoz = getMsgarchivo(sender)
+                const currentMsgstickerz = getMsgsticker(sender)
+                const currentMsgaudioz = getMsgaudio(sender)
 				const checkIdMsgz = getMsgId(sender)
 				if (currentMsgz === undefined && checkIdMsgz === undefined) return reply('✳️ Tu contador esta vacío')
                 msgresul = `*▢ Nombre:* @${sender.split("@")[0]}
 ╭──────────────────✾
 ├ *💬Mensajes enviados :* ${currentMsgz}
 ├ *🖼️Imagenes enviados :* ${currentMsgimgz}
+├ *🎥Videos enviados :* ${currentMsgvideoz}
+├ *📂Archivos enviados :* ${currentMsgarchivoz}
+├ *👾Stickers enviados :* ${currentMsgstickerz}
+├ *🔊Audios enviados :* ${currentMsgaudioz}
 ╰──────────────────✾`
                Fg.sendMessage(from, msgresul, text, { quoted: mek, contextInfo: {mentionedJid: [sender] }})
                 .catch(async (err) => {
@@ -7695,64 +7838,46 @@ if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 if (!isGroup) return reply(group())
 if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuesta en este chat`)
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
-_mate.splice("")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					if (args[0] === 'noob' ) {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +142  botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506  botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("142")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'fácil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +560 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("560")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'facil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +560 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("560")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else if (args[0] === 'normal') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=medium`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +841 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("841")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else if (args[0] === 'difícil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
 reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("7506")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'dificil') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
 reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("7506")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'extremo') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=extreme`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +29543 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("29543")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 } else if (args[0] === 'imposible') {
 					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=impossible`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +99999 botcoins`)
+reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +7506 botcoins`)
 let anih = anu.data.jawaban.toLowerCase()
 game.addmtk(from, anih, GameTime, mtk)
-_mate.push("99999")
-fs.writeFileSync('./game/mate.json', JSON.stringify(_mate))
 					} else {
 					  reply(`🗂️  *${args[0]}* No disponible!\n\n*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					}
