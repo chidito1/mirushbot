@@ -2412,13 +2412,6 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isQuotedDocs = type === "extendedTextMessage" && content.includes("documentMessage");
     const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid");
     
-    const isTmsg = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
-    const isTimg = type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
-    const isTvd = type === 'extendedTextMessage' && content.includes('imageMessage') || type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
-    const isTrh = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
-    const isTst = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("audioMessage");
-    const isTio = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === 'extendedTextMessage' && content.includes('Message');
-    
 //>> Mensaje privado y grupo
  if (!isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Pv", color(command, "blue"), "de", color(sender.split('@')[0], "aqua"), args.length)
 if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(command, "green"), "de", color(sender.split('@')[0], "aqua"), "en", color(groupName, "gold"), args.length)
@@ -2437,6 +2430,7 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 				const checkIdImagen = getMsgId(sender)
 					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
 					addMsgimg(sender, 1)
+					if (isQuotedImage) return addMsgimg(sender, -1)
 			}
 			
 //>> video
@@ -2445,6 +2439,7 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 				const checkIdVideo = getMsgId(sender)
 					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
 					addMsgvideo(sender, 1)
+					if (isQuotedVideo) return addMsgvideo(sender, -1)
 			}
 			
 //>> archivo
@@ -2462,6 +2457,7 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 				const checkIdSticker = getMsgId(sender)
 					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
 					addMsgsticker(sender, 1)
+					if (isQuotedSticker) return addMsgsticker(sender, -1)
 			}
 			
 //>> audio
@@ -2470,6 +2466,7 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 				const checkIdAudio = getMsgId(sender)
 					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
 					addMsgaudio(sender, 1)
+					if (isQuotedAudio) return addMsgaudio(sender, -1)
 			}
 			
 			
