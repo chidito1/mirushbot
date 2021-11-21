@@ -7883,7 +7883,7 @@ reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n
 game.addmtk(from, resulaz, timeax, mtk)
 } else if (args[0] === 'fácil') {
 const opyy = ["+","*","-"]
-const opezz = opy[Math.floor(Math.random() * opy.length)]
+const opezz = opyy[Math.floor(Math.random() * opyy.length)]
 const matecc0 = `${Math.floor(Math.random() * 100)}`
 const matecc1 = `${Math.floor(Math.random() * 100)}`
 const mateed = `${matecc0} ${opezz} ${matecc1}`
@@ -7895,7 +7895,7 @@ let resulaat = (new Function('return ' + vaall))()
 if (!resulaat) throw resulaat
 const resulaaz = resulaat
 reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resulez, timebx, mtk)
+game.addmtk(from, resulaaz, timeax, mtk)
 } else if (args[0] === 'facil') {
 reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${timebx} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resulez, timebx, mtk)
