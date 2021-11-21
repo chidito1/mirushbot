@@ -1768,7 +1768,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			}
 			
 //>> mensaje
-			if (!isTmsg && isContador) {
+			if (isContador && content.includes('Message')) {
 				const currentMsg = getMsg(sender)
 				const checkIdMsg = getMsgId(sender)
 					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
@@ -1776,7 +1776,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			}
 			
 //>> imagen
-			if (!isTmsgimg && isContador) {
+			if (isContador && content.includes("imageMessage")) {
 				const currentMsg = getMsgimg(sender)
 				const checkIdMsg = getMsgId(sender)
 					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
@@ -2317,8 +2317,6 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
    
 //>> Tipo de mensaje
     const isViewOnce = (type == 'viewOnceMessage')
-    const isTmsg = content.includes('Message')
-    const isTmsgimg = content.includes('imageMessage')
     const isMedia = type === "imageMessage" || type === "videoMessage";
     const isQuotedMsg = type === 'extendedTextMessage' && content.includes('Message');
     const isQuotedImage = type === "extendedTextMessage" && content.includes("imageMessage");
