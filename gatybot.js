@@ -1870,60 +1870,6 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 				}
 			}
 			
-//>> mensaje
-			if (isContador && content.includes('Message')) {
-				const currentMensaje = getMsg(sender)
-				const checkIdMensaje = getMsgId(sender)
-					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
-					addMsg(sender, 1)
-			}
-			
-//>> imagen
-			if (isContador && content.includes("imageMessage")) {
-				if (content.includes("contextInfo")) return
-				const currentImagen = getMsgimg(sender)
-				const checkIdImagen = getMsgId(sender)
-					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
-					addMsgimg(sender, 1)
-			}
-			
-//>> video
-			if (isContador && content.includes("videoMessage")) {
-				if (content.includes("contextInfo")) return
-				const currentVideo = getMsgvideo(sender)
-				const checkIdVideo = getMsgId(sender)
-					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
-					addMsgvideo(sender, 1)
-			}
-			
-//>> archivo
-			if (isContador && content.includes("documentMessage")) {
-				if (content.includes("contextInfo")) return
-				const currentArchivo = getMsgarchivo(sender)
-				const checkIdArchivo = getMsgId(sender)
-					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
-					addMsgarchivo(sender, 1)
-			}
-			
-//>> sticker
-			if (isContador && content.includes("stickerMessage")) {
-				if (content.includes("contextInfo")) return
-				const currentSticker = getMsgsticker(sender)
-				const checkIdSticker = getMsgId(sender)
-					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
-					addMsgsticker(sender, 1)
-			}
-			
-//>> audio
-			if (isContador && content.includes("audioMessage")) {
-				if (content.includes("contextInfo")) return
-				const currentAudio = getMsgaudio(sender)
-				const checkIdAudio = getMsgId(sender)
-					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
-					addMsgaudio(sender, 1)
-			}
-			
-			
 //====================================================================================================//
 
 //>> Emoji a sticker
@@ -2469,6 +2415,61 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 //>> Mensaje privado y grupo
  if (!isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Pv", color(command, "blue"), "de", color(sender.split('@')[0], "aqua"), args.length)
 if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(command, "green"), "de", color(sender.split('@')[0], "aqua"), "en", color(groupName, "gold"), args.length)
+
+//>> mensaje
+			if (isContador && content.includes('Message')) {
+				const currentMensaje = getMsg(sender)
+				const checkIdMensaje = getMsgId(sender)
+					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
+					addMsg(sender, 1)
+			}
+			
+//>> imagen
+			if (isContador && content.includes("imageMessage")) {
+				if (!isQuotedImage)return 
+				const currentImagen = getMsgimg(sender)
+				const checkIdImagen = getMsgId(sender)
+					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
+					addMsgimg(sender, 1)
+			}
+			
+//>> video
+			if (isContador && content.includes("videoMessage")) {
+				if (!isQuotedVideo)return 
+				const currentVideo = getMsgvideo(sender)
+				const checkIdVideo = getMsgId(sender)
+					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
+					addMsgvideo(sender, 1)
+			}
+			
+//>> archivo
+			if (isContador && content.includes("documentMessage")) {
+				if (!isQuotedDocs)return 
+				const currentArchivo = getMsgarchivo(sender)
+				const checkIdArchivo = getMsgId(sender)
+					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
+					addMsgarchivo(sender, 1)
+			}
+			
+//>> sticker
+			if (isContador && content.includes("stickerMessage")) {
+				if (!isQuotedSticker)return 
+				const currentSticker = getMsgsticker(sender)
+				const checkIdSticker = getMsgId(sender)
+					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
+					addMsgsticker(sender, 1)
+			}
+			
+//>> audio
+			if (isContador && content.includes("audioMessage")) {
+				if (!isQuotedAudio)return 
+				const currentAudio = getMsgaudio(sender)
+				const checkIdAudio = getMsgId(sender)
+					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
+					addMsgaudio(sender, 1)
+			}
+			
+			
 
 //====================================================================================================//
 
