@@ -7861,117 +7861,15 @@ if (!isGroup) return reply(group())
 if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuesta en este chat`)
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 
-const operators = ["+", "×", "÷", "-"]
+const operators = ["+","×","÷","-"]
 const opez = operators[Math.floor(Math.random() * operators.length)]
 opex = opez
 
-const mtz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
-const mty = mtz[Math.floor(Math.random() * mtz.length)]
-const mtu = mty
-
-const mtzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
-const mtyy = mtzz[Math.floor(Math.random() * mtzz.length)]
-const mtuu = mtyy
-
-const mtzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
-const mtyyy = mtzzz[Math.floor(Math.random() * mtzzz.length)]
-const mtuuu = mtyyy
-
-const mtzzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
-const mtyyyy = mtzzzz[Math.floor(Math.random() * mtzzzz.length)]
-const mtuuuu = mtyyyy
-
-const mtzzzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
-const mtyyyyy = mtzzzzz[Math.floor(Math.random() * mtzzzzz.length)]
-const mtuuuuu = mtyyyyy
-
-const mtzzzzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
-const mtyyyyyy = mtzzzzzz[Math.floor(Math.random() * mtzzzzzz.length)]
-const mtuuuuuu = mtyyyyyy
-
-
-const mtv = `${mtu}`
-const mth = mtv
-
-const mtvv = `${mtu}${mtuu}`
-const mthh = mtvv
-
-const mtvvv = `${mtu}${mtuu}${mtuuu}`
-const mthhh = mtvvv
-
-const mtvvvv = `${mtu}${mtuu}${mtuu}${mtuuuu}`
-const mthhhh = mtvvvv
-
-const mtvvvvv = `${mtu}${mtuu}${mtuuu}${mtuuuu}${mtuuuuu}`
-const mthhhhh = mtvvvvv
-
-const mtvvvvvv = `${mtu}${mtuu}${mtuuu}${mtuuuu}${mtuuuuu}${mtuuuuuu}`
-const mthhhhhh = mtvvvvvv
-
-//>> Mate noob
-
-
-
-
-//>> Mate Facil
-const mateg = mthh
-const mateh = `${mateg} ${opex} ${mateg}`
-const mabt = mateh
-const timebx = 30
-const bonobx = 170
-let vell = mabt
-let resulet = (new Function('return ' + vell))()
-if (!resulet) throw resulet
-const resulez = resulet
-
-//>> Mate normal
-const matek = mthhh
-const matem = `${matek} ${opex} ${matek}`
-const mact = matem
-const timecx = 50
-const bonocx = 170
-let vill = mact
-let resulit = (new Function('return ' + vill))()
-if (!resulit) throw resulit
-const resuliz = resulit
-
-//>> Mate difícil
-const matep = mthhhh
-const mateq = `${matep} ${opex} ${matep}`
-const madt = mateq
-const timedx = 70
-const bonodx = 170
-let voll = madt
-let resulot = (new Function('return ' + voll))()
-if (!resulot) throw resulot
-const resuloz = resulot
-
-//>> Mate extremo
-const matet = mthhhhh
-const mateu = `${matet} ${opex} ${matet}`
-const maet = mateu
-const timeex = 100
-const bonoex = 170
-let vull = maet
-let resulut = (new Function('return ' + vull))()
-if (!resulut) throw resulut
-const resuluz = resulut
-
-//>> Mate imposible
-const matex = mthhhhhh
-const matez = `${matex} ${opex} ${matex}`
-const maft = matez
-const timefx = 140
-const bonofx = 170
-let vyll = maft
-let resulyt = (new Function('return ' + vyll))()
-if (!resulyt) throw resulyt
-const resulyz = resulyt
-
 					if (args[0] === 'noob' ) {
-const mty = Math.floor(Math.random() * (10 - 1 + 1) + 1)
-const matec = mty
-const mated = `${matec} ${opex} ${matec}`
+						
+const matec0 = `${Math.floor(Math.random() * 10)}`
+const matec1 = `${Math.floor(Math.random() * 10)}`
+const mated = `${matec0} ${opex} ${matec1}`
 maat = mated
 timeax = 10
 bonoax = 170
@@ -7979,6 +7877,7 @@ let vall = maat
 let resulat = (new Function('return ' + vall))()
 if (!resulat) throw resulat
 const resulaz = resulat
+
 reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750  botcoins`)
 game.addmtk(from, resulaz, timeax, mtk)
 } else if (args[0] === 'fácil') {
