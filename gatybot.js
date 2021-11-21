@@ -2409,15 +2409,15 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isQuotedVideo = type === "extendedTextMessage" && content.includes("videoMessage");
     const isQuotedAudio = type === "extendedTextMessage" && content.includes("audioMessage");
     const isQuotedSticker = type === "extendedTextMessage" && content.includes("stickerMessage");
-    const isQuotedDocs = type === "extendedTextMessage" && content.includes("documentMessage")
-    const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid")
+    const isQuotedDocs = type === "extendedTextMessage" && content.includes("documentMessage");
+    const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid");
     
-    const isTmsg = type === "imageMessage" || type === "videoMessage" || type === "documentMessage" || type === "stickerMessage" || type === "audioMessage";
-    const isTimg = type === "Message" || type === "videoMessage" || type === "documentMessage" || type === "stickerMessage" || type === "audioMessage";
-    const isTvd = type === "imageMessage" || type === "Message" || type === "documentMessage" || type === "stickerMessage" || type === "audioMessage";
-    const isTrh = type === "imageMessage" || type === "videoMessage" || type === "Message" || type === "stickerMessage" || type === "audioMessage";
-    const isTst = type === "imageMessage" || type === "videoMessage" || type === "documentMessage" || type === "Message" || type === "audioMessage";
-    const isTio = type === "imageMessage" || type === "videoMessage" || type === "documentMessage" || type === "stickerMessage" || type === "Message";
+    const isTmsg = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
+    const isTimg = type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
+    const isTvd = type === 'extendedTextMessage' && content.includes('Message') || type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
+    const isTrh = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("stickerMessage") || type === "extendedTextMessage" && content.includes("audioMessage");
+    const isTst = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("documentMessage") || type === 'extendedTextMessage' && content.includes('Message') || type === "extendedTextMessage" && content.includes("audioMessage");
+    const isTio = type === "extendedTextMessage" && content.includes("imageMessage") || type === "extendedTextMessage" && content.includes("videoMessage") || type === "extendedTextMessage" && content.includes("documentMessage") || type === "extendedTextMessage" && content.includes("stickerMessage") || type === 'extendedTextMessage' && content.includes('Message');
     
 //>> Mensaje privado y grupo
  if (!isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Pv", color(command, "blue"), "de", color(sender.split('@')[0], "aqua"), args.length)
