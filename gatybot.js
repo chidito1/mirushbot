@@ -239,6 +239,14 @@ const vcard2 = 'BEGIN:VCARD\n'
 //====================================================================================================//
   
 //>> Funcion de contador de mensajes beta
+
+const addMsgId = (sender) => {
+	const amsg = { id: sender, mensaje: 1, imagen: 0, video: 0, archivo: 0, sticker: 0, audio: 0 }
+	_msg.push(amsg)
+	fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+}
+
+//>> mensaje
   const addMsg = (sender, msg) => {
 	let position = false
 	Object.keys(_msg).forEach((i) => {
@@ -250,12 +258,6 @@ const vcard2 = 'BEGIN:VCARD\n'
 		_msg[position].mensaje += msg
 		fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
 	}
-}
-
-  const addMsgId = (sender) => {
-	const amsg = { id: sender, mensaje: 1 }
-	_msg.push(amsg)
-	fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
 }
 
 const getMsg = (sender) => {
@@ -279,6 +281,32 @@ const getMsgId = (sender) => {
 	})
 	if (position !== false) {
 		return _msg[position].id
+	}
+}
+
+//>> imagen
+  const addMsgimg = (sender, img) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_msg[position].imagen += img
+		fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+	}
+}
+
+const getMsgimg = (sender) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _msg[position].imagen
 	}
 }
 
@@ -1740,11 +1768,19 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			}
 			
 //>> mensaje
-			if (isGroup && isContador) {
+			if (!isQuotedMsg && isContador) {
 				const currentMsg = getMsg(sender)
 				const checkIdMsg = getMsgId(sender)
 					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
 					addMsg(sender, 1)
+			}
+			
+//>> imagen
+			if (!isQuotedImage && isContador) {
+				const currentMsg = getMsgimg(sender)
+				const checkIdMsg = getMsgId(sender)
+					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
+					addMsgimg(sender, 1)
 			}
 			
 			
@@ -2283,15 +2319,12 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isViewOnce = (type == 'viewOnceMessage')
     const isMedia = type === "imageMessage" || type === "videoMessage";
     const isQuotedMsg = type === 'extendedTextMessage' && content.includes('Message');
-    const isQuotedImage =
-      type === "extendedTextMessage" && content.includes("imageMessage");
-    const isQuotedVideo =
-      type === "extendedTextMessage" && content.includes("videoMessage");
-    const isQuotedAudio =
-      type === "extendedTextMessage" && content.includes("audioMessage");
-    const isQuotedSticker =
-      type === "extendedTextMessage" && content.includes("stickerMessage");
-      
+    const isQuotedImage = type === "extendedTextMessage" && content.includes("imageMessage");
+    const isQuotedVideo = type === "extendedTextMessage" && content.includes("videoMessage");
+    const isQuotedAudio = type === "extendedTextMessage" && content.includes("audioMessage");
+    const isQuotedSticker = type === "extendedTextMessage" && content.includes("stickerMessage");
+    const isQuotedDocs = type === "extendedTextMessage" && content.includes("documentMessage")
+    
 //>> Mensaje privado y grupo
  if (!isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Pv", color(command, "blue"), "de", color(sender.split('@')[0], "aqua"), args.length)
 if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(command, "green"), "de", color(sender.split('@')[0], "aqua"), "en", color(groupName, "gold"), args.length)
@@ -5734,11 +5767,13 @@ if(!isVerify) return isUser()
     if (!isGroup) return reply(group()) 
                 if (!isContador) return reply('❎ El contador de mensajes no se activó en este grupo')
                 const currentMsgz = getMsg(sender)
+                const currentMsgimgz = getMsgimg(sender)
 				const checkIdMsgz = getMsgId(sender)
 				if (currentMsgz === undefined && checkIdMsgz === undefined) return reply('✳️ Tu contador esta vacío')
                 msgresul = `*▢ Nombre:* @${sender.split("@")[0]}
 ╭──────────────────✾
 ├ *💬Mensajes enviados :* ${currentMsgz}
+├ *🖼️Imagenes enviados :* ${currentMsgimgz}
 ╰──────────────────✾`
                Fg.sendMessage(from, msgresul, text, { quoted: mek, contextInfo: {mentionedJid: [sender] }})
                 .catch(async (err) => {
