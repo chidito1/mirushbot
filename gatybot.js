@@ -7869,26 +7869,47 @@ const mtz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8"
 const mty = mtz[Math.floor(Math.random() * mtz.length)]
 const mtu = mty
 
+const mtzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
+const mtyy = mtzz[Math.floor(Math.random() * mtzz.length)]
+const mtuu = mtyy
+
+const mtzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
+const mtyyy = mtzzz[Math.floor(Math.random() * mtzzz.length)]
+const mtuuu = mtyyy
+
+const mtzzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
+const mtyyyy = mtzzzz[Math.floor(Math.random() * mtzzzz.length)]
+const mtuuuu = mtyyyy
+
+const mtzzzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
+const mtyyyyy = mtzzzzz[Math.floor(Math.random() * mtzzzzz.length)]
+const mtuuuuu = mtyyyyy
+
+const mtzzzzzz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
+const mtyyyyyy = mtzzzzzz[Math.floor(Math.random() * mtzzzzzz.length)]
+const mtuuuuuu = mtyyyyyy
+
+
 const mtv = `${mtu}`
 const mth = mtv
 
-const mtvv = `${mtu}${mtu}`
+const mtvv = `${mtu}${mtuu}`
 const mthh = mtvv
 
-const mtvvv = `${mtu}${mtu}${mtu}`
+const mtvvv = `${mtu}${mtuu}${mtuuu}`
 const mthhh = mtvvv
 
-const mtvvvv = `${mtu}${mtu}${mtu}${mtu}`
+const mtvvvv = `${mtu}${mtuu}${mtuu}${mtuuuu}`
 const mthhhh = mtvvvv
 
-const mtvvvvv = `${mtu}${mtu}${mtu}${mtu}${mtu}`
+const mtvvvvv = `${mtu}${mtuu}${mtuuu}${mtuuuu}${mtuuuuu}`
 const mthhhhh = mtvvvvv
 
-const mtvvvvvv = `${mtu}${mtu}${mtu}${mtu}${mtu}${mtu}`
+const mtvvvvvv = `${mtu}${mtuu}${mtuuu}${mtuuuu}${mtuuuuu}${mtuuuuuu}`
 const mthhhhhh = mtvvvvvv
 
 //>> Mate noob
-const matec = mth
+const matec = mty
 const mated = `${matec} ${opex} ${matec}`
 const maat = mated
 const timeax = 10
