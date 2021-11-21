@@ -7833,6 +7833,33 @@ reply(`No hay sesión en curso, 🛡️ Para iniciar uno escribe ${prefix}ttc`);
   }
 break
 
+case 'mathpv':
+if (!isOwner) return reply(ownerB())
+const operators = ["+", "×", "÷", "-"]
+const opez = operators[Math.floor(Math.random() * operators.length)]
+opex = opez
+
+const matex = ["14", "15", "16", "17"]
+const mthz = matex[Math.floor(Math.random() * matex.length)]
+mthx = mthz
+timex = 50
+bonox = 170
+
+const matez = ["54", "55", "56", "57"]
+const mtz = matez[Math.floor(Math.random() * matez.length)]
+mtx = mtz
+timez = 60
+bonoz = 275
+
+if (args[0] === 'z' ) {
+	reply(`Cuanto es el resultado de *${mthx} ${opex} ${mthx}*?\n\n*⏰Tiempo:* ${timex} segundos\n*💰Bono:* +${bonox}  botcoins`)
+	} else if (args[0] === 'x') {
+		reply(`Cuanto es el resultado de *${mtx} ${opex} ${mtx}*?\n\n*⏰Tiempo:* ${timez} segundos\n*💰Bono:* +${bonoz}  botcoins`)
+		} else {
+					  reply(`Modo *${args[0]}* no disponible!`)
+					}
+break
+
                //-----  𝗝𝘂𝗲𝗴𝗼𝘀 𝗽𝗮𝗿𝗮 𝗴𝗮𝗻𝗮𝗿 𝗕𝗼𝘁𝗖𝗼𝗶𝗻𝘀--         
 case 'math':
 case 'mate':
