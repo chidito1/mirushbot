@@ -2425,7 +2425,6 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 
 //>> mensaje
 			if (isContador && content.includes('Message')) {
-				if (!isTmsg)return 
 				const currentMensaje = getMsg(sender)
 				const checkIdMensaje = getMsgId(sender)
 					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
@@ -2434,7 +2433,6 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 			
 //>> imagen
 			if (isContador && content.includes("imageMessage")) {
-				if (!isTimg)return 
 				const currentImagen = getMsgimg(sender)
 				const checkIdImagen = getMsgId(sender)
 					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
@@ -2443,7 +2441,6 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 			
 //>> video
 			if (isContador && content.includes("videoMessage")) {
-				if (!isTvd)return 
 				const currentVideo = getMsgvideo(sender)
 				const checkIdVideo = getMsgId(sender)
 					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
@@ -2461,7 +2458,6 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 			
 //>> sticker
 			if (isContador && content.includes("stickerMessage")) {
-				if (!isTst)return 
 				const currentSticker = getMsgsticker(sender)
 				const checkIdSticker = getMsgId(sender)
 					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
@@ -2470,7 +2466,6 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 			
 //>> audio
 			if (isContador && content.includes("audioMessage")) {
-				if (!isTio)return 
 				const currentAudio = getMsgaudio(sender)
 				const checkIdAudio = getMsgId(sender)
 					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
