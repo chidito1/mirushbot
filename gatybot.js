@@ -124,6 +124,10 @@ const _claim = JSON.parse(fs.readFileSync('./database/user/claim.json'))
 //>> Juego mate
 const _mate = JSON.parse(fs.readFileSync('./game/mate.json'))
 
+//>> mensaje 
+const contador = JSON.parse(fs.readFileSync('./database/group/contador.json'))
+const _msg = JSON.parse(fs.readFileSync('./database/user/mensaje.json'))
+
 //====================[ FIN DE BASE DE DATOS ]====================//
 
 
@@ -231,8 +235,53 @@ const vcard2 = 'BEGIN:VCARD\n'
  + 'ORG:Dueño de GatyBot;\n' 
  + 'TEL;type=CELL;type=VOICE;waid=51940617554:+51 940 617 554\n'
  + 'END:VCARD'
-//====================[ FIN DE CONTACTO DEL DUEÑO ]====================//
   
+//====================================================================================================//
+  
+//>> Funcion de contador de mensajes beta
+  const addMsg = (sender, msg) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_msg[position].mensaje += msg
+		fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+	}
+}
+
+  const addMsgId = (sender) => {
+	const amsg = { id: sender, mensaje: 1 }
+	_msg.push(amsg)
+	fs.writeFileSync('./database/user/mensaje.json', JSON.stringify(_msg))
+}
+
+const getMsg = (sender) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _msg[position].mensaje
+	}
+}
+
+const getMsgId = (sender) => {
+	let position = false
+	Object.keys(_msg).forEach((i) => {
+		if (_msg[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _msg[position].id
+	}
+}
+
 //====================[ FUNCIÓN DE NIVELACIÓN ]====================//
 const getLevelingXp = (sender) => {
 	let position = false
@@ -550,6 +599,7 @@ prefix = prefa }}}
     //----nuevo fg 
 const isBanned = ban.includes(sender)
 const isNsfw = isGroup ? nsfw.includes(from) : false 
+const isContador = isGroup ? contador.includes(from) : false 
 const isLevelingOn = isGroup ? _leveling.includes(from) : false
 
     const conts = mek.key.fromMe
@@ -1688,6 +1738,19 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 					console.error(err)
 				}
 			}
+			
+//>> mensaje
+			if (isGroup && isContador) {
+				const currentMsg = getMsg(sender)
+				const checkIdMsg = getMsgId(sender)
+				try {
+					if (currentMsg === undefined && checkIdMsg === undefined) addMsgId(sender)
+					}
+				} catch (err) {
+					console.error(err)
+				}
+			}
+			
 			
 //====================================================================================================//
 
@@ -5814,6 +5877,28 @@ break
 					}
 					break
 					
+				case 'contador':
+				case 'contadormsg':
+				if(!isVerify) return isUser()
+				if (isBanned) return reply(banf())
+				if (!isGroup) return reply(group())
+					if (!isGroupAdmins && !isOwner) return reply(admin())
+					if (args.length < 1) return reply(`✳️ *CONTADOR DE MENSAJES*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					if ((args[0]) === 'on') {
+						if (isContador) return reply('✳️ Contador de mensajes ya está activo')
+						contador.push(from)
+						fs.writeFileSync('./database/group/contador.json', JSON.stringify(contador))
+						reply(`✅ Se activo el *Contador de mensajes* en este grupo`)
+					} else if ((args[0]) === 'off') {
+						if (!isContador) return reply('✳️ Contador de mensajes ya está desactivado')
+						contador.splice(from, 1)
+						fs.writeFileSync('./database/group/contador.json', JSON.stringify(contador))
+						reply(`✅ Se desactivo el *Contador de mensajes* en este grupo`)
+					} else {
+						reply(`✳️ *CONTADOR DE MENSAJES*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					}
+					break
+					
 				case 'interaction':
 				case 'interacción':
 				case 'interaccion':
@@ -5821,7 +5906,6 @@ break
 				if (isBanned) return reply(banf())
 				if (!isGroup) return reply(group())
 					if (!isGroupAdmins && !isOwner) return reply(admin())
-					if (!isBotGroupAdmins) return reply(Badmin())
 					if (args.length < 1) return reply(`✳️ *INTERACCIÓN*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
 					if ((args[0]) === 'on') {
 						if (isInteraction) return reply('✳️ Interacción ya está activo')
