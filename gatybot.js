@@ -7909,15 +7909,7 @@ const mtvvvvvv = `${mtu}${mtuu}${mtuuu}${mtuuuu}${mtuuuuu}${mtuuuuuu}`
 const mthhhhhh = mtvvvvvv
 
 //>> Mate noob
-const matec = mty
-const mated = `${matec} ${opex} ${matec}`
-const maat = mated
-const timeax = 10
-const bonoax = 170
-let vall = maat
-let resulat = (new Function('return ' + vall))()
-if (!resulat) throw resulat
-const resulaz = resulat
+
 
 
 
@@ -7977,6 +7969,16 @@ if (!resulyt) throw resulyt
 const resulyz = resulyt
 
 					if (args[0] === 'noob' ) {
+const mty = Math.floor(Math.random() * (10 - 1 + 1) + 1)
+const matec = mty
+const mated = `${matec} ${opex} ${matec}`
+maat = mated
+timeax = 10
+bonoax = 170
+let vall = maat
+let resulat = (new Function('return ' + vall))()
+if (!resulat) throw resulat
+const resulaz = resulat
 reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750  botcoins`)
 game.addmtk(from, resulaz, timeax, mtk)
 } else if (args[0] === 'fácil') {
