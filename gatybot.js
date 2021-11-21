@@ -7890,9 +7890,9 @@ const mthhhhhh = mtvvvvvv
 //>> Mate noob
 const matec = mth
 const mated = `${matec} ${opex} ${matec}`
-maat = mated
-timeax = 10
-bonoax = 170
+const maat = mated
+const timeax = 10
+const bonoax = 170
 let vall = maat
 let resulat = (new Function('return ' + vall))()
 if (!resulat) throw resulat
@@ -7903,10 +7903,10 @@ const resulaz = resulat
 //>> Mate Facil
 const mateg = mthh
 const mateh = `${mateg} ${opex} ${mateg}`
-mabt = mateh
-timebx = 30
-bonobx = 170
-let vell = maat
+const mabt = mateh
+const timebx = 30
+const bonobx = 170
+let vell = mabt
 let resulet = (new Function('return ' + vell))()
 if (!resulet) throw resulet
 const resulez = resulet
@@ -7914,10 +7914,10 @@ const resulez = resulet
 //>> Mate normal
 const matek = mthhh
 const matem = `${matek} ${opex} ${matek}`
-mact = matem
-timecx = 50
-bonocx = 170
-let vill = maat
+const mact = matem
+const timecx = 50
+const bonocx = 170
+let vill = mact
 let resulit = (new Function('return ' + vill))()
 if (!resulit) throw resulit
 const resuliz = resulit
@@ -7925,10 +7925,10 @@ const resuliz = resulit
 //>> Mate difícil
 const matep = mthhhh
 const mateq = `${matep} ${opex} ${matep}`
-madt = mateq
-timedx = 70
-bonodx = 170
-let voll = maat
+const madt = mateq
+const timedx = 70
+const bonodx = 170
+let voll = madt
 let resulot = (new Function('return ' + voll))()
 if (!resulot) throw resulot
 const resuloz = resulot
@@ -7936,10 +7936,10 @@ const resuloz = resulot
 //>> Mate extremo
 const matet = mthhhhh
 const mateu = `${matet} ${opex} ${matet}`
-maet = mateu
-timeex = 100
-bonoex = 170
-let vull = maat
+const maet = mateu
+const timeex = 100
+const bonoex = 170
+let vull = maet
 let resulut = (new Function('return ' + vull))()
 if (!resulut) throw resulut
 const resuluz = resulut
@@ -7947,10 +7947,10 @@ const resuluz = resulut
 //>> Mate imposible
 const matex = mthhhhhh
 const matez = `${matex} ${opex} ${matex}`
-maft = matez
-timefx = 140
-bonofx = 170
-let vyll = maat
+const maft = matez
+const timefx = 140
+const bonofx = 170
+let vyll = maft
 let resulyt = (new Function('return ' + vyll))()
 if (!resulyt) throw resulyt
 const resulyz = resulyt
