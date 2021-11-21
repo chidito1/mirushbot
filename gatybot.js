@@ -7956,28 +7956,28 @@ if (!resulyt) throw resulyt
 const resulyz = resulyt
 
 					if (args[0] === 'noob' ) {
-reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750  botcoins`)
+reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750  botcoins`)
 game.addmtk(from, resulaz, timeax, mtk)
 } else if (args[0] === 'fácil') {
-reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${timebx} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resulez, timebx, mtk)
 } else if (args[0] === 'facil') {
-reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${timebx} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resulez, timebx, mtk)
 					} else if (args[0] === 'normal') {
-reply(`Cuanto es el resultado de *${mact}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+reply(`Cuanto es el resultado de *${mact}*?\n\n*⏰Tiempo:* ${timecx} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resuliz, timecx, mtk)
 					} else if (args[0] === 'difícil') {
-reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${timedx} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resuloz, timedx, mtk)
 } else if (args[0] === 'dificil') {
-reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${timedx} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resuloz, timedx, mtk)
 } else if (args[0] === 'extremo') {
-reply(`Cuanto es el resultado de *${maet}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+reply(`Cuanto es el resultado de *${maet}*?\n\n*⏰Tiempo:* ${timeex} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resuluz, timeex, mtk)
 } else if (args[0] === 'imposible') {
-reply(`Cuanto es el resultado de *${maft}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+reply(`Cuanto es el resultado de *${maft}*?\n\n*⏰Tiempo:* ${timefx} segundos\n*💰Bono:* +750 botcoins`)
 game.addmtk(from, resulyz, timefx, mtk)
 					} else {
 					  reply(`🗂️  *${args[0]}* No disponible!\n\n*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
