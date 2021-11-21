@@ -2452,11 +2452,12 @@ if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(comm
 			
 //>> archivo
 			if (isContador && content.includes("documentMessage")) {
-				if (!isTrh)return 
 				const currentArchivo = getMsgarchivo(sender)
 				const checkIdArchivo = getMsgId(sender)
 					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
 					addMsgarchivo(sender, 1)
+					if (!isQuotedDocs) return 
+					addMsgarchivo(sender, -1)
 			}
 			
 //>> sticker
