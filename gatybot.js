@@ -7841,20 +7841,45 @@ opex = opez
 
 const matex = ["14", "15", "16", "17"]
 const mthz = matex[Math.floor(Math.random() * matex.length)]
-mthx = mthz
+const mthx = mthz
+const mathe = `${mthx} ${opex} ${mthx}`
+maat = mathe
 timex = 50
 bonox = 170
 
 const matez = ["54", "55", "56", "57"]
 const mtz = matez[Math.floor(Math.random() * matez.length)]
-mtx = mtz
+const mtx = mtz
+const mathee = `${mtx} ${opex} ${mtx}`
+maatt = mathee
 timez = 60
 bonoz = 275
 
+let vall = maat
+.replace(/[^0-9\-\/+*×÷πEe()piPI/]/g, '')
+.replace(/×/g, '*')
+.replace(/÷/g, '/')
+.replace(/π|pi/gi, 'Math.PI')
+.replace(/e/gi, 'Math.E')
+.replace(/\/+/g, '/')
+.replace(/\++/g, '+')
+.replace(/-+/g, '-')
+let format = vall
+.replace(/Math\.PI/g, 'π')
+.replace(/Math\.E/g, 'e')
+.replace(/\//g, '÷')
+.replace(/\*×/g, '×')
+console.log(vall)
+let result = (new Function('return ' + vall))()
+if (!result) throw result
+const resulz = result
+
 if (args[0] === 'z' ) {
-	reply(`Cuanto es el resultado de *${mthx} ${opex} ${mthx}*?\n\n*⏰Tiempo:* ${timex} segundos\n*💰Bono:* +${bonox}  botcoins`)
+	reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timex} segundos\n*💰Bono:* +${bonox}  botcoins\n*Resultado:* ${resulz}`)
+	game.addmtk(from, anih, timex, mtk)
 	} else if (args[0] === 'x') {
-		reply(`Cuanto es el resultado de *${mtx} ${opex} ${mtx}*?\n\n*⏰Tiempo:* ${timez} segundos\n*💰Bono:* +${bonoz}  botcoins`)
+		reply(`Cuanto es el resultado de *${maatt}*?\n\n*⏰Tiempo:* ${timez} segundos\n*💰Bono:* +${bonoz}  botcoins\n*Resultado:* ${resulz}`)
+		game.addmtk(from, anih, timez, mtk)
 		} else {
 					  reply(`Modo *${args[0]}* no disponible!`)
 					}
