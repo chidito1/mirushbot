@@ -7835,39 +7835,8 @@ break
 
 case 'mathpv':
 if (!isOwner) return reply(ownerB())
-const operators = ["+", "×", "÷", "-"]
-const opez = operators[Math.floor(Math.random() * operators.length)]
-opex = opez
 
-const matex = ["14", "15", "16", "17"]
-const mthz = matex[Math.floor(Math.random() * matex.length)]
-const mthx = mthz
-const mathe = `${mthx} ${opex} ${mthx}`
-maat = mathe
-timex = 50
-bonox = 170
 
-const matez = ["54", "55", "56", "57"]
-const mtz = matez[Math.floor(Math.random() * matez.length)]
-const mtx = mtz
-const mathee = `${mtx} ${opex} ${mtx}`
-maatt = mathee
-timez = 60
-bonoz = 275
-
-let vall = maat
-.replace(/[^0-9\-\/+*×÷πEe()piPI/]/g, '')
-.replace(/×/g, '*')
-.replace(/÷/g, '/')
-.replace(/π|pi/gi, 'Math.PI')
-.replace(/e/gi, 'Math.E')
-.replace(/\/+/g, '/')
-.replace(/\++/g, '+')
-.replace(/-+/g, '-')
-console.log(vall)
-let result = (new Function('return ' + vall))()
-if (!result) throw result
-const resulz = result
 
 if (args[0] === 'z' ) {
 	reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${timex} segundos\n*💰Bono:* +${bonox}  botcoins\n*Resultado:* ${resulz}`)
@@ -7891,46 +7860,125 @@ if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
 if (!isGroup) return reply(group())
 if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuesta en este chat`)
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
+
+const operators = ["+", "×", "÷", "-"]
+const opez = operators[Math.floor(Math.random() * operators.length)]
+opex = opez
+
+const mtz = ["1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9","1","2","3","4","5","6","7","8","9"]
+const mty = mtz[Math.floor(Math.random() * mtz.length)]
+const mtu = mty
+
+const mtv = `${mtu}`
+const mth = mtv
+
+const mtvv = `${mtu}${mtu}`
+const mthh = mtvv
+
+const mtvvv = `${mtu}${mtu}${mtu}`
+const mthhh = mtvvv
+
+const mtvvvv = `${mtu}${mtu}${mtu}${mtu}`
+const mthhhh = mtvvvv
+
+const mtvvvvv = `${mtu}${mtu}${mtu}${mtu}${mtu}`
+const mthhhhh = mtvvvvv
+
+const mtvvvvvv = `${mtu}${mtu}${mtu}${mtu}${mtu}${mtu}`
+const mthhhhhh = mtvvvvvv
+
+//>> Mate noob
+const matec = mth
+const mated = `${matec} ${opex} ${matec}`
+maat = mated
+timeax = 10
+bonoax = 170
+let vall = maat
+let resulat = (new Function('return ' + vall))()
+if (!resulat) throw resulat
+const resulaz = resulat
+
+
+
+//>> Mate Facil
+const mateg = mthh
+const mateh = `${mateg} ${opex} ${mateg}`
+mabt = mateh
+timebx = 30
+bonobx = 170
+let vell = maat
+let resulet = (new Function('return ' + vell))()
+if (!resulet) throw resulet
+const resulez = resulet
+
+//>> Mate normal
+const matek = mthhh
+const matem = `${matek} ${opex} ${matek}`
+mact = matem
+timecx = 50
+bonocx = 170
+let vill = maat
+let resulit = (new Function('return ' + vill))()
+if (!resulit) throw resulit
+const resuliz = resulit
+
+//>> Mate difícil
+const matep = mthhhh
+const mateq = `${matep} ${opex} ${matep}`
+madt = mateq
+timedx = 70
+bonodx = 170
+let voll = maat
+let resulot = (new Function('return ' + voll))()
+if (!resulot) throw resulot
+const resuloz = resulot
+
+//>> Mate extremo
+const matet = mthhhhh
+const mateu = `${matet} ${opex} ${matet}`
+maet = mateu
+timeex = 100
+bonoex = 170
+let vull = maat
+let resulut = (new Function('return ' + vull))()
+if (!resulut) throw resulut
+const resuluz = resulut
+
+//>> Mate imposible
+const matex = mthhhhhh
+const matez = `${matex} ${opex} ${matex}`
+maft = matez
+timefx = 140
+bonofx = 170
+let vyll = maat
+let resulyt = (new Function('return ' + vyll))()
+if (!resulyt) throw resulyt
+const resulyz = resulyt
+
 					if (args[0] === 'noob' ) {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=very_easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750  botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${maat}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750  botcoins`)
+game.addmtk(from, resulaz, timeax, mtk)
 } else if (args[0] === 'fácil') {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resulez, timebx, mtk)
 } else if (args[0] === 'facil') {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=easy`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${mabt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resulez, timebx, mtk)
 					} else if (args[0] === 'normal') {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=medium`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${mact}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resuliz, timecx, mtk)
 					} else if (args[0] === 'difícil') {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resuloz, timedx, mtk)
 } else if (args[0] === 'dificil') {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=hard`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${madt}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resuloz, timedx, mtk)
 } else if (args[0] === 'extremo') {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=extreme`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${maet}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resuluz, timeex, mtk)
 } else if (args[0] === 'imposible') {
-					  let anu = await axios.get(`http://zekais-api.herokuapp.com/math?mode=impossible`)
-reply(`Cuanto es el resultado de *${anu.data.nilai_1} ${anu.data.tanda} ${anu.data.nilai_2}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
-let anih = anu.data.jawaban.toLowerCase()
-game.addmtk(from, anih, GameTime, mtk)
+reply(`Cuanto es el resultado de *${maft}*?\n\n*⏰Tiempo:* ${GameTime} segundos\n*💰Bono:* +750 botcoins`)
+game.addmtk(from, resulyz, timefx, mtk)
 					} else {
 					  reply(`🗂️  *${args[0]}* No disponible!\n\n*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 					}
