@@ -7781,7 +7781,7 @@ Tu turno:  @${boardnow.turn == "X" ? boardnow.X : boardnow.O}
           
 Escriba *rendirse* para dejar el juego..
 Escriba ${prefix}delttc para eliminar la sesión de juego..`;
-if (chatMove.includes("null")) return reply(`❎ Intente de nuevo después de este mensaje`);
+if (chatMove.includes("null")) return reply(`❎ Error pon ${prefix}deltt para restablecer el juego`);
 Fg.sendMessage(from, chatMove, MessageType.text, {
 quoted: mek,
 contextInfo: {
@@ -7830,7 +7830,7 @@ if (fs.existsSync("./lib/tictactoe/db/" + from + ".json")) {
 fs.unlinkSync("./lib/tictactoe/db/" + from + ".json");
 reply(`✅ Sesión de juego reiniciado`);
   } else {
-reply(`No hay sesión en curso, 🛡️ Para iniciar uno escribe ${prefix}ttc`);
+reply(`No hay sesión en curso, 🛡️ Para iniciar uno escribe ${prefix}ttt`);
   }
 break
 
