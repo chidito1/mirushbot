@@ -2317,8 +2317,8 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
    
 //>> Tipo de mensaje
     const isViewOnce = (type == 'viewOnceMessage')
-    const isTmsg = (type == 'Message')
-    const isTmsgimg = (type == 'imageMessage')
+    const isTmsg = content.includes('Message')
+    const isTmsgimg = content.includes('imageMessage')
     const isMedia = type === "imageMessage" || type === "videoMessage";
     const isQuotedMsg = type === 'extendedTextMessage' && content.includes('Message');
     const isQuotedImage = type === "extendedTextMessage" && content.includes("imageMessage");
