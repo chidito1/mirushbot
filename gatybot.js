@@ -7781,6 +7781,7 @@ Tu turno:  @${boardnow.turn == "X" ? boardnow.X : boardnow.O}
           
 Escriba *rendirse* para dejar el juego..
 Escriba ${prefix}delttc para eliminar la sesión de juego..`;
+if (chatMove.includes("null")) return reply(`❎ Intente de nuevo después de este mensaje`);
 Fg.sendMessage(from, chatMove, MessageType.text, {
 quoted: mek,
 contextInfo: {
