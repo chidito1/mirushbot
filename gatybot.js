@@ -1872,7 +1872,6 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> mensaje
 			if (isContador && content.includes('Message')) {
-				if (content.includes("extendedTextMessage")) return
 				const currentMensaje = getMsg(sender)
 				const checkIdMensaje = getMsgId(sender)
 					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
@@ -1881,7 +1880,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> imagen
 			if (isContador && content.includes("imageMessage")) {
-				if (content.includes("extendedTextMessage")) return
+				if (content.includes("contextInfo")) return
 				const currentImagen = getMsgimg(sender)
 				const checkIdImagen = getMsgId(sender)
 					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
@@ -1890,7 +1889,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> video
 			if (isContador && content.includes("videoMessage")) {
-				if (content.includes("extendedTextMessage")) return
+				if (content.includes("contextInfo")) return
 				const currentVideo = getMsgvideo(sender)
 				const checkIdVideo = getMsgId(sender)
 					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
@@ -1899,7 +1898,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> archivo
 			if (isContador && content.includes("documentMessage")) {
-				if (content.includes("extendedTextMessage")) return
+				if (content.includes("contextInfo")) return
 				const currentArchivo = getMsgarchivo(sender)
 				const checkIdArchivo = getMsgId(sender)
 					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
@@ -1908,7 +1907,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> sticker
 			if (isContador && content.includes("stickerMessage")) {
-				if (content.includes("extendedTextMessage")) return
+				if (content.includes("contextInfo")) return
 				const currentSticker = getMsgsticker(sender)
 				const checkIdSticker = getMsgId(sender)
 					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
@@ -1917,7 +1916,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 			
 //>> audio
 			if (isContador && content.includes("audioMessage")) {
-				if (content.includes("extendedTextMessage")) return
+				if (content.includes("contextInfo")) return
 				const currentAudio = getMsgaudio(sender)
 				const checkIdAudio = getMsgId(sender)
 					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
