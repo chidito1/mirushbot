@@ -2381,7 +2381,7 @@ var enlace = 'WhatsApp'
 	}
 
 //>> Anti cadenas
-if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || (budy.includes("█████") || (budy.includes("tu deseo se cumplira") || (budy.includes("telo en 5 grupos") || (budy.includes("solo envía esta cadena") || (budy.includes("uevo patron de desbloqueo") || (budy.includes("pide tres deseos") || (budy.includes("pide 3 deseos") || (budy.includes("Instala para obtener el tema")))))))))){
+if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || (budy.includes("█████") || (budy.includes("tu deseo se cumplira") || (budy.includes("telo en 5 grupos") || (budy.includes("solo envía esta cadena") || (budy.includes("uevo patron de desbloqueo") || (budy.includes("pide tres deseos") || (budy.includes("pide 3 deseos") || (budy.includes("Instala para obtener el tema"))))))))))){
 		if (!isGroup) return 
 		if (!isAntilink) return 
 		if (sender.includes("78118982")) return
