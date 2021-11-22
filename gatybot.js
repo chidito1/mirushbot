@@ -2398,7 +2398,7 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 		}, 0)
 	}
 	
-if (content.includes("asalo") || (content.includes("rupo"))){
+if (content.includes("____asalo") || (content.includes("____rupo"))){
 if (!isGroup) return 
 		if (!isAnticadena) return 
 		console.log(color('[GATYBOT]','magenta'), color(`Cadena detectado`,'red'));
