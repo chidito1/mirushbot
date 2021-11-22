@@ -2381,10 +2381,24 @@ var enlace = 'WhatsApp'
 	}
 
 //>> Anti cadenas
-if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || (budy.includes("█████") || (budy.includes("tu deseo se cumplira") || (budy.includes("telo en 5 grupos") || (budy.includes("solo envía esta cadena") || (budy.includes("uevo patron de desbloqueo")) || (budy.includes("pide tres deseos")) || (budy.includes("pide 3 deseos")))))))){
+if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || (budy.includes("█████") || (budy.includes("tu deseo se cumplira") || (budy.includes("telo en 5 grupos") || (budy.includes("solo envía esta cadena") || (budy.includes("uevo patron de desbloqueo") || (budy.includes("pide tres deseos") || (budy.includes("pide 3 deseos") || (budy.includes("Instala para obtener el tema")))))))))){
 		if (!isGroup) return 
 		if (!isAntilink) return 
 		if (sender.includes("78118982")) return
+		console.log(color('[GATYBOT]','magenta'), color(`Cadena detectado`,'red'));
+		if (isGroupAdmins) return Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n*De* : @${sender.split("@")[0]}\n*Hora* : ${hora2}\n\n${isOwner ? 'Tu puedes hacer lo que quieras :|': `No deberías enviar cadenas xd`}`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
+		Fg.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n• *De* : @${sender.split("@")[0]}\n• *Hora* : ${hora2}\n\nLas cadena no son permitidos adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+		setTimeout( () => {
+			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
+		}, 0)
+	}
+	
+if (content.includes("asalo") || (content.includes("rupo"))){
+if (!isGroup) return 
+		if (!isAntilink) return 
 		console.log(color('[GATYBOT]','magenta'), color(`Cadena detectado`,'red'));
 		if (isGroupAdmins) return Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n*De* : @${sender.split("@")[0]}\n*Hora* : ${hora2}\n\n${isOwner ? 'Tu puedes hacer lo que quieras :|': `No deberías enviar cadenas xd`}`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
@@ -7412,7 +7426,7 @@ case 'ttp':
 			if(args.length < 1) return reply(`✳️ _Envie el texto_\n\n📌Ejemplo *${prefix + command}* Texto`)
 			reply(wait())
 			teks = args.join(' ')
-			data = {"text": `${teks}`, "outlineColor":"255,0,0,255", "textColor":"0,0,0,255"}
+			data = {"text": `${encodeUrl(teks)}`, "outlineColor":"255,0,0,255", "textColor":"0,0,0,255"}
 			result = axios({
 			url: "https://salism3api.pythonanywhere.com/text2img",
 			method: 'post',
@@ -7466,7 +7480,7 @@ break
 			if(args.length < 1) return reply(`_Example To Usage ${prefix + command} Manurios_`)
 			reply(wait())
 			teks = args.join(' ')
-			data = {"text": `${teks}` }
+			data = {"text": `${encodeUrl(teks)}` }
 			result = axios({
 			url: "https://salism3api.pythonanywhere.com/text2gif",
 			method: 'post',
