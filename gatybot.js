@@ -225,7 +225,7 @@ let {GameTime, limitCount } = require('./settings')
 //====================[ CONTACTO DEL DUEÑO ]====================//
 const vcard1 = 'BEGIN:VCARD\n' 
  + 'VERSION:3.0\n' 
- + 'FN:式⃟🩸고양이🩸⃟式⁩\n'
+ + 'FN:「gatitoツ」\n'
  + 'ORG:Dueño de GatyBot;\n' 
  + `TEL;type=CELL;type=VOICE;waid=${owner}:+${owner}\n`
  + 'END:VCARD'
@@ -2911,7 +2911,7 @@ gbutsan = [
 gbuttonan = {
 imageMessage: py.message.imageMessage,
 contentText: helfxz,
-footerText: `  *Copyright © gatybot*`,
+footerText: `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © gatybot 2021*`,
 buttons: gbutsan,
 headerType: 4
 }
