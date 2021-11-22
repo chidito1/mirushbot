@@ -103,6 +103,7 @@ const _interaction = JSON.parse(fs.readFileSync('./database/group/interaction.js
 const _antilink = JSON.parse(fs.readFileSync('./database/group/antilink.json'))
 const _antivirtual = JSON.parse(fs.readFileSync('./database/group/antivirtual.json'))
 const _antiviewonce = JSON.parse(fs.readFileSync('./database/group/antiviewonce.json'))
+const _anticadena = JSON.parse(fs.readFileSync('./database/group/anticadena.json'))
 const _bancht = JSON.parse(fs.readFileSync('./database/group/banchat.json'));
 const ban = JSON.parse(fs.readFileSync('./database/bot/banned.json'));
 const premium = JSON.parse(fs.readFileSync('./database/bot/premium.json'))
@@ -710,6 +711,7 @@ prefix = prefa }}}
     const isAntilink = isGroup ? _antilink.includes(from) : false
     const isAntiviewOnce = isGroup ? _antiviewonce.includes(from) : false
     const isAntivirtual = isGroup ? _antivirtual.includes(from) : false
+    const isAnticadena = isGroup ? _anticadena.includes(from) : false
     const isPremium = _prem.checkPremiumUser(sender,premium) || false || isOwner
     const isWelcom = isGroup ? _welcom.includes(from) : false
     const isBye = isGroup ? _bye.includes(from) : false
@@ -2383,7 +2385,7 @@ var enlace = 'WhatsApp'
 //>> Anti cadenas
 if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || (budy.includes("█████") || (budy.includes("tu deseo se cumplira") || (budy.includes("telo en 5 grupos") || (budy.includes("solo envía esta cadena") || (budy.includes("uevo patron de desbloqueo") || (budy.includes("pide tres deseos") || (budy.includes("pide 3 deseos") || (budy.includes("Instala para obtener el tema"))))))))))){
 		if (!isGroup) return 
-		if (!isAntilink) return 
+		if (!isAnticadena) return 
 		if (sender.includes("78118982")) return
 		console.log(color('[GATYBOT]','magenta'), color(`Cadena detectado`,'red'));
 		if (isGroupAdmins) return Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n*De* : @${sender.split("@")[0]}\n*Hora* : ${hora2}\n\n${isOwner ? 'Tu puedes hacer lo que quieras :|': `No deberías enviar cadenas xd`}`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
@@ -2398,7 +2400,7 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 	
 if (content.includes("asalo") || (content.includes("rupo"))){
 if (!isGroup) return 
-		if (!isAntilink) return 
+		if (!isAnticadena) return 
 		console.log(color('[GATYBOT]','magenta'), color(`Cadena detectado`,'red'));
 		if (isGroupAdmins) return Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n*De* : @${sender.split("@")[0]}\n*Hora* : ${hora2}\n\n${isOwner ? 'Tu puedes hacer lo que quieras :|': `No deberías enviar cadenas xd`}`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
@@ -6093,6 +6095,28 @@ break
 						reply(`✅ Se desactivo el *Antilink* en este grupo`)
 					} else {
 						reply(`✳️ *ANTILINK WHATSAPP*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					}
+					break
+					
+				case 'anticadena':
+				if(!isVerify) return isUser()
+				if (isBanned) return reply(banf())
+				if (!isGroup) return reply(group())
+					if (!isGroupAdmins && !isOwner) return reply(admin())
+					if (!isBotGroupAdmins) return reply(Badmin())
+					if (args.length < 1) return reply(`✳️ *ANTICADENA*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					if ((args[0]) === 'on') {
+						if (isAnticadena) return reply('✳️ Anti cadena ya está activo')
+						_anticadena.push(from)
+						fs.writeFileSync('./database/group/anticadena.json', JSON.stringify(_anticadena))
+						reply(`✅ Se activo *Anti cadena* en este grupo`)
+					} else if ((args[0]) === 'off') {
+						if (!isAnticadena) return reply('✳️ Anti cadena ya está desactivado')
+						_anticadena.splice(from, 1)
+						fs.writeFileSync('./database/group/anticadena.json', JSON.stringify(_anticadena))
+						reply(`✅ Se desactivo *Anti cadena* en este grupo`)
+					} else {
+						reply(`✳️ *ANTICADENA*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
 					}
 					break
 					
