@@ -7404,7 +7404,31 @@ break
 //-----------------------------ATTP - TTP----------------------------
 
 //https://api.xteam.xyz/attp?file&text=hola
+
 case 'ttp':
+  if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+			if(args.length < 1) return reply(`✳️ _Envie el texto_\n\n📌Ejemplo *${prefix + command}* Texto`)
+			reply(wait())
+			teks = args.join(' ')
+			data = {"text": `${teks}`, "outlineColor":"0,0,0,255", "textColor":"255,255,255,255"}
+			result = axios({
+			url: "https://salism3api.pythonanywhere.com/text2img",
+			method: 'post',
+			data: new URLSearchParams(Object.entries(data))
+			})
+			.then(res => {
+			sendStickerUrl(from, res.data.image)
+			})
+			.catch((err) => {
+						reply(`❎ Error, intente de nuevo mas tarde`); 
+						giveLimit(sender, 1, limit)
+						})
+limitAdd(sender, limit)
+			break
+
+case 'ttp2':
   if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
@@ -7421,23 +7445,7 @@ sendStickerUrl(from, buffer)
 						})
 limitAdd(sender, limit)
 break 
-						case 'ttp2':  
-             if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-					if (args.length < 1) return reply(`✳️ _Envie el texto_\n\n📌Ejemplo *${prefix + command}* Texto`)
-                    reply(wait())
-                    F = q
-                    anu1 = await getBuffer(`https://lolhuman.herokuapp.com/api/ttp3?apikey=${lolkey}&text=${encodeUrl(F)}`)
-                    Fg.sendMessage(from, anu1, sticker, {quoted: mek})
-                    .catch((err) => {
-						reply(`❎ Error, intente de nuevo mas tarde`); 
-						giveLimit(sender, 1, limit)
-						})
-                    limitAdd(sender, limit)
-                    break
-                    
-
+						
 	case 'attp':
 	              if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -7454,21 +7462,25 @@ break
 					  limitAdd(sender, limit)
 break
 					
-					case 'attp2':  
-                  if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-					if (args.length < 1) return reply(`✳️ _Envie el texto_\n\n📌Ejemplo *${prefix + command}* Texto`)
-                    reply(wait())
-                    F = q
-                    anu1 = await getBuffer(`https://lolhuman.herokuapp.com/api/attp?apikey=${lolkey}&text=${encodeUrl(F)}`)
-                    Fg.sendMessage(from, anu1, sticker, {quoted: mek})
-                    .catch((err) => {
+		case 'attp2':
+			if(args.length < 1) return reply(`_Example To Usage ${prefix + command} Manurios_`)
+			reply(wait())
+			teks = args.join(' ')
+			data = {"text": `${teks}` }
+			result = axios({
+			url: "https://salism3api.pythonanywhere.com/text2gif",
+			method: 'post',
+			data: new URLSearchParams(Object.entries(data))
+			})
+			.then(res => {
+			sendStickerUrl(from, res.data.image)
+			})
+			.catch((err) => {
 						reply(`❎ Error, intente de nuevo mas tarde`); 
 						giveLimit(sender, 1, limit)
 						})
-                    limitAdd(sender, limit)
-                    break
+					  limitAdd(sender, limit)
+			break
                    
 	
 case 'attp3':
@@ -8446,22 +8458,6 @@ ${descOwner ? `*Desc diubah oleh* : @${descOwner.split('@')[0]}` : '*Desc diubah
              reply('Link error')
              }
              break
-        
-case 'reenviar':
-if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-   if (!isGroup)return reply(group())
-	if (!isGroupAdmins && !isOwner) return reply(admin())
-try{
-if(!isQuotedMsg)return reply('✳️ Responde a un mensaje!')
-pp = {id:mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from }
-Fg.sendMessage(from, pp, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-} catch(e) {
-reply('✳️ Responde a un mensaje!')
-reply(e)
-console.log(e)
-}
-break
         
 //--------------------------------------
       default:
