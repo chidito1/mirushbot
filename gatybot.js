@@ -7412,7 +7412,7 @@ case 'ttp':
 			if(args.length < 1) return reply(`✳️ _Envie el texto_\n\n📌Ejemplo *${prefix + command}* Texto`)
 			reply(wait())
 			teks = args.join(' ')
-			data = {"text": `${teks}`, "outlineColor":"0,0,0,255", "textColor":"255,255,255,255"}
+			data = {"text": `${teks}`, "outlineColor":"255,0,0,255", "textColor":"0,0,0,255"}
 			result = axios({
 			url: "https://salism3api.pythonanywhere.com/text2img",
 			method: 'post',
