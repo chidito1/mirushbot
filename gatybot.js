@@ -2415,14 +2415,14 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid");
     
 //>> Mensaje privado y grupo
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("──────────────────────────────────────────────────────────────────────", "magenta"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("────────────────────────────────────────────────────────────────────", "magenta"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color("gatybot", "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cmd: "), color(command, "aqua"))
 
-if (isGroup && isCmd) console.log('\x1b[1;31m', color("──────────────────────────────────────────────────────────────────────", "magenta"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("────────────────────────────────────────────────────────────────────", "magenta"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Grupo: "), color(groupName, "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
@@ -8744,7 +8744,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
 } catch (e) { 
     e = String(e);
 	if (!e.includes("this.isZero") && !e.includes("jid is not defined") && !e.includes("Cannot read property 'fromMe' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("Cannot read property 'key' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("no such file or directory") && !e.includes("Not expecting a response")) {
-	  console.log('\x1b[1;31m', color("──────────────────────────────────────────────────────────────────────", "magenta"));
+	  console.log('\x1b[1;31m', color("────────────────────────────────────────────────────────────────────", "magenta"));
       console.log('\x1b[1;31m', color("Message: %s", "red"), color(e, "red"));
     }
   }
