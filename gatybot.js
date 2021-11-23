@@ -151,6 +151,7 @@ cekGLimit
 //====================[ RESULTADOS ]====================//
 const _verdad = JSON.parse(fs.readFileSync('./result/verdad.json'));
 const _reto = JSON.parse(fs.readFileSync('./result/reto.json'));
+const anime = JSON.parse(fs.readFileSync('./result/anime.json'));
 //====================[ FIN DE RESULTADOS ]====================//
 
 //---Ajustes  Del prefijo
@@ -2764,6 +2765,7 @@ break;
   🌅 ${prefix}par
   🌅 ${prefix}pinterest
   🌅 ${prefix}wallpaper
+  🌅 ${prefix}anime
   🌅 ${prefix}loli
   🌅 ${prefix}neko
   🌅 ${prefix}waifu
@@ -5216,6 +5218,20 @@ case 'mujer':
 )
               break
               
+case 'anime':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+let animez = anime[Math.floor(Math.random() * anime.length)]
+      animex = await getBuffer(animez)
+Fg.sendMessage(from, animex, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${animez}\n\n✅ Aqui tienes *UwU*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
+            })
+            limitAdd(sender, limit)
+          break
               
         //https://media.publit.io/file/Twintails/145.jpg
         //https://nekos.life/api/v2/img/keta
