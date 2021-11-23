@@ -2417,14 +2417,14 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 //if (!isGroup && isCmd) console.log('\x1b[1;31m', "Pv", color(command, "aqua"), "de", color(sender.split('@')[0]), color(args.length))
 
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("────────────────────────────────────────────────────────────", "purple"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Privado: ", "aqua"), color("gatybot", "cyan"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ De: ", "aqua"), color(sender.split('@')[0], "cyan"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Cmd: ", "aqua"), color(command, "cyan"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color("gatybot", "aqua"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cmd: "), color(command, "aqua"))
 
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("────────────────────────────────────────────────────────────", "purple"))
-if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Grupo: ", "aqua"), color(groupName, "cyan"))
-if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ De: ", "aqua"), color(sender.split('@')[0], "cyan"))
-if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Cmd: ", "aqua"), color(command, "cyan"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Grupo: "), color(groupName, "aqua"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cmd: "), color(command, "aqua"))
 
 //>> mensaje
 			if (isContador && content.includes('Message')) {
