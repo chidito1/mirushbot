@@ -1993,9 +1993,7 @@ _prem.expiredCheck(premium)
 //>> Juego de matemáticas
 
 const htgm3 = Math.floor(Math.random() * (10000 - 5000 + 1) + 5000)
-
 game.cekWaktuMtk(Fg, mtk)
-
 if (game.isMtk(from, mtk)){
 if (chats.toLowerCase().includes(game.getJawabanMtk(from, mtk))){
 addBalance(sender, 750, balance)
@@ -2397,7 +2395,7 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
 		}, 0)
 	}
-
+	
 //====================================================================================================//
 
 //>> Colores
@@ -2561,6 +2559,8 @@ break
 pre = `⭐ El prefijo que se utiliza es : *${prefix}*`
 reply(pre)
 break
+
+}
 
 //====================================================================================================//
 
@@ -8595,7 +8595,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   if (!isInteraction) return 
                   reply(`Bueno en ese caso el tuyo 7w7`)
                   }
-                  if (budy.includes('51988050859')) {
+                  if (budy.includes('@51988050859')) {
                   if (!isInteraction) return 
                   reply(`Holi, en que le puedo ayudar? para ver mis comandos pon *+menu*`)
                   }
@@ -8695,8 +8695,10 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   }, 15000)
                   
     }
-}
-.catch((err) => {
-            reply(`❎ Error, intente de nuevo mas tarde`); 
-            })
+} catch (e) { 
+    e = String(e);
+	if (!e.includes("this.isZero") && !e.includes("jid is not defined") && !e.includes("Cannot read property 'fromMe' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("Cannot read property 'key' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("no such file or directory") && !e.includes("Not expecting a response")) {
+      console.log("Message : %s", color(e, "red"));
+    }
+  }
 };
