@@ -2422,9 +2422,9 @@ if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ De: ", "aqua"), colo
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Cmd: ", "aqua"), color(command, "cyan"))
 
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("──────────────────────────────", "purple"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Grupo: ", "aqua"), color(groupName, "cyan"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ De: ", "aqua"), color(sender.split('@')[0], "cyan"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Cmd: ", "aqua"), color(command, "cyan"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Grupo: ", "aqua"), color(groupName, "cyan"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ De: ", "aqua"), color(sender.split('@')[0], "cyan"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ Cmd: ", "aqua"), color(command, "cyan"))
 
 //>> mensaje
 			if (isContador && content.includes('Message')) {
@@ -7649,7 +7649,7 @@ case 'tienda':
 ╰──────────────────✾
 
 *📌NOTA:*
-Puedes comprar 💎Diamantes usando *${prefix}buy* 
+Puedes comprar ??Diamantes usando *${prefix}buy* 
 Y para comprar 🎰GameCoins *${prefix}buygcoin*`
 reply(shopfg)
 	break
