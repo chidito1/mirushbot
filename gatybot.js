@@ -2414,8 +2414,8 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid");
     
 //>> Mensaje privado y grupo
-if (!isGroup && isCmd) console.log('[\x1b[1;32mGATYBOT\x1b[1;37m]', "Pv", color(command), "de", color(sender.split('@')[0]), color(args.length))
-if (isGroup && isCmd) console.log('[\x1b[1;32mGATYBOT\x1b[1;37m]', "Gp", color(command), "de", color(sender.split('@')[0]), "en", color(groupName), color(args.length))
+if (!isGroup && isCmd) console.log('[\x1b[1;32mGATYBOT\x1b[1;37m]', "Pv", color(command, "aqua"), "de", color(sender.split('@')[0]), color(args.length))
+if (isGroup && isCmd) console.log('[\x1b[1;32mGATYBOT\x1b[1;37m]', "Gp", color(command, "aqua"), "de", color(sender.split('@')[0]), "en", color(groupName), color(args.length))
 
 //>> mensaje
 			if (isContador && content.includes('Message')) {
