@@ -57,6 +57,7 @@ const toMs = require("ms");
 const { error } = require("qrcode-terminal");
 const CryptoJS = require("crypto-js");
 const crypto = require('crypto');
+const CFonts  = require('cfonts')
 //====================[ FIN DE MODULOS ]====================//
 
 
@@ -2414,14 +2415,18 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid");
     
 //>> Mensaje privado y grupo
-//if (!isGroup && isCmd) console.log('\x1b[1;31m', "Pv", color(command, "aqua"), "de", color(sender.split('@')[0]), color(args.length))
-
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("────────────────────────────────────────────────────────────", "purple"))
+CFonts.say('────────────────────────────────────────────────────────────', {font: 'console', align: 'center', gradient: ['magenta', 'magenta']})
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color("gatybot", "aqua"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cmd: "), color(command, "aqua"))
 
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("────────────────────────────────────────────────────────────", "purple"))
+CFonts.say('——————————————————————————————————————————————————', {font: 'console', align: 'center', gradient: ['magenta', 'magenta']})
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color("gatybot", "aqua"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Grupo: "), color(groupName, "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cmd: "), color(command, "aqua"))
