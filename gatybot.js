@@ -2397,20 +2397,6 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
 		}, 0)
 	}
-	
-if (content.includes("____asalo") || (content.includes("____rupo"))){
-if (!isGroup) return 
-		if (!isAnticadena) return 
-		console.log(color('[GATYBOT]','magenta'), color(`Cadena detectado`,'red'));
-		if (isGroupAdmins) return Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n*De* : @${sender.split("@")[0]}\n*Hora* : ${hora2}\n\n${isOwner ? 'Tu puedes hacer lo que quieras :|': `No deberías enviar cadenas xd`}`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
-		Fg.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n• *De* : @${sender.split("@")[0]}\n• *Hora* : ${hora2}\n\nLas cadena no son permitidos adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-		setTimeout( () => {
-			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
-		}, 0)
-	}
 
 //====================================================================================================//
 
@@ -2575,23 +2561,6 @@ break
 pre = `⭐ El prefijo que se utiliza es : *${prefix}*`
 reply(pre)
 break
-
-case '//gamemode':
-			if (args.length == 0) return reply(from, 'Eliga un modo [survival/creative/spectator/adventure]', id)
-			if (args[0] == '1' || args[0] == 'c' || args[0] == 'creative') {
-				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a creativo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else if (args[0] == '0' || args[0] == 's' || args[0] == 'survival') {
-				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a supervivencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else if (args[0] == '2' || args[0] == 'a' || args[0] == 'spectator') {
-				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a espectador`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else if (args[0] == 'xxxxx' || args[0] == 'xxxxx' || args[0] == 'adventure') {
-				Fg.sendMessage(from, `El modo de juego de @${sender.split("@")[0]} se cambio a aventura`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
-			} else {
-				reply(from, 'Eliga un modo [survival/creative/spectator/adventure]', id)
-			}
-            break
-
-}
 
 //====================================================================================================//
 
@@ -8626,7 +8595,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   if (!isInteraction) return 
                   reply(`Bueno en ese caso el tuyo 7w7`)
                   }
-                  if (budy.includes('@51988050859')) {
+                  if (budy.includes('51988050859')) {
                   if (!isInteraction) return 
                   reply(`Holi, en que le puedo ayudar? para ver mis comandos pon *+menu*`)
                   }
