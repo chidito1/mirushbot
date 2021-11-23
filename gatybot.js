@@ -8485,21 +8485,6 @@ Fg.sendMessage(from, picmale, image, {quoted: mek, caption: `✅ Chico`})
             limitAdd(sender, limit)
 break
 
-case 'loli':
-if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-      reply(wait()) 
-let loliz = loli[Math.floor(Math.random() * loli.length)]
-      lolix = await getBuffer(loliz)
-Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${loliz}\n\n✅ Aqui tienes *Onii chan*`})
-.catch((err) => {
-            reply(`❎ Error, intente de nuevo mas tarde`); 
-            giveLimit(sender, 1, limit)
-            })
-            limitAdd(sender, limit)
-          break
-
 //--------------------------------------
       default:
  
