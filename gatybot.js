@@ -2761,6 +2761,7 @@ break;
 
     *IMAGENES*
   🌅 ${prefix}imagen
+  🌅 ${prefix}par
   🌅 ${prefix}pinterest
   🌅 ${prefix}wallpaper
   🌅 ${prefix}loli
@@ -8465,7 +8466,40 @@ ${descOwner ? `*Desc diubah oleh* : @${descOwner.split('@')[0]}` : '*Desc diubah
              reply('Link error')
              }
              break
-        
+
+case 'par':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+pares = await axios.get(`https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=dappakntlll`)
+var { male, female } = pares.data.result
+picfemale = await getBuffer(`${female}`)
+Fg.sendMessage(from, picfemale, image, {quoted: mek, caption: `✅ Chica`})
+picmale = await getBuffer(`${male}`)
+Fg.sendMessage(from, picmale, image, {quoted: mek, caption: `✅ Chico`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
+            })
+            limitAdd(sender, limit)
+break
+
+case 'loli':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+let loliz = loli[Math.floor(Math.random() * loli.length)]
+      lolix = await getBuffer(loliz)
+Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${loliz}\n\n✅ Aqui tienes *Onii chan*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
+            })
+            limitAdd(sender, limit)
+          break
+
 //--------------------------------------
       default:
  
