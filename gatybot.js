@@ -2917,43 +2917,41 @@ const latensii = speed() - timestampp
                    giid.push(id)
                     }
                     }
-                   inifernazer = `_*<INFORMACIÓN DEL BOT/>*_
+                   inifernazer = `「 *INFORMACIÓN DEL BOT* 」
 
-• 式 ⃟⃟🤖 _*Nombre* : ${Fg.user.name}_
-• 式 ⃟⃟🤖 _*Numero* : wa.me/${botnum.split("@")[0]}_
-• 式 ⃟🤖 _*Prefijo* : ${prefix}_
-• 式 ⃟🤖 _*Version del bot* : 4.0.0_
-• 式 ⃟⃟🤖 _*Total Hits* : ${totalhit}_
-• 式 ⃟⃟🤖 _*Usuarios registrados* : ${_user.length}_
-• 式 ⃟⃟🤖 _*Tiempo activa* : ${runtime(process.uptime())}_
-• 式 ⃟⃟🤖 _*Velocidad* : ${latensii.toFixed(4)} Segundos_
-• 式 ⃟⃟🤖 _*Navegador* : ${Fg.browserDescription[1]}_
-• 式 ⃟⃟🤖 _*Versión del navegador* : ${Fg.browserDescription[2]}_
-• 式 ⃟⃟🤖 _*Vercion del Wpp* : ${wa_version}_
+• 🤖 *Prefijo* : ${prefix}
+• 🤖 *Bot V* : 4.0.0
+• 🤖 *Total Hits* : ${totalhit}
+• 🤖 *Usuarios reg* : ${_user.length}
+• 🤖 *Tiempo activa* : ${runtime(process.uptime())}
+• 🤖 *Velocidad* : ${latensii.toFixed(4)} Segundos
+• 🤖 *Navegador* : ${Fg.browserDescription[1]}
+• 🤖 *Navegador V* : ${Fg.browserDescription[2]}
+• 🤖 *WhatsApp V* : ${wa_version}
 
-_*<INFORMACIÓN DE CHATS/>*_
+「 *INFORMACIÓN DE CHATS* 」
 
-• 式 ⃟⃟💬 _*Chats grupales* : ${giid.length}_
-• 式 ⃟⃟💬 _*Chats privados* : ${totalchat.length - giid.length}_
-• 式 ⃟⃟💬 _*Total de chats* : ${totalchat.length}_
-• 式 ⃟⃟💬 _*No leido* : ${unread.length} mensajes_
+• 💬 *Chats grupales* : ${giid.length}
+• 💬 *Chats privados* : ${totalchat.length - giid.length}
+• 💬 *Total de chats* : ${totalchat.length}
+• 💬 *No leido* : ${unread.length} mensajes
 
-_*<INFORMACIÓN DEL ANDROID/>*_
+「 *INFORMACIÓN DEL ANDROID* 」
 
-• 式 ⃟⃟📲 _*Marca* : ${device_manufacturer}_
-• 式 ⃟⃟📲 _*Modelo* : ${device_model}_
-• 式 ⃟⃟📲 _*Vercion* : ${os_version}_
-• 式 ⃟⃟📲 _*Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB_
-• 式 ⃟⃟📲 _*MCC* : ${mcc}_
-• 式 ⃟⃟📲 _*MNC* : ${mnc}_
+• 📲 *Marca* : ${device_manufacturer}
+• 📲 *Modelo* : ${device_model}
+• 📲 *Vercion* : ${os_version}
+• 📲 *Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+• 📲 *MCC* : ${mcc}
+• 📲 *MNC* : ${mnc}
+「」
+ 「 *AGRADECIMIENTOS* 」
 
- _*<AGRADECIMIENTOS/>*_
-
-• 式 ⃟⃟🐱 _*Gatito :* @${fgnum.split("@s.whatsapp.net")[0]}_
+• 🐱 *Gatito :* @${fgnum.split("@s.whatsapp.net")[0]}
 _*Diseñador del bot*_
 
-• 式 ⃟⃟🌀 _*Edgar :* @${ayudante.split("@s.whatsapp.net")[0]}_
-_*Ayuda en algunos comandos*_`
+• 🌀 *Edgar :* @${ayudante.split("@s.whatsapp.net")[0]}
+*Ayuda en algunos comandos*`
 Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱INFORMACIÓNES🐱⃟式`,body: `• Fecha : ${fecha2}\n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
              
            break
@@ -3399,7 +3397,7 @@ if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(
             pll = body.slice(8);
             plo = pll.split("|")[0];
 			      plo2 = pll.split("|")[1];
-            const preffk = `✳️ Ingrese el texto\n\n📌 Ejemplo : *${prefix + command}* Texto|Texto2`
+            const preffk = `*✳️ Ingrese el texto*\n\n📌Ejemplo: ${prefix + command} Texto|Texto2`
 					  if (args.length < 1) return reply(preffk)
             rakz = await getBuffer(`https://ferdiz-afk.my.id/api/maker/pornhub?text=${plo}&text2=${plo2}`)
             reply(wait())
@@ -3418,7 +3416,7 @@ if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(
             plo = pll.split("|")[0];
 			  plo2 = pll.split("|")[1];
 			    plo3 = pll.split("|")[2];
-            const preffk2 = `✳️ Ingrese el texto\n\n📌 Ejemplo : *${prefix + command}* Texto|Texto2|Texto3`
+            const preffk2 = `*✳️ Ingrese el texto*\n\n📌Ejemplo: ${prefix + command} Texto|Texto2|Texto3`
 					  if (args.length < 1) return reply(preffk2)   
             rakz = await getBuffer(`https://docs-jojo.herokuapp.com/api/neon?text1=${plo}&text2=${plo2}&text3=${plo3}`)
             reply(wait())
@@ -3436,7 +3434,7 @@ if(!isVerify) return isUser()
             pll = body.slice(7);
             plo = pll.split("|")[0];
 			      plo2 = pll.split("|")[1];
-            const preffk3 = `✳️ Ingrese el texto\n\n📌 Ejemplo : *${prefix + command}* Texto|Texto2`
+            const preffk3 = `*✳️ Ingrese el texto*\n\n📌Ejemplo: ${prefix + command} Texto|Texto2`
 					  if (args.length < 1) return reply(preffk3)   
             rakz = await getBuffer(`https://docs-jojo.herokuapp.com/api/ttlogo?text1=${plo}&text2=${plo2}`)
             reply(wait())
@@ -3451,7 +3449,7 @@ case 'blackpink':
  if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-if (args.length < 1) return reply(`✳️ Ingrese el texto\n\n📌 Ejemplo : *${prefix + command}* Texto`)
+if (args.length < 1) return reply(`*✳️ Ingrese el texto*\n\n📌Ejemplo: ${prefix + command} Texto`)
 reply(wait())
 bp = args.join(" ")
 bpz = await getBuffer(`https://docs-jojo.herokuapp.com/api/blackpink?text=${bp}`)
@@ -3467,7 +3465,7 @@ case '3d':
 				if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-				if (args.length < 1) return reply(`✳️ Ingrese el texto\n📌 Ejemplo : ${prefix + command} Texto`)
+				if (args.length < 1) return reply(`*✳️ Ingrese el texto*\n\n📌Ejemplo: ${prefix + command} Texto`)
 			    defg = q
                 data = await await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${defg}`)
                 
@@ -3483,7 +3481,7 @@ case 'luzneon':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-				if (args.length < 1) return reply(`✳️ Ingrese el texto\n📌 Ejemplo : ${prefix + command} Texto`)
+				if (args.length < 1) return reply(`*✳️ Ingrese el texto*\n\n📌Ejemplo: ${prefix + command} Texto`)
 			    defg = q
                 data = await await getBuffer(`https://docs-jojo.herokuapp.com/api/neon_light?text=${encodeUrl(defg)}`)
                 
@@ -3500,7 +3498,7 @@ case 'gaming':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-				if (args.length < 1) return reply(`✳️ Ingrese el texto\n📌 Ejemplo : ${prefix + command} Texto`)
+				if (args.length < 1) return reply(`*✳️ Ingrese el texto*\n\n📌Ejemplo: ${prefix + command} Texto`)
 			    defg = q
                 data = await await getBuffer(`https://docs-jojo.herokuapp.com/api/gaming?text=${defg}`)
                 	reply(wait())
@@ -3515,7 +3513,7 @@ if(!isVerify) return isUser()
                  
 
                     
-                    case 'sinfondo':
+case 'sinfondo':
    if(!isVerify) return isUser()
  if (isBanned) return reply(banf())
  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
@@ -6448,7 +6446,7 @@ case 'profile':
 │⎔ *🔮Tag* : @${sender.split("@")[0]}
 │⎔ *#️⃣Numero* : wa.me/${sender.split("@")[0]}
 │⎔ *📇Info* : ${infost}
-│⎔ *🥇Rango* : ${role}
+│⎔ *??Rango* : ${role}
 │⎔ *⭐Premium* : ${prem_}
 │⎔ *🕐Expira* : ${isPremium ? 'Ilimitado' : `${prmm}`}
 │⎔ *🆙Nivel* : ${lvl}
