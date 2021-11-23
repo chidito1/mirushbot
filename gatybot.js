@@ -2414,8 +2414,8 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     const isQuotedTag = type === "extendedTextMessage" && content.includes("mentionedJid");
     
 //>> Mensaje privado y grupo
- if (!isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Pv", color(command, "blue"), "de", color(sender.split('@')[0], "aqua"), args.length)
-if (isGroup && isCmd) console.log(color('[GATYBOT]','magenta'), "Gp", color(command, "green"), "de", color(sender.split('@')[0], "aqua"), "en", color(groupName, "gold"), args.length)
+if (!isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mGATYBOT\x1b[1;37m]'), "Pv", color(command, "blue"), "de", color(sender.split('@')[0], "aqua"), args.length)
+if (isGroup && isCmd) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mGATYBOT\x1b[1;37m]'), "Gp", color(command, "green"), "de", color(sender.split('@')[0], "aqua"), "en", color(groupName, "gold"), args.length)
 
 //>> mensaje
 			if (isContador && content.includes('Message')) {
@@ -2808,6 +2808,7 @@ break;
   👥 ${prefix}welcome [on/off]
   👥 ${prefix}goodbye [on/off]
   👥 ${prefix}simih [on/off]
+  👥 ${prefix}anticadena [on/off]
   👥 ${prefix}antiviewonce [on/off]
   👥 ${prefix}antilink [on/off]
   👥 ${prefix}interaction [on/off]
@@ -2944,7 +2945,7 @@ const latensii = speed() - timestampp
 • 📲 *Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 • 📲 *MCC* : ${mcc}
 • 📲 *MNC* : ${mnc}
-「」
+
  「 *AGRADECIMIENTOS* 」
 
 • 🐱 *Gatito :* @${fgnum.split("@s.whatsapp.net")[0]}
@@ -3275,14 +3276,14 @@ if (!isGroup) return reply(group())
           {
             buttonId: `${prefix}verdad`,
             buttonText: {
-              displayText: `Verdad`,
+              displayText: `🔹Verdad`,
             },
             type: 1,
           },
           {
             buttonId: `${prefix}reto`,
             buttonText: {
-              displayText: `Reto`,
+              displayText: `🔸Reto`,
             },
             type: 1,
           },
@@ -6446,7 +6447,7 @@ case 'profile':
 │⎔ *🔮Tag* : @${sender.split("@")[0]}
 │⎔ *#️⃣Numero* : wa.me/${sender.split("@")[0]}
 │⎔ *📇Info* : ${infost}
-│⎔ *??Rango* : ${role}
+│⎔ *🥇Rango* : ${role}
 │⎔ *⭐Premium* : ${prem_}
 │⎔ *🕐Expira* : ${isPremium ? 'Ilimitado' : `${prmm}`}
 │⎔ *🆙Nivel* : ${lvl}
