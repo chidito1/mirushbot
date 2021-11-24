@@ -2416,7 +2416,7 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     
 //>> Mensaje privado
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color("gatybot", "aqua"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color("gatybot", "blue"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
@@ -2424,7 +2424,7 @@ if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cm
 
 //>> Mensaje grupo
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
-if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Grupo: "), color(groupName, "aqua"))
+if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Grupo: "), color(groupName, "blue"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
@@ -3027,11 +3027,11 @@ if (isBanned) return reply(banf())
 				fs.writeFileSync('./database/user/verify.json', JSON.stringify(_verify))
 				adduserUser(sender, pushname, fecha2, hora2, seriTod)
 				console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Vericación exitosa", "aqua"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Nombre: "), color(pushname, "aqua"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Codigo: "), color(seriTod, "aqua"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Vericación exitosa", "yellow"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Nombre: "), color(pushname, "yellow"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "yellow"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "yellow"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Codigo: "), color(seriTod, "yellow"))
 				
 			capt = `「 *VERIFICACIÓN EXITOSA* 」
 ╭──────────────────✾
@@ -7854,7 +7854,11 @@ if (argss.length === 1)
 return reply(`✳️ Etiqueta a quien quiere ser tu oponente\n\n📌Uso  : *${prefix + command} @Tag*`
                          );
 const boardnow = setGame(`${from}`);
-console.log(color('[GATYBOT]','magenta'), color(`Juego iniciado en ${boardnow.session}`));
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Juego tictactoe iniciado", "aqua"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("En: "), color(groupName, "aqua"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 boardnow.status = false;
 boardnow.X = sender.replace("@s.whatsapp.net", "");
 boardnow.O = argss[1].replace("@", "");
