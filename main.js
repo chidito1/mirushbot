@@ -70,6 +70,7 @@ Fg.on('group-participants-update', async (anu) => {
 		if (!_welcom.includes(anu.jid)) return
 		try {
 			const mdata = await Fg.groupMetadata(anu.jid)
+			console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
