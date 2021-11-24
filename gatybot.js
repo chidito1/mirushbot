@@ -8424,13 +8424,13 @@ if(!isVerify) return isUser()
 					if (!isGroupAdmins && !isOwner) return reply(admin())
 					if (!isBotGroupAdmins) return reply(Badmin())
 					if(!q)return reply(`✳️ Menciona a alguien\n\n📌Ejemplo : ${prefix + command} @tag`)
-warnuser = q.split('@')[1] + '@s.whatsapp.net'
-		const currentWarn = getWarn(warnuser)
-				const checkIdWarn = getWarnId(warnuser)
-					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(warnuser)
+const warnuser = `${q.split("@")[0]}@s.whatsapp.net`
+		const currentWWarn = getWarn(warnuser)
+				const checkIdWWarn = getWarnId(warnuser)
+					if (currentWWarn === undefined && checkIdWWarn === undefined) addWarnId(warnuser)
 					addWarn(warnuser, 1)
-					Fg.sendMessage(from, `✅ Se le dio una advertencia a @${warnuser.split("@")[0]}`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
-		if (currentWarn === 3) {
+					Fg.sendMessage(from, `✅ Se le dio una advertencia a @${warnuser.split("@")[0]}`, text, {quoted: mek, contextInfo: {"mentionedJid": [warnuser]}})
+		if (currentWWarn === 3) {
 			var kic = `${sender.split("@")[0]}@s.whatsapp.net`
 			Fg.sendMessage(from, `✅ @${kic.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
 			setTimeout( () => {
