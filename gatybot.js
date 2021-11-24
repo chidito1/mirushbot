@@ -2430,61 +2430,6 @@ if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hor
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cmd: "), color(command, "aqua"))
 
-//>> mensaje
-			if (isContador && content.includes('Message')) {
-				const currentMensaje = getMsg(sender)
-				const checkIdMensaje = getMsgId(sender)
-					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
-					addMsg(sender, 1)
-			}
-			
-//>> imagen
-			if (isContador && content.includes("imageMessage")) {
-				const currentImagen = getMsgimg(sender)
-				const checkIdImagen = getMsgId(sender)
-					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
-					addMsgimg(sender, 1)
-					if (isQuotedImage) return addMsgimg(sender, -1)
-			}
-			
-//>> video
-			if (isContador && content.includes("videoMessage")) {
-				const currentVideo = getMsgvideo(sender)
-				const checkIdVideo = getMsgId(sender)
-					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
-					addMsgvideo(sender, 1)
-					if (isQuotedVideo) return addMsgvideo(sender, -1)
-			}
-			
-//>> archivo
-			if (isContador && content.includes("documentMessage")) {
-				const currentArchivo = getMsgarchivo(sender)
-				const checkIdArchivo = getMsgId(sender)
-					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
-					addMsgarchivo(sender, 1)
-					if (isQuotedDocs) return addMsgarchivo(sender, -1)
-			}
-			
-//>> sticker
-			if (isContador && content.includes("stickerMessage")) {
-				const currentSticker = getMsgsticker(sender)
-				const checkIdSticker = getMsgId(sender)
-					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
-					addMsgsticker(sender, 1)
-					if (isQuotedSticker) return addMsgsticker(sender, -1)
-			}
-			
-//>> audio
-			if (isContador && content.includes("audioMessage")) {
-				const currentAudio = getMsgaudio(sender)
-				const checkIdAudio = getMsgId(sender)
-					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
-					addMsgaudio(sender, 1)
-					if (isQuotedAudio) return addMsgaudio(sender, -1)
-			}
-			
-			
-
 //====================================================================================================//
 
 //>> Ver características
@@ -3551,6 +3496,7 @@ fs.unlinkSync(buffer)
 }
 limitAdd(sender, limit)
 break
+
 //--------𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗖𝗢𝗠𝗔𝗡𝗗O--------
 case 'addcmd': 
 case 'setcmd':
@@ -8728,6 +8674,62 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                	return 
                }
                }
+  
+//====================================================================================================//
+//>> Contador de mensajes beta
+
+//>> mensaje
+			if (isContador && content.includes('Message')) {
+				const currentMensaje = getMsg(sender)
+				const checkIdMensaje = getMsgId(sender)
+					if (currentMensaje === undefined && checkIdMensaje === undefined) addMsgId(sender)
+					addMsg(sender, 1)
+			}
+			
+//>> imagen
+			if (isContador && content.includes("imageMessage")) {
+				const currentImagen = getMsgimg(sender)
+				const checkIdImagen = getMsgId(sender)
+					if (currentImagen === undefined && checkIdImagen === undefined) addMsgId(sender)
+					addMsgimg(sender, 1)
+					if (isQuotedImage) return addMsgimg(sender, -1)
+			}
+			
+//>> video
+			if (isContador && content.includes("videoMessage")) {
+				const currentVideo = getMsgvideo(sender)
+				const checkIdVideo = getMsgId(sender)
+					if (currentVideo === undefined && checkIdVideo === undefined) addMsgId(sender)
+					addMsgvideo(sender, 1)
+					if (isQuotedVideo) return addMsgvideo(sender, -1)
+			}
+			
+//>> archivo
+			if (isContador && content.includes("documentMessage")) {
+				const currentArchivo = getMsgarchivo(sender)
+				const checkIdArchivo = getMsgId(sender)
+					if (currentArchivo === undefined && checkIdArchivo === undefined) addMsgId(sender)
+					addMsgarchivo(sender, 1)
+					if (isQuotedDocs) return addMsgarchivo(sender, -1)
+			}
+			
+//>> sticker
+			if (isContador && content.includes("stickerMessage")) {
+				const currentSticker = getMsgsticker(sender)
+				const checkIdSticker = getMsgId(sender)
+					if (currentSticker === undefined && checkIdSticker === undefined) addMsgId(sender)
+					addMsgsticker(sender, 1)
+					if (isQuotedSticker) return addMsgsticker(sender, -1)
+			}
+			
+//>> audio
+			if (isContador && content.includes("audioMessage")) {
+				const currentAudio = getMsgaudio(sender)
+				const checkIdAudio = getMsgId(sender)
+					if (currentAudio === undefined && checkIdAudio === undefined) addMsgId(sender)
+					addMsgaudio(sender, 1)
+					if (isQuotedAudio) return addMsgaudio(sender, -1)
+			}
   
 //====================================================================================================//
 
