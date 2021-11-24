@@ -7714,6 +7714,8 @@ if (!isGroup) return reply(group())
 if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuesta en este chat`)
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 
+_db.splice("")
+
 const operators = ["+","×","÷","-"]
 const opez = operators[Math.floor(Math.random() * operators.length)]
 opex = opez
