@@ -2414,19 +2414,22 @@ var enlace = 'WhatsApp'
 //====================================================================================================//
 
 //>> Anti groseria
-	if (budy.includes("puto") || (budy.includes("mierda") || (budy.includes("pvto") || (budy.includes("puta") || (budy.includes("pvta") || (budy.includes("estupido") || (budy.includes("calla gay") || (budy.includes("verga") || (budy.includes("puto")))))))))){
+	if (budy.includes("puto") || (budy.includes("mierda") || (budy.includes("Puto") || (budy.includes("puta") || (budy.includes("Puta") || (budy.includes("Estupido") || (budy.includes("Calla gay") || (budy.includes("estupido") || (budy.includes("Mierda")))))))))){
 		const currentWarn = getWarn(sender)
 				const checkIdWarn = getWarnId(sender)
 					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(sender)
 					addWarn(sender, 1)
 		console.log(color('[GATYBOT]','magenta'), color(`Groseria detectado`,'red'));
-		Fg.sendMessage(from, `❎ En este no esta permitido las groserías, se le acumulo una advertencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+		Fg.sendMessage(from, `❎ En este no esta permitido las groserías\n\n▪︎Se le acumulo una advertencia\n\n*📌Nota:* a las 3 advertencias se te eliminará del grupo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
 		Fg.updatePresence(from, Presence.composing)
 		if (currentWarn === 3) {
 			var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-			Fg.groupRemove(from, [kic]).catch((e) => {console.log(`⚠️ *ERROR:* ${e}`)})
 			Fg.sendMessage(from, `✅ @${kic.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
+			setTimeout( () => {
+			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
+			addWarn(sender, -3)
+			}, 1000)
 			}
 		}
 
