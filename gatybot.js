@@ -130,6 +130,9 @@ const _mate = JSON.parse(fs.readFileSync('./game/mate.json'))
 const contador = JSON.parse(fs.readFileSync('./database/group/contador.json'))
 const _msg = JSON.parse(fs.readFileSync('./database/user/mensaje.json'))
 
+//>> Advertencia
+const _adv = JSON.parse(fs.readFileSync('./database/user/advertencia.json'))
+
 //====================[ FIN DE BASE DE DATOS ]====================//
 
 
@@ -2425,8 +2428,6 @@ var enlace = 'WhatsApp'
 				const checkIdWarn = getWarnId(sender)
 					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(sender)
 					addWarnId(sender, 1)
-		if (!isGroup) return
-		if (!isAntilink) return
 		console.log(color('[GATYBOT]','magenta'), color(`Groseria detectado`,'red'));
 		Fg.sendMessage(from, `❎ En este no esta permitido las groserías, se le acumulo una advertencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
