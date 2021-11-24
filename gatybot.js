@@ -239,9 +239,32 @@ const vcard2 = 'BEGIN:VCARD\n'
  + 'ORG:Dueño de GatyBot;\n' 
  + 'TEL;type=CELL;type=VOICE;waid=51940617554:+51 940 617 554\n'
  + 'END:VCARD'
+
+//====================================================================================================//
+//>> Pruebas
+
+  const adddaily = (sender) => {
+    let obi = { id: sender, expired: Date.now() + toMs(`10s`) }
+_claim.push(obi)
+fs.writeFileSync('./database/user/claim.json', JSON.stringify(_claim))
+}
+
+const cekdaily = (_claim) => {
+    setInterval(() => {
+        let position = null
+        Object.keys(_claim).forEach((i) => {
+            if (Date.now() >= _claim[i].expired) {
+                position = i
+            }
+        })
+        if (position !== null) {
+            Fg.sendMessage(_claim[position].id, `⏳`, MessageType.text)
+            _claim.splice(position, 1)
+        }
+    }, 1000)
+}
   
 //====================================================================================================//
-  
 //>> Funcion de contador de mensajes beta
 
 const addMsgId = (sender) => {
@@ -7714,8 +7737,6 @@ if (!isGroup) return reply(group())
 if (game.isMtk(from, mtk)) return reply(`❎ Todavía hay preguntas sin respuesta en este chat`)
 if (!q) return reply(`*🧮 Dificultades disponibles :*\n1. noob\n2. fácil\n3. normal\n4. difícil\n5. extremo\n6. imposible\n\n_📌Ejemplo : ${prefix + command} normal_`)
 
-_db.splice("")
-
 const operators = ["+","×","÷","-"]
 const opez = operators[Math.floor(Math.random() * operators.length)]
 opex = opez
@@ -8149,8 +8170,7 @@ break
                     addBalance(sender, claimcoins, balance)
                     const claimexp = Math.floor(Math.random() * 900) + 10000
                     addLevelingXp(sender, claimexp)
-                    _claim.push(sender)
-                    fs.writeFileSync('./database/user/claim.json', JSON.stringify(_claim))
+                    adddaily(sender)
                     reply(`*🎁 RECOMPENSA DIARIA 🎁*
 
 ▢ *Has recibido:*
