@@ -21,16 +21,15 @@ const moment = require("moment-timezone");
 blocked = [];
 
 require("./gatybot.js");
-console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
-nocache("./gatybot.js", (module) => 
-console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color(`${module} Se actualizó!`, "pink")));
+nocache("./gatybot.js", (module) => console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta")));
+nocache("./gatybot.js", (module) => console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color(`${module} Se actualizó!`, "pink")));
 
 const starts = async (Fg = new WAConnection()) => {
   Fg.logger.level = "warn";
   Fg.version = [2, 2140, 12];
  
  const CFonts  = require('cfonts')
-CFonts.say('GATY-BOT', {
+CFonts.say('gaty', {
   font: 'simple3d',
   align: 'center',
   gradient: ['red', 'magenta']
