@@ -8549,9 +8549,8 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
 //====================================================================================================//
 
 //>> Simi sin comando 
-  if (isGroup && isSimi && budy != undefined) {
+  if (isGroup && isSimi && budy != undefined || (content.includes('🐤')) { 
   	try {
-       	if (isQuotedSticker) return
            await Fg.updatePresence(from, Presence.composing)
            simi = await fetchJson(`https://api.simsimi.net/v2/?text=${budy}&lc=es`, {method: 'GET'})
                reply(simi.success)
