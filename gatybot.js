@@ -239,9 +239,53 @@ const vcard2 = 'BEGIN:VCARD\n'
  + 'ORG:Dueño de GatyBot;\n' 
  + 'TEL;type=CELL;type=VOICE;waid=51940617554:+51 940 617 554\n'
  + 'END:VCARD'
-  
 //====================================================================================================//
-  
+//>> Funcion de advertencias
+
+const addWarnId = (sender) => {
+	const aadv = { id: sender, adv: 0, }
+	_adv.push(aadv)
+	fs.writeFileSync('./database/user/advertencia.json', JSON.stringify(_adv))
+}
+
+const addWarn = (sender, advr) => {
+	let position = false
+	Object.keys(_adv).forEach((i) => {
+		if (_adv[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		_adv[position].adv += advr
+		fs.writeFileSync('./database/user/advertencia.json', JSON.stringify(_adv))
+	}
+}
+
+const getWarn = (sender) => {
+	let position = false
+	Object.keys(_adv).forEach((i) => {
+		if (_adv[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _adv[position].adv
+	}
+}
+
+const getWarnId = (sender) => {
+	let position = false
+	Object.keys(_adv).forEach((i) => {
+		if (_adv[i].id === sender) {
+			position = i
+		}
+	})
+	if (position !== false) {
+		return _adv[position].id
+	}
+}
+
+//====================================================================================================//
 //>> Funcion de contador de mensajes beta
 
 const addMsgId = (sender) => {
@@ -2365,6 +2409,34 @@ var enlace = 'WhatsApp'
             }
 
 //====================================================================================================//
+
+//>> mensaje
+			if (budy.includes("chat.whatsapp.com") || (budy.includes("getsnap.link") || (budy.includes("m.kwai.me") || (budy.includes("instagram.com") || (budy.includes("t.me") || (budy.includes("whatsthemes.com") || (budy.includes("nysL.com") || (budy.includes("discord.gg") || (budy.includes("getsnap.link")))))))))){
+				const currentWarn = getWarn(sender)
+				const checkIdWarn = getWarnId(sender)
+					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(sender)
+					addWarnId(sender, 1)
+			}
+
+
+//>> Anti groseria
+	if (budy.includes("puto") || (budy.includes("mierda") || (budy.includes("pvto") || (budy.includes("puta") || (budy.includes("pvta") || (budy.includes("estupido") || (budy.includes("calla gay") || (budy.includes("verga") || (budy.includes("puto")))))))))){
+		const currentWarn = getWarn(sender)
+				const checkIdWarn = getWarnId(sender)
+					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(sender)
+					addWarnId(sender, 1)
+		if (!isGroup) return
+		if (!isAntilink) return
+		console.log(color('[GATYBOT]','magenta'), color(`Groseria detectado`,'red'));
+		Fg.sendMessage(from, `❎ En este no esta permitido las groserías, se le acumulo una advertencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
+		Fg.updatePresence(from, Presence.composing)
+		if (currentWarn === 3) {
+			var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+			Fg.groupRemove(from, [kic]).catch((e) => {console.log(`⚠️ *ERROR:* ${e}`)})
+			Fg.sendMessage(from, `✅ @${kic.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
+			}
+		}
 
 //>> Anti enlaces
 	if (budy.includes("chat.whatsapp.com") || (budy.includes("getsnap.link") || (budy.includes("m.kwai.me") || (budy.includes("instagram.com") || (budy.includes("t.me") || (budy.includes("whatsthemes.com") || (budy.includes("nysL.com") || (budy.includes("discord.gg") || (budy.includes("getsnap.link")))))))))){
