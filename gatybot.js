@@ -6446,148 +6446,8 @@ reply(e)
 console.log(e)
 }
 break
-//----
-//>> Efectos de sonido
-case 'nightcore':
-if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-          if (!isQuotedAudio) return reply('Menciona el audio que quieres volver estilo NightCore')
-              reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-              encmediaNG = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-                  roll = await kev.downloadAndSaveMediaMessage(encmediaNG)
-                  ran = getRandom('.mp3')
-                  exec(`ffmpeg -i ${roll} -filter:a atempo=1.06,asetrate=44100*1.25 ${ran}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(roll)
-                  if (err) return reply('Ups algo ha salido mal....')
-                  hah = fs.readFileSync(ran)
-                  kev.sendMessage(from, hah, audio, { mimetype: "audio/mp4", ptt: true, quoted: vin, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
-                  fs.unlinkSync(ran)
-                  })
-            break
-        case 'bass':
-        if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-            if (!isQuotedAudio) return reply(`Boostea una música o audio que te guste mencionandolo con el comando: ${prefix}bass (cantidad de bass)\n\nejemplo: *${prefix}bass 10*\n\n*El limite del booster es de 80.*`)
-            reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-            encmediaBA = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM','m')).message.extendedTextMessage.contextInfo : vin
-            roll2 = await kev.downloadAndSaveMediaMessage(encmediaBA)
-            ren = getRandom('.mp3')
-                  exec(`ffmpeg -i ${roll2} -af equalizer=f=${args}:width_type=o:width=2:g=30 ${ren}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(roll2)
-                  if (err) return reply('Ups algo ha salido mal....')
-                  hah = fs.readFileSync(ren)
-                  kev.sendMessage(from, hah, audio, { mimetype: 'audio/mp4', ptt:true, quoted: vin, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
-                  fs.unlinkSync(ren)
-                  })
-            break
-        case 'fantasma':
-        if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-          if (!isQuotedAudio) return reply('Menciona el audio que quieres volver estilo Fantasma')
-                reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-                encmediaGH = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-                roll3 = await kev.downloadAndSaveMediaMessage(encmediaGH)
-                rin = getRandom('.mp3')
-                exec(`ffmpeg -i ${roll3} -filter:a "atempo=1.6,asetrate=3486" ${rin}`, (err, stderr, stdout) => {
-                fs.unlinkSync(roll3)
-                if (err) return reply('Ups algo ha salido mal....')
-                hah = fs.readFileSync(rin)
-                  kev.sendMessage(from, hah, audio,{ mimetype: "audio/mp4", ptt: true, quoted: vin, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
-                  fs.unlinkSync(rin)
-                  })
-            break
-            
-        case 'lento':
-        if(!isVerify) return isUser()
-         if (isBanned) return reply(banf())
-          if (!isQuotedAudio) return reply('Menciona el audio que quieres volver estilo SlowMotion')
-                  reply(wait()) 
-                  encmediaSL = isQuotedAudio ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-                  roll4 = await Fg.downloadMediaMessage(encmediaSL)
-                  ron = getRandom('.mp3')
-                  exec(`ffmpeg -i ${roll4} -filter:a "atempo=0.7,asetrate=44100" ${ron}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(roll4)
-                  if (err) return reply('Ups algo ha salido mal....')
-                  hah = fs.readFileSync(ron)
-                  mek.sendMessage(from, hah, audio,{ mimetype: "audio/mp4", ptt: true, quoted: mek })
-                  fs.unlinkSync(ron)
-                  })
-            break
-            
-            
-        case 'lentocore':
-        if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-          if (!isQuotedAudio) return reply('Menciona el audio que quieres volver estilo SlowMotion NightCore')
-                  reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-                  encmediaTP = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-                  roll5 = await kev.downloadAndSaveMediaMessage(encmediaTP)
-                  run = getRandom('.mp3')
-                  exec(`ffmpeg -i ${roll5} -filter:a "atempo=0.5,asetrate=65100" ${run}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(roll5)
-                  if (err) return reply('Ups algo ha salido mal....')
-                  hah = fs.readFileSync(run)
-                  kev.sendMessage(from, hah, audio,{ mimetype: "audio/mp4", ptt: true, quoted: vin, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
-                  fs.unlinkSync(run)
-                  })
-            break
-        case 'rapido':
-        if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-          if (!isQuotedAudio) return reply('Menciona el audio que quieres acelerar')
-                  reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-                  encmediaBL = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-                  roll6 = await kev.downloadAndSaveMediaMessage(encmediaBL)
-                  rhan = getRandom('.mp3')
-                  exec(`ffmpeg -i ${roll6} -filter:a "atempo=0.9,asetrate=95100" ${rhan}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(roll6)
-                  if (err) return reply('Ups algo ha salido mal....')
-                  hah = fs.readFileSync(rhan)
-                  kev.sendMessage(from, hah, audio,{ mimetype: "audio/mp4", ptt: true, quoted: vin, contextInfo: {"forwardingScore": 9999, "isForwarded": true}})
-                  fs.unlinkSync(rhan)
-                  })
-            break
-        case 'volumen':
-        if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-if (!isQuotedAudio) return reply('Menciona el audio que quieres subirle el volumen')
-reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-encmediavolumen = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-mediavolumen = await kev.downloadAndSaveMediaMessage(encmediavolumen)
-    ran = getRandom('.mp3')
-    exec(`ffmpeg -i ${mediavolumen} -filter:a "volume=${q}" ${ran}`, (err, stderr, stdout) => {
-fs.unlinkSync(mediavolumen)
-if (err) return enviar('Error!')
-res = fs.readFileSync(ran)
-kev.sendMessage(from, res, audio, { mimetype: "audio/mp4", ptt: true, quoted: vin})
-fs.unlinkSync(ran)
-    })
-break
-case 'reversa':
-if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-if (!isQuotedAudio) return reply('Menciona el audio que quieres poner en reversa')
-reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-encmediareversa = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-mediareversa = await kev.downloadAndSaveMediaMessage(encmediareversa)
-ran = getRandom('.mp3')
-exec(`ffmpeg -i ${mediareversa} -filter_complex "areverse" ${ran}`, (err, stderr, stdout) => {
-fs.unlinkSync(mediareversa)
-if (err) return enviar('Error!')
-res = fs.readFileSync(ran)
-kev.sendMessage(from, res, audio, { mimetype: "audio/mp4", ptt: true, quoted: vin})
-fs.unlinkSync(ran)
-    })
-break
-        case 'monstruo':
-        if (!isGroup)return reply('❬❗❭ *_Lᴏ ʟᴀᴍᴇɴᴛᴏ... ᴇʟ ʙᴏᴛ ɴᴏ ғᴜɴᴄɪᴏɴᴀ ᴇɴ ᴄʜᴀᴛs ᴘʀɪᴠᴀᴅᴏs......_*')
-            if (!isQuotedAudio) return reply('Menciona el audio que quieres volver estilo Monstruo')
-                  reply('❬❗❭ *_Esᴘᴇʀᴀ ᴇɴ ᴘʀᴏᴄᴇsᴏ.._*')
-                  encmediaGE = isQuotedAudio ? JSON.parse(JSON.stringify(vin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : vin
-                  roll7 = await kev.downloadAndSaveMediaMessage(encmediaGE)
-                  rhen = getRandom('.mp3')
-                  exec(`ffmpeg -i ${roll7} -filter:a "atempo=1.6,asetrate=22100" ${rhen}`, (err, stderr, stdout) => {
-                  fs.unlinkSync(roll7)
-                  if (err) return reply('Ups algo ha salido mal....')
-                  hah = fs.readFileSync(rhen)
-                  kev.sendMessage(from, hah, audio,{ mimetype: "audio/mp4", ptt: true, quoted: vin})
-                  fs.unlinkSync(rhen)
-                  })
-            break
 
+//----
     case 'play':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -8412,10 +8272,6 @@ po = Fg.prepareMessageFromContent(from, { "protocolMessage": {
             Fg.relayWAMessage(po, {waitForAck: true})
 break
 
-case 'menupv':
-Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./storage/gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`??𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
-break
-
 case 'inspect':
             try {
             if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(mess.Iv)
@@ -8463,6 +8319,33 @@ Fg.sendMessage(from, picmale, image, {quoted: mek, caption: `✅ Chico`})
             giveLimit(sender, 1, limit)
             })
             limitAdd(sender, limit)
+break
+
+case 'menupv':
+menuxx = `Menu de prueva`
+buttons = [{
+                    "buttonId": `${prefix}owner`,
+                    "buttonText": {
+                        "displayText": "🧇 CREADOR 🧇"
+                    },
+                    "type": "RESPONSE"
+                },{
+                    "buttonId": `${prefix}info`,
+                    "buttonText": {
+                        "displayText": "🧇 INFO 🧇"
+                    },
+                    "type": "RESPONSE"
+                }]
+Mek = fs.readFileSync('./storage/other/gatybot_0.pdf')
+documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: "NOMBRE DE GRUPO", "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: fs.readFileSync('./almacenamiento/imagenes/gaty_4.jpg')})).message.documentMessage
+documentMessage["fileLength"] = 9999999999
+documentMessage["pageCount"] = 999999
+buttonsMessage = { contentText: `      Hey Hola ${pushname} 🧇`,
+footerText: `${menuxx}`,
+documentMessage,
+buttons,headerType: 'DOCUMENT'}
+prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { sendEphemeral:true, quoted: mek, contextInfo: {mentionedJid: [senderfix], "forwardingScore": 9999,"pageCount": 999999, "isForwarded": true}})
+Fg.relayWAMessage(prep2)
 break
 
 //--------------------------------------
