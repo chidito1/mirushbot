@@ -20,6 +20,9 @@ const moment = require("moment-timezone");
 
 blocked = [];
 
+require("./gatybot.js");
+nocache("./gatybot.js", (module) => console.log('\x1b[1;31m', color(`─────────────────────────────────────────────────────────────────────\n`, "magenta"), color("➛ ", "red"), color("Estado: "), color(`${module} Se actualizó!`, "pink")));
+
 const starts = async (Fg = new WAConnection()) => {
   Fg.logger.level = "warn";
   Fg.version = [2, 2140, 12];
@@ -192,7 +195,6 @@ var ase = new Date();
             var tampilUcapan = '' + waktoo;  
 if (antidel === false) return 
 const type2 = Object.keys(m.message)[0]
-console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
 console.log(color('[GATYBOT]', 'magenta'), color(`Mensaje eliminado detectado`, 'red')) 
 Fg.sendMessage(m.key.remoteJid, `*🍃「 Mensaje eliminado 」🍃*
 
