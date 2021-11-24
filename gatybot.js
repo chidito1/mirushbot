@@ -2571,11 +2571,8 @@ break
 {contextInfo: { mentionedJid: [sender]}} )
 break;
 
-		case 'menu':
-        case 'menú':
-        case 'comandos':
-        case 'commands':
-        if(!isVerify) return isUser()
+case 'menu':
+if(!isVerify) return isUser()
           if (isBanned) return reply(banf())
           try {
         lvlh = getLevelingLevel(sender)
@@ -2833,20 +2830,30 @@ break;
   ℹ️ ${prefix}estado
   ℹ️ ${prefix}join
   ℹ️ ${prefix}ayuda`
-
-  py =  await Fg.prepareMessage(from, imgth, image)
-gbutsan = [
-{buttonId: `${prefix}creador`, buttonText: {displayText: '🐱 CREADOR'}, type: 1},
-{buttonId: `${prefix}info`, buttonText: {displayText: '🤖 INFO'}, type: 1}
-]
-gbuttonan = {
-imageMessage: py.message.imageMessage,
-contentText: helfxz,
+  
+buttons = [{
+                    "buttonId": `${prefix}owner`,
+                    "buttonText": {
+                        "displayText": "🐱 CREADOR"
+                    },
+                    "type": "RESPONSE"
+                },{
+                    "buttonId": `${prefix}info`,
+                    "buttonText": {
+                        "displayText": "🤖 INFO"
+                    },
+                    "type": "RESPONSE"
+                }]
+Mek = fs.readFileSync('./storage/other/gatybot_0.pdf')
+documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: `${groupName}`, "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: fs.readFileSync('./almacenamiento/imagenes/gaty_4.jpg')})).message.documentMessage
+documentMessage["fileLength"] = 9999999999
+documentMessage["pageCount"] = 999999
+buttonsMessage = { contentText: helfxz,
 footerText: `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © gatybot 2021*`,
-buttons: gbutsan,
-headerType: 4
-}
-await Fg.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: {  mentionedJid: [sender]}, quoted: mek})
+documentMessage,
+buttons,headerType: 'DOCUMENT'}
+prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { quoted: mek, contextInfo: {mentionedJid: [sender], "pageCount": 999999 }})
+Fg.relayWAMessage(prep2)
 } catch (e) {
 	console.log(`Error :`, color(e,'red'))
      reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
@@ -8319,33 +8326,6 @@ Fg.sendMessage(from, picmale, image, {quoted: mek, caption: `✅ Chico`})
             giveLimit(sender, 1, limit)
             })
             limitAdd(sender, limit)
-break
-
-case 'menupv':
-menuxx = `Menu de prueva`
-buttons = [{
-                    "buttonId": `${prefix}owner`,
-                    "buttonText": {
-                        "displayText": "🧇 CREADOR 🧇"
-                    },
-                    "type": "RESPONSE"
-                },{
-                    "buttonId": `${prefix}info`,
-                    "buttonText": {
-                        "displayText": "🧇 INFO 🧇"
-                    },
-                    "type": "RESPONSE"
-                }]
-Mek = fs.readFileSync('./storage/other/gatybot_0.pdf')
-documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: "NOMBRE DE GRUPO", "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: fs.readFileSync('./almacenamiento/imagenes/gaty_4.jpg')})).message.documentMessage
-documentMessage["fileLength"] = 9999999999
-documentMessage["pageCount"] = 999999
-buttonsMessage = { contentText: `      Hey Hola ${pushname} 🧇`,
-footerText: `${menuxx}`,
-documentMessage,
-buttons,headerType: 'DOCUMENT'}
-prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { sendEphemeral:true, quoted: mek, contextInfo: {mentionedJid: [sender], "forwardingScore": 9999,"pageCount": 999999, "isForwarded": true}})
-Fg.relayWAMessage(prep2)
 break
 
 //--------------------------------------
