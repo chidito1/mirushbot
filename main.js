@@ -21,8 +21,7 @@ const moment = require("moment-timezone");
 blocked = [];
 
 require("./gatybot.js");
-nocache("./gatybot.js", (module) => console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta")));
-nocache("./gatybot.js", (module) => console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color(`${module} Se actualizó!`, "pink")));
+nocache("./gatybot.js", (module) => console.log('\x1b[1;31m', color(`─────────────────────────────────────────────────────────────────────\n`, "magenta"), color("➛ ", "red"), color("Estado: "), color(`${module} Se actualizó!`, "pink")));
 
 const starts = async (Fg = new WAConnection()) => {
   Fg.logger.level = "warn";
