@@ -3028,10 +3028,10 @@ if (isBanned) return reply(banf())
 				adduserUser(sender, pushname, fecha2, hora2, seriTod)
 				console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
 				console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Vericación exitosa", "yellow"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Nombre: "), color(pushname, "yellow"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "yellow"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "yellow"))
-				console.log('\x1b[1;31m', color("➛ ", "red"), color("Codigo: "), color(seriTod, "yellow"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Nombre: "), color(pushname, "pink"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "pink"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "pink"))
+				console.log('\x1b[1;31m', color("➛ ", "red"), color("Codigo: "), color(seriTod, "pink"))
 				
 			capt = `「 *VERIFICACIÓN EXITOSA* 」
 ╭──────────────────✾
@@ -7837,7 +7837,7 @@ ${matrix[2][0]}  ${matrix[2][1]}  ${matrix[2][2]}
 Tu turno:  @${boardnow.turn == "X" ? boardnow.X : boardnow.O}
           
 Escriba *rendirse* para dejar el juego..
-Escriba ${prefix}delttc para eliminar la sesión de juego..`;
+Escriba ${prefix}delttt para eliminar la sesión de juego..`;
 if (chatMove.includes("null")) return reply(`❎ Error pon ${prefix}delttt para restablecer el juego`);
 Fg.sendMessage(from, chatMove, MessageType.text, {
 quoted: mek,
@@ -7854,14 +7854,14 @@ if (argss.length === 1)
 return reply(`✳️ Etiqueta a quien quiere ser tu oponente\n\n📌Uso  : *${prefix + command} @Tag*`
                          );
 const boardnow = setGame(`${from}`);
-console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
-console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Juego tictactoe iniciado", "yellow"))
-console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
-console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 boardnow.status = false;
 boardnow.X = sender.replace("@s.whatsapp.net", "");
 boardnow.O = argss[1].replace("@", "");
 fs.writeFileSync(`./lib/tictactoe/db/${from}.json`,JSON.stringify(boardnow, null, 2));
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Juego tictactoe iniciado", "yellow"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("X: "), color(boardnow.X, "pink"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("O: "), color(boardnow.O, "pink"))
 const strChat = `TICTACTOE GAME..
 
 @${sender.replace("@s.whatsapp.net","")} desafía a ${argss[1]} para una partida de tictactoe
