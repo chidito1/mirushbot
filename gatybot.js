@@ -239,32 +239,9 @@ const vcard2 = 'BEGIN:VCARD\n'
  + 'ORG:Dueño de GatyBot;\n' 
  + 'TEL;type=CELL;type=VOICE;waid=51940617554:+51 940 617 554\n'
  + 'END:VCARD'
-
-//====================================================================================================//
-//>> Pruebas
-
-  const adddaily = (sender) => {
-    let obi = { expired: Date.now() + toMs(`10s`) }
-_claim.push(obi)
-fs.writeFileSync('./database/user/claim.json', JSON.stringify(_claim))
-}
-
-const cekdaily = (_claim) => {
-    setInterval(() => {
-        let position = null
-        Object.keys(_claim).forEach((i) => {
-            if (Date.now() >= _claim[i].expired) {
-                position = i
-            }
-        })
-        if (position !== null) {
-            Fg.sendMessage(_claim[position].id, `⏳`, MessageType.text)
-            _claim.splice(position, 1)
-        }
-    }, 1000)
-}
   
 //====================================================================================================//
+  
 //>> Funcion de contador de mensajes beta
 
 const addMsgId = (sender) => {
@@ -8170,7 +8147,8 @@ break
                     addBalance(sender, claimcoins, balance)
                     const claimexp = Math.floor(Math.random() * 900) + 10000
                     addLevelingXp(sender, claimexp)
-                    adddaily(sender)
+                    _claim.push(sender)
+                    fs.writeFileSync('./database/user/claim.json', JSON.stringify(_claim))
                     reply(`*🎁 RECOMPENSA DIARIA 🎁*
 
 ▢ *Has recibido:*
