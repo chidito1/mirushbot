@@ -8475,7 +8475,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   if (!isInteraction) return 
                   reply(`De su corazón`)
                   }
-                  if (budy.includes('tengo hermana')) {
+                  if (budy.includes('tengo hermana') || (budy.includes('tengo ermana'))) {
                   if (!isInteraction) return 
                   reply(`Bueno en ese caso el tuyo 7w7`)
                   }
@@ -8492,7 +8492,9 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                  	if (!isInteraction) return 
                  	await Fg.updatePresence(from, Presence.composing)
                  simi = await fetchJson(`https://api.simsimi.net/v2/?text=${budy}&lc=es`, {method: 'GET'})
-                 reply(`${simi.success} 🐤`)
+                 simip = `${simi.success} 🐤`
+                 if (simip.includes("please enter the text")) return 
+                 reply(simip)
                  }
                  
                   //gif con sonido 
