@@ -1,4 +1,5 @@
-console.log('✅ Preparando ...')
+const { color } = require("./lib/color");
+console.log('\x1b[1;31m', color("✅ Preparando..."))
 
 const {
   WAConnection: _WAConnection,
@@ -12,8 +13,6 @@ const simple = require("./lib/simple.js");
 const WAConnection = simple.WAConnection(_WAConnection);
 const fs = require("fs");
 const { banner, start, success, getGroupAdmins } = require("./lib/functions");
-const { color } = require("./lib/color");
-//const { keepalive } = require("./keepalive");
 const fetch = require("node-fetch");
 const axios = require("axios")  
 const encodeUrl = require('encodeurl')
@@ -22,7 +21,8 @@ const moment = require("moment-timezone");
 blocked = [];
 
 require("./gatybot.js");
-nocache("./gatybot.js", (module) => console.log(`${module} Se actualizó!`));
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+nocache("./gatybot.js", (module) => console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color(`${module} Se actualizó!`, "pink"))
 
 const starts = async (Fg = new WAConnection()) => {
   Fg.logger.level = "warn";
@@ -30,12 +30,12 @@ const starts = async (Fg = new WAConnection()) => {
  
  const CFonts  = require('cfonts')
 CFonts.say('GATY-BOT', {
-  font: 'tiny',
+  font: 'simple3d',
   align: 'center',
   gradient: ['red', 'magenta']
 })
 
-CFonts.say(`Gatybot by g4tito`, {
+CFonts.say(`gatybot by gatito`, {
   font: 'console',
   align: 'center',
   colors: ['yellow']

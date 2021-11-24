@@ -7855,8 +7855,7 @@ return reply(`✳️ Etiqueta a quien quiere ser tu oponente\n\n📌Uso  : *${pr
                          );
 const boardnow = setGame(`${from}`);
 console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
-console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Juego tictactoe iniciado", "aqua"))
-console.log('\x1b[1;31m', color("➛ ", "red"), color("En: "), color(groupName, "aqua"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Juego tictactoe iniciado", "yellow"))
 console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 boardnow.status = false;
