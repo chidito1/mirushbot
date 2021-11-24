@@ -8488,6 +8488,13 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
                   reply(`😒`)
                   }
                  
+                 if (content.includes('🐤')) { 
+                 	if (!isInteraction) return 
+                 	await Fg.updatePresence(from, Presence.composing)
+                 simi = await fetchJson(`https://api.simsimi.net/v2/?text=${budy}&lc=es`, {method: 'GET'})
+                 reply(`${simi.success} 🐤`)
+                 }
+                 
                   //gif con sonido 
                   if (budy.startsWith(`__Linda noche`)) {
         const gfso = fs.readFileSync('./src/mp4/1.mp4');
@@ -8549,7 +8556,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
 //====================================================================================================//
 
 //>> Simi sin comando 
-  if (isGroup && isSimi && budy != undefined || (content.includes('🐤'))) { 
+  if (isGroup && isSimi && budy != undefined) { 
            await Fg.updatePresence(from, Presence.composing)
            simi = await fetchJson(`https://api.simsimi.net/v2/?text=${budy}&lc=es`, {method: 'GET'})
                reply(`${simi.success} 🐤`)
