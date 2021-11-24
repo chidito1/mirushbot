@@ -195,6 +195,7 @@ var ase = new Date();
             var tampilUcapan = '' + waktoo;  
 if (antidel === false) return 
 const type2 = Object.keys(m.message)[0]
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
 console.log(color('[GATYBOT]', 'magenta'), color(`Mensaje eliminado detectado`, 'red')) 
 Fg.sendMessage(m.key.remoteJid, `*🍃「 Mensaje eliminado 」🍃*
 
