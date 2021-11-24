@@ -2428,7 +2428,7 @@ var enlace = 'WhatsApp'
 			Fg.sendMessage(from, `✅ @${kic.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
 			setTimeout( () => {
 			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
-			addWarn(sender, -3)
+			addWarn(sender, -4)
 			}, 1000)
 			}
 		}
