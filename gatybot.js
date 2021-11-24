@@ -1111,7 +1111,6 @@ const loli = [
     "https://i.pinimg.com/originals/f0/7a/3e/f07a3e338ad35cad89254f81f430793a.jpg",
     "https://i.pinimg.com/originals/52/c9/d1/52c9d1662b9980ea5828c15c6f2f40bc.jpg",
     "https://i.pinimg.com/originals/e6/35/f0/e635f0a968870cfa1f61fe7c54294ebe.jpg",
-    "https://i.pinimg.com/originals/e1/58/5b/e1585bda44f7c2f53651188438883eca.jpg",
     "https://i.pinimg.com/736x/07/1e/93/071e93d9e922000826e5b97c0125f3f3.jpg",
     "https://i.pinimg.com/originals/75/a6/6a/75a66aa75bbbc5943de0982b28ce3a7d.png",
     "https://i.pinimg.com/originals/81/c2/68/81c268fe66221cf4262b8596acce22bd.jpg",
@@ -1471,7 +1470,6 @@ const loli = [
         "https://i.pinimg.com/originals/25/e3/28/25e32849ce741ef6949d440f25d92332.jpg",
         "https://i.pinimg.com/originals/6f/78/9a/6f789a9ea17311ee72ac8ae0ae8c66c0.jpg",
         "https://i.pinimg.com/originals/d3/85/63/d38563715af9d94f6fc6092563b73e8d.jpg",
-        "https://i.pinimg.com/originals/71/8e/1e/718e1e0ffb55fc0fc288c1567bbf54b8.jpg",
         "https://i.pinimg.com/originals/76/14/ea/7614ea924f23dae9fed86a85d313ac3f.jpg",
         "https://i.pinimg.com/originals/42/3d/bc/423dbc54927907734290f1c1d5187edb.jpg",
         "https://i.pinimg.com/originals/bc/3a/1f/bc3a1f36e19e36c590bb8942ba1618de.png",
@@ -1965,7 +1963,8 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
 
 //>> Ttp2 ttp3 y demás de Stickers
 const sendStickerUrl = async(to, url) => {
-console.log(color(time, 'magenta'), color(moment.tz('America/La_Paz').format('HH:mm:ss'), "gold"), color('✅ Descargando sticker...'))
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("✅ Descargando sticker...", "yellow"))
 var names = getRandom('.webp')
 var namea = getRandom('.png')
 var download = function (uri, filename, callback) {
@@ -1981,7 +1980,8 @@ exec(`ffmpeg -i ${filess} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop
 exec(`webpmux -set exif ./sticker/data.exif ${asw} -o ${asw}`, async (error) => {
 let media = fs.readFileSync(asw)
 Fg.sendMessage(from, media, sticker, {quoted: mek})
-console.log(color(time, 'magenta'), color(moment.tz('America/La_Paz').format('HH:mm:ss'), "gold"), color('📤 Enviando sticker...'))  
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("📤 Enviando sticker...", "yellow"))
 });
 });
 });
@@ -8045,15 +8045,15 @@ case 'dado':
                 if (!isLevelingOn) return reply(leveloff())
                  if (isGame(sender, isOwner, gcount, glimit)) return reply(gCoinF(prefix))
                  try {
-                    const ui5 =['01', '02', '03', '04', '05', '06']
+                    const ui5 =['https://i.ibb.co/mCyS8wn/01.webp', 'https://i.ibb.co/NsNn2H9/02.webp', 'https://i.ibb.co/wBGxpHf/03.webp', 'https://i.ibb.co/jyNbx9F/04.webp', 'https://i.ibb.co/Jm0Lscc/05.webp', 'https://i.ibb.co/k2whZJ2/06.webp']
                     xfjjs5 = ui5[Math.floor(Math.random() * ui5.length)]
-                    dadoz = fs.readFileSync(`./almacenamiento/stickers/dado/${xfjjs5}.webp`);
+                    dadoz = await getBuffer(xfjjs5)
                     Fg.sendMessage(from, dadoz, MessageType.sticker, {quoted: mek})
-                    } catch (e) {
-    console.log(`Error :`, color(e,'red'))
-	reply('❎ Error, inténtelo más tarde')
-	}
-	gameAdd(sender, glimit)
+                    }
+                    .catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            })
+	        gameAdd(sender, glimit)
                     break
 
 case '__girar':
@@ -8469,7 +8469,7 @@ po = Fg.prepareMessageFromContent(from, { "protocolMessage": {
 break
 
 case 'menupv':
-Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./storage/gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`𝖌𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
+Sendbutdocument(from, `menu de prueva`, "by gatito", fs.readFileSync('./storage/gatybot_0.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg'), filename:`??𝖆𝖙𝖞𝖇𝖔𝖙 𝖇𝖞 𝖌𝖆𝖙𝖎𝖙𝖔.pdf`, pageCount: 9999999 }, [{buttonId:`!000`,buttonText:{displayText:'Hola'},type:1}], {quoted: fvid, contextInfo: { mentionedJid: [sender], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gatylogo,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}}})
 break
 
 case 'inspect':
