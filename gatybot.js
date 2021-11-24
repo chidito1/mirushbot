@@ -207,6 +207,7 @@ const soportefg = 'https://chat.whatsapp.com/KQLMoi0FX0JHWBzRPOwJ31'
 //====================[ ALMACENAMIENTO ]====================//
 fakefg = fs.readFileSync('./image/fake.jpg')
 fakelogo = fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg')
+gaty4 = fs.readFileSync('./storage/image/gaty_4.jpg')
 fglogo = fs.readFileSync('./almacenamiento/imagenes/gaty_0.jpg')
 gatylogo = fs.readFileSync('./almacenamiento/imagenes/gaty_2.jpg')
 minecraft = fs.readFileSync('./almacenamiento/imagenes/minecraft_0.jpg')
@@ -2571,8 +2572,11 @@ break
 {contextInfo: { mentionedJid: [sender]}} )
 break;
 
-case 'menu':
-if(!isVerify) return isUser()
+		case 'menu':
+        case 'menú':
+        case 'comandos':
+        case 'commands':
+        if(!isVerify) return isUser()
           if (isBanned) return reply(banf())
           try {
         lvlh = getLevelingLevel(sender)
@@ -2830,8 +2834,8 @@ if(!isVerify) return isUser()
   ℹ️ ${prefix}estado
   ℹ️ ${prefix}join
   ℹ️ ${prefix}ayuda`
-  
-buttons = [{
+
+  buttons = [{
                     "buttonId": `${prefix}owner`,
                     "buttonText": {
                         "displayText": "🐱 CREADOR"
@@ -2845,14 +2849,14 @@ buttons = [{
                     "type": "RESPONSE"
                 }]
 Mek = fs.readFileSync('./storage/other/gatybot_0.pdf')
-documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: `${groupName}`, "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: fs.readFileSync('./almacenamiento/imagenes/gaty_4.jpg')})).message.documentMessage
+documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: `${groupName}`, "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: false})).message.documentMessage
 documentMessage["fileLength"] = 9999999999
 documentMessage["pageCount"] = 999999
 buttonsMessage = { contentText: helfxz,
 footerText: `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © gatybot 2021*`,
 documentMessage,
 buttons,headerType: 'DOCUMENT'}
-prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { quoted: mek, contextInfo: {mentionedJid: [sender], "pageCount": 999999 }})
+prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { quoted: mek, contextInfo: { externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gaty4, mediaUrl:`https://youtu.be/IkuLv9P2qCM`}, "mentionedJid": [sender], "pageCount": 999999 }})
 Fg.relayWAMessage(prep2)
 } catch (e) {
 	console.log(`Error :`, color(e,'red'))
