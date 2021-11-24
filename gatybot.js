@@ -8424,7 +8424,7 @@ if(!isVerify) return isUser()
 					if (!isGroupAdmins && !isOwner) return reply(admin())
 					if (!isBotGroupAdmins) return reply(Badmin())
 					if(!q)return reply(`✳️ Menciona a alguien\n\n📌Ejemplo : ${prefix + command} @tag`)
-const warnuser = `${q.split("@")[0]}@s.whatsapp.net`
+const warnuser = q.split('@')[1] + '@s.whatsapp.net'
 		const currentWWarn = getWarn(warnuser)
 				const checkIdWWarn = getWarnId(warnuser)
 					if (currentWWarn === undefined && checkIdWWarn === undefined) addWarnId(warnuser)
