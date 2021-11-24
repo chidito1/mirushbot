@@ -2423,7 +2423,7 @@ if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Cmd: "), color(command, "aqua"))
 
 //>> Mensaje grupo
-if (isGroup && isCmd) console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+if (isGroup && isCmd) npm start
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Grupo: "), color(groupName, "blue"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 if (isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
@@ -3262,6 +3262,8 @@ case 'update':
 if (!isOwner) return reply(ownerB())
 reply(`✳️ Espere un momento la bot se está actualizando`)
 exec(`bash update.sh`, (err, stdout) => {
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("El bot se actualizó", "pink"))
 if (err) return reply(err)
 if (stdout) reply(`✅ *Informe de la actualización:*\n\n${stdout}`)
 })
