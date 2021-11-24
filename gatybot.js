@@ -8417,6 +8417,29 @@ prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { sendEphem
 Fg.relayWAMessage(prep2)
 break
 
+case 'warn':
+if(!isVerify) return isUser()
+				if (isBanned) return reply(banf())
+				if (!isGroup) return reply(group())
+					if (!isGroupAdmins && !isOwner) return reply(admin())
+					if (!isBotGroupAdmins) return reply(Badmin())
+					if(!q)return reply(`✳️ Menciona a alguien\n\n📌Ejemplo : ${prefix + command} @tag`)
+warnuser = q.split('@')[1] + '@s.whatsapp.net'
+		const currentWarn = getWarn(warnuser)
+				const checkIdWarn = getWarnId(warnuser)
+					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(warnuser)
+					addWarn(warnuser, 1)
+					Fg.sendMessage(from, `✅ Se le dio una advertencia a @${warnuser.split("@")[0]}`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
+		if (currentWarn === 3) {
+			var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+			Fg.sendMessage(from, `✅ @${kic.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
+			setTimeout( () => {
+			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
+			addWarn(sender, -4)
+			}, 1000)
+			}
+break
+
 //--------------------------------------
       default:
  
