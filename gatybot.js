@@ -244,7 +244,7 @@ const vcard2 = 'BEGIN:VCARD\n'
 //>> Pruebas
 
   const adddaily = (sender) => {
-    let obi = { id: sender, expired: Date.now() + toMs(`10s`) }
+    let obi = { expired: Date.now() + toMs(`10s`) }
 _claim.push(obi)
 fs.writeFileSync('./database/user/claim.json', JSON.stringify(_claim))
 }
