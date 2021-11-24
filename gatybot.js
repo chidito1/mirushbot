@@ -2413,21 +2413,12 @@ var enlace = 'WhatsApp'
 
 //====================================================================================================//
 
-//>> mensaje
-			if (budy.includes("chat.whatsapp.com") || (budy.includes("getsnap.link") || (budy.includes("m.kwai.me") || (budy.includes("instagram.com") || (budy.includes("t.me") || (budy.includes("whatsthemes.com") || (budy.includes("nysL.com") || (budy.includes("discord.gg") || (budy.includes("getsnap.link")))))))))){
-				const currentWarn = getWarn(sender)
-				const checkIdWarn = getWarnId(sender)
-					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(sender)
-					addWarnId(sender, 1)
-			}
-
-
 //>> Anti groseria
 	if (budy.includes("puto") || (budy.includes("mierda") || (budy.includes("pvto") || (budy.includes("puta") || (budy.includes("pvta") || (budy.includes("estupido") || (budy.includes("calla gay") || (budy.includes("verga") || (budy.includes("puto")))))))))){
 		const currentWarn = getWarn(sender)
 				const checkIdWarn = getWarnId(sender)
 					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(sender)
-					addWarnId(sender, 1)
+					addWarn(sender, 1)
 		console.log(color('[GATYBOT]','magenta'), color(`Groseria detectado`,'red'));
 		Fg.sendMessage(from, `❎ En este no esta permitido las groserías, se le acumulo una advertencia`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
