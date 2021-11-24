@@ -4475,7 +4475,7 @@ var imgbb2 = require('imgbb-uploader')
 anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
 txtg = `${anug.display_url}`
 sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
-Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtg}\n\n✅ Aqui tienes *0.0*`})
+Fg.sendMessage(from, sgay, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${txtg}\n\n✅ Aqui tienes *0.0*`})
 limitAdd(sender, limit)
 } else {
 					reply('✳️ Envia o responde a una imagen')
@@ -4518,7 +4518,7 @@ var imgbb2r = require('imgbb-uploader')
 anur = await imgbb2r("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
 txtr = `${anur.display_url}`
 srip = await getBuffer(`https://pecundang.herokuapp.com/api/rip?url=${txtr}`)
-Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *xd*`})
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *xd*`})
 limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
@@ -4539,7 +4539,7 @@ var imgbb2rr = require('imgbb-uploader')
 anur = await imgbb2rr("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
 txtr = `${anur.display_url}`
 srip = await getBuffer(`breakhttps://ferdiz-afk.my.id/api/maker/rip?picurl=${txtr}`)
-Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *xd*`})
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *xd*`})
 limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
@@ -4560,7 +4560,7 @@ var imgbb2rrr = require('imgbb-uploader')
 anur = await imgbb2rrr("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
 txtr = `${anur.display_url}`
 srip = await getBuffer(`https://api.dhamzxploit.my.id/api/canvas/wanted?url=${txtr}`)
-Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *:3*`})
+Fg.sendMessage(from, srip, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Aqui tienes *:3*`})
 limitAdd(sender, limit)
 } else {
 reply('✳️ *Envia una imagen con el comando o etiqueta una imagen que se haya enviado*')
@@ -5141,7 +5141,7 @@ break
         let pin = await hx.pinterest(q);
         let ac = pin[Math.floor(Math.random() * pin.length)];
         let di = await getBuffer(ac);
-        await Fg.sendMessage(from, di, image, { quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Pinterest : *${q}*` });
+        await Fg.sendMessage(from, di, image, { quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Pinterest : *${q}*` });
         } catch (e) {
     console.log(`Error :`, color(e,'red'))
 	reply('❎ Error, inténtelo más tarde')
@@ -5169,7 +5169,7 @@ break
               else {
               gugIm = result
               random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-              sendFileFromUrl(random, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Imagen : *${teks}*`})
+              sendFileFromUrl(random, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Imagen : *${teks}*`})
             }
       }
 } catch (e) {
@@ -5208,7 +5208,7 @@ case 'mujer':
               else {
               gugIm = result
               random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-              sendFileFromUrl(random, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Wallpaper : *${teks}*`})
+              sendFileFromUrl(random, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n✅ Wallpaper : *${teks}*`})
             }
       }
 } catch (e) {
@@ -5242,7 +5242,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 let animez = anime[Math.floor(Math.random() * anime.length)]
       animex = await getBuffer(animez)
-Fg.sendMessage(from, animex, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${animez}\n\n✅ Aqui tienes *UwU*`})
+Fg.sendMessage(from, animex, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${animez}\n\n✅ Aqui tienes *UwU*`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
@@ -5259,7 +5259,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 let loliz = loli[Math.floor(Math.random() * loli.length)]
       lolix = await getBuffer(loliz)
-Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${loliz}\n\n✅ Aqui tienes *Onii chan*`})
+Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${loliz}\n\n✅ Aqui tienes *Onii chan*`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
@@ -5289,7 +5289,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 let hentaiz = hentai[Math.floor(Math.random() * hentai.length)]
       hentaix = await getBuffer(hentaiz)
-Fg.sendMessage(from, hentaix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${hentaiz}\n\n✅ Aqui tienes *7u7*`})
+Fg.sendMessage(from, hentaix, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${hentaiz}\n\n✅ Aqui tienes *7u7*`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
@@ -5305,7 +5305,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 let nsfw_loliz = nsfw_loli[Math.floor(Math.random() * nsfw_loli.length)]
       nsfw_lolix = await getBuffer(nsfw_loliz)
-Fg.sendMessage(from, nsfw_lolix, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${nsfw_loliz}\n\n✅ Aqui tienes *7u7*`})
+Fg.sendMessage(from, nsfw_lolix, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${nsfw_loliz}\n\n✅ Aqui tienes *7u7*`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
@@ -5321,7 +5321,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 let nsfw_waifuz = nsfw_waifu[Math.floor(Math.random() * nsfw_waifu.length)]
       nsfw_waifux = await getBuffer(nsfw_waifuz)
-Fg.sendMessage(from, nsfw_waifux, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${nsfw_waifuz}\n\n✅ Aqui tienes *Onii chan*`})
+Fg.sendMessage(from, nsfw_waifux, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${nsfw_waifuz}\n\n✅ Aqui tienes *Onii chan*`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
@@ -5345,7 +5345,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 let waifuz = waifu[Math.floor(Math.random() * waifu.length)]
       waifux = await getBuffer(waifuz)
-Fg.sendMessage(from, waifux, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${waifuz}\n\n✅ Aqui tienes *Onii chan*`})
+Fg.sendMessage(from, waifux, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${waifuz}\n\n✅ Aqui tienes *Onii chan*`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
@@ -8388,7 +8388,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 let memez = meme[Math.floor(Math.random() * meme.length)]
       memex = await getBuffer(memez)
-Fg.sendMessage(from, memex, image, {quoted: mek, caption: `${isPremium && isOwner ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${memez}\n\n✅ Aqui tienes :v`})
+Fg.sendMessage(from, memex, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${memez}\n\n✅ Aqui tienes :v`})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             giveLimit(sender, 1, limit)
