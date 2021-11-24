@@ -8344,7 +8344,7 @@ buttonsMessage = { contentText: `      Hey Hola ${pushname} 🧇`,
 footerText: `${menuxx}`,
 documentMessage,
 buttons,headerType: 'DOCUMENT'}
-prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { sendEphemeral:true, quoted: mek, contextInfo: {mentionedJid: [senderfix], "forwardingScore": 9999,"pageCount": 999999, "isForwarded": true}})
+prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { sendEphemeral:true, quoted: mek, contextInfo: {mentionedJid: [sender], "forwardingScore": 9999,"pageCount": 999999, "isForwarded": true}})
 Fg.relayWAMessage(prep2)
 break
 
