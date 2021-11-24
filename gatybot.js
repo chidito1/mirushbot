@@ -2850,7 +2850,7 @@ break;
                     "type": "RESPONSE"
                 }]
 Mek = fs.readFileSync('./storage/other/gatybot_0.pdf')
-documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: `${groupName}`, "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: gaty4 })).message.documentMessage
+documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: `${groupName}`, "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: fs.readFileSync('./storage/image/gaty_4.jpg')})).message.documentMessage
 documentMessage["fileLength"] = 9999999999
 documentMessage["pageCount"] = 999999
 buttonsMessage = { contentText: helfxz,
