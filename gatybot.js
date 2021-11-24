@@ -2493,6 +2493,7 @@ const sendSticker = (from, filename, mek) => {
 title:`${pushname}`,body:"",previewType:"PHOTO",thumbnail: fakelogo,sourceUrl:`${grupomc}` }},quoted: mek})
 }
 
+
 //----
 const sendMessageFromContent = async(jid, message, options) => { 
 		var option = { contextInfo: {}, ...options }
@@ -2662,7 +2663,7 @@ break;
     *LOGOS*
   🧩 ${prefix}blackpink
   🧩 ${prefix}glich
-  🧩 ${prefix}retroneon
+  ?? ${prefix}retroneon
   🧩 ${prefix}luzneon
   🧩 ${prefix}gaming
   🧩 ${prefix}3d
@@ -2849,14 +2850,14 @@ break;
                     "type": "RESPONSE"
                 }]
 Mek = fs.readFileSync('./storage/other/gatybot_0.pdf')
-documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: `${groupName}`, "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: false})).message.documentMessage
+documentMessage = (await Fg.prepareMessage(from, Mek, 'documentMessage',{ quoted: mek, "mimetype": "application/pdf", filename: `${groupName}`, "title": "gatybot_0.pdf","pageCount": 999999, thumbnail: gaty4 })).message.documentMessage
 documentMessage["fileLength"] = 9999999999
 documentMessage["pageCount"] = 999999
 buttonsMessage = { contentText: helfxz,
 footerText: `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © gatybot 2021*`,
 documentMessage,
 buttons,headerType: 'DOCUMENT'}
-prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { quoted: mek, contextInfo: { externalAdReply:{title:`Hola ${pushname}`,mediaType:"2",thumbnail: gaty4, mediaUrl:`https://youtu.be/IkuLv9P2qCM`}, "mentionedJid": [sender], "pageCount": 999999 }})
+prep2 = await Fg.prepareMessageFromContent(from, { buttonsMessage }, { quoted: mek, contextInfo: { mentionedJid: [sender], "pageCount": 999999 }})
 Fg.relayWAMessage(prep2)
 } catch (e) {
 	console.log(`Error :`, color(e,'red'))
@@ -2958,7 +2959,7 @@ Subes de nivel cada ves que envíes mensajes al grupo
 ───────────────────
 _*PRONTO SE AGREGARAN MAS AYUDAS*_
 ───────────────────`
-Fg.sendMessage(from, reglasbot, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱AYUDA/HELP🐱⃟式`,body:"• preguntas frecuentes", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}}})
+Fg.sendMessage(from, reglasbot, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟??AYUDA/HELP🐱⃟式`,body:"• preguntas frecuentes", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}}})
 break
 
 
