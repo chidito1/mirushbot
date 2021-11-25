@@ -8385,7 +8385,7 @@ if(!isVerify) return isUser()
       reply(wait()) 
 pares = await axios.get(`https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=dappakntlll`)
 var { male, female } = pares.data.result
-if (pares.includes("Request failed with status code 503")) return reply(`❎ Error del servidor, intente de nuevo mas tarde`); 
+if (pares.includes("Application error")) return reply(`❎ Error del servidor, intente de nuevo mas tarde`); 
 picfemale = await getBuffer(`${female}`)
 Fg.sendMessage(from, picfemale, image, {quoted: mek, caption: `✅ Chica`})
 picmale = await getBuffer(`${male}`)
