@@ -8385,7 +8385,6 @@ if(!isVerify) return isUser()
       reply(wait()) 
 pares = await axios.get(`https://leyscoders-api.herokuapp.com/api/ppcouple?apikey=dappakntlll`)
 var { male, female } = pares.data.result
-if (pares.includes("Application error")) return reply(`❎ Error del servidor, intente de nuevo mas tarde`); 
 picfemale = await getBuffer(`${female}`)
 Fg.sendMessage(from, picfemale, image, {quoted: mek, caption: `✅ Chica`})
 picmale = await getBuffer(`${male}`)
@@ -8738,6 +8737,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
     }
 } catch (e) { 
     e = String(e);
+    if (e.includes('Request failed with status code 503'))return reply(`❎ Error del servidor, intente de nuevo mas tarde`); 
 	if (!e.includes("this.isZero") && !e.includes("jid is not defined") && !e.includes("Cannot read property 'fromMe' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("Cannot read property 'key' of undefined") && !e.includes("Cannot use 'in' operator to search for 'text' in undefined") && !e.includes("no such file or directory") && !e.includes("Not expecting a response")) {
 	  console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
       console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color(e, "red"));
