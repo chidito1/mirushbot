@@ -7896,7 +7896,7 @@ let resulit = (new Function('return ' + vill))()
 if (!resulit) throw resulit
 const resuliz = resulit
 reply(`Cuanto es el resultado de *${mit}*?\n\n*⏰Tiempo:* ${timeax} segundos\n*💰Bono:* +750 botcoins`)
-game.addmtk(from, resuliz, timeex, mtk)
+game.addmtk(from, resuliz, timeax, mtk)
 } else if (args[0] === 'imposible') {
 const opoy = ["+","*","-","÷"]
 const opeoz = opoy[Math.floor(Math.random() * opoy.length)]
