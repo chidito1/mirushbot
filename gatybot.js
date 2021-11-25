@@ -6792,15 +6792,18 @@ if(!isVerify) return isUser()
 						await ffmpeg(`./${media}`)
 							.input(media)
 							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
+								console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
+								console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Creando sticker imagen", "yellow"))
 							})
 							.on('error', function (err) {
-								console.log(`Error : ${err}`)
+								console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
+								console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Error al crear el sticker imagen", "red"))
 								fs.unlinkSync(media)
 								reply('❎ Error al crear el sticker')
 							})
 							.on('end', function () {
-								console.log('Finish')
+								console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
+								console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Sticker imagen creado con éxito", "yellow"))
 								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
 									 if (error) {
 											 reply('❎ Error al crear el sticker')
@@ -6824,16 +6827,19 @@ if(!isVerify) return isUser()
 						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
 							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
+								console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
+								console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Creando sticker video", "yellow"))
 							})
 							.on('error', function (err) {
-								console.log(`Error : ${err}`)
+								console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
+								console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Error al crear el sticker video", "red"))
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 								reply('❎ Error al crear el stickergif')
 							})
 							.on('end', function () {
-								console.log('Finish')
+								console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
+								console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Sticker video creado con éxito", "yellow"))
 								exec(`webpmux -set exif ${addMetadata('gatybot', 'gatito')} ${ran} -o ${ran}`, async (error) => {
 									if (error) {
 											 reply('❎ Error al crear el stickergif')
