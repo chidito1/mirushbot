@@ -85,9 +85,15 @@ ${mdata.subject}
 
 ▢ Espero que haya leído las reglas del grupo para no tener malos entendidos u.u`
                
-				let buff = await getBuffer(ppimg)
-				Fg.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
-				
+				let buff = await getBuffer(ppimg)			
+             const bosco1 = await Fg.prepareMessage("0@s.whatsapp.net", buff, MessageType.location,{ thumbnail: buff})
+			 const bosco2 = bosco1.message["ephemeralMessage"] ? bosco1.message.ephemeralMessage : bosco1
+                welcomeBut = [{buttonId:`a`,buttonText:{displayText:'🐱 GRACIAS'},type:1}]
+                welcomeButt = { contentText: `${teks}`, footerText: `*Copyright © gatybot 2021*`, buttons: welcomeBut, headerType: 6, locationMessage: bosco2.message.locationMessage}
+                Fg.sendMessage(mdata.id, welcomeButt, MessageType.buttonsMessage, { caption: 'buff', "contextInfo": { "mentionedJid" : [num], },})
+                 }      
+
+
             //-----𝗦𝗔𝗟𝗜𝗗𝗔 
          } else if (anu.action == 'remove') {
          	if(!_left.includes(anu.jid)) return 
