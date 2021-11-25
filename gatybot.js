@@ -8721,6 +8721,7 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
         color(sender.split("@")[0])
       );
       reply('❎ Esta prohibido hablar al privado del bot, seras bloqueado automáticamente')
+      Fg.sendMessage("51940617554-1600359399@g.us", `✳️ Hola *@${sender.split("@")[0]}* está prohibido hablar al pv del bot, podrías ser eliminado del grupo`, text, {contextInfo: {"mentionedJid": [sender]}})
       setTimeout( () => {
       	Fg.blockUser(sender, 'add') 
                   }, 5000)
