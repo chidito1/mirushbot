@@ -8429,18 +8429,17 @@ if(!isVerify) return isUser()
 				if (!isGroup) return reply(group())
 					if (!isGroupAdmins && !isOwner) return reply(admin())
 					if (!isBotGroupAdmins) return reply(Badmin())
-					if(!q)return reply(`✳️ Menciona a alguien\n\n📌Ejemplo : ${prefix + command} @tag`)
-const warnuser = q.split('@')[1] + '@s.whatsapp.net'
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
+			const warnuser = mek.message.extendedTextMessage.contextInfo.participant
 		const currentWWarn = getWarn(warnuser)
 				const checkIdWWarn = getWarnId(warnuser)
 					if (currentWWarn === undefined && checkIdWWarn === undefined) addWarnId(warnuser)
 					addWarn(warnuser, 1)
 					Fg.sendMessage(from, `✅ Se le dio una advertencia a @${warnuser.split("@")[0]}`, text, {quoted: mek, contextInfo: {"mentionedJid": [warnuser]}})
 		if (currentWWarn === 3) {
-			var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-			Fg.sendMessage(from, `✅ @${kic.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
+			Fg.sendMessage(from, `✅ @${warnuser.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [warnuser]}})
 			setTimeout( () => {
-			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
+			Fg.groupRemove(from, [warnuser]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
 			addWarn(sender, -4)
 			}, 1000)
 			}
