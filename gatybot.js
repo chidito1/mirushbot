@@ -2650,7 +2650,7 @@ break;
         lvlh = getLevelingLevel(sender)
        infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
 	  infost = infost.status == 401 ? 'sin info' : infost.status
-        imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
+        imgth = fs.readFileSync('./storage/image/gaty_4.jpg')
         autorfg = `${sender.split("@")[0]}`
         helfxz = `Hola @${autorfg} ${YahahaHayyuk}
 
