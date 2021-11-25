@@ -91,7 +91,7 @@ ${mdata.subject}
                 welcomeBut = [{buttonId:`a`,buttonText:{displayText:'🐱 GRACIAS'},type:1}]
                 welcomeButt = { contentText: `${teks}`, footerText: `*Copyright © gatybot 2021*`, buttons: welcomeBut, headerType: 6, locationMessage: bosco2.message.locationMessage}
                 Fg.sendMessage(mdata.id, welcomeButt, MessageType.buttonsMessage, { caption: 'buff', "contextInfo": { "mentionedJid" : [num], },})
-                 }      
+                 
 
 
             //-----𝗦𝗔𝗟𝗜𝗗𝗔 
