@@ -8463,7 +8463,10 @@ break
 case 'stalkserver':
 if(!isVerify) return isUser()
 if (isBanned) return reply(banf())
-util.statusBedrock('play.fallentech.io', { port: 19132 })
+if (!q)return reply(`📌Ejemplo : ${prefix + command} play.fallentech.io 19132`)
+if (budy.includes("https://")) return reply(`❎ No ponga el "https://"`);
+const serverzz = q.split(" ")[1]
+util.statusBedrock(`${q}`, { port: `${serverzz}` })
                     .then((response) => {
                         console.log(response)
                         Fg.sendMessage(`「 *INFO DEL SERVIDOR* 」
@@ -8474,9 +8477,11 @@ Version : ${response.version}
 Protocol Version : ${response.protocolVersion}
 Gamemode : ${response.gameMode}
 Jugadores en línea : ${response.onlinePlayers}
-Máximo de Jugadores : ${response.maxPlayers}
-Motd : ${response.motdLine1.descriptionText}`)
+Máximo de Jugadores : ${response.maxPlayers}`)
                     })
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            })
 break
 
 
