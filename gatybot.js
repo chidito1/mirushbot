@@ -7361,11 +7361,11 @@ case 'ttp':
 			if(args.length < 1) return reply(`✳️ _Envie el texto_\n\n📌Ejemplo *${prefix + command}* Texto`)
 			reply(wait())
 			teks = args.join(' ')
-			data = {"text": `${encodeUrl(teks)}`, "outlineColor":"255,0,0,255", "textColor":"0,0,0,255"}
+			const datax = {"text": `${encodeUrl(teks)}`, "outlineColor":"255,0,0,255", "textColor":"0,0,0,255"}
 			result = axios({
 			url: "https://salism3api.pythonanywhere.com/text2img",
 			method: 'post',
-			data: new URLSearchParams(Object.entries(data))
+			data: new URLSearchParams(Object.entries(datax))
 			})
 			.then(res => {
 			sendStickerUrl(from, res.data.image)
