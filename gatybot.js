@@ -8549,8 +8549,8 @@ case 'diamondtop':
             limit.sort((a, b) => (a.limit < b.limit) ? 1 : -1)
               let leeaderboard =  '-----[ *TOP DE DIAMANTES* ]----\n\n'
               try {
-              for (let i = 0; i < 10; i++) {
-              leeaderboard += `[${i + 1}]wa.me/${limit[i].id.replace('@s.whatsapp.net', '')}\n◪ *Diamantes* : ${limit[i].limit}\n\n`
+              for (let i = 0; i < 10; i++) {             
+              leeaderboard += `[${i + 1}]@${limit[i].id.split("@s.whatsapp.net")[0]}\n*💎Diamantes:* ${limit[i].limit}\n\n`
 }
               reply(leeaderboard)
               } catch (err) {
