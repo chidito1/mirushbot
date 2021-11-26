@@ -1681,30 +1681,33 @@ const hentai = [
 ]
 
 const neko = [
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
-   "xxx",
+   "https://i.ibb.co/WPWKxYM/aacc1cff4d1e.jpg",
+   "https://i.ibb.co/TqQ8vxm/5b1685980a85.png",
+   "https://i.ibb.co/F8f85XF/d227d7dedfc8.png",
+   "https://cdn.nekos.life/neko/neko_356.jpg",
+   "https://cdn.nekos.life/neko/neko114.jpg",
+   "https://cdn.nekos.life/neko/neko273.jpeg",
+   "https://cdn.nekos.life/neko/neko232.jpg",
+   "https://cdn.nekos.life/neko/neko_034.jpg",
+   "https://cdn.nekos.life/neko/neko153.png",
+   "https://cdn.nekos.life/neko/neko_320.jpg",
+   "https://cdn.nekos.life/neko/neko377.jpeg",
+   "https://cdn.nekos.life/neko/neko256.png",
+   "https://cdn.nekos.life/neko/neko_036.jpg",
+   "https://cdn.nekos.life/neko/neko_132.jpeg",
+   "https://cdn.nekos.life/neko/neko_236.png",
+   "https://cdn.nekos.life/neko/neko_019.jpg",
+   "https://cdn.nekos.life/neko/neko298.jpeg",
+   "https://cdn.nekos.life/neko/neko298.jpeg",
+   "https://cdn.nekos.life/neko/neko_111.jpeg",
+   "https://cdn.nekos.life/neko/neko_100.jpg",
+   "https://cdn.nekos.life/neko/neko370.jpeg",
+   "https://static.zerochan.net/Amashiro.Natsuki.full.2856785.png",
+   "https://c4.wallpaperflare.com/wallpaper/42/767/641/christmas-amashiro-natsuki-animal-ears-tail-wallpaper-preview.jpg"
+]
+
+const xxx = [
+"xxx",
    "xxx",
    "xxx",
    "xxx",
@@ -1802,7 +1805,6 @@ const neko = [
    "xxx",
    "xxx"
 ]
-
   //---------𝗙𝗨𝗡𝗖𝗜𝗢́𝗡 𝗥𝗔𝗡𝗚𝗢𝗦--------
 	const levelRole = getLevelingLevel(sender, _level)
         var role = 'HIERRO I'
@@ -5128,7 +5130,7 @@ if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
 if (!q) return reply(`✳️ Nombre de un país \n\n📌 Ejemplo : ${prefix + command} Peru`)
-cvd = await fetchJson(`http://zekais-api.herokuapp.com/corona?country=${q}`)
+cvd = await fetchJson(`http://zekais-api.herokuapp.com/corona?country=${q}&apikey=qyYRIs2V`)
 if (cvd.error) return reply(`❎ El país ${q} no se encontró`)
 if (cvd = "undefined") return reply(`❎ El país *${q}* no se encontró\n\nTen en cuenta que no debes colocar tildes\n\n*📌Ejemplo:* ${prefix + command} Peru`)
 copid = `❒ *「 Covid ${q} 」* ❒ 
@@ -5281,7 +5283,26 @@ Fg.sendMessage(from, lolix, image, {quoted: mek, caption: `${isPremium ? '💎No
             })
             limitAdd(sender, limit)
           break
-     
+
+//https://nekos.life/api/v2/img/kemonomimi
+//https://nekos.life/api/v2/img/neko
+//https://nekos.life/api/v2/img/fox_girl
+//https://nekos.life/api/v2/img/ngif  //gif
+case 'neko':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+      reply(wait()) 
+let nekoz = neko[Math.floor(Math.random() * neko.length)]
+      nekox = await getBuffer(nekoz)
+Fg.sendMessage(from, nekox, image, {quoted: mek, caption: `${isPremium ? '💎No se te descontará ningún Diamante' : `💎-1 Diamante por utilizar esta función`}\n\n• *Link* : ${nekoz}\n\n✅ Aqui tienes *7u7*`})
+.catch((err) => {
+            reply(`❎ Error, intente de nuevo mas tarde`); 
+            giveLimit(sender, 1, limit)
+            })
+            limitAdd(sender, limit)
+          break
+
 case 'pack':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
@@ -5343,14 +5364,6 @@ Fg.sendMessage(from, nsfw_waifux, image, {quoted: mek, caption: `${isPremium ? '
             })
             limitAdd(sender, limit)
           break
-        
-        //https://nekos.life/api/v2/img/kemonomimi
-        //https://nekos.life/api/v2/img/neko
-        //https://nekos.life/api/v2/img/fox_girl
-        //https://nekos.life/api/v2/img/ngif  //gif
-        case 'neko':
- reply(`_❎ Comando en mantenimiento_`)
-        break
         
         //https://waifu.pics/api/sfw/waifu
         case 'waifu':
