@@ -3036,7 +3036,7 @@ if (isBanned) return reply(banf())
 				try {
 				ppimg = await Fg.getProfilePicture(`${sender.split('@')[0]}@c.us`)
 				} catch {
-				ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
+				ppimg = 'https://i.ibb.co/9vCxvzL/sinperfil.jpg'
 				}
 				fgfoto = 'https://i.ibb.co/JxxPcm2/verify.jpg'
 				veri = sender
@@ -5929,7 +5929,7 @@ if(!isVerify) return isUser()
                 try {
 				ppimg = await Fg.getProfilePicture(`${sender.split('@')[0]}@c.us`)
 				} catch {
-				ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
+				ppimg = 'https://i.ibb.co/9vCxvzL/sinperfil.jpg'
 				}
 				nivelrs = await getBuffer(ppimg)
                 const userLevel = getLevelingLevel(sender)
@@ -6350,7 +6350,7 @@ if (!isGroup) return reply(group())
   try {
 	ppUrl = await Fg.getProfilePicture(from)
 		} catch {
-	ppUrl = 'https://i.ibb.co/FX6pMj0/profile.png'
+	ppUrl = 'https://i.ibb.co/9vCxvzL/sinperfil.jpg'
   	}
   reply(wait())
   
@@ -6458,7 +6458,7 @@ mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 	try {
 	pic = await Fg.getProfilePicture(mentioned[0])
 	} catch {
-	pic = 'https://i.ibb.co/FX6pMj0/profile.png'
+	pic = 'https://i.ibb.co/9vCxvzL/sinperfil.jpg'
 	}
 thumb = await getBuffer(pic)
 Fg.sendMessage(from, thumb,image,{quoted : mek})
@@ -6478,7 +6478,7 @@ case 'profile':
     				try {
 					ppimg = await Fg.getProfilePicture(`${sender.split('@')[0]}@c.us`)
 					} catch {
-					ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
+					ppimg = 'https://i.ibb.co/9vCxvzL/sinperfil.jpg'
 
 					}
 					const lvl = getLevelingLevel(sender)
@@ -7498,7 +7498,7 @@ let premiumnya = `${cekvip.days} *_días_* ${cekvip.hours} *_horas_* ${cekvip.mi
 try {
 ppimg = await Fg.getProfilePicture(`${sender.split('@')[0]}@c.us`)
 } catch {
-ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
+ppimg = 'https://i.ibb.co/9vCxvzL/sinperfil.jpg'
 }
 teks = `❒ *「 Usuario Premium 」* ❒ 
   
@@ -8468,7 +8468,6 @@ if (budy.includes("https://")) return reply(`❎ No ponga el "https://"`);
 reply(wait())
 const data = await fetchJson(`https://api.mcsrvstat.us/bedrock/2/${q}`)
 
-        ssnombre = data.clean
         enlinea = data.players.online
         maxplayers = data.players.max
         svercion = data.version
@@ -8479,7 +8478,6 @@ const data = await fetchJson(`https://api.mcsrvstat.us/bedrock/2/${q}`)
         snombre = data.hostname
 infoserverz = `「 *INFO DEL SERVIDOR BE* 」
 ╭──────────────────✾
-├ *Nombre:* ${ssnombre}
 ├ *Ip:* ${serverip}
 ├ *Puerto:* ${serverport}
 ├ *El línea:* ${enlinea} jugadores

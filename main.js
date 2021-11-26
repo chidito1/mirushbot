@@ -65,7 +65,7 @@ CFonts.say(`gatybot by gatito`, {
   //𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗔 𝗬 𝗗𝗘𝗦𝗣𝗘𝗗𝗜𝗗𝗔 𝗰𝗼𝗻 𝗮𝗽𝗶 //
 Fg.on('group-participants-update', async (anu) => {
 	const _welcom = JSON.parse(fs.readFileSync('./database/group/welcom.json'))
-	const _left = JSON.parse(fs.readFileSync('./database/group/bye.json'))	
+	const _bye = JSON.parse(fs.readFileSync('./database/group/bye.json'))	
 		if (!_welcom.includes(anu.jid)) return
 		try {
 			const mdata = await Fg.groupMetadata(anu.jid)
@@ -76,7 +76,7 @@ Fg.on('group-participants-update', async (anu) => {
 				try {
 					ppimg = await Fg.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 				} catch {
-					ppimg = 'https://i.ibb.co/FX6pMj0/profile.png'
+					ppimg = 'https://i.ibb.co/9vCxvzL/sinperfil.jpg'
 				}
 				teks = `👋Hola @${num.split('@')[0]}
 ───────────────────
@@ -96,7 +96,7 @@ ${mdata.subject}
 
             //-----𝗦𝗔𝗟𝗜𝗗𝗔 
          } else if (anu.action == 'remove') {
-         	if(!_left.includes(anu.jid)) return 
+         	if(!_bye.includes(anu.jid)) return 
          	//sólo foto user
          	let fotouser = await getBuffer(ppimg)
          //
