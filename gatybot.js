@@ -8461,12 +8461,25 @@ break
 
 //play.hypixel.net 19132
 case 'stalkserver':
-if (!q)return reply(`📌Ejemplo : ${prefix + command} play.hypixel.net`)
-serverx = await getBuffer(`https://mcapi.us/server/image?ip=${q}`)
-Fg.sendMessage(from, serverx, image, {quoted: mek, caption: `✅ Servidor : *${q}*`})
-.catch((err) => {
-            reply(`❎ Error, intente de nuevo mas tarde`); 
-            })
+if(!isVerify) return isUser()
+if (isBanned) return reply(banf())
+if (!q)return reply(`📌Ejemplo : ${prefix + command} play.hypixel.net 19132`)
+if (budy.includes("https://")) return reply(`❎ No ponga el "https://"`);
+const serverz = q.split(" ")[1]
+util.statusBedrock(`${q}`, { port: `${serverz}` })
+                    .then((response) => {
+                        console.log(response)
+                        Fg.sendMessage(`「 *INFO DEL SERVIDOR* 」
+
+Host : ${response.host}
+Port : ${response.port}
+Version : ${response.version}
+Protocol Version : ${response.protocolVersion}
+Gamemode : ${response.gameMode}
+Jugadores en línea : ${response.onlinePlayers}
+Máximo de Jugadores : ${response.maxPlayers}
+Motd : ${response.motdLine1.descriptionText}`)
+                    })
 break
 
 
