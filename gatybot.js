@@ -8466,7 +8466,7 @@ if (isBanned) return reply(banf())
 if (!q)return reply(`📌Ejemplo : ${prefix + command} play.hypixel.net 19132`)
 if (budy.includes("https://")) return reply(`❎ No ponga el "https://"`);
 const serverz = q.split(" ")[1]
-util.statusBedrock(`${q}`, { port: `${serverz}` })
+util.statusBedrock(`${q}`, { port: 19132 })
                     .then((response) => {
                         console.log(response)
                         Fg.sendMessage(`「 *INFO DEL SERVIDOR* 」
