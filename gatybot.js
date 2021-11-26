@@ -8494,6 +8494,11 @@ Fg.sendMessage(from, infoserverz, text, {quoted: mek, contextInfo: {"mentionedJi
 break
 
 
+case 'reenviar':
+const textzz = mek.message.extendedTextMessage.text
+		    Fg.sendMessage(from, textzz)
+break
+
 //--------------------------------------
       default:
  
