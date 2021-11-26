@@ -135,86 +135,37 @@ ${mdata.subject}
 
 //antidelete 
 //=================================================//
+const _antidel = JSON.parse(fs.readFileSync('./database/group/antidelete.json'))
+
 Fg.on('message-delete', async (m) => {
-	const _antidelete = JSON.parse(fs.readFileSync('./database/group/antidelete.json'))
-	if (!_antidelete.includes(m.jid)) return
-var date = new Date();
-        var tahun = date.getFullYear();
-        var bulan1 = date.getMonth();
-        var tanggal = date.getDate();
-        var hari = date.getDay();
-        var jam = date.getHours();
-        var menit = date.getMinutes();
-        var detik = date.getSeconds();
-        var waktoo = date.getHours();
-            switch(hari) {
-                case 0: hari = 'Domingo'; break;
-                case 1: hari = 'Lunes'; break;
-                case 2: hari = 'Martes'; break;
-                case 3: hari = 'Miercoles'; break;
-                case 4: hari = 'Jueves'; break;
-                case 5: hari = 'Viernes'; break;
-                case 6: hari = 'Sabado'; break;
-            }
-            switch(bulan1) {
-                case 0: bulan = "De Enero Del"; break;
-                case 1: bulan = "De Febrero Del"; break;
-                case 2: bulan = "De Marzo Del"; break;
-                case 3: bulan = "De Abril Del"; break;
-                case 4: bulan = "De Mayo Del"; break;
-                case 5: bulan = "De Junio Del"; break;
-                case 6: bulan = "De Julio Del"; break;
-                case 7: bulan = "De Agosto Del"; break;
-                case 8: bulan = "De Septiembre Del"; break;
-                case 9: bulan = "De Octubre Del"; break;
-                case 10: bulan = "De Noviembre Del"; break;
-                case 11: bulan = "De Diciembre Del"; break;
-            }
-                 var tampilHari = '' + hari + ', ' + tanggal + ' ' + bulan1 + ' ' + tahun;
-                var tampilJam = '' + jam + ':' + menit + ':' + detik;
-var ase = new Date();
-                        var waktoo = ase.getHours();
-                        switch(waktoo){
-                case 0: waktoo = "Buena Media Noche"; break;
-                case 1: waktoo = "Buena Madrugada"; break;
-                case 2: waktoo = "Buena Madrugada"; break;
-                case 3: waktoo = "Buena Madrugada"; break;
-                case 4: waktoo = "Buena Madrugada"; break;
-                case 5: waktoo = "Buena Madrugada"; break;
-                case 6: waktoo = "Buen Día"; break;
-                case 7: waktoo = "Buen Día"; break;
-                case 8: waktoo = "Buen Día"; break;
-                case 9: waktoo = "Buen Día"; break;
-                case 10: waktoo = "Buen Día"; break;
-                case 11: waktoo = "Buen Mediodía"; break;
-                case 12: waktoo = "Buen Mediodía"; break;
-                case 13: waktoo = "Buen Mediodía"; break;
-                case 14: waktoo = "Buena Tarde"; break;
-                case 15: waktoo = "Buena Tarde"; break;
-                case 16: waktoo = "Buena Tarde"; break;
-                case 17: waktoo = "Buena Tarde"; break;
-                case 18: waktoo = "Buena Noche"; break;
-                case 19: waktoo = "Buena Noche"; break;
-                case 20: waktoo = "Buena Noche"; break;
-                case 21: waktoo = "Buena Noche"; break;
-                case 22: waktoo = "Buena Noche"; break;
-                case 23: waktoo = "Buena Noche"; break;
-            }
-            var tampilUcapan = '' + waktoo;  
-const type2 = Object.keys(m.message)[0]
+if (m.key.remoteJid == 'status@broadcast') return
+if (!m.key.fromMe && m.key.fromMe) return
+if (!_antidel.includes(m.jid)) return
+m.message = (Object.keys(m.message)[0] === 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
+const jam = moment.tz('America/La_Paz').format('HH:mm:ss')
+let d = new Date
+let locale = 'id'
+let gmt = new Date(0).getTime() - new Date('1 Januari 2021').getTime()
+let weton = ['Pahing', 'Pon','Wage','Kliwon','Legi'][Math.floor(((d * 1) + gmt) / 84600000) % 5]
+let week = d.toLocaleDateString(locale, { weekday: 'long' })
+let calender = d.toLocaleDateString(locale, {
+day: 'numeric',
+month: 'long',
+year: 'numeric'
+})
+const type = Object.keys(m.message)[0]
 console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
 console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Mensaje eliminado detectado", "red"))
 console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${m.participant.split("@")[0]}`, "orange"))
-console.log('\x1b[1;31m', color("➛ ", "red"), color("Tipo: "), color(type2, "orange"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Tipo: "), color(type, "orange"))
 Fg.sendMessage(m.key.remoteJid, `*🍃「 Mensaje eliminado 」🍃*
 
 *De:* @${m.participant.split("@")[0]}
-*Hora:* ${tampilJam}
-*Tipo:* ${type2}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
-setTimeout( () => {
-                Fg.copyNForward(m.key.remoteJid, m.message)
-                }, 1000)
-                })
+*Hora:* ${jam}
+*Tipo:* ${type}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
+Fg.copyNForward(m.key.remoteJid, m.message)
+})
+
 //---
 
   Fg.on("chat-update", async (message) => {
