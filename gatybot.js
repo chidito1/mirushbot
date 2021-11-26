@@ -8466,7 +8466,7 @@ if (isBanned) return reply(banf())
 if (!q)return reply(`📌Ejemplo : ${prefix + command} play.fallentech.io 19132`)
 if (budy.includes("https://")) return reply(`❎ No ponga el "https://"`);
 const serverzz = q.split(" ")[1]
-util.statusBedrock(`${q}`, { port: serverzz })
+util.statusBedrock('play.fallentech.io', { port: 19132 })
                     .then((response) => {
                         console.log(response)
                         Fg.sendMessage(`「 *INFO DEL SERVIDOR* 」
