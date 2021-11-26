@@ -8460,16 +8460,28 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 break
 
 //play.hypixel.net 19132
-case 'stalkserver':
+case 'serverbe':
 if(!isVerify) return isUser()
 if (isBanned) return reply(banf())
-if (!q)return reply(`📌Ejemplo : ${prefix + command} play.fallentech.io 19132`)
+if (!q)return reply(`📌Ejemplo : ${prefix + command} play.fallentech.io`)
 if (budy.includes("https://")) return reply(`❎ No ponga el "https://"`);
-const serverzz = q.split(" ")[1]
-util.statusBedrock('play.fallentech.io', { port: 19132 })
-                    .then((response) => {
-                        reply(response)
-                    })
+reply(wait())
+const data = await fetchJson(`https://api.mcsrvstat.us/bedrock/2/${q}`)
+        enlinea = data.players.online;
+        maxplayers = data.players.max;
+        svercion = data.version;
+        estado = data.online;
+        serverip = data.ip;
+        snombre = data.hostname;
+infoserverz = `🎋「 Info del servidor 」🎋
+
+El línea : ${enlinea} jugadores
+Máximo : ${maxplayers} jugadores
+Versión : ${svercion}
+Estado : ${estado}
+Ip : ${serverip}
+Host : ${snombre}`
+Fg.sendMessage(from, infoserverz, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
             })
