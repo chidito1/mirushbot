@@ -58,6 +58,7 @@ const { error } = require("qrcode-terminal");
 const CryptoJS = require("crypto-js");
 const crypto = require('crypto');
 const CFonts  = require('cfonts')
+const util = require('minecraft-server-util');
 //====================[ FIN DE MODULOS ]====================//
 
 
@@ -8457,6 +8458,24 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 			}, 1000)
 			}
 break
+
+//play.hypixel.net 19132
+case 'server':
+if (!q)return reply(`📌Ejemplo : ${prefix + command} play.hypixel.net 19132`)
+lim = q.split(" ")[1]
+const tag1 = `${q.split(" ")[0].replace("@",'')}@s.whatsapp.net`
+giveLimit(tag1, lim, limit)
+
+util.statusBedrock(`${q}`, { port: `${lim}`, enableSRV: true, timeout: 5000 }) // These are the default options, `clientGUID` is set to random bytes
+    .then((response) => {
+        console.log(response);
+        reply(response);
+    })
+    .catch((err) => {
+        console.error(error);
+    });
+break
+
 
 //--------------------------------------
       default:
