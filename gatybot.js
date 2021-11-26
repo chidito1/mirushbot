@@ -2424,7 +2424,9 @@ var enlace = 'WhatsApp'
 				const checkIdWarn = getWarnId(sender)
 					if (currentWarn === undefined && checkIdWarn === undefined) addWarnId(sender)
 					addWarn(sender, 1)
-		console.log(color('[GATYBOT]','magenta'), color(`Groseria detectado`,'red'));
+		console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Groseria detectado", "red"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${sender.split("@")[0]}`, "orange"))
 		Fg.sendMessage(from, `❎ En este no esta permitido las groserías\n\n▪︎Se le acumulo una advertencia\n\n*📌Nota:* a las 3 advertencias se te eliminará del grupo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
 		Fg.updatePresence(from, Presence.composing)
@@ -2442,7 +2444,9 @@ var enlace = 'WhatsApp'
 	if (budy.includes("chat.whatsapp.com") || (budy.includes("getsnap.link") || (budy.includes("m.kwai.me") || (budy.includes("instagram.com") || (budy.includes("t.me") || (budy.includes("whatsthemes.com") || (budy.includes("nysL.com") || (budy.includes("discord.gg") || (budy.includes("getsnap.link")))))))))){
 		if (!isGroup) return
 		if (!isAntilink) return
-		console.log(color('[GATYBOT]','magenta'), color(`${enlace} enlace detectado`,'red'));
+		console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color(`${enlace} enlace detectado`, "red"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${sender.split("@")[0]}`, "orange"))
 		linkgp = await Fg.groupInviteCode (from)
 		if (budy.includes(`https://chat.whatsapp.com/${linkgp}`)) return reply('✳️ Menos mal que este enlace es de este grupo :v')
 		if (isGroupAdmins) return Fg.sendMessage(from, `*🪀「 Enlace Detectado 」🪀*\n\n*De* : @${sender.split("@")[0]}\n*Hora* : ${hora2}\n*Enlace* : ${enlace}\n\n${isOwner ? 'Si puedes enviar enlaces :3': `Espero que hayas pedido permiso`}`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
@@ -2460,7 +2464,9 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 		if (!isGroup) return 
 		if (!isAnticadena) return 
 		if (sender.includes("78118982")) return
-		console.log(color('[GATYBOT]','magenta'), color(`Cadena detectado`,'red'));
+		console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Cadena detectado", "red"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${sender.split("@")[0]}`, "orange"))
 		if (isGroupAdmins) return Fg.sendMessage(from, `*🪀「 Cadena Detectado 」🪀*\n\n*De* : @${sender.split("@")[0]}\n*Hora* : ${hora2}\n\n${isOwner ? 'Tu puedes hacer lo que quieras :|': `No deberías enviar cadenas xd`}`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
 		Fg.updatePresence(from, Presence.composing)
@@ -8530,7 +8536,9 @@ let peq = msg.message.viewOnceMessage.message["imageMessage"] ? { key: { fromMe:
 let pe = await Fg.prepareMessageFromContent(from, msg.message.viewOnceMessage.message, {quoted: peq, contextInfo: {"mentionedJid": [sender]}})
             
 await Fg.relayWAMessage(pe)
-console.log(color('[GATYBOT]','magenta'), color(`ViewOnce Detectado`,'red'));
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("ViewOnce Detectado", "red"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${sender.split("@")[0]}`, "orange"))
 }
 //====================================================================================================//
 
@@ -8781,19 +8789,18 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
 //>> Privado auto bloqueo y mas
     if (isGroup && budy != undefined) {
     } else {
-      console.log(
-        color("[CHAT]", "red"),
-        "PRIVADO",
-        color(sender.split("@")[0])
+    	console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Chat privado", "red"))
+		console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${sender.split("@")[0]}`, "orange"))
       );
       reply('❎ Esta prohibido hablar al privado del bot, seras bloqueado automáticamente')
       Fg.sendMessage("51940617554-1600359399@g.us", `✳️ Hola *@${sender.split("@")[0]}* está prohibido hablar al pv del bot, podrías ser eliminado del grupo`, text, {contextInfo: {"mentionedJid": [sender]}})
       setTimeout( () => {
       	Fg.blockUser(sender, 'add') 
-                  }, 5000)
+                  }, 1000)
       setTimeout( () => {
                   Fg.modifyChat(from, ChatModification.delete)
-                  }, 15000)
+                  }, 5000)
                   
     }
 } catch (e) { 
