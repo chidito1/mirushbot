@@ -8460,27 +8460,35 @@ if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMes
 break
 
 //play.hypixel.net 19132
-case 'serverbe':
+case 'infoserver_be':
 if(!isVerify) return isUser()
 if (isBanned) return reply(banf())
 if (!q)return reply(`📌Ejemplo : ${prefix + command} play.fallentech.io`)
 if (budy.includes("https://")) return reply(`❎ No ponga el "https://"`);
 reply(wait())
 const data = await fetchJson(`https://api.mcsrvstat.us/bedrock/2/${q}`)
-        enlinea = data.players.online;
-        maxplayers = data.players.max;
-        svercion = data.version;
-        estado = data.online;
-        serverip = data.ip;
-        snombre = data.hostname;
-infoserverz = `🎋「 Info del servidor 」🎋
 
-El línea : ${enlinea} jugadores
-Máximo : ${maxplayers} jugadores
-Versión : ${svercion}
-Estado : ${estado}
-Ip : ${serverip}
-Host : ${snombre}`
+        ssnombre = data.clean
+        enlinea = data.players.online
+        maxplayers = data.players.max
+        svercion = data.version
+        estado = data.online
+        gamemode = data.gamemode
+        serverip = data.ip
+        serverport = data.port
+        snombre = data.hostname
+infoserverz = `「 *INFO DEL SERVIDOR BE* 」
+╭──────────────────✾
+├ *Nombre:* ${ssnombre}
+├ *Ip:* ${serverip}
+├ *Puerto:* ${serverport}
+├ *El línea:* ${enlinea} jugadores
+├ *Máximo:* ${maxplayers} jugadores
+├ *Versión:* ${svercion}
+├ *Estado:* ${estado}
+├ *Modo:* ${gamemode}
+├ *Host:* ${snombre}
+╰──────────────────✾`
 Fg.sendMessage(from, infoserverz, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 .catch((err) => {
             reply(`❎ Error, intente de nuevo mas tarde`); 
