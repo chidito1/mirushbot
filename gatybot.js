@@ -8528,14 +8528,14 @@ if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 if(!isGroup)return reply(group())
 Fg.updatePresence(from, Presence.composing)
-let txot = `*── 「 TOP WARN 」 ──*\n\n`
+let txoot = `*── 「 TOP WARN 」 ──*\n\n`
 let mebn = [];
 for (let i of _adv){
 mebn.push(i.id)
 let bl = (i.adv)
-txot += `*🏷️ID :* @${i.id.split("@")[0]}\n➸ *⚠️Warn* : ${bl}\n\n`
+txoot += `*🏷️ID :* @${i.id.split("@")[0]}\n➸ *⚠️Warn* : ${bl}\n\n`
   }
-mentions(txot, mebn, true)
+mentions(txoot, mebn, true)
 break
 
 case 'topdiamond':
