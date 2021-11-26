@@ -8495,7 +8495,7 @@ break
 
 
 case 'reenviar':
-const textzz = mek.message.extendedTextMessage.text
+const textzz = mek.message.extendedTextMessage.contextInfo.message
 		    Fg.sendMessage(from, textzz)
 break
 
