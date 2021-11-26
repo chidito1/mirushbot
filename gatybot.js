@@ -8548,11 +8548,12 @@ case 'diamondtop':
               const reespp = limit
             limit.sort((a, b) => (a.limit < b.limit) ? 1 : -1)
               let leeaderboard =  '-----[ *TOP DE DIAMANTES* ]----\n\n'
+              let merebn = [];
               try {
               for (let i = 0; i < 10; i++) {             
               leeaderboard += `[${i + 1}]@${limit[i].id.split("@s.whatsapp.net")[0]}\n*💎Diamantes:* ${limit[i].limit}\n\n`
 }
-              reply(leeaderboard)
+              mentions(leeaderboard, merebn, true)
               } catch (err) {
               console.error(err)
               reply('✴ mínimo 10 usuarios para mostrar la base de diamantes!')
