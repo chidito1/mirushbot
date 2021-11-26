@@ -3682,22 +3682,6 @@ const txs = Fg.chats.all().filter(v => v.jid.endsWith('g.us')).map(v =>`
 ❉─────────────────────❉`).join`\n\n`
 reply('≡ *LISTA DE GRUPOS*\n\n' + txs)
 break
-
-case 'antidelete':
-if (!isOwner) return reply(ownerB()) 
-if (args.length < 1) return reply(`✳️ Anti mensajes eliminados\n\n📌 Para activar Escriba *${prefix +command} on* \nPara desactivar *${prefix +command} off*`)
-if (args[0] === "on") {
-if(antidel)return reply('✳️ Ya ha sido activado antes!')
-antidel = true
-reply(`✅ Se actico Anti - Delete`)
-} else if (args[0] === "off") {
-if(!antidel)return reply('✳️ Ya ha sido desactivado antes!')
-antidel = false
-reply(`✅ Se desactivo Anti - Delete`)
-} else {
-reply(`✳️ Anti mensajes eliminados\n\n📌 Para activar Escriba *${prefix +command} on* \nPara desactivar *${prefix +command} off*`)
-}
-break
                 
 case 'bc':
 case 'tx':
