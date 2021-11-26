@@ -8529,13 +8529,13 @@ if(!isVerify) return isUser()
 if(!isGroup)return reply(group())
 Fg.updatePresence(from, Presence.composing)
 let txoot = `*── 「 TOP WARN 」 ──*\n\n`
-let mebn = [];
+let meebn = [];
 for (let i of _adv){
-mebn.push(i.id)
-let bl = (i.adv)
-txoot += `*🏷️ID :* @${i.id.split("@")[0]}\n➸ *⚠️Warn* : ${bl}\n\n`
+meebn.push(i.id)
+let bll = (i.adv)
+txoot += `*🏷️ID :* @${i.id.split("@")[0]}\n➸ *⚠️Warn* : ${bll}\n\n`
   }
-mentions(txoot, mebn, true)
+mentions(txoot, meebn, true)
 break
 
 case 'topdiamond':
@@ -8545,14 +8545,14 @@ case 'diamondtop':
   if (isBanned) return reply(banf())
     if (!isGroup) return reply(group())
                 if (!isLevelingOn) return reply(leveloff())
-              const respp = limit
+              const reespp = limit
             limit.sort((a, b) => (a.limit < b.limit) ? 1 : -1)
-              let leaderboard =  '-----[ *TOP DE DIAMANTES* ]----\n\n'
+              let leeaderboard =  '-----[ *TOP DE DIAMANTES* ]----\n\n'
               try {
               for (let i = 0; i < 10; i++) {
-              lleaderboard += `[${i + 1}]wa.me/${limit[i].id.replace('@s.whatsapp.net', '')}\n◪ *D* : ${limit[i].limit}\n\n`
+              leeaderboard += `[${i + 1}]wa.me/${limit[i].id.replace('@s.whatsapp.net', '')}\n◪ *Diamantes* : ${limit[i].limit}\n\n`
 }
-              reply(lleaderboard)
+              reply(leeaderboard)
               } catch (err) {
               console.error(err)
               reply('✴ mínimo 10 usuarios para mostrar la base de diamantes!')
