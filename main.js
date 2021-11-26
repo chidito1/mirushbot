@@ -136,6 +136,8 @@ ${mdata.subject}
 //antidelete 
 //=================================================//
 Fg.on('message-delete', async (m) => {
+	const _antidelete = JSON.parse(fs.readFileSync('./database/group/antidelete.json'))
+	if (!_antidelete.includes(anu.jid)) return
 var date = new Date();
         var tahun = date.getFullYear();
         var bulan1 = date.getMonth();
@@ -199,9 +201,11 @@ var ase = new Date();
                 case 23: waktoo = "Buena Noche"; break;
             }
             var tampilUcapan = '' + waktoo;  
-if (antidel === false) return 
 const type2 = Object.keys(m.message)[0]
-console.log(color('[GATYBOT]', 'magenta'), color(`Mensaje eliminado detectado`, 'red')) 
+console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Mensaje eliminado detectado", "red"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${m.participant.split("@")[0]}`, "orange"))
+console.log('\x1b[1;31m', color("➛ ", "red"), color("Tipo: "), color(type2, "orange"))
 Fg.sendMessage(m.key.remoteJid, `*🍃「 Mensaje eliminado 」🍃*
 
 *De:* @${m.participant.split("@")[0]}

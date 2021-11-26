@@ -106,6 +106,7 @@ const _antilink = JSON.parse(fs.readFileSync('./database/group/antilink.json'))
 const _antivirtual = JSON.parse(fs.readFileSync('./database/group/antivirtual.json'))
 const _antiviewonce = JSON.parse(fs.readFileSync('./database/group/antiviewonce.json'))
 const _anticadena = JSON.parse(fs.readFileSync('./database/group/anticadena.json'))
+const _antidelete = JSON.parse(fs.readFileSync('./database/group/antidelete.json'))
 const _bancht = JSON.parse(fs.readFileSync('./database/group/banchat.json'));
 const ban = JSON.parse(fs.readFileSync('./database/bot/banned.json'));
 const premium = JSON.parse(fs.readFileSync('./database/bot/premium.json'))
@@ -763,6 +764,7 @@ prefix = prefa }}}
     const isAntiviewOnce = isGroup ? _antiviewonce.includes(from) : false
     const isAntivirtual = isGroup ? _antivirtual.includes(from) : false
     const isAnticadena = isGroup ? _anticadena.includes(from) : false
+    const isAntidelete = isGroup ? _antidelete.includes(from) : false
     const isPremium = _prem.checkPremiumUser(sender,premium) || false || isOwner
     const isWelcom = isGroup ? _welcom.includes(from) : false
     const isBye = isGroup ? _bye.includes(from) : false
@@ -2472,7 +2474,7 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
 //====================================================================================================//
 
 //>> Colores
-    colors = ["red", "white", "black", "blue", "yellow", "green", "magenta", "cyan", "pink", "gold", "purple", "navy", "gray"];
+    colors = ["red", "white", "black", "blue", "yellow", "green", "magenta", "cyan", "pink", "gold", "purple", "navy", "gray", "orange"];
    
 //>> Tipo de mensaje
     const isViewOnce = (type == 'viewOnceMessage')
@@ -6127,6 +6129,27 @@ break
 						reply(`✅ Se desactivo el *Antilink* en este grupo`)
 					} else {
 						reply(`✳️ *ANTILINK WHATSAPP*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					}
+					break
+					
+				case 'antidelete':
+				if(!isVerify) return isUser()
+				if (isBanned) return reply(banf())
+				if (!isGroup) return reply(group())
+					if (!isGroupAdmins && !isOwner) return reply(admin())
+					if (args.length < 1) return reply(`✳️ *ANTIDELETE*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
+					if ((args[0]) === 'on') {
+						if (isAntidelete) return reply('✳️ Antidelete ya está activo')
+						_antidelete.push(from)
+						fs.writeFileSync('./database/group/antidelete.json', JSON.stringify(_antidelete))
+						reply(`✅ Se activo el *Antidelete* en este grupo`)
+					} else if ((args[0]) === 'off') {
+						if (!isAntidelete) return reply('✳️ Antidelete ya está desactivado')
+						_antidelete.splice(from, 1)
+						fs.writeFileSync('./database/group/antidelete.json', JSON.stringify(_antidelete))
+						reply(`✅ Se desactivo el *Antidelete* en este grupo`)
+					} else {
+						reply(`✳️ *ANTIDELETE*\n\n*${prefix + command} on* para activar\n*${prefix + command} off* para desactivar`)
 					}
 					break
 					
