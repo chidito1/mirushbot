@@ -137,7 +137,7 @@ ${mdata.subject}
 //=================================================//
 Fg.on('message-delete', async (m) => {
 	const _antidelete = JSON.parse(fs.readFileSync('./database/group/antidelete.json'))
-	if (!_antidelete.includes(anu.jid)) return
+	if (!_antidelete.includes(m.jid)) return
 var date = new Date();
         var tahun = date.getFullYear();
         var bulan1 = date.getMonth();
