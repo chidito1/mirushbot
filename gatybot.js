@@ -4113,6 +4113,7 @@ if (!isBotGroupAdmins) return reply(Badmin())
  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('*Etiqueta un mensaje!*')
 			const zkick = mek.message.extendedTextMessage.contextInfo.participant
 		    Fg.groupRemove(from, [zkick])
+		    Fg.blockUser(`${zkick}`, 'add') 
 		    reply(`✅ Ordenes recibidas, emitidas`)
 		.catch((err) => {
             reply(`❎ No se pudo eliminar a usuario`)
@@ -4318,7 +4319,7 @@ case 'jadibot':
    if (isYo) return reply(`❎ No puedes ser bot en un bot ??`)
    if(!isPremium)return reply(premi())
 if(!isVerify) return isUser()
-                    if (isBanned) return reply(banf())
+ if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
     jadibot(reply,Fg,from)
     limitAdd(sender, limit)
@@ -7415,11 +7416,11 @@ break
 			if(args.length < 1) return reply(`_Example To Usage ${prefix + command} Manurios_`)
 			reply(wait())
 			teks = args.join(' ')
-			data = {"text": `${encodeUrl(teks)}` }
+			const dataz = {"text": `${encodeUrl(teks)}` }
 			result = axios({
 			url: "https://salism3api.pythonanywhere.com/text2gif",
 			method: 'post',
-			data: new URLSearchParams(Object.entries(data))
+			data: new URLSearchParams(Object.entries(dataz))
 			})
 			.then(res => {
 			sendStickerUrl(from, res.data.image)
@@ -8507,10 +8508,21 @@ Fg.sendMessage(from, infoserverz, text, {quoted: mek, contextInfo: {"mentionedJi
 break
 
 
-case 'reenviar':
-const textzz = mek.message.extendedTextMessage.contextInfo.message
-		    Fg.sendMessage(from, textzz)
+case 'topwarn':
+if(!isVerify) return isUser()
+  if (isBanned) return reply(banf())
+if(!isGroup)return reply(group())
+Fg.updatePresence(from, Presence.composing)
+let txot = `*── 「 TOP WARN 」 ──*\n\n`
+let mebn = [];
+for (let i of _adv){
+mebn.push(i.id)
+let bl = (i.adv)
+txot += `*🏷️ID :* @${i.id.split("@")[0]}\n➸ *⚠️Warn* : ${bl}\n\n`
+  }
+mentions(txot, mebn, true)
 break
+
 
 //--------------------------------------
       default:
