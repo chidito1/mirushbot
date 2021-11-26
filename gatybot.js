@@ -8463,7 +8463,7 @@ break
 case 'stalkserver':
 if(!isVerify) return isUser()
 if (isBanned) return reply(banf())
-util.statusBedrock('play.hypixel.net', { port: 19132 })
+util.statusBedrock('play.fallentech.io', { port: 19132 })
                     .then((response) => {
                         console.log(response)
                         Fg.sendMessage(`「 *INFO DEL SERVIDOR* 」
