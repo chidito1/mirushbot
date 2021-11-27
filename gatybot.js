@@ -2612,6 +2612,7 @@ break
 
 //>> Comandos con prefijo
     switch (command) {
+    	
         case 'menu':
         case 'menú':
         case 'comandos':
@@ -2879,12 +2880,12 @@ sendButLocation(from, `${helfxz}`, `║▌│█║▌│ █║▌│█│║�
  [
 {buttonId: `creador`, buttonText: {displayText: '🐱 CREADOR'}, type: 1},
 {buttonId: `info`, buttonText: {displayText: '🤖 INFO'}, type: 1},
-{contextInfo: { mentionedJid: [sender]}}
+{contextInfo: { mentionedJid: [sender]}})
 .catch((err) => {
 	console.log(`Error :`, color(e,'red'))
     reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
             })
-break
+break;
 
 //--info bot 
 case 'info':
