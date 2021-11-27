@@ -190,18 +190,25 @@ fdiama,
 fgnsfw, 
 gCoinF 
 } = require('./help/respon');
-//====================[ FIN DE HELP/MENU ]====================//
 
-//====================[ CONFIGURACIÓN ]====================//
+//====================================================================================================//
+
+//>> Configuración
+const grupomc = "https://chat.whatsapp.com/KQLMoi0FX0JHWBzRPOwJ31"
+const owner = "51940617554"
+const mods = ["51940617554","5218911054291","5356588048"]
+const botname = "gatybot"
+const botname2 = "GATYBOT"
+const botname3 = "Gatybot"
+const ownername = "「gatitoツ」"
+const ownername2 = "gatito"
+
 const Vkey = confi.Zekskey
 const lolkey = confi.LolHumanKey
 const hunterkey = confi.fgkey  
 const valkey = 'rivalgans'
 const Xinz = 'XinzBot'
 const Pkode = 'pais' 
-const grupomc = 'https://chat.whatsapp.com/KQLMoi0FX0JHWBzRPOwJ31'
-const owner = confi.ownerN
-const mods = confi.mods
 //====================[ FIN DE CONFIGURACIÓN ]====================//
 
 
@@ -233,8 +240,8 @@ let {GameTime, limitCount } = require('./settings')
 //====================[ CONTACTO DEL DUEÑO ]====================//
 const vcard1 = 'BEGIN:VCARD\n' 
  + 'VERSION:3.0\n' 
- + 'FN:「gatitoツ」\n'
- + 'ORG:Dueño de GatyBot;\n' 
+ + `FN:${ownername}\n`
+ + `ORG:Dueño de ${botname};\n`
  + `TEL;type=CELL;type=VOICE;waid=${owner}:+${owner}\n`
  + 'END:VCARD'
       
@@ -873,7 +880,7 @@ var ase = new Date();
                 case 22: waktoonyabro = `espero que tengas una linda noche 🌛`; break;
                 case 23: waktoonyabro = `espero que tengas una linda noche 🌃`; break;
             }
-            var YahahaHayyuk = "" + waktoonyabro;
+            var saludo = "" + waktoonyabro;
 //====================[ FIN DE SALUDO ]====================//
 
     //// --- Función de respuesta
@@ -2495,7 +2502,7 @@ if (budy.includes("ncuentra el error") || (budy.includes("alo a 5 grupos y") || 
     
 //>> Mensaje privado
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
-if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color("gatybot", "blue"))
+if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Privado: "), color(botname, "blue"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Fecha: "), color(fecha2, "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("Hora: "), color(hora2, "aqua"))
 if (!isGroup && isCmd) console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(sender.split('@')[0], "aqua"))
@@ -2605,57 +2612,11 @@ break
 
 //>> Comandos con prefijo
     switch (command) {
-      case "_menu":
-      case "_help":  
-        if(!isVerify) return isUser()
-          if (isBanned) return reply(banf())
-        imgth = fs.readFileSync(`./almacenamiento/imagenes/gaty_4.jpg`)
-        
-        lvlh = getLevelingLevel(sender)
-       infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
-	  infost = infost.status == 401 ? '' : infost.status
-			
-     helpfg = `☰ *INFO DEL USUARIO*
-╭──────────────────✾
-├ *Nombre* : @${sender.split("@")[0]}
-├ *Nivel* : ${lvlh}
-├ *Rango* : ${role} 🏅
-├ *Info* : ${infost}
-╰──────────────────✾
-
-☰ *INFO DEL BOT*
-╭──────────────────✾
-├ *Hora* : ${hora2}
-├ *Prefijo* : ${single ? `${prefa}` : multi ? 'Multiprefijo' : 'SinPrefijo'}
-├ *Total Hits* : ${totalhit}
-├ *Usuarios* : ${_user.length}
-╰──────────────────✾
-
-╭────ꕥ *Comandos* ꕥ───────✾
-├─❐ *${prefix}reglas*
-├─❐ *${prefix}creador*
-├─❐ *${prefix}info*
-├─❐ *${prefix}bot* _(simsimi)_
-├─❐ *${prefix}report*
-├─❐ *${prefix}ping*
-├─❐ *${prefix}runtime*
-├─❐ *${prefix}estado*
-├─❐ *${prefix}join*
-╰──────────────────✾`
-        sendButLocation(from, `${helpfg}`, ` *NOTA:* Si tiene problemas con los botones use el comando ${prefix}menu`, {jpegThumbnail:imgth},
-
- [
-{buttonId:`${prefix}menu`,buttonText:{displayText:'⦙☰ MENU'},type:1},
-{buttonId:`${prefix}info`,buttonText:{displayText:'📇 INFO'},type:1}],
-
-{contextInfo: { mentionedJid: [sender]}} )
-break;
-
-		case 'menu':
+        case 'menu':
         case 'menú':
         case 'comandos':
         case 'commands':
-        if(!isVerify) return isUser()
+          if(!isVerify) return isUser()
           if (isBanned) return reply(banf())
           try {
         lvlh = getLevelingLevel(sender)
@@ -2663,7 +2624,9 @@ break;
 	  infost = infost.status == 401 ? 'sin info' : infost.status
         imgth = fs.readFileSync('./storage/image/gaty_4.jpg')
         autorfg = `${sender.split("@")[0]}`
-        helfxz = `Hola @${autorfg} ${YahahaHayyuk}
+        helfxz = `Hola @${autorfg} ${saludo}
+        
+        helfxz = `Hola @${autorfg} ${saludo}
 
 💫 Tu Info: *${infost}*
 
@@ -2741,7 +2704,7 @@ break;
     *LOGOS*
   🧩 ${prefix}blackpink
   🧩 ${prefix}glich
-  ?? ${prefix}retroneon
+  🧩 ${prefix}retroneon
   🧩 ${prefix}luzneon
   🧩 ${prefix}gaming
   🧩 ${prefix}3d
@@ -2830,6 +2793,7 @@ break;
   👥 ${prefix}online
   👥 ${prefix}kick
   👥 ${prefix}okick
+  👥 ${prefix}warn
   👥 ${prefix}oadd
   👥 ${prefix}staff
   👥 ${prefix}dueñogp
@@ -2913,20 +2877,12 @@ break;
   ℹ️ ${prefix}estado
   ℹ️ ${prefix}join
   ℹ️ ${prefix}ayuda`
-
-  py =  await Fg.prepareMessage(from, imgth, image)
-gbutsan = [
-{buttonId: `${prefix}creador`, buttonText: {displayText: '🐱 CREADOR'}, type: 1},
-{buttonId: `${prefix}info`, buttonText: {displayText: '🤖 INFO'}, type: 1}
-]
-gbuttonan = {
-imageMessage: py.message.imageMessage,
-contentText: helfxz,
-footerText: `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © gatybot 2021*`,
-buttons: gbutsan,
-headerType: 4
-}
-await Fg.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: {  mentionedJid: [sender]}, quoted: mek})
+        
+sendButLocation(from, `${helfxz}`, `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © ${botname} 2021*`, {jpegThumbnail: imgth},
+ [
+{buttonId: `creador`, buttonText: {displayText: '🐱 CREADOR'}, type: 1},
+{buttonId: `info`, buttonText: {displayText: '🤖 INFO'}, type: 1},
+{contextInfo: { mentionedJid: [sender]}}
 } catch (e) {
 	console.log(`Error :`, color(e,'red'))
      reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
@@ -3177,7 +3133,7 @@ case 'solicitud':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   yoi = q
-  if (args.length < 1) return reply('✳️ Ingrese las funciones que desee en *gatybot*')
+  if (args.length < 1) return reply(`✳️ Ingrese las funciones que desee en *${botname}*`)
   if (yoi.length > 200 ) return reply('El texto supera el límite, su solicitud es rechazada!')
   _solicitud.push(yoi)
   fs.writeFileSync('./result/reportes/solicitud.json', JSON.stringify(_solicitud))
@@ -3292,7 +3248,7 @@ if (stdout) reply(`✅ *Informe de la actualización:*\n\n${stdout}`)
 })
 break
 
-//https://api.zeks.me/api/magernulis?apikey=WRhywqyYC0doYNeqTZymcB2SjrT&nama=gatybot&kelas=6-08&text=${q}&tinta=6
+//https://api.zeks.me/api/magernulis?apikey=WRhywqyYC0doYNeqTZymcB2SjrT&nama=${botname}&kelas=6-08&text=${q}&tinta=6
 case 'nulis':
 	case 'tulis':
 		case 'escribe':
@@ -3300,7 +3256,7 @@ if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
 				if (args.length < 1) return reply(`📝 Que escribo? Ejemplo : *${prefix + command}* Hola puercos`)
 				reply('✅ Espere, Lo estoy escribiendo :3')
-				buff = `https://ferdiz-afk.my.id/api/tulis?nama=gatybot&no=750&kelas=by%20gatito&text=${q}`
+				buff = `https://ferdiz-afk.my.id/api/tulis?nama=${botname}&no=750&kelas=by%20${ownername2}&text=${q}`
 					voss = await fetch(buff)
 					ftype = require('file-type')
 					vuss = await ftype.fromStream(voss.body)
@@ -4625,7 +4581,7 @@ anuc = await imgbb2c("20a14861e4f7591f3dc52649cb07ae02", './stickc.jpeg')
 txtc = `${anuc.display_url}`
 sc = await getBuffer(`https://pecundang.herokuapp.com/api/jail?url=${txtc}`)
 const bas642c = `data:image/jpeg;base64,${sc.toString('base64')}`
-var mantap2c = await convertSticker(bas642c, `🐱gatybot🤖`, `「gatitoツ」`)
+var mantap2c = await convertSticker(bas642c, `🐱${botname}🤖`, `${ownername}`)
 var imageBuffer2c = new Buffer.from(mantap2c, 'base64');
 Fg.sendMessage(from, imageBuffer2c, sticker, {quoted: mek})
 fs.unlinkSync('./stickc.jpeg')
@@ -4980,7 +4936,7 @@ if (args.length < 1) return reply(`✳️ Ejemplo : ${prefix + command} Lil Peep
 		            ytresult += '*⏳ Duración* : ' + video.timestamp + '\n'
 		            ytresult += '*📤 Publicado* : ' + video.ago + '\n________________________\n\n'
 		    		});
-		    		ytresult += '─── GatyBot ───'
+		    		ytresult += `─── ${botname} ───`
 		    		
 		            Fg.sendMessage(from, tbuff, image, {quoted: mek, caption: ytresult})
 		            limitAdd(sender, limit)
@@ -5461,7 +5417,7 @@ limitAdd(sender, limit)
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
                  //   if (!isGroupAdmins && !isOwner) return reply(admin())
                     if (!isGroup) return reply(group())
-                    if (args.length < 1) return reply(`✳️ Usu del comando *${prefix + command }* nombre|número\n\n📌 Ejemplo : ${prefix + command} Gatybot|19199992616`)
+                    if (args.length < 1) return reply(`✳️ Usu del comando *${prefix + command }* nombre|número\n\n📌 Ejemplo : ${prefix + command} ${botname3}|19199992616`)
                     
                     const pepek = q
                     const adan = pepek.split("|")[0]
@@ -5698,7 +5654,7 @@ limitAdd(sender, limit)
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-if (!isQuotedSticker) return reply(`✳️ Responde a un sticker\n\n*USO DEL COMAMDO*\n*${prefix + command}* Nombre|Autor\n\n📌Ejemplo *${prefix + command}* gatybot|gatito`);
+if (!isQuotedSticker) return reply(`✳️ Responde a un sticker\n\n*USO DEL COMAMDO*\n*${prefix + command}* Nombre|Autor\n\n📌Ejemplo *${prefix + command}* ${botname}|${ownername2}`);
 const encmediats = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 var kls = q
 var pack = kls.split("|")[0];
@@ -5711,7 +5667,7 @@ reply(wait())
 const bas64 = `data:image/jpeg;base64,${dlfile.toString('base64')}`
 var mantap = await convertSticker(bas64, `${author2}`, `${pack}`)
 var imageBuffer = new Buffer.from(mantap, 'base64');
-Fg.sendMessage(from, imageBuffer, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `Gatybot by 「gatitoツ」`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
+Fg.sendMessage(from, imageBuffer, sticker, { quoted: mek, contextInfo: { externalAdReply:{title: `${botname3} by ${ownername}`,body:"", previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:`${grupomc}`}}})
 .catch((err) => {
             reply(`❎ Error, intente más tarde`); 
             })
@@ -8040,7 +7996,7 @@ if (isBanned) return reply(banf())
                     if (vit == "empate") {
                         var tes = "El juego termino en empate"
                     }
-                    reply(`*🤖gatybot:* ${pptb}\n*🏮jugador:* ${args}\n\n${tes}`)
+                    reply(`*🤖${botname}:* ${pptb}\n*🏮jugador:* ${args}\n\n${tes}`)
                     if (tes == "🥳 victoria del jugador") {
                         reply(pph)
                     }
@@ -8759,7 +8715,9 @@ Fg.sendMessage(from, aing, text, {quoted: mek, contextInfo: {"mentionedJid": [se
       if (sender.startsWith("994") || (sender.startsWith("48") || (sender.startsWith("1") || (sender.startsWith("9") || (sender.startsWith("91") || (sender.startsWith("44") || (sender.startsWith("96")))))))){
   	if (!isAntivirtual) return
     reply('❎ En este grupo no se permiten los números virtuales, adios')
-    console.log(color('[GATYBOT]','magenta'), color(`Numero virtual detectado`));
+    console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
+	console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Numero virtual detectado", "red"))
+	console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${sender.split("@")[0]}`, "orange"))
     setTimeout( () => {
                   var virtual = `${sender.split("@")[0]}@s.whatsapp.net`
                   Fg.groupRemove(from, [virtual]);
