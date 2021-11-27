@@ -2619,11 +2619,13 @@ break
         case 'commands':
         if(!isVerify) return isUser()
           if (isBanned) return reply(banf())
-          lvlh = getLevelingLevel(sender)
+          try {
+      	lvlh = getLevelingLevel(sender)
           infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
 	      infost = infost.status == 401 ? 'sin info' : infost.status
           imgth = fs.readFileSync('./storage/image/gaty_4.jpg')
           autorfg = `${sender.split("@")[0]}`
+        
           helfxz = `Hola @${autorfg} ${saludo}
 
 💫 Tu Info: *${infost}*
@@ -2875,17 +2877,24 @@ break
   ℹ️ ${prefix}estado
   ℹ️ ${prefix}join
   ℹ️ ${prefix}ayuda`
-sendButLocation(from, `${helfxz}`, `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © ${botname} 2021*`, {jpegThumbnail:imgth},
 
- [
-{buttonId:`creador`,buttonText:{displayText:'🐱 CREADOR'},type:1},
-{buttonId:`info`,buttonText:{displayText:'🤖 INFO'},type:1}], 
-
-{contextInfo: { mentionedJid: [sender]}} )
-.catch((err) => {
+py =  await Fg.prepareMessage(from, imgth, image)
+gbutsan = [
+{buttonId: `${prefix}creador`, buttonText: {displayText: '🐱 CREADOR'}, type: 1},
+{buttonId: `${prefix}info`, buttonText: {displayText: '🤖 INFO'}, type: 1}
+]
+gbuttonan = {
+imageMessage: py.message.imageMessage,
+contentText: helfxz,
+footerText: `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © ${botname} 2021*`,
+buttons: gbutsan,
+headerType: 4
+}
+await Fg.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: {  mentionedJid: [sender]}, quoted: mek})
+} catch (e) {
 	console.log(`Error :`, color(e,'red'))
-    reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
-            })
+     reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
+                     }
 break
 
 //--info bot 
