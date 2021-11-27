@@ -2617,14 +2617,14 @@ break
         case 'menú':
         case 'comandos':
         case 'commands':
-          if(!isVerify) return isUser()
+        if(!isVerify) return isUser()
           if (isBanned) return reply(banf())
-        lvlh = getLevelingLevel(sender)
-       infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
-	  infost = infost.status == 401 ? 'sin info' : infost.status
-        imgth = fs.readFileSync('./storage/image/gaty_4.jpg')
-        autorfg = `${sender.split("@")[0]}`
-        helfxz = `Hola @${autorfg} ${saludo}
+          lvlh = getLevelingLevel(sender)
+          infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
+	      infost = infost.status == 401 ? 'sin info' : infost.status
+          imgth = fs.readFileSync('./storage/image/gaty_4.jpg')
+          autorfg = `${sender.split("@")[0]}`
+          helfxz = `Hola @${autorfg} ${saludo}
 
 💫 Tu Info: *${infost}*
 
@@ -2875,17 +2875,18 @@ break
   ℹ️ ${prefix}estado
   ℹ️ ${prefix}join
   ℹ️ ${prefix}ayuda`
-        
-sendButLocation(from, `${helfxz}`, `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © ${botname} 2021*`, {jpegThumbnail: imgth},
+sendButLocation(from, `${helfxz}`, `║▌│█║▌│ █║▌│█│║▌║\n║▌│█║▌│ █║▌│█│║▌║\n      *Copyright © ${botname} 2021*`, {jpegThumbnail:imgth},
+
  [
-{buttonId: `creador`, buttonText: {displayText: '🐱 CREADOR'}, type: 1},
-{buttonId: `info`, buttonText: {displayText: '🤖 INFO'}, type: 1},
-{contextInfo: { mentionedJid: [sender]}})
+{buttonId:`creador`,buttonText:{displayText:'🐱 CREADOR'},type:1},
+{buttonId:`info`,buttonText:{displayText:'🤖 INFO'},type:1}], 
+
+{contextInfo: { mentionedJid: [sender]}} )
 .catch((err) => {
 	console.log(`Error :`, color(e,'red'))
     reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
             })
-break;
+break
 
 //--info bot 
 case 'info':
