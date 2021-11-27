@@ -2625,8 +2625,6 @@ break
         imgth = fs.readFileSync('./storage/image/gaty_4.jpg')
         autorfg = `${sender.split("@")[0]}`
         helfxz = `Hola @${autorfg} ${saludo}
-        
-        helfxz = `Hola @${autorfg} ${saludo}
 
 💫 Tu Info: *${infost}*
 
