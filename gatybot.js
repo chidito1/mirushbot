@@ -2618,7 +2618,6 @@ break
         case 'commands':
           if(!isVerify) return isUser()
           if (isBanned) return reply(banf())
-          try {
         lvlh = getLevelingLevel(sender)
        infost = await Fg.getStatus(`${sender.split('@')[0]}@c.us`)
 	  infost = infost.status == 401 ? 'sin info' : infost.status
@@ -2881,10 +2880,10 @@ sendButLocation(from, `${helfxz}`, `║▌│█║▌│ █║▌│█│║�
 {buttonId: `creador`, buttonText: {displayText: '🐱 CREADOR'}, type: 1},
 {buttonId: `info`, buttonText: {displayText: '🤖 INFO'}, type: 1},
 {contextInfo: { mentionedJid: [sender]}}
-} catch (e) {
+.catch((err) => {
 	console.log(`Error :`, color(e,'red'))
-     reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
-                     }
+    reply('❎ Error al mostrar el menú, intenta de nuevo después de este mensaje')
+            })
 break
 
 //--info bot 
