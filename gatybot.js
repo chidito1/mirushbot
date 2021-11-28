@@ -2400,6 +2400,18 @@ Fg.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
     }
 
 //====================================================================================================//
+//Warns
+const chetwarnx = getWarn(sender)
+var advertencia = 'primera'
+            if (chetwarnx === 1) {
+                advertencia = 'primera'
+            } else if (chetwarnx === 2) {
+                advertencia = 'segunda'
+            } else if (chetwarnx === 3) {
+                advertencia = 'tercera'
+	        } else if (chetwarnx === 4) {
+                advertencia = 'cuarta'
+            }
 
 //>> Tipo de enlace 
 var enlace = 'WhatsApp'
@@ -2434,15 +2446,15 @@ var enlace = 'WhatsApp'
 		console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"))
 		console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Groseria detectado", "red"))
 		console.log('\x1b[1;31m', color("➛ ", "red"), color("De: "), color(`${sender.split("@")[0]}`, "orange"))
-		Fg.sendMessage(from, `❎ En este no esta permitido las groserías\n\n▪︎Se le acumulo una advertencia\n\n*📌Nota:* a las 3 advertencias se te eliminará del grupo`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
+		Fg.sendMessage(from, `✳️ En este grupo no está permitido los insultos, *${advertencia}* advertencia\n\n*📌Nota:* 3 advertencias = ban`, text, {quoted: mek, contextInfo: {"mentionedJid": [sender]}})
 		if (!isBotGroupAdmins) return reply('🤨 Por suerte no soy  admin, asi que no te expulsare')
 		Fg.updatePresence(from, Presence.composing)
-		if (currentWarn === 3) {
+		if (currentWarn === 2) {
 			var kic = `${sender.split("@")[0]}@s.whatsapp.net`
 			Fg.sendMessage(from, `✅ @${kic.split("@")[0]} has superado las 3 advertencias adiós`, text, {quoted: mek, contextInfo: {"mentionedJid": [kic]}})
 			setTimeout( () => {
 			Fg.groupRemove(from, [kic]).catch((e)=>{reply('❎ Error, no se pudo eliminar al usuario')})
-			addWarn(sender, -4)
+			addWarn(sender, -3)
 			}, 1000)
 			}
 		}
@@ -8507,7 +8519,7 @@ break
 case 'topdiamond':
 case 'topdiamante':
 case 'diamondtop':
-              if(!isVerify) return isUser()
+if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
     if (!isGroup) return reply(group())
                 if (!isLevelingOn) return reply(leveloff())
@@ -8523,6 +8535,14 @@ case 'diamondtop':
               console.error(err)
               reply('✴ mínimo 10 usuarios para mostrar la base de diamantes!')
 }
+              break
+
+case 'chiste':
+              if(!isVerify) return isUser()
+              if (isBanned) return reply(banf())
+              const chiste = [`¿Cuál es el colmo de un ciego?\n Enamorarse a primera vista.`, `*¿Qué le dijo un zapato a otro?* \n - Qué vida más arrastrada llevas. \n ¡MIRA LOS ZAPATOS QUE EXISTEN PARA ANDAR POR EL TECHO!`, `¿Qué le dijo un cable a otro cable? \n Somos los intocables.`, `*¿Qué le dijo batman al papel higiénico?* \n Tu eres el único que conoce mi baticueva.`, `¿Por qué llora un libro de matemáticas? \n ¡Porque tiene muchos problemas!`, `¿Qué está al final de todo? ¡La letra o!`, `¿Por qué el profe de música tiene una escalera? \n ¡Para poder llegar a las notas más altas!`, `¿Qué le dice una iguana a su hermana gemela? \n Somos iguanitas`, `*¿Cuál es el colmo del electricista?* \n ¡Que su mujer se llame Luz!`, `¿Cómo se dice pañuelo en japonés? \n Sacamoko`, `¿Cuál es el pez que huele mucho? \n ¡Peztoso!`, `¿Sabes cómo se queda un mago después de comer? \n Magordito` ]
+              answer = chiste[Math.floor(Math.random() * chiste.length)]
+              Fg.sendMessage(from, `*◼️CHISTE*\n\n${answer}`, text, { quoted: mek })
               break
 
 //--------------------------------------
