@@ -79,6 +79,7 @@ const time = moment().tz("America/La_Paz").format("HH:mm:ss");
 const { sleep, isAfk, cekafk,  } = require("./lib/offline");
 const { cmdadd } = require("./lib/totalcmd.js");
 const { mediafire } = require('./lib/mediafire.js')
+const { y2mateA, y2mateV } = require('./lib/y2mate.js')
 const { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
 const _prem = require("./lib/premium");
 const game = require("./lib/game");
@@ -6526,8 +6527,30 @@ console.log(e)
 }
 break
 
+case 'play':
+                reply(`*Espere un momento, su audio ${q} se esta descargando...*`)
+                teks = args.join(' ')
+                if (!teks.endsWith("-doc")){
+                res1 = await yts(q).catch(e => {	
+                reply('*NO HE ENCONTRADO LO QUE BUSCABAS*')
+                })	
+                let thumbInfo = `*🎶Musica encontrada*
+
+‣ *📌Título* : ${res1.all[0].title}
+‣ *📂Archivo* : Mp3
+‣ *⏰Duración* : ${res1.all[0].timestamp}
+‣ *🔗Link* : ${res1.all[0].author.name}
+
+El archivo se esta enviando espere` 
+                sendFileFromUrl(res1.all[0].image, image, {quoted: choute, caption: thumbInfo})
+                res1 = await y2mateA(res1.all[0].url).catch(e => {
+                })
+                sendFileFromUrl(res1[0].link, audio, {quoted: choute, mimetype: 'audio/mp4', filename: res1[0].output})
+                }
+                break
+
 //----
-    case 'play':
+    case '______play':
 if(!isVerify) return isUser()
   if (isBanned) return reply(banf())
   if(!isPremium)return reply(premi())
