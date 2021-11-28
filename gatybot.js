@@ -2920,41 +2920,45 @@ const latensii = speed() - timestampp
                    giid.push(id)
                     }
                     }
-                   inifernazer = `「 *INFORMACIÓN DEL BOT* 」
+                   inifernazer = `┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+*🤖〝 Info del bot 〞🤖*
 
-• 🤖 *Prefijo* : ${prefix}
-• 🤖 *Bot V* : 4.0.0
-• 🤖 *Total Hits* : ${totalhit}
-• 🤖 *Usuarios reg* : ${_user.length}
-• 🤖 *Tiempo activa* : ${runtime(process.uptime())}
-• 🤖 *Velocidad* : ${latensii.toFixed(4)} Segundos
-• 🤖 *Navegador* : ${Fg.browserDescription[1]}
-• 🤖 *Navegador V* : ${Fg.browserDescription[2]}
-• 🤖 *WhatsApp V* : ${wa_version}
+• *Prefijo del bot* : ${prefix}
+• *Vercion del bot* : 4.0.0
+• *Total Hits* : ${totalhit}
+• *Usuarios :* ${_user.length} verificados
+• *Tiempo activa :* ${runtime(process.uptime())}
+• *Velocidad :* ${latensii.toFixed(4)} Segundos
+• *Navegador :* ${Fg.browserDescription[1]}
+• *Vercion del navegador :* ${Fg.browserDescription[2]}
+• *Versión del whatsapp* : ${wa_version}
 
-「 *INFORMACIÓN DE CHATS* 」
+┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+*💬〝 Info de chats 〞💬*
 
-• 💬 *Chats grupales* : ${giid.length}
-• 💬 *Chats privados* : ${totalchat.length - giid.length}
-• 💬 *Total de chats* : ${totalchat.length}
-• 💬 *No leido* : ${unread.length} mensajes
+• *Chats grupales* : ${giid.length}
+• *Chats privados* : ${totalchat.length - giid.length}
+• *Total de chats* : ${totalchat.length}
+• *No leido* : ${unread.length} mensajes
 
-「 *INFORMACIÓN DEL ANDROID* 」
+┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+*👾〝 Info del android 〞👾*
 
-• 📲 *Marca* : ${device_manufacturer}
-• 📲 *Modelo* : ${device_model}
-• 📲 *Vercion* : ${os_version}
-• 📲 *Ram* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-• 📲 *MCC* : ${mcc}
-• 📲 *MNC* : ${mnc}
+• *Marca :* ${device_manufacturer}
+• *Modelo :* ${device_model}
+• *Vercion :* ${os_version}
+• *Ram :* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+• *MCC :* ${mcc}
+• *MNC :* ${mnc}
 
- 「 *AGRADECIMIENTOS* 」
+┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+*🐱〝 Agradecimientos 〞🐱*
 
-• 🐱 *Gatito :* @${fgnum.split("@s.whatsapp.net")[0]}
-_*Diseñador del bot*_
+• *Gatito :* @${fgnum.split("@s.whatsapp.net")[0]}
+_Diseñador del bot_
 
-• 🌀 *Edgar :* @${ayudante.split("@s.whatsapp.net")[0]}
-*Ayuda en algunos comandos*`
+• *Edgar :* @${ayudante.split("@s.whatsapp.net")[0]}
+_Ayuda en algunos comandos_`
 Fg.sendMessage(from, inifernazer, text, { quoted: mek, contextInfo: { externalAdReply:{title: `式⃟🐱INFORMACIÓNES🐱⃟式`,body: `• Fecha : ${fecha2}\n• Hora : ${hora2}`, previewType:"PHOTO",thumbnail: gatylogo, sourceUrl:``}, "mentionedJid": [fgnum, ayudante, botnum]}})
              
            break
@@ -5090,7 +5094,6 @@ if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(
 if (!q) return reply(`✳️ Nombre de un país \n\n📌 Ejemplo : ${prefix + command} Peru`)
 cvd = await fetchJson(`http://zekais-api.herokuapp.com/corona?country=${q}&apikey=qyYRIs2V`)
 if (cvd.error) return reply(`❎ El país ${q} no se encontró`)
-if (cvd = "undefined") return reply(`❎ El país *${q}* no se encontró\n\nTen en cuenta que no debes colocar tildes\n\n*📌Ejemplo:* ${prefix + command} Peru`)
 copid = `❒ *「 Covid ${q} 」* ❒ 
 
 ‣ *Total de casos :* _${cvd.result.total_case}_
@@ -5421,8 +5424,8 @@ limitAdd(sender, limit)
   
       case 'contag':
                     if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-  if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+                    if (isBanned) return reply(banf())
+                    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
                  //   if (!isGroupAdmins && !isOwner) return reply(admin())
                     if (!isGroup) return reply(group())
                     if (args.length < 1) return reply(`✳️ Usu del comando *${prefix + command }* nombre|número\n\n📌 Ejemplo : ${prefix + command} ${botname3}|19199992616`)
@@ -5482,9 +5485,9 @@ if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(
                    case 'imgtag':
                    case 'imagentag':
                           if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
-                   if (!isGroup) return reply(group())
+                          if (isBanned) return reply(banf())
+                          if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+                          if (!isGroup) return reply(group())
 		        //   if (!isGroupAdmins && !isOwner) return reply(admin())
                     if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -5514,8 +5517,8 @@ if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(
       case "totag":
       case "tag":
         if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
+        if (isBanned) return reply(banf())
+        if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
                    if (!isGroup) return reply(group())
 		         if (!isGroupAdmins && !isOwner) return reply(admin())
         if (
@@ -5809,8 +5812,8 @@ if (!isOwner)return reply(ownerB())
 	
 	case 'topgay':
 if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-  if (!isGroup) return reply(group())
+if (isBanned) return reply(banf())
+if (!isGroup) return reply(group())
 member = []
 top5 = args.join(' ')
 const v1 = groupMembers
@@ -5861,13 +5864,13 @@ mentions(teks, member, true)
 break
 				
 case 'dueñogrupo':
-  case 'dueñogp':
- case 'ownergroup':
-		case 'creadorgrupo':
-		case 'ownergp':
-				if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-if (!isGroup) return reply(group())
+case 'dueñogp':
+case 'ownergroup':
+case 'creadorgrupo':
+case 'ownergp':
+		if(!isVerify) return isUser()
+			if (isBanned) return reply(banf())
+			    if (!isGroup) return reply(group())
 				Fg.updatePresence(from, Presence.composing)
 				cfg = `${from.split("-")[0]}@s.whatsapp.net`
 				cgp = `✅ El creador del grupo es : @${cfg.split("@")[0]}`
@@ -5875,13 +5878,12 @@ if (!isGroup) return reply(group())
 				break
 				 
 				// Nivel
-				
 case 'level':
 case 'nivel':
 case 'lvl':
 if(!isVerify) return isUser()
-  if (isBanned) return reply(banf())
-    if (!isGroup) return reply(group()) 
+if (isBanned) return reply(banf())
+if (!isGroup) return reply(group()) 
                 if (!isLevelingOn) return reply(leveloff())
                 try {
 				ppimg = await Fg.getProfilePicture(`${sender.split('@')[0]}@c.us`)
@@ -6251,7 +6253,7 @@ if(!isVerify) return isUser()
       case "chatmode":
       if (!isGroup) return reply(group())
         if (!isOwner)return reply(ownerB()) 
-        sendButMessage(from, `Quiere silenciar el grupo?\n\n✳️Si no te aparecen pon el comando:\n🔇Para mutear el grupo\n• ${prefix}banchat\n🔊Para desmutear el grupo\n\n• ${prefix}unbanchat`, `Elija una opción`, [
+        sendButMessage(from, `Quiere silenciar el grupo?`, `Elija una opción`, [
           {
             buttonId: `${prefix}banchat`,
             buttonText: {
@@ -6286,7 +6288,7 @@ if (!isBanchat) return reply(`✳️El grupo no estaba silenciado`)
 let ubc = _bancht.indexOf(from)
 _bancht.splice(ubc, 1)
 fs.writeFileSync('./database/group/banchat.json', JSON.stringify(_bancht))
-reply(`✅ *Grupo desmuteado*\n\n ▶️ Ahora ya pueden usar los comandos`)
+reply(`✅ *Grupo desmuteado*\n\n▶️ Ahora ya pueden usar los comandos`)
 break
 
 case 'listbanchat': 
@@ -6303,8 +6305,8 @@ reply(teks)
 break
 
 case 'detectorinfo':
-       case 'detecinfo':
-        case 'infodetec':
+case 'detecinfo':
+case 'infodetec':
 detec = `「 *DETECTOR INFO* 」
 ╭──────────────────✾
 │⎔ *🚫Antidelete* : ${antidel_}
