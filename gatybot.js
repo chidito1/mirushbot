@@ -6528,25 +6528,30 @@ console.log(e)
 break
 
 case 'play':
-                reply(`*Espere un momento, su audio ${q} se esta descargando...*`)
+                if(!isVerify) return isUser()
+                if (isBanned) return reply(banf())
                 teks = args.join(' ')
                 if (!teks.endsWith("-doc")){
                 res1 = await yts(q).catch(e => {	
-                reply('*NO HE ENCONTRADO LO QUE BUSCABAS*')
-                })	
+                reply('❎ No se encontró la música')
+                })
+                reply(wait()) 
                 let thumbInfo = `*🎶Musica encontrada*
 
 ‣ *📌Título* : ${res1.all[0].title}
 ‣ *📂Archivo* : Mp3
 ‣ *⏰Duración* : ${res1.all[0].timestamp}
-‣ *🔗Link* : ${res1.all[0].author.name}
+‣ *🔗Link* : ${res1.all[0].author.url}
 
 El archivo se esta enviando espere` 
                 sendFileFromUrl(res1.all[0].image, image, {quoted: mek, caption: thumbInfo})
                 res1 = await y2mateA(res1.all[0].url).catch(e => {
                 })
-                sendFileFromUrl(res1[0].link, audio, {quoted: choute, mimetype: 'audio/mp4', filename: res1[0].output})
+                sendFileFromUrl(res1[0].link, audio, {quoted: mek, mimetype: 'audio/mp4', filename: res1[0].output})
                 }
+                .catch((err) => {
+                	reply(`❎ Error, intente más tarde`); 
+                })
                 break
 
 //----
@@ -8062,7 +8067,7 @@ if (isBanned) return reply(banf())
                    mmogiro = Math.floor(Math.random() * (100000 - 50000 + 1) + 50000)
                    const girores = Math.floor(Math.random() * (100 - 50 + 1) + 50)
                    mnogiro = `-${girores}`
-                    const sotoy = ['🍊 : 🍒 : ??','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
+                    const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
                     const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
