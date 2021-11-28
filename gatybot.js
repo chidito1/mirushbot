@@ -1916,8 +1916,12 @@ const xxx = [
 					addLevelingXp(sender, amountXp)
 					if (requiredXp <= getLevelingXp(sender)) {
 						addLevelingLevel(sender, 1)
-						     giveLimit(sender, 2, limit)
-levelup = `*🥳Hola @${sender.split("@")[0]} acabas de subir de nivel*
+						giveLimit(sender, 2, limit)
+						console.log('\x1b[1;31m', color("─────────────────────────────────────────────────────────────────────", "magenta"));
+				        console.log('\x1b[1;31m', color("➛ ", "red"), color("Estado: "), color("Subió de nivel", "yellow"))
+				        console.log('\x1b[1;31m', color("➛ ", "red"), color("Nro: "), color(`${sender.split("@")[0]}`, "pink"))
+				        console.log('\x1b[1;31m', color("➛ ", "red"), color("Nivel: "), color(`${getLevel} ➪ ${getLevelingLevel(sender)}`, "pink"))
+levelup = `*🥳Hola @${sender.split("@")[0]} subiste de nivel*
 
 ⎔ *✨Exp* : ${getLevelingXp(sender)}
 ⎔ *🆙Nivel* : ${getLevel} ➪ ${getLevelingLevel(sender)}
