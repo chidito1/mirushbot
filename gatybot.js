@@ -6549,9 +6549,6 @@ El archivo se esta enviando espere`
                 })
                 sendFileFromUrl(res1[0].link, audio, {quoted: mek, mimetype: 'audio/mp4', filename: res1[0].output})
                 }
-                .catch((err) => {
-                	reply(`❎ Error, intente más tarde`); 
-                })
                 break
 
 //----
