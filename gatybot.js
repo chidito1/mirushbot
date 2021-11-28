@@ -196,7 +196,7 @@ gCoinF
 
 //>> Configuración
 const grupomc = "https://chat.whatsapp.com/KQLMoi0FX0JHWBzRPOwJ31"
-const owner = "51940617554"
+const owner = "5215623360095"
 const mods = ["51940617554","5218911054291","5356588048"]
 const botname = "gatybot"
 const botname2 = "GATYBOT"
