@@ -6550,7 +6550,7 @@ if(!isVerify) return isUser()
 El archivo se esta enviando espere`
 //if(Number(size.split(' MB')[0]) >= 5.00) return reply('❎ El archivo pesa más de 5 mb')
   thumb = await getBuffer(foto)
-  Fg.sendMessage(from, thumb, image, {mimetype: 'image/jpeg', quoted: mek, caption: capt})
+  Fg.sendMessage(from, thumb, image, {mimetype: 'image/webp', quoted: mek, caption: capt})
   mp3 = await getBuffer(lagu)
   Fg.sendMessage(from, mp3, document, {mimetype: 'audio/mp4', filename: `${judul}.mp3`, quoted: mek})
   .catch((err) => {
