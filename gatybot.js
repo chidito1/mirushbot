@@ -2023,7 +2023,7 @@ Fg.sendMessage(from, levelup, text, {quoted: mek, contextInfo: {"mentionedJid": 
         });
       }
  
- //====================================================================================================//
+//====================================================================================================//
 
 //>> Ttp2 ttp3 y demás de Stickers
 const sendStickerUrl = async(to, url) => {
@@ -6534,22 +6534,21 @@ if(!isVerify) return isUser()
 	        if (args.length < 1) return reply(`✳️ *Ingresa el nombre de una música*\n\n📌Ejemplo: *${prefix}play* Lil Peep broken smile`)
                 playz = q
                 reply(wait()) 
-  pl = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?apikey=WRhywqyYC0doYNeqTZymcB2SjrT&q=${playz}`)
-  judul = pl.result.title
-  lagu = pl.result.url_audio
-  size = pl.result.size
-  foto = pl.result.thumbnail
-  durasi = pl.result.duration
-  link = pl.result.source
+  pl = await fetchJson(`https://api-gdr2.herokuapp.com/api/yt/play2?query=${playz}`)
+  judul = msc.result.title
+  lagu = msc.result.url_audio
+  foto = msc.result.thumbnail
+  durasi = msc.result.duration
+  link = msc.result.url
   capt = `*🎶Musica encontrada*
-  
+
 ‣ *📌Título* : ${judul}
 ‣ *📂Archivo* : Mp3
-‣ *⚖️Tamaño* : ${size}
-‣ *🔗 Link* : ${link}
+‣ *⏰Duración* : ${durasi}
+‣ *🔗Link* : ${link}
 
 El archivo se esta enviando espere`
-  if(Number(size.split(' MB')[0]) >= 5.00) return reply('❎ El archivo pesa más de 5 mb')
+//if(Number(size.split(' MB')[0]) >= 5.00) return reply('❎ El archivo pesa más de 5 mb')
   thumb = await getBuffer(foto)
   Fg.sendMessage(from, thumb, image, {quoted: mek, caption: capt})
   mp3 = await getBuffer(lagu)
@@ -6740,7 +6739,7 @@ _📤 Enviando, espere si el audio no aparece, descargue por el link_`
                 limitAdd(sender, limit)
                 break
         
-      case 'video':
+                case 'video':
 				case 'playvideo':
 				case 'playvid':
 				case 'playmp4':
