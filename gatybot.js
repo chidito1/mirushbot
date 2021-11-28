@@ -6534,7 +6534,7 @@ if(!isVerify) return isUser()
 	        if (args.length < 1) return reply(`✳️ *Ingresa el nombre de una música*\n\n📌Ejemplo: *${prefix}play* Lil Peep broken smile`)
                 playz = q
                 reply(wait()) 
-  pl = await fetchJson(`https://api-gdr2.herokuapp.com/api/yt/play2?query=${playz}`)
+  msc = await fetchJson(`https://api-gdr2.herokuapp.com/api/yt/play2?query=${playz}`)
   judul = msc.result.title
   lagu = msc.result.url_audio
   foto = msc.result.thumbnail
